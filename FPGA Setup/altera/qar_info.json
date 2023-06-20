@@ -1,0 +1,7 @@
+{
+	"common_dir" : "C:/Users/Kavindra/Downloads/cyclone10lp-10cl025yu256-eval-v17.0.0stdb595/cyclone10LP_10cl025yu256_eval_v17.0.0stdb595/examples/golden_top/",
+	"acds_version" : "Version 20.1.1",
+	"platform" : "windows",
+	"os" : "Windows 10",
+	"qpf" : "c10lp_golden_top.qpf"
+}

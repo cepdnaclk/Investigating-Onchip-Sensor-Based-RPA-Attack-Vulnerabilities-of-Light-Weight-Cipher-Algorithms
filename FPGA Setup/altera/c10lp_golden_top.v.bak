@@ -1,0 +1,90 @@
+module  c10lp_golden_top (
+        //Clock and Reset
+        input  wire        c10_clk50m    ,
+        input  wire        hbus_clk_50m  ,  
+        input  wire        c10_clk_adj   ,  
+        input  wire        enet_clk_125m ,
+        input  wire        c10_resetn    ,
+
+        //LED PB DIPSW
+        output wire [3:0]  user_led ,
+        input  wire [3:0]  user_pb  ,
+        input  wire [2:0]  user_dip ,
+
+        //Ethernet Port 
+        output wire        enet_mdc        ,
+        inout  wire        enet_mdio       ,
+        
+        input  wire        enet_int        ,     
+        output wire        enet_resetn     ,	    
+        input  wire        enet_rx_clk     ,     
+        output wire        enet_tx_clk     ,    
+        input  wire [3:0]  enet_rx_d       ,       
+        output wire [3:0]  enet_tx_d       ,       
+        output wire        enet_tx_en      ,      
+        input  wire        enet_rx_dv      ,      
+
+        //PMOD PORT
+        inout  wire [7:0]  pmod_d   ,
+
+        //Side Bus
+        input  wire         usb_reset_n        ,
+        input  wire         c10_usb_clk        ,
+        input  wire         usb_wr_n           ,
+        input  wire         usb_rd_n           ,
+        input  wire         usb_oe_n           ,
+        output wire         usb_full           ,
+        output wire         usb_empty          ,
+        inout  wire   [7:0] usb_data           ,
+        inout  wire   [1:0] usb_addr           ,
+        inout  tri1         usb_scl            ,
+        inout  tri1         usb_sda            ,
+        
+        
+        //User IO & Clock
+        inout  wire [35:0]  gpio            ,
+        
+        //ARDUINO IO
+        inout  wire [13:0]  arduino_io      ,
+        output wire         arduino_rstn    ,
+        inout  wire         arduino_sda     ,
+        inout  wire         arduino_scl     ,        
+        inout  wire         arduino_adc_sda ,
+        inout  wire         arduino_adc_scl ,
+
+        //Cyclone 10 to MAX 10 IO
+        inout  wire [3:0]  c10_m10_io   ,       
+        
+        //HyperRAM IO
+        output wire         hbus_rstn   ,
+        output wire         hbus_clk0p  ,
+        output wire         hbus_clk0n  ,
+        output wire         hbus_cs2n   , //HyperRAM chip select
+        inout  wire         hbus_rwds   ,
+        inout  wire [7:0]   hbus_dq     ,
+        output wire         hbus_cs1n   , //For HyperFlash
+        input  wire         hbus_rston  , //For HyperFlash
+        input  wire         hbus_intn     //For HyperFlash
+
+        //QSPI
+//        output wire    qspi_dclk   ,
+//        output wire    qspi_sce    ,
+//        output wire    qspi_sdo    ,
+//        input  wire    qspi_data0  
+
+        );
+
+//Heart-beat counter
+reg   [25:0]  heart_beat_cnt;
+
+//Heart beat by 50MHz clock
+always @(posedge c10_clk50m or negedge c10_resetn)
+  if (!c10_resetn)
+      heart_beat_cnt <= 26'h0; //0x3FFFFFF
+  else
+      heart_beat_cnt <= heart_beat_cnt + 1'b1;
+
+
+assign user_led[0] = heart_beat_cnt[25];
+
+endmodule
