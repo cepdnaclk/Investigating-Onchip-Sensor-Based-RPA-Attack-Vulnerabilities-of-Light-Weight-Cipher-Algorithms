@@ -84,6 +84,8 @@ parameter CounterSize= 31;
 parameter SAMPLES 	= 1024;
 parameter SAMPLESTART= 0;
 parameter AES_COUNT	= 2;
+//parameter TDC_SIZE	= 128;
+parameter NUM_ROSensors=64;
 
 // STATES
 parameter RESET				= 8'b0000_0000,
@@ -128,20 +130,22 @@ parameter SAMPLE_RESET		= 8'b0000_0000,
 // USER REGISTERS AND WIRES
 	wire 				clk0, clk1;
 	wire 				locked, TXDone, txActive, dvld, kvld, transmit_done, receive_ready, trace_r_en;
-	reg  [7:0] 		STATE, STATE_TX, STATE_RX, STATE_SAMPLE;
-	reg  [7:0] 		transmitReg, sampleData, tx_data, delay;
-	reg  [127:0]	ptReg, ctReg, keyReg, cipher_w_data;
+	reg  	[7:0] 		STATE, STATE_TX, STATE_RX, STATE_SAMPLE;
+	reg  	[7:0] 		transmitReg, sampleData, tx_data, delay;
+	reg  	[127:0]	ptReg, ctReg, keyReg, cipher_w_data;
 	reg  				keyRdy, dataRdy, tx_en, trace_w_en, transmit_en, cipher_w_en, cipher_r_en, enc_LED, transmit_para;
-	wire [7:0]		RXdata, processedOut, cipher_r_data, receive_data, trace_r_data, trace_w_data, tracer_r_addr, param_addr, param_s_addr;
-	reg  [15:0]    tx_addr, tracer_w_addr;
-	reg  [2:0]		tracer_w_memsel, tracer_r_memsel, cipher_w_memsel;
-	reg  [4:0]     transmit_sel;
-	wire [127:0] 	doutTemp [AES_COUNT-1:0] ;
-	wire [127:0] 	dout;
-	wire [AES_COUNT-1:0] dvldTemp;
-	wire [2:0] 				cipher_r_memsel, trace_r_memsel;
-	wire [15:0] 			cipher_r_addr;
-	reg	[7:0] 	param 	[3:0];
+	wire 	[7:0]		RXdata, processedOut, cipher_r_data, receive_data, trace_r_data, trace_w_data, tracer_r_addr, param_addr, param_s_addr;
+	reg  	[15:0]    tx_addr, tracer_w_addr;
+	reg  	[2:0]		tracer_w_memsel, tracer_r_memsel, cipher_w_memsel;
+	reg  	[4:0]     transmit_sel;
+	wire 	[127:0] 	doutTemp [AES_COUNT-1:0] ;
+	wire 	[127:0] 	dout;
+	wire 	[AES_COUNT-1:0] dvldTemp;
+	wire 	[2:0] 				cipher_r_memsel, trace_r_memsel;
+	wire 	[15:0] 			cipher_r_addr;
+	reg	[7:0] 	param 	[3:0], processedOutReg;
+	reg	[TDC_SIZE-1:0]		outReg;
+	wire	[TDC_SIZE-1:0]		out;
 	// temp
 	
 	wire tx_uart;
@@ -157,7 +161,7 @@ parameter SAMPLE_RESET		= 8'b0000_0000,
 	reg			transmit_reg, receive_start;
 
 
-// MODULE
+// MODULES
 
 clock clkmanager(.clkin(c10_clk50m), .rst(~c10_resetn), .clk0(clk0), .clk1(clk1), .locked(locked));	
 cipher_memory cm0 (.w_clk(clk1), .r_clk(clk1), .rstn(c10_resetn), .r_en(trace_r_en), .w_en(cipher_w_en), .r_addr(cipher_r_addr), .w_memsel(cipher_w_memsel), .r_memsel(cipher_r_memsel), .w_data(cipher_w_data), .r_data(cipher_r_data), .r_dvld(), .w_dvld());
@@ -165,11 +169,18 @@ trace_memory  tm0 (.w_clk(clk0), .r_clk(clk1), .rstn(c10_resetn), .r_en(trace_r_
 sender s0 (.clk(clk1), .rstn(c10_resetn), .transmit_sel(transmit_sel), .transmit_en(transmit_en), .cipher_mem_sel(cipher_r_memsel), .cipher_addr(cipher_r_addr), .cipher_data(cipher_r_data), .trace_r_en(trace_r_en), .trace_data(trace_r_data), .trace_mem_sel(trace_r_memsel), .trace_addr(tracer_r_addr), .transmit_done(transmit_done), .tx(tx), .param_addr(param_s_addr), .param_data(receive_data));
 receiver r0 (.clk(clk1), .rstn(c10_resetn), .start(receive_start), .rx(rx), .addr(param_addr), .ready(receive_ready), .data(receive_data));
 
+
+// TDC and TDC chain value calculator
+
+carry_chain tp (.a(128'h0), .b(128'hffff_ffff_ffff_ffff_ffff_ffff_ffff_ffff), .carryin(clk0), .clk(clk0), .enable(1'b0), .clear(1'b0), .regout(out), .carryout());
+tdc_decode tdc_decode(.clk(clk0), .rst(AESResetn), .chainvalue_i(outReg), .coded_o(processedOut));
+
+
     genvar i;  genvar j;
 	 generate
         for(i = 0; i < AES_COUNT; i = i+1) 
 		  begin:gen_code_label
-				aes_tiny aes_tinyi ( .clk(clk1),  .rst(dataRdy),  .din(ptReg), .key(keyReg), .dout(doutTemp[i]),  .done(dvldTemp[i]) );
+				aes_tiny aes_tinyi ( .clk(clk1),  .rst(~dataRdy),  .din(ptReg), .key(keyReg), .dout(doutTemp[i]),  .done(dvldTemp[i]) );
 		  end
 	endgenerate
 
@@ -437,12 +448,19 @@ always @(posedge clk1  or negedge c10_resetn)
 					trace_w_en  	<= 1'b0;
 					tracer_w_addr	<= 16'h0;
 					tracer_w_memsel<=	1'b1;  // we use only 1 memory atm.
+					
+					outReg			<= out;
+					processedOutReg<= processedOut;
+					
 					if(dataRdy== 1'b1)
 						STATE_SAMPLE <= SAMPLE_COLLECT;
 					
 				end
 				SAMPLE_COLLECT: begin
-					sampleData		<= tracer_w_addr;//8'h00;//processedOut;
+					outReg			<= out;
+					processedOutReg<= processedOut;
+				
+					sampleData		<= processedOutReg;
 					trace_w_en  	<= 1'b1;
 					tracer_w_addr	<= tracer_w_addr + 1'b1;		
 					if(tracer_w_addr == 1023) // check this- might not work

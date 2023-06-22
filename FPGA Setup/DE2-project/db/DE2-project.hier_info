@@ -4,10 +4,10 @@ hbus_clk_50m => ~NO_FANOUT~
 c10_clk_adj => ~NO_FANOUT~
 enet_clk_125m => ~NO_FANOUT~
 c10_resetn => c10_resetn.IN4
-user_led[0] << heart_beat50_cnt[25].DB_MAX_OUTPUT_PORT_TYPE
-user_led[1] << heart_beat12_cnt[25].DB_MAX_OUTPUT_PORT_TYPE
-user_led[2] << heart_beat200_cnt[25].DB_MAX_OUTPUT_PORT_TYPE
-user_led[3] << enc_LED.DB_MAX_OUTPUT_PORT_TYPE
+user_led[0] <= heart_beat50_cnt[25].DB_MAX_OUTPUT_PORT_TYPE
+user_led[1] <= heart_beat12_cnt[25].DB_MAX_OUTPUT_PORT_TYPE
+user_led[2] <= heart_beat200_cnt[25].DB_MAX_OUTPUT_PORT_TYPE
+user_led[3] <= enc_LED.DB_MAX_OUTPUT_PORT_TYPE
 user_pb[0] => ~NO_FANOUT~
 user_pb[1] => ~NO_FANOUT~
 user_pb[2] => ~NO_FANOUT~
@@ -16,7 +16,7 @@ user_dip[0] => ~NO_FANOUT~
 user_dip[1] => ~NO_FANOUT~
 user_dip[2] => ~NO_FANOUT~
 rx => rx.IN1
-tx << sender:s0.tx
+tx <= sender:s0.tx
 
 
 |c10lp_golden_top|clock:clkmanager
