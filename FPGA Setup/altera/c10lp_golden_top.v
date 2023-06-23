@@ -84,8 +84,8 @@ parameter CounterSize= 31;
 parameter SAMPLES 	= 1024;
 parameter SAMPLESTART= 0;
 parameter AES_COUNT	= 2;
-//parameter TDC_SIZE	= 128;
-parameter NUM_ROSensors=64;
+parameter TDC_SIZE	= 128;
+//parameter NUM_ROSensors=64;
 
 // STATES
 parameter RESET				= 8'b0000_0000,
@@ -172,7 +172,7 @@ receiver r0 (.clk(clk1), .rstn(c10_resetn), .start(receive_start), .rx(rx), .add
 
 // TDC and TDC chain value calculator
 
-carry_chain tp (.a(128'h0), .b(128'hffff_ffff_ffff_ffff_ffff_ffff_ffff_ffff), .carryin(clk0), .clk(clk0), .enable(1'b0), .clear(1'b0), .regout(out), .carryout());
+carry_chain tp ( .carryin(clk0), .clk(clk0), .enable(1'b1), .clear(1'b0), .regout(out), .carryout());
 tdc_decode tdc_decode(.clk(clk0), .rst(AESResetn), .chainvalue_i(outReg), .coded_o(processedOut));
 
 

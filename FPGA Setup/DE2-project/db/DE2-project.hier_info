@@ -4,10 +4,10 @@ hbus_clk_50m => ~NO_FANOUT~
 c10_clk_adj => ~NO_FANOUT~
 enet_clk_125m => ~NO_FANOUT~
 c10_resetn => c10_resetn.IN4
-user_led[0] <= heart_beat50_cnt[25].DB_MAX_OUTPUT_PORT_TYPE
-user_led[1] <= heart_beat12_cnt[25].DB_MAX_OUTPUT_PORT_TYPE
-user_led[2] <= heart_beat200_cnt[25].DB_MAX_OUTPUT_PORT_TYPE
-user_led[3] <= enc_LED.DB_MAX_OUTPUT_PORT_TYPE
+user_led[0] << heart_beat50_cnt[25].DB_MAX_OUTPUT_PORT_TYPE
+user_led[1] << heart_beat12_cnt[25].DB_MAX_OUTPUT_PORT_TYPE
+user_led[2] << heart_beat200_cnt[25].DB_MAX_OUTPUT_PORT_TYPE
+user_led[3] << enc_LED.DB_MAX_OUTPUT_PORT_TYPE
 user_pb[0] => ~NO_FANOUT~
 user_pb[1] => ~NO_FANOUT~
 user_pb[2] => ~NO_FANOUT~
@@ -16,7 +16,7 @@ user_dip[0] => ~NO_FANOUT~
 user_dip[1] => ~NO_FANOUT~
 user_dip[2] => ~NO_FANOUT~
 rx => rx.IN1
-tx <= sender:s0.tx
+tx << sender:s0.tx
 
 
 |c10lp_golden_top|clock:clkmanager
@@ -2091,6 +2091,2350 @@ o_Rx_Byte[4] <= r_Rx_Byte[4].DB_MAX_OUTPUT_PORT_TYPE
 o_Rx_Byte[5] <= r_Rx_Byte[5].DB_MAX_OUTPUT_PORT_TYPE
 o_Rx_Byte[6] <= r_Rx_Byte[6].DB_MAX_OUTPUT_PORT_TYPE
 o_Rx_Byte[7] <= r_Rx_Byte[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|c10lp_golden_top|carry_chain:tp
+carryin => carryin.IN1
+clk => clk.IN128
+enable => enable.IN128
+clear => clear.IN128
+regout[0] <= primitive_ff:gen[1].myff.q
+regout[1] <= primitive_ff:gen[2].myff.q
+regout[2] <= primitive_ff:gen[3].myff.q
+regout[3] <= primitive_ff:gen[4].myff.q
+regout[4] <= primitive_ff:gen[5].myff.q
+regout[5] <= primitive_ff:gen[6].myff.q
+regout[6] <= primitive_ff:gen[7].myff.q
+regout[7] <= primitive_ff:gen[8].myff.q
+regout[8] <= primitive_ff:gen[9].myff.q
+regout[9] <= primitive_ff:gen[10].myff.q
+regout[10] <= primitive_ff:gen[11].myff.q
+regout[11] <= primitive_ff:gen[12].myff.q
+regout[12] <= primitive_ff:gen[13].myff.q
+regout[13] <= primitive_ff:gen[14].myff.q
+regout[14] <= primitive_ff:gen[15].myff.q
+regout[15] <= primitive_ff:gen[16].myff.q
+regout[16] <= primitive_ff:gen[17].myff.q
+regout[17] <= primitive_ff:gen[18].myff.q
+regout[18] <= primitive_ff:gen[19].myff.q
+regout[19] <= primitive_ff:gen[20].myff.q
+regout[20] <= primitive_ff:gen[21].myff.q
+regout[21] <= primitive_ff:gen[22].myff.q
+regout[22] <= primitive_ff:gen[23].myff.q
+regout[23] <= primitive_ff:gen[24].myff.q
+regout[24] <= primitive_ff:gen[25].myff.q
+regout[25] <= primitive_ff:gen[26].myff.q
+regout[26] <= primitive_ff:gen[27].myff.q
+regout[27] <= primitive_ff:gen[28].myff.q
+regout[28] <= primitive_ff:gen[29].myff.q
+regout[29] <= primitive_ff:gen[30].myff.q
+regout[30] <= primitive_ff:gen[31].myff.q
+regout[31] <= primitive_ff:gen[32].myff.q
+regout[32] <= primitive_ff:gen[33].myff.q
+regout[33] <= primitive_ff:gen[34].myff.q
+regout[34] <= primitive_ff:gen[35].myff.q
+regout[35] <= primitive_ff:gen[36].myff.q
+regout[36] <= primitive_ff:gen[37].myff.q
+regout[37] <= primitive_ff:gen[38].myff.q
+regout[38] <= primitive_ff:gen[39].myff.q
+regout[39] <= primitive_ff:gen[40].myff.q
+regout[40] <= primitive_ff:gen[41].myff.q
+regout[41] <= primitive_ff:gen[42].myff.q
+regout[42] <= primitive_ff:gen[43].myff.q
+regout[43] <= primitive_ff:gen[44].myff.q
+regout[44] <= primitive_ff:gen[45].myff.q
+regout[45] <= primitive_ff:gen[46].myff.q
+regout[46] <= primitive_ff:gen[47].myff.q
+regout[47] <= primitive_ff:gen[48].myff.q
+regout[48] <= primitive_ff:gen[49].myff.q
+regout[49] <= primitive_ff:gen[50].myff.q
+regout[50] <= primitive_ff:gen[51].myff.q
+regout[51] <= primitive_ff:gen[52].myff.q
+regout[52] <= primitive_ff:gen[53].myff.q
+regout[53] <= primitive_ff:gen[54].myff.q
+regout[54] <= primitive_ff:gen[55].myff.q
+regout[55] <= primitive_ff:gen[56].myff.q
+regout[56] <= primitive_ff:gen[57].myff.q
+regout[57] <= primitive_ff:gen[58].myff.q
+regout[58] <= primitive_ff:gen[59].myff.q
+regout[59] <= primitive_ff:gen[60].myff.q
+regout[60] <= primitive_ff:gen[61].myff.q
+regout[61] <= primitive_ff:gen[62].myff.q
+regout[62] <= primitive_ff:gen[63].myff.q
+regout[63] <= primitive_ff:gen[64].myff.q
+regout[64] <= primitive_ff:gen[65].myff.q
+regout[65] <= primitive_ff:gen[66].myff.q
+regout[66] <= primitive_ff:gen[67].myff.q
+regout[67] <= primitive_ff:gen[68].myff.q
+regout[68] <= primitive_ff:gen[69].myff.q
+regout[69] <= primitive_ff:gen[70].myff.q
+regout[70] <= primitive_ff:gen[71].myff.q
+regout[71] <= primitive_ff:gen[72].myff.q
+regout[72] <= primitive_ff:gen[73].myff.q
+regout[73] <= primitive_ff:gen[74].myff.q
+regout[74] <= primitive_ff:gen[75].myff.q
+regout[75] <= primitive_ff:gen[76].myff.q
+regout[76] <= primitive_ff:gen[77].myff.q
+regout[77] <= primitive_ff:gen[78].myff.q
+regout[78] <= primitive_ff:gen[79].myff.q
+regout[79] <= primitive_ff:gen[80].myff.q
+regout[80] <= primitive_ff:gen[81].myff.q
+regout[81] <= primitive_ff:gen[82].myff.q
+regout[82] <= primitive_ff:gen[83].myff.q
+regout[83] <= primitive_ff:gen[84].myff.q
+regout[84] <= primitive_ff:gen[85].myff.q
+regout[85] <= primitive_ff:gen[86].myff.q
+regout[86] <= primitive_ff:gen[87].myff.q
+regout[87] <= primitive_ff:gen[88].myff.q
+regout[88] <= primitive_ff:gen[89].myff.q
+regout[89] <= primitive_ff:gen[90].myff.q
+regout[90] <= primitive_ff:gen[91].myff.q
+regout[91] <= primitive_ff:gen[92].myff.q
+regout[92] <= primitive_ff:gen[93].myff.q
+regout[93] <= primitive_ff:gen[94].myff.q
+regout[94] <= primitive_ff:gen[95].myff.q
+regout[95] <= primitive_ff:gen[96].myff.q
+regout[96] <= primitive_ff:gen[97].myff.q
+regout[97] <= primitive_ff:gen[98].myff.q
+regout[98] <= primitive_ff:gen[99].myff.q
+regout[99] <= primitive_ff:gen[100].myff.q
+regout[100] <= primitive_ff:gen[101].myff.q
+regout[101] <= primitive_ff:gen[102].myff.q
+regout[102] <= primitive_ff:gen[103].myff.q
+regout[103] <= primitive_ff:gen[104].myff.q
+regout[104] <= primitive_ff:gen[105].myff.q
+regout[105] <= primitive_ff:gen[106].myff.q
+regout[106] <= primitive_ff:gen[107].myff.q
+regout[107] <= primitive_ff:gen[108].myff.q
+regout[108] <= primitive_ff:gen[109].myff.q
+regout[109] <= primitive_ff:gen[110].myff.q
+regout[110] <= primitive_ff:gen[111].myff.q
+regout[111] <= primitive_ff:gen[112].myff.q
+regout[112] <= primitive_ff:gen[113].myff.q
+regout[113] <= primitive_ff:gen[114].myff.q
+regout[114] <= primitive_ff:gen[115].myff.q
+regout[115] <= primitive_ff:gen[116].myff.q
+regout[116] <= primitive_ff:gen[117].myff.q
+regout[117] <= primitive_ff:gen[118].myff.q
+regout[118] <= primitive_ff:gen[119].myff.q
+regout[119] <= primitive_ff:gen[120].myff.q
+regout[120] <= primitive_ff:gen[121].myff.q
+regout[121] <= primitive_ff:gen[122].myff.q
+regout[122] <= primitive_ff:gen[123].myff.q
+regout[123] <= primitive_ff:gen[124].myff.q
+regout[124] <= primitive_ff:gen[125].myff.q
+regout[125] <= primitive_ff:gen[126].myff.q
+regout[126] <= primitive_ff:gen[127].myff.q
+regout[127] <= primitive_ff:gen[128].myff.q
+carryout <= primitive_carry:gen[128].mycarry.cout
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry_in:mycarry_in
+datac => ~NO_FANOUT~
+cout <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[1].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[1].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[2].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[2].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[3].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[3].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[4].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[4].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[5].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[5].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[6].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[6].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[7].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[7].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[8].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[8].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[9].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[9].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[10].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[10].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[11].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[11].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[12].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[12].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[13].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[13].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[14].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[14].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[15].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[15].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[16].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[16].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[17].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[17].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[18].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[18].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[19].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[19].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[20].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[20].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[21].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[21].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[22].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[22].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[23].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[23].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[24].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[24].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[25].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[25].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[26].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[26].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[27].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[27].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[28].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[28].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[29].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[29].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[30].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[30].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[31].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[31].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[32].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[32].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[33].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[33].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[34].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[34].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[35].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[35].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[36].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[36].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[37].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[37].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[38].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[38].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[39].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[39].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[40].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[40].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[41].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[41].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[42].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[42].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[43].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[43].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[44].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[44].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[45].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[45].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[46].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[46].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[47].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[47].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[48].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[48].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[49].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[49].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[50].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[50].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[51].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[51].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[52].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[52].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[53].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[53].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[54].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[54].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[55].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[55].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[56].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[56].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[57].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[57].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[58].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[58].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[59].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[59].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[60].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[60].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[61].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[61].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[62].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[62].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[63].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[63].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[64].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[64].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[65].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[65].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[66].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[66].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[67].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[67].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[68].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[68].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[69].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[69].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[70].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[70].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[71].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[71].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[72].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[72].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[73].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[73].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[74].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[74].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[75].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[75].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[76].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[76].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[77].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[77].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[78].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[78].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[79].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[79].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[80].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[80].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[81].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[81].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[82].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[82].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[83].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[83].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[84].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[84].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[85].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[85].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[86].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[86].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[87].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[87].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[88].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[88].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[89].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[89].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[90].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[90].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[91].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[91].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[92].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[92].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[93].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[93].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[94].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[94].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[95].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[95].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[96].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[96].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[97].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[97].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[98].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[98].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[99].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[99].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[100].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[100].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[101].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[101].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[102].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[102].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[103].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[103].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[104].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[104].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[105].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[105].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[106].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[106].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[107].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[107].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[108].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[108].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[109].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[109].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[110].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[110].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[111].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[111].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[112].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[112].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[113].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[113].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[114].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[114].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[115].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[115].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[116].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[116].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[117].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[117].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[118].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[118].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[119].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[119].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[120].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[120].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[121].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[121].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[122].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[122].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[123].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[123].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[124].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[124].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[125].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[125].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[126].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[126].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[127].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[127].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_carry:gen[128].mycarry
+cin => carry.CIN
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+s <= <GND>
+
+
+|c10lp_golden_top|carry_chain:tp|primitive_ff:gen[128].myff
+s => myff.DATAIN
+clk => myff.CLK
+clr => myff.SCLR
+ena => myff.ENA
+q <= myff.REGOUT
+
+
+|c10lp_golden_top|tdc_decode:tdc_decode
+clk => tdc_input_buf_reg[0].CLK
+clk => tdc_input_buf_reg[1].CLK
+clk => tdc_input_buf_reg[2].CLK
+clk => tdc_input_buf_reg[3].CLK
+clk => tdc_input_buf_reg[4].CLK
+clk => tdc_input_buf_reg[5].CLK
+clk => tdc_input_buf_reg[6].CLK
+clk => tdc_input_buf_reg[7].CLK
+clk => tdc_input_buf_reg[8].CLK
+clk => tdc_input_buf_reg[9].CLK
+clk => tdc_input_buf_reg[10].CLK
+clk => tdc_input_buf_reg[11].CLK
+clk => tdc_input_buf_reg[12].CLK
+clk => tdc_input_buf_reg[13].CLK
+clk => tdc_input_buf_reg[14].CLK
+clk => tdc_input_buf_reg[15].CLK
+clk => tdc_input_buf_reg[16].CLK
+clk => tdc_input_buf_reg[17].CLK
+clk => tdc_input_buf_reg[18].CLK
+clk => tdc_input_buf_reg[19].CLK
+clk => tdc_input_buf_reg[20].CLK
+clk => tdc_input_buf_reg[21].CLK
+clk => tdc_input_buf_reg[22].CLK
+clk => tdc_input_buf_reg[23].CLK
+clk => tdc_input_buf_reg[24].CLK
+clk => tdc_input_buf_reg[25].CLK
+clk => tdc_input_buf_reg[26].CLK
+clk => tdc_input_buf_reg[27].CLK
+clk => tdc_input_buf_reg[28].CLK
+clk => tdc_input_buf_reg[29].CLK
+clk => tdc_input_buf_reg[30].CLK
+clk => tdc_input_buf_reg[31].CLK
+clk => tdc_input_buf_reg[32].CLK
+clk => tdc_input_buf_reg[33].CLK
+clk => tdc_input_buf_reg[34].CLK
+clk => tdc_input_buf_reg[35].CLK
+clk => tdc_input_buf_reg[36].CLK
+clk => tdc_input_buf_reg[37].CLK
+clk => tdc_input_buf_reg[38].CLK
+clk => tdc_input_buf_reg[39].CLK
+clk => tdc_input_buf_reg[40].CLK
+clk => tdc_input_buf_reg[41].CLK
+clk => tdc_input_buf_reg[42].CLK
+clk => tdc_input_buf_reg[43].CLK
+clk => tdc_input_buf_reg[44].CLK
+clk => tdc_input_buf_reg[45].CLK
+clk => tdc_input_buf_reg[46].CLK
+clk => tdc_input_buf_reg[47].CLK
+clk => tdc_input_buf_reg[48].CLK
+clk => tdc_input_buf_reg[49].CLK
+clk => tdc_input_buf_reg[50].CLK
+clk => tdc_input_buf_reg[51].CLK
+clk => tdc_input_buf_reg[52].CLK
+clk => tdc_input_buf_reg[53].CLK
+clk => tdc_input_buf_reg[54].CLK
+clk => tdc_input_buf_reg[55].CLK
+clk => tdc_input_buf_reg[56].CLK
+clk => tdc_input_buf_reg[57].CLK
+clk => tdc_input_buf_reg[58].CLK
+clk => tdc_input_buf_reg[59].CLK
+clk => tdc_input_buf_reg[60].CLK
+clk => tdc_input_buf_reg[61].CLK
+clk => tdc_input_buf_reg[62].CLK
+clk => tdc_input_buf_reg[63].CLK
+clk => tdc_input_buf_reg[64].CLK
+clk => tdc_input_buf_reg[65].CLK
+clk => tdc_input_buf_reg[66].CLK
+clk => tdc_input_buf_reg[67].CLK
+clk => tdc_input_buf_reg[68].CLK
+clk => tdc_input_buf_reg[69].CLK
+clk => tdc_input_buf_reg[70].CLK
+clk => tdc_input_buf_reg[71].CLK
+clk => tdc_input_buf_reg[72].CLK
+clk => tdc_input_buf_reg[73].CLK
+clk => tdc_input_buf_reg[74].CLK
+clk => tdc_input_buf_reg[75].CLK
+clk => tdc_input_buf_reg[76].CLK
+clk => tdc_input_buf_reg[77].CLK
+clk => tdc_input_buf_reg[78].CLK
+clk => tdc_input_buf_reg[79].CLK
+clk => tdc_input_buf_reg[80].CLK
+clk => tdc_input_buf_reg[81].CLK
+clk => tdc_input_buf_reg[82].CLK
+clk => tdc_input_buf_reg[83].CLK
+clk => tdc_input_buf_reg[84].CLK
+clk => tdc_input_buf_reg[85].CLK
+clk => tdc_input_buf_reg[86].CLK
+clk => tdc_input_buf_reg[87].CLK
+clk => tdc_input_buf_reg[88].CLK
+clk => tdc_input_buf_reg[89].CLK
+clk => tdc_input_buf_reg[90].CLK
+clk => tdc_input_buf_reg[91].CLK
+clk => tdc_input_buf_reg[92].CLK
+clk => tdc_input_buf_reg[93].CLK
+clk => tdc_input_buf_reg[94].CLK
+clk => tdc_input_buf_reg[95].CLK
+clk => tdc_input_buf_reg[96].CLK
+clk => tdc_input_buf_reg[97].CLK
+clk => tdc_input_buf_reg[98].CLK
+clk => tdc_input_buf_reg[99].CLK
+clk => tdc_input_buf_reg[100].CLK
+clk => tdc_input_buf_reg[101].CLK
+clk => tdc_input_buf_reg[102].CLK
+clk => tdc_input_buf_reg[103].CLK
+clk => tdc_input_buf_reg[104].CLK
+clk => tdc_input_buf_reg[105].CLK
+clk => tdc_input_buf_reg[106].CLK
+clk => tdc_input_buf_reg[107].CLK
+clk => tdc_input_buf_reg[108].CLK
+clk => tdc_input_buf_reg[109].CLK
+clk => tdc_input_buf_reg[110].CLK
+clk => tdc_input_buf_reg[111].CLK
+clk => tdc_input_buf_reg[112].CLK
+clk => tdc_input_buf_reg[113].CLK
+clk => tdc_input_buf_reg[114].CLK
+clk => tdc_input_buf_reg[115].CLK
+clk => tdc_input_buf_reg[116].CLK
+clk => tdc_input_buf_reg[117].CLK
+clk => tdc_input_buf_reg[118].CLK
+clk => tdc_input_buf_reg[119].CLK
+clk => tdc_input_buf_reg[120].CLK
+clk => tdc_input_buf_reg[121].CLK
+clk => tdc_input_buf_reg[122].CLK
+clk => tdc_input_buf_reg[123].CLK
+clk => tdc_input_buf_reg[124].CLK
+clk => tdc_input_buf_reg[125].CLK
+clk => tdc_input_buf_reg[126].CLK
+clk => tdc_input_buf_reg[127].CLK
+clk => dec_reg[0].CLK
+clk => dec_reg[1].CLK
+clk => dec_reg[2].CLK
+clk => dec_reg[3].CLK
+clk => dec_reg[4].CLK
+clk => dec_reg[5].CLK
+clk => dec_reg[6].CLK
+clk => dec_reg[7].CLK
+rst => dec_reg.OUTPUTSELECT
+rst => dec_reg.OUTPUTSELECT
+rst => dec_reg.OUTPUTSELECT
+rst => dec_reg.OUTPUTSELECT
+rst => dec_reg.OUTPUTSELECT
+rst => dec_reg.OUTPUTSELECT
+rst => dec_reg.OUTPUTSELECT
+rst => dec_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+rst => tdc_input_buf_reg.OUTPUTSELECT
+chainvalue_i[0] => tdc_input_buf_reg.DATAA
+chainvalue_i[1] => tdc_input_buf_reg.DATAA
+chainvalue_i[2] => tdc_input_buf_reg.DATAA
+chainvalue_i[3] => tdc_input_buf_reg.DATAA
+chainvalue_i[4] => tdc_input_buf_reg.DATAA
+chainvalue_i[5] => tdc_input_buf_reg.DATAA
+chainvalue_i[6] => tdc_input_buf_reg.DATAA
+chainvalue_i[7] => tdc_input_buf_reg.DATAA
+chainvalue_i[8] => tdc_input_buf_reg.DATAA
+chainvalue_i[9] => tdc_input_buf_reg.DATAA
+chainvalue_i[10] => tdc_input_buf_reg.DATAA
+chainvalue_i[11] => tdc_input_buf_reg.DATAA
+chainvalue_i[12] => tdc_input_buf_reg.DATAA
+chainvalue_i[13] => tdc_input_buf_reg.DATAA
+chainvalue_i[14] => tdc_input_buf_reg.DATAA
+chainvalue_i[15] => tdc_input_buf_reg.DATAA
+chainvalue_i[16] => tdc_input_buf_reg.DATAA
+chainvalue_i[17] => tdc_input_buf_reg.DATAA
+chainvalue_i[18] => tdc_input_buf_reg.DATAA
+chainvalue_i[19] => tdc_input_buf_reg.DATAA
+chainvalue_i[20] => tdc_input_buf_reg.DATAA
+chainvalue_i[21] => tdc_input_buf_reg.DATAA
+chainvalue_i[22] => tdc_input_buf_reg.DATAA
+chainvalue_i[23] => tdc_input_buf_reg.DATAA
+chainvalue_i[24] => tdc_input_buf_reg.DATAA
+chainvalue_i[25] => tdc_input_buf_reg.DATAA
+chainvalue_i[26] => tdc_input_buf_reg.DATAA
+chainvalue_i[27] => tdc_input_buf_reg.DATAA
+chainvalue_i[28] => tdc_input_buf_reg.DATAA
+chainvalue_i[29] => tdc_input_buf_reg.DATAA
+chainvalue_i[30] => tdc_input_buf_reg.DATAA
+chainvalue_i[31] => tdc_input_buf_reg.DATAA
+chainvalue_i[32] => tdc_input_buf_reg.DATAA
+chainvalue_i[33] => tdc_input_buf_reg.DATAA
+chainvalue_i[34] => tdc_input_buf_reg.DATAA
+chainvalue_i[35] => tdc_input_buf_reg.DATAA
+chainvalue_i[36] => tdc_input_buf_reg.DATAA
+chainvalue_i[37] => tdc_input_buf_reg.DATAA
+chainvalue_i[38] => tdc_input_buf_reg.DATAA
+chainvalue_i[39] => tdc_input_buf_reg.DATAA
+chainvalue_i[40] => tdc_input_buf_reg.DATAA
+chainvalue_i[41] => tdc_input_buf_reg.DATAA
+chainvalue_i[42] => tdc_input_buf_reg.DATAA
+chainvalue_i[43] => tdc_input_buf_reg.DATAA
+chainvalue_i[44] => tdc_input_buf_reg.DATAA
+chainvalue_i[45] => tdc_input_buf_reg.DATAA
+chainvalue_i[46] => tdc_input_buf_reg.DATAA
+chainvalue_i[47] => tdc_input_buf_reg.DATAA
+chainvalue_i[48] => tdc_input_buf_reg.DATAA
+chainvalue_i[49] => tdc_input_buf_reg.DATAA
+chainvalue_i[50] => tdc_input_buf_reg.DATAA
+chainvalue_i[51] => tdc_input_buf_reg.DATAA
+chainvalue_i[52] => tdc_input_buf_reg.DATAA
+chainvalue_i[53] => tdc_input_buf_reg.DATAA
+chainvalue_i[54] => tdc_input_buf_reg.DATAA
+chainvalue_i[55] => tdc_input_buf_reg.DATAA
+chainvalue_i[56] => tdc_input_buf_reg.DATAA
+chainvalue_i[57] => tdc_input_buf_reg.DATAA
+chainvalue_i[58] => tdc_input_buf_reg.DATAA
+chainvalue_i[59] => tdc_input_buf_reg.DATAA
+chainvalue_i[60] => tdc_input_buf_reg.DATAA
+chainvalue_i[61] => tdc_input_buf_reg.DATAA
+chainvalue_i[62] => tdc_input_buf_reg.DATAA
+chainvalue_i[63] => tdc_input_buf_reg.DATAA
+chainvalue_i[64] => tdc_input_buf_reg.DATAA
+chainvalue_i[65] => tdc_input_buf_reg.DATAA
+chainvalue_i[66] => tdc_input_buf_reg.DATAA
+chainvalue_i[67] => tdc_input_buf_reg.DATAA
+chainvalue_i[68] => tdc_input_buf_reg.DATAA
+chainvalue_i[69] => tdc_input_buf_reg.DATAA
+chainvalue_i[70] => tdc_input_buf_reg.DATAA
+chainvalue_i[71] => tdc_input_buf_reg.DATAA
+chainvalue_i[72] => tdc_input_buf_reg.DATAA
+chainvalue_i[73] => tdc_input_buf_reg.DATAA
+chainvalue_i[74] => tdc_input_buf_reg.DATAA
+chainvalue_i[75] => tdc_input_buf_reg.DATAA
+chainvalue_i[76] => tdc_input_buf_reg.DATAA
+chainvalue_i[77] => tdc_input_buf_reg.DATAA
+chainvalue_i[78] => tdc_input_buf_reg.DATAA
+chainvalue_i[79] => tdc_input_buf_reg.DATAA
+chainvalue_i[80] => tdc_input_buf_reg.DATAA
+chainvalue_i[81] => tdc_input_buf_reg.DATAA
+chainvalue_i[82] => tdc_input_buf_reg.DATAA
+chainvalue_i[83] => tdc_input_buf_reg.DATAA
+chainvalue_i[84] => tdc_input_buf_reg.DATAA
+chainvalue_i[85] => tdc_input_buf_reg.DATAA
+chainvalue_i[86] => tdc_input_buf_reg.DATAA
+chainvalue_i[87] => tdc_input_buf_reg.DATAA
+chainvalue_i[88] => tdc_input_buf_reg.DATAA
+chainvalue_i[89] => tdc_input_buf_reg.DATAA
+chainvalue_i[90] => tdc_input_buf_reg.DATAA
+chainvalue_i[91] => tdc_input_buf_reg.DATAA
+chainvalue_i[92] => tdc_input_buf_reg.DATAA
+chainvalue_i[93] => tdc_input_buf_reg.DATAA
+chainvalue_i[94] => tdc_input_buf_reg.DATAA
+chainvalue_i[95] => tdc_input_buf_reg.DATAA
+chainvalue_i[96] => tdc_input_buf_reg.DATAA
+chainvalue_i[97] => tdc_input_buf_reg.DATAA
+chainvalue_i[98] => tdc_input_buf_reg.DATAA
+chainvalue_i[99] => tdc_input_buf_reg.DATAA
+chainvalue_i[100] => tdc_input_buf_reg.DATAA
+chainvalue_i[101] => tdc_input_buf_reg.DATAA
+chainvalue_i[102] => tdc_input_buf_reg.DATAA
+chainvalue_i[103] => tdc_input_buf_reg.DATAA
+chainvalue_i[104] => tdc_input_buf_reg.DATAA
+chainvalue_i[105] => tdc_input_buf_reg.DATAA
+chainvalue_i[106] => tdc_input_buf_reg.DATAA
+chainvalue_i[107] => tdc_input_buf_reg.DATAA
+chainvalue_i[108] => tdc_input_buf_reg.DATAA
+chainvalue_i[109] => tdc_input_buf_reg.DATAA
+chainvalue_i[110] => tdc_input_buf_reg.DATAA
+chainvalue_i[111] => tdc_input_buf_reg.DATAA
+chainvalue_i[112] => tdc_input_buf_reg.DATAA
+chainvalue_i[113] => tdc_input_buf_reg.DATAA
+chainvalue_i[114] => tdc_input_buf_reg.DATAA
+chainvalue_i[115] => tdc_input_buf_reg.DATAA
+chainvalue_i[116] => tdc_input_buf_reg.DATAA
+chainvalue_i[117] => tdc_input_buf_reg.DATAA
+chainvalue_i[118] => tdc_input_buf_reg.DATAA
+chainvalue_i[119] => tdc_input_buf_reg.DATAA
+chainvalue_i[120] => tdc_input_buf_reg.DATAA
+chainvalue_i[121] => tdc_input_buf_reg.DATAA
+chainvalue_i[122] => tdc_input_buf_reg.DATAA
+chainvalue_i[123] => tdc_input_buf_reg.DATAA
+chainvalue_i[124] => tdc_input_buf_reg.DATAA
+chainvalue_i[125] => tdc_input_buf_reg.DATAA
+chainvalue_i[126] => tdc_input_buf_reg.DATAA
+chainvalue_i[127] => tdc_input_buf_reg.DATAA
+coded_o[0] <= dec_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+coded_o[1] <= dec_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+coded_o[2] <= dec_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+coded_o[3] <= dec_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+coded_o[4] <= dec_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+coded_o[5] <= dec_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+coded_o[6] <= dec_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+coded_o[7] <= dec_reg[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi

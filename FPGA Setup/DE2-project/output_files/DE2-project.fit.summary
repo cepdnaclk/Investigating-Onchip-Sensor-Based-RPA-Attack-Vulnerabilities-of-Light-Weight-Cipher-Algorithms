@@ -1,14 +1,14 @@
-Fitter Status : Successful - Thu Jun 22 12:37:41 2023
-Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Fitter Status : Successful - Fri Jun 23 16:22:32 2023
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : DE2-project
 Top-level Entity Name : c10lp_golden_top
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
 Total logic elements : 2,386 / 114,480 ( 2 % )
-    Total combinational functions : 2,132 / 114,480 ( 2 % )
-    Dedicated logic registers : 1,373 / 114,480 ( 1 % )
-Total registers : 1373
+    Total combinational functions : 2,137 / 114,480 ( 2 % )
+    Dedicated logic registers : 1,368 / 114,480 ( 1 % )
+Total registers : 1368
 Total pins : 18 / 529 ( 3 % )
 Total virtual pins : 0
 Total memory bits : 8,192 / 3,981,312 ( < 1 % )
