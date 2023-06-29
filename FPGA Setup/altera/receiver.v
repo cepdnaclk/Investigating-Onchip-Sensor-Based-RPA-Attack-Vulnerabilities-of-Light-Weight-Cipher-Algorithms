@@ -40,7 +40,7 @@ module receiver(
 				ready_reg		<= 1'b0;
 			end
 			else begin
-				read_reg <= data_memory[addr];
+				read_reg <= data_memory[0];  // dj change
 				
 				case(STATE)
 					WAIT:
@@ -48,7 +48,7 @@ module receiver(
 						memory_addr		<= 8'h0;
 						ready_reg		<= 1'b0;
 						
-						if(start == 1'b1)
+						//if(start == 1'b1)  // dj change
 							STATE			<= READ;
 						
 						

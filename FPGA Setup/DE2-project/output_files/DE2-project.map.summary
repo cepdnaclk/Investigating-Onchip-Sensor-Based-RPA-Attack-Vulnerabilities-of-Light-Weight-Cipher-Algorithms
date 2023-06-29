@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Fri Jun 23 16:22:06 2023
-Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Analysis & Synthesis Status : Successful - Thu Jun 29 07:10:15 2023
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : DE2-project
 Top-level Entity Name : c10lp_golden_top
 Family : Cyclone IV E
-Total logic elements : 2,583
-    Total combinational functions : 2,134
-    Dedicated logic registers : 1,376
-Total registers : 1376
+Total logic elements : 3,097
+    Total combinational functions : 2,650
+    Dedicated logic registers : 1,644
+Total registers : 1644
 Total pins : 18
 Total virtual pins : 0
 Total memory bits : 8,192

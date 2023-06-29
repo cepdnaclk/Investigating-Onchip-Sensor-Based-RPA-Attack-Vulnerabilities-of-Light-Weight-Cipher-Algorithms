@@ -83,7 +83,7 @@ module  c10lp_golden_top (
 parameter CounterSize= 31;
 parameter SAMPLES 	= 1024;
 parameter SAMPLESTART= 0;
-parameter AES_COUNT	= 2;
+parameter AES_COUNT	= 5;
 parameter TDC_SIZE	= 128;
 //parameter NUM_ROSensors=64;
 
@@ -131,21 +131,37 @@ parameter SAMPLE_RESET		= 8'b0000_0000,
 	wire 				clk0, clk1;
 	wire 				locked, TXDone, txActive, dvld, kvld, transmit_done, receive_ready, trace_r_en;
 	reg  	[7:0] 		STATE, STATE_TX, STATE_RX, STATE_SAMPLE;
-	reg  	[7:0] 		transmitReg, sampleData, tx_data, delay;
+	reg  	[7:0] 		transmitReg, sampleData, tx_data, delay, processedOutReg;
 	reg  	[127:0]	ptReg, ctReg, keyReg, cipher_w_data;
 	reg  				keyRdy, dataRdy, tx_en, trace_w_en, transmit_en, cipher_w_en, cipher_r_en, enc_LED, transmit_para;
-	wire 	[7:0]		RXdata, processedOut, cipher_r_data, receive_data, trace_r_data, trace_w_data, tracer_r_addr, param_addr, param_s_addr;
+	wire 	[7:0]		RXdata, processedOut, cipher_r_data, receive_data, trace_r_data, trace_w_data, param_addr, param_s_addr;
 	reg  	[15:0]    tx_addr, tracer_w_addr;
-	reg  	[2:0]		tracer_w_memsel, tracer_r_memsel, cipher_w_memsel;
+	reg  	[2:0]		 tracer_w_memsel, tracer_r_memsel, cipher_w_memsel;
 	reg  	[4:0]     transmit_sel;
 	wire 	[127:0] 	doutTemp [AES_COUNT-1:0] ;
 	wire 	[127:0] 	dout;
 	wire 	[AES_COUNT-1:0] dvldTemp;
 	wire 	[2:0] 				cipher_r_memsel, trace_r_memsel;
-	wire 	[15:0] 			cipher_r_addr;
-	reg	[7:0] 	param 	[3:0], processedOutReg;
+	wire 	[15:0] 			cipher_r_addr, tracer_r_addr;
+	reg	[7:0] 	param 	[3:0]; 
 	reg	[TDC_SIZE-1:0]		outReg;
 	wire	[TDC_SIZE-1:0]		out;
+	
+	wire	[127:0]	A, B, S;
+	reg	[127:0]  Areg, Breg;
+	reg 	AESResetn;
+	
+	
+	//assign B= {Breg[126:0], clk1};
+	assign B= {Breg[126:0], clk0};
+	
+	assign A= {Areg[127:0]};
+	
+	assign S= A+B;
+	
+	
+	
+	
 	// temp
 	
 	wire tx_uart;
@@ -172,15 +188,16 @@ receiver r0 (.clk(clk1), .rstn(c10_resetn), .start(receive_start), .rx(rx), .add
 
 // TDC and TDC chain value calculator
 
-carry_chain tp ( .carryin(clk0), .clk(clk0), .enable(1'b1), .clear(1'b0), .regout(out), .carryout());
-tdc_decode tdc_decode(.clk(clk0), .rst(AESResetn), .chainvalue_i(outReg), .coded_o(processedOut));
+//carry_chain tp ( .carryin(clk0), .clk(clk0), .enable(1'b1), .clear(1'b0), .regout(out), .carryout());
+tdc_decode tdc_decode(.clk(clk0), .rst(~keyRdy), .chainvalue_i(outReg), .coded_o(processedOut));
 
 
     genvar i;  genvar j;
 	 generate
         for(i = 0; i < AES_COUNT; i = i+1) 
 		  begin:gen_code_label
-				aes_tiny aes_tinyi ( .clk(clk1),  .rst(~dataRdy),  .din(ptReg), .key(keyReg), .dout(doutTemp[i]),  .done(dvldTemp[i]) );
+				aes_tiny aes_tinyi ( .clk(clk1),  .rst(dataRdy),  .din(ptReg), .key(keyReg), .dout(doutTemp[i]),  .done(dvldTemp[i]) ); //changed ~dataRdy to dataRdy
+				//aes128_table_ecb aes_tinyi   (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[i]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[i]), .busy());
 		  end
 	endgenerate
 
@@ -193,7 +210,7 @@ assign user_led[1] = heart_beat12_cnt[25];
 assign user_led[2] = heart_beat200_cnt[25];
 assign user_led[3] = enc_LED;
 
-assign dout 			= doutTemp[0]  & doutTemp[1];
+assign dout 			= doutTemp[0]  & doutTemp[1] & doutTemp[2]  & doutTemp[3] & doutTemp[4];
 assign dvld 			= &dvldTemp;
 assign trace_w_data  = sampleData;
 
@@ -202,6 +219,7 @@ assign param_addr	= (transmit_para == 1'b1)? param_s_addr : receive_addr ;
 //assign pmod_d[0]		= tx;
 //assign pmod_d[3]		= rx;
 
+ 
 
 
 // MAIN FSM WHICH COORDINATES ALL THE HARDWARE COMPONENTS
@@ -222,6 +240,7 @@ always @(posedge clk1  or negedge c10_resetn)
 				keyRdy	<= 1'b0; 
 				dataRdy	<= 1'b0;
 				enc_LED	<= 1'b1;
+				AESResetn 		 <= 0;
 				receive_addr	<= 8'h00;
 				STATE 	<= START;
 			end
@@ -244,6 +263,7 @@ always @(posedge clk1  or negedge c10_resetn)
 		START_ENC:
 			begin
 				param[0]			<= receive_data;
+				AESResetn 		 <= 0;
 				if(counter == 0)
 					STATE		<= ENC_KRDY;
 				else 
@@ -254,6 +274,11 @@ always @(posedge clk1  or negedge c10_resetn)
 				keyReg   <= 128'h000102030405060708090a0b0c0d0ef0;
 				keyRdy	<= 1'b1; 
 				enc_LED	<=	1'b1;
+				AESResetn <= 1;	
+				// temp
+				Breg		<= {16{param[0]}};
+				Areg		<= {~param[0], ~param[0], ~param[0], ~param[0], ~param[0], ~param[0], ~param[0], ~param[0], ~param[0], ~param[0], ~param[0], ~param[0], ~param[0], ~param[0], ~param[0], ~param[0]};
+				
 				STATE		<= ENC_WAIT_KVLD;
 			end
 		ENC_WAIT_KVLD:  // wait for kvld or pass to next state
@@ -261,12 +286,13 @@ always @(posedge clk1  or negedge c10_resetn)
 				keyRdy			 <= 1'b0;
 				cipher_w_memsel <= 3'b001;
 				cipher_w_en		 <= 1'b1;
+				
 				cipher_w_data	 <= keyReg;
 				STATE				 <= ENC_DRDY;
 			end
 		ENC_DRDY:  
 			begin
-				ptReg    		 <= ptReg + 1; //ctReg;
+				ptReg    		 <= ctReg+1;  // add a small LFSR
 				dataRdy			 <= 1'b1;
 				cipher_w_memsel <= 3'b000;
 				cipher_w_en		 <= 1'b0;
@@ -449,7 +475,7 @@ always @(posedge clk1  or negedge c10_resetn)
 					tracer_w_addr	<= 16'h0;
 					tracer_w_memsel<=	1'b1;  // we use only 1 memory atm.
 					
-					outReg			<= out;
+					//outReg			<= S;
 					processedOutReg<= processedOut;
 					
 					if(dataRdy== 1'b1)
@@ -457,10 +483,14 @@ always @(posedge clk1  or negedge c10_resetn)
 					
 				end
 				SAMPLE_COLLECT: begin
-					outReg			<= out;
+					outReg			<= S;
 					processedOutReg<= processedOut;
 				
-					sampleData		<= processedOutReg;
+					if(dvld==1)
+						sampleData		<= 55;
+					else
+						sampleData		<= processedOutReg;//processedOutReg;
+						
 					trace_w_en  	<= 1'b1;
 					tracer_w_addr	<= tracer_w_addr + 1'b1;		
 					if(tracer_w_addr == 1023) // check this- might not work

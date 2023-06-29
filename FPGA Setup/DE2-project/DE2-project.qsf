@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY c10lp_golden_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:07:28  JUNE 20, 2023"
-set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.1 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -65,6 +65,7 @@ set_location_assignment PIN_E19 -to user_led[2]
 set_location_assignment PIN_F21 -to user_led[3]
 set_location_assignment PIN_AB22 -to rx
 set_location_assignment PIN_AC15 -to tx
+set_global_assignment -name VERILOG_FILE ../altera/aes128_table_ecb.v
 set_global_assignment -name VHDL_FILE ../altera/lattice_sensor.vhd
 set_global_assignment -name VERILOG_FILE ../altera/TDC.v
 set_global_assignment -name VERILOG_FILE ../altera/tiny_AES/sboxalg.v
