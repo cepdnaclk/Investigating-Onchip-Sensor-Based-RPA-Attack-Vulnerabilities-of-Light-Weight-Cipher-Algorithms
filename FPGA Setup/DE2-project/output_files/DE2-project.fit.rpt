@@ -1,6 +1,6 @@
 Fitter report for DE2-project
-Fri Jun 23 16:22:32 2023
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Thu Jun 29 07:10:56 2023
+Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
 ---------------------
@@ -52,7 +52,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2023  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -69,26 +69,26 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Fitter Summary                                                                   ;
-+------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri Jun 23 16:22:32 2023       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                      ; DE2-project                                 ;
-; Top-level Entity Name              ; c10lp_golden_top                            ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE115F29C7                               ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,386 / 114,480 ( 2 % )                     ;
-;     Total combinational functions  ; 2,137 / 114,480 ( 2 % )                     ;
-;     Dedicated logic registers      ; 1,368 / 114,480 ( 1 % )                     ;
-; Total registers                    ; 1368                                        ;
-; Total pins                         ; 18 / 529 ( 3 % )                            ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 8,192 / 3,981,312 ( < 1 % )                 ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
-+------------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Fitter Summary                                                                      ;
++------------------------------------+------------------------------------------------+
+; Fitter Status                      ; Successful - Thu Jun 29 07:10:56 2023          ;
+; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
+; Revision Name                      ; DE2-project                                    ;
+; Top-level Entity Name              ; c10lp_golden_top                               ;
+; Family                             ; Cyclone IV E                                   ;
+; Device                             ; EP4CE115F29C7                                  ;
+; Timing Models                      ; Final                                          ;
+; Total logic elements               ; 2,909 / 114,480 ( 3 % )                        ;
+;     Total combinational functions  ; 2,652 / 114,480 ( 2 % )                        ;
+;     Dedicated logic registers      ; 1,636 / 114,480 ( 1 % )                        ;
+; Total registers                    ; 1636                                           ;
+; Total pins                         ; 18 / 529 ( 3 % )                               ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 8,192 / 3,981,312 ( < 1 % )                    ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                                 ;
++------------------------------------+------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -156,17 +156,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
+; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.06        ;
+; Average used               ; 1.05        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.4%      ;
+;     Processor 2            ;   1.9%      ;
 ;     Processor 3            ;   1.8%      ;
-;     Processor 4            ;   1.6%      ;
+;     Processor 4            ;   1.7%      ;
 +----------------------------+-------------+
 
 
@@ -192,8 +192,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 3569 ) ; 0.00 % ( 0 / 3569 )        ; 0.00 % ( 0 / 3569 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 3569 ) ; 0.00 % ( 0 / 3569 )        ; 0.00 % ( 0 / 3569 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 4354 ) ; 0.00 % ( 0 / 4354 )        ; 0.00 % ( 0 / 4354 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 4354 ) ; 0.00 % ( 0 / 4354 )        ; 0.00 % ( 0 / 4354 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -216,7 +216,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 3556 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 4341 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 13 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -224,7 +224,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-project/output_files/DE2-project.pin.
+The pin-out file can be found in C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/DE2-project/output_files/DE2-project.pin.
 
 
 +---------------------------------------------------------------------------+
@@ -232,26 +232,26 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 +---------------------------------------------+-----------------------------+
 ; Resource                                    ; Usage                       ;
 +---------------------------------------------+-----------------------------+
-; Total logic elements                        ; 2,386 / 114,480 ( 2 % )     ;
-;     -- Combinational with no register       ; 1018                        ;
-;     -- Register only                        ; 249                         ;
-;     -- Combinational with a register        ; 1119                        ;
+; Total logic elements                        ; 2,909 / 114,480 ( 3 % )     ;
+;     -- Combinational with no register       ; 1273                        ;
+;     -- Register only                        ; 257                         ;
+;     -- Combinational with a register        ; 1379                        ;
 ;                                             ;                             ;
 ; Logic element usage by number of LUT inputs ;                             ;
-;     -- 4 input functions                    ; 954                         ;
-;     -- 3 input functions                    ; 458                         ;
-;     -- <=2 input functions                  ; 725                         ;
-;     -- Register only                        ; 249                         ;
+;     -- 4 input functions                    ; 1022                        ;
+;     -- 3 input functions                    ; 687                         ;
+;     -- <=2 input functions                  ; 943                         ;
+;     -- Register only                        ; 257                         ;
 ;                                             ;                             ;
 ; Logic elements by mode                      ;                             ;
-;     -- normal mode                          ; 1862                        ;
-;     -- arithmetic mode                      ; 275                         ;
+;     -- normal mode                          ; 2116                        ;
+;     -- arithmetic mode                      ; 536                         ;
 ;                                             ;                             ;
-; Total registers*                            ; 1,368 / 117,053 ( 1 % )     ;
-;     -- Dedicated logic registers            ; 1,368 / 114,480 ( 1 % )     ;
+; Total registers*                            ; 1,636 / 117,053 ( 1 % )     ;
+;     -- Dedicated logic registers            ; 1,636 / 114,480 ( 1 % )     ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )           ;
 ;                                             ;                             ;
-; Total LABs:  partially or completely used   ; 171 / 7,155 ( 2 % )         ;
+; Total LABs:  partially or completely used   ; 210 / 7,155 ( 3 % )         ;
 ; Virtual pins                                ; 0                           ;
 ; I/O pins                                    ; 18 / 529 ( 3 % )            ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )              ;
@@ -269,12 +269,12 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )               ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )               ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )               ;
-; Average interconnect usage (total/H/V)      ; 0.5% / 0.5% / 0.6%          ;
-; Peak interconnect usage (total/H/V)         ; 16.9% / 15.5% / 18.8%       ;
-; Maximum fan-out                             ; 1293                        ;
-; Highest non-global fan-out                  ; 329                         ;
-; Total fan-out                               ; 11785                       ;
-; Average fan-out                             ; 3.17                        ;
+; Average interconnect usage (total/H/V)      ; 0.7% / 0.6% / 0.8%          ;
+; Peak interconnect usage (total/H/V)         ; 21.3% / 19.3% / 24.1%       ;
+; Maximum fan-out                             ; 1284                        ;
+; Highest non-global fan-out                  ; 339                         ;
+; Total fan-out                               ; 13820                       ;
+; Average fan-out                             ; 3.06                        ;
 +---------------------------------------------+-----------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -287,26 +287,26 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 2386 / 114480 ( 2 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 1018                  ; 0                              ;
-;     -- Register only                        ; 249                   ; 0                              ;
-;     -- Combinational with a register        ; 1119                  ; 0                              ;
+; Total logic elements                        ; 2909 / 114480 ( 3 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 1273                  ; 0                              ;
+;     -- Register only                        ; 257                   ; 0                              ;
+;     -- Combinational with a register        ; 1379                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 954                   ; 0                              ;
-;     -- 3 input functions                    ; 458                   ; 0                              ;
-;     -- <=2 input functions                  ; 725                   ; 0                              ;
-;     -- Register only                        ; 249                   ; 0                              ;
+;     -- 4 input functions                    ; 1022                  ; 0                              ;
+;     -- 3 input functions                    ; 687                   ; 0                              ;
+;     -- <=2 input functions                  ; 943                   ; 0                              ;
+;     -- Register only                        ; 257                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 1862                  ; 0                              ;
-;     -- arithmetic mode                      ; 275                   ; 0                              ;
+;     -- normal mode                          ; 2116                  ; 0                              ;
+;     -- arithmetic mode                      ; 536                   ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 1368                  ; 0                              ;
-;     -- Dedicated logic registers            ; 1368 / 114480 ( 1 % ) ; 0 / 114480 ( 0 % )             ;
+; Total registers                             ; 1636                  ; 0                              ;
+;     -- Dedicated logic registers            ; 1636 / 114480 ( 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 171 / 7155 ( 2 % )    ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 210 / 7155 ( 3 % )    ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 18                    ; 0                              ;
@@ -318,18 +318,18 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; Clock control block                         ; 2 / 24 ( 8 % )        ; 2 / 24 ( 8 % )                 ;
 ;                                             ;                       ;                                ;
 ; Connections                                 ;                       ;                                ;
-;     -- Input Connections                    ; 1344                  ; 2                              ;
-;     -- Registered Input Connections         ; 1344                  ; 0                              ;
-;     -- Output Connections                   ; 2                     ; 1344                           ;
+;     -- Input Connections                    ; 1613                  ; 2                              ;
+;     -- Registered Input Connections         ; 1612                  ; 0                              ;
+;     -- Output Connections                   ; 2                     ; 1613                           ;
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 11786                 ; 1354                           ;
-;     -- Registered Connections               ; 6430                  ; 0                              ;
+;     -- Total Connections                    ; 13813                 ; 1623                           ;
+;     -- Registered Connections               ; 7550                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
-;     -- Top                                  ; 0                     ; 1346                           ;
-;     -- hard_block:auto_generated_inst       ; 1346                  ; 0                              ;
+;     -- Top                                  ; 0                     ; 1615                           ;
+;     -- hard_block:auto_generated_inst       ; 1615                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Partition Interface                         ;                       ;                                ;
 ;     -- Input Ports                          ; 13                    ; 2                              ;
@@ -358,18 +358,18 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; Name          ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; c10_clk50m    ; Y2    ; 2        ; 0            ; 36           ; 14           ; 27                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; c10_clk_adj   ; AE5   ; 3        ; 5            ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; c10_resetn    ; Y1    ; 2        ; 0            ; 36           ; 21           ; 480                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; enet_clk_125m ; J7    ; 1        ; 0            ; 49           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; hbus_clk_50m  ; C17   ; 7        ; 81           ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; c10_clk_adj   ; J7    ; 1        ; 0            ; 49           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; c10_resetn    ; Y1    ; 2        ; 0            ; 36           ; 21           ; 490                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; enet_clk_125m ; AE5   ; 3        ; 5            ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; hbus_clk_50m  ; A3    ; 8        ; 5            ; 73           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 ; rx            ; AB22  ; 4        ; 107          ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; user_dip[0]   ; AB3   ; 2        ; 0            ; 21           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; user_dip[1]   ; L27   ; 6        ; 115          ; 48           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; user_dip[2]   ; E11   ; 8        ; 31           ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; user_pb[0]    ; AG7   ; 3        ; 16           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; user_pb[1]    ; AF5   ; 3        ; 5            ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; user_pb[2]    ; K26   ; 6        ; 115          ; 55           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; user_pb[3]    ; B4    ; 8        ; 7            ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; user_dip[0]   ; W25   ; 5        ; 115          ; 20           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; user_dip[1]   ; A8    ; 8        ; 18           ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; user_dip[2]   ; B26   ; 7        ; 113          ; 73           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; user_pb[0]    ; AH3   ; 3        ; 5            ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; user_pb[1]    ; C26   ; 7        ; 113          ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; user_pb[2]    ; C4    ; 8        ; 3            ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; user_pb[3]    ; J23   ; 6        ; 115          ; 63           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -386,27 +386,26 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 +-------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Dual Purpose and Dedicated Pins                                                                                                     ;
-+----------+-----------------------------------------+--------------------------+-------------------------+---------------------------+
-; Location ; Pin Name                                ; Reserved As              ; User Signal Name        ; Pin Type                  ;
-+----------+-----------------------------------------+--------------------------+-------------------------+---------------------------+
-; F4       ; DIFFIO_L5n, DATA1, ASDO                 ; As input tri-stated      ; ~ALTERA_ASDO_DATA1~     ; Dual Purpose Pin          ;
-; E2       ; DIFFIO_L8p, FLASH_nCE, nCSO             ; As input tri-stated      ; ~ALTERA_FLASH_nCE_nCSO~ ; Dual Purpose Pin          ;
-; M6       ; nSTATUS                                 ; -                        ; -                       ; Dedicated Programming Pin ;
-; P3       ; DCLK                                    ; As output driving ground ; ~ALTERA_DCLK~           ; Dual Purpose Pin          ;
-; N7       ; DATA0                                   ; As input tri-stated      ; ~ALTERA_DATA0~          ; Dual Purpose Pin          ;
-; P4       ; nCONFIG                                 ; -                        ; -                       ; Dedicated Programming Pin ;
-; R8       ; nCE                                     ; -                        ; -                       ; Dedicated Programming Pin ;
-; P24      ; CONF_DONE                               ; -                        ; -                       ; Dedicated Programming Pin ;
-; N22      ; MSEL0                                   ; -                        ; -                       ; Dedicated Programming Pin ;
-; P23      ; MSEL1                                   ; -                        ; -                       ; Dedicated Programming Pin ;
-; M22      ; MSEL2                                   ; -                        ; -                       ; Dedicated Programming Pin ;
-; P22      ; MSEL3                                   ; -                        ; -                       ; Dedicated Programming Pin ;
-; P28      ; DIFFIO_R23n, nCEO                       ; Use as programming pin   ; ~ALTERA_nCEO~           ; Dual Purpose Pin          ;
-; C17      ; DIFFIO_T46n, PADD3                      ; Use as regular IO        ; hbus_clk_50m            ; Dual Purpose Pin          ;
-; B4       ; DIFFIO_T4p, DATA12, DQS1T/CQ1T#,CDPCLK7 ; Use as regular IO        ; user_pb[3]              ; Dual Purpose Pin          ;
-+----------+-----------------------------------------+--------------------------+-------------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Dual Purpose and Dedicated Pins                                                                                         ;
++----------+-----------------------------+--------------------------+-------------------------+---------------------------+
+; Location ; Pin Name                    ; Reserved As              ; User Signal Name        ; Pin Type                  ;
++----------+-----------------------------+--------------------------+-------------------------+---------------------------+
+; F4       ; DIFFIO_L5n, DATA1, ASDO     ; As input tri-stated      ; ~ALTERA_ASDO_DATA1~     ; Dual Purpose Pin          ;
+; E2       ; DIFFIO_L8p, FLASH_nCE, nCSO ; As input tri-stated      ; ~ALTERA_FLASH_nCE_nCSO~ ; Dual Purpose Pin          ;
+; M6       ; nSTATUS                     ; -                        ; -                       ; Dedicated Programming Pin ;
+; P3       ; DCLK                        ; As output driving ground ; ~ALTERA_DCLK~           ; Dual Purpose Pin          ;
+; N7       ; DATA0                       ; As input tri-stated      ; ~ALTERA_DATA0~          ; Dual Purpose Pin          ;
+; P4       ; nCONFIG                     ; -                        ; -                       ; Dedicated Programming Pin ;
+; R8       ; nCE                         ; -                        ; -                       ; Dedicated Programming Pin ;
+; P24      ; CONF_DONE                   ; -                        ; -                       ; Dedicated Programming Pin ;
+; N22      ; MSEL0                       ; -                        ; -                       ; Dedicated Programming Pin ;
+; P23      ; MSEL1                       ; -                        ; -                       ; Dedicated Programming Pin ;
+; M22      ; MSEL2                       ; -                        ; -                       ; Dedicated Programming Pin ;
+; P22      ; MSEL3                       ; -                        ; -                       ; Dedicated Programming Pin ;
+; P28      ; DIFFIO_R23n, nCEO           ; Use as programming pin   ; ~ALTERA_nCEO~           ; Dual Purpose Pin          ;
+; A8       ; DIFFIO_T11n, DATA9          ; Use as regular IO        ; user_dip[1]             ; Dual Purpose Pin          ;
++----------+-----------------------------+--------------------------+-------------------------+---------------------------+
 
 
 +----------------------------------------------------------+
@@ -415,13 +414,13 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; I/O Bank ; Usage          ; VCCIO Voltage ; VREF Voltage ;
 +----------+----------------+---------------+--------------+
 ; 1        ; 5 / 56 ( 9 % ) ; 2.5V          ; --           ;
-; 2        ; 3 / 63 ( 5 % ) ; 2.5V          ; --           ;
-; 3        ; 3 / 73 ( 4 % ) ; 2.5V          ; --           ;
+; 2        ; 2 / 63 ( 3 % ) ; 2.5V          ; --           ;
+; 3        ; 2 / 73 ( 3 % ) ; 2.5V          ; --           ;
 ; 4        ; 2 / 71 ( 3 % ) ; 2.5V          ; --           ;
-; 5        ; 0 / 65 ( 0 % ) ; 2.5V          ; --           ;
-; 6        ; 3 / 58 ( 5 % ) ; 2.5V          ; --           ;
-; 7        ; 5 / 72 ( 7 % ) ; 2.5V          ; --           ;
-; 8        ; 2 / 71 ( 3 % ) ; 2.5V          ; --           ;
+; 5        ; 1 / 65 ( 2 % ) ; 2.5V          ; --           ;
+; 6        ; 2 / 58 ( 3 % ) ; 2.5V          ; --           ;
+; 7        ; 6 / 72 ( 8 % ) ; 2.5V          ; --           ;
+; 8        ; 3 / 71 ( 4 % ) ; 2.5V          ; --           ;
 +----------+----------------+---------------+--------------+
 
 
@@ -431,12 +430,12 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; Location ; Pad Number ; I/O Bank ; Pin Name/Usage                                            ; Dir.   ; I/O Standard ; Voltage ; I/O Type   ; User Assignment ; Bus Hold ; Weak Pull Up ;
 +----------+------------+----------+-----------------------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 ; A2       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; A3       ; 535        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; A3       ; 535        ; 8        ; hbus_clk_50m                                              ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A4       ; 532        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A5       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; A6       ; 504        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A7       ; 501        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; A8       ; 517        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; A8       ; 517        ; 8        ; user_dip[1]                                               ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A9       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; A10      ; 491        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A11      ; 487        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -486,7 +485,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; AA28     ;            ; 5        ; VCCIO5                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; AB1      ; 86         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AB2      ; 85         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AB3      ; 99         ; 2        ; user_dip[0]                                               ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; AB3      ; 99         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AB4      ; 121        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; AB5      ; 127        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AB6      ; 126        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -572,7 +571,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; AE2      ; 105        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AE3      ; 122        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AE4      ; 132        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AE5      ; 135        ; 3        ; c10_clk_adj                                               ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AE5      ; 135        ; 3        ; enet_clk_125m                                             ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AE6      ; 129        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE7      ; 158        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE8      ; 161        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -600,7 +599,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; AF2      ; 123        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AF3      ; 138        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF4      ; 131        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AF5      ; 136        ; 3        ; user_pb[1]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AF5      ; 136        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF6      ; 139        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF7      ; 159        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF8      ; 162        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -630,7 +629,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; AG4      ; 141        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AG5      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG6      ; 145        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AG7      ; 150        ; 3        ; user_pb[0]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AG7      ; 150        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AG8      ; 156        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AG9      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG10     ; 167        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -653,7 +652,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; AG27     ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG28     ;            ; 5        ; VCCIO5                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; AH2      ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; AH3      ; 137        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AH3      ; 137        ; 3        ; user_pb[0]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AH4      ; 142        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AH5      ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; AH6      ; 146        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -681,7 +680,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; B1       ;            ; 1        ; VCCIO1                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; B2       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B3       ; 534        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; B4       ; 533        ; 8        ; user_pb[3]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; B4       ; 533        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B5       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B6       ; 505        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B7       ; 502        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -703,13 +702,13 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; B23      ; 413        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B24      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B25      ; 406        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; B26      ; 401        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; B26      ; 401        ; 7        ; user_dip[2]                                               ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B27      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B28      ;            ; 6        ; VCCIO6                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; C1       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C2       ; 1          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; C3       ; 543        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; C4       ; 539        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; C4       ; 539        ; 8        ; user_pb[2]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C5       ; 538        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C6       ; 536        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C7       ; 521        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -722,7 +721,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; C14      ; 476        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C15      ; 468        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C16      ; 460        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; C17      ; 438        ; 7        ; hbus_clk_50m                                              ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; C17      ; 438        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C18      ; 429        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C19      ; 435        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C20      ; 431        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -731,7 +730,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; C23      ; 415        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C24      ; 416        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C25      ; 411        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; C26      ; 400        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; C26      ; 400        ; 7        ; user_pb[1]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C27      ; 382        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; C28      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; D1       ; 3          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -772,7 +771,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; E8       ; 526        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E9       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; E10      ; 516        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; E11      ; 499        ; 8        ; user_dip[2]                                               ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; E11      ; 499        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E12      ; 497        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E13      ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; E14      ; 486        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -880,7 +879,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; J4       ; 22         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J5       ; 36         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J6       ; 35         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; J7       ; 37         ; 1        ; enet_clk_125m                                             ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J7       ; 37         ; 1        ; c10_clk_adj                                               ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J8       ;            ; --       ; VCCA3                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; J9       ;            ;          ; VCCD_PLL3                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; J10      ; 515        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -896,7 +895,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; J20      ;            ;          ; VCCD_PLL2                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; J21      ;            ; --       ; VCCA2                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; J22      ; 394        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; J23      ; 387        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; J23      ; 387        ; 6        ; user_pb[3]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J24      ; 386        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J25      ; 365        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J26      ; 364        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -927,7 +926,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; K23      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; K24      ;            ; 6        ; VCCIO6                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; K25      ; 371        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; K26      ; 370        ; 6        ; user_pb[2]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K26      ; 370        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K27      ; 362        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K28      ; 361        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L1       ; 49         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -956,7 +955,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; L24      ; 359        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L25      ; 369        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L26      ; 363        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; L27      ; 358        ; 6        ; user_dip[1]                                               ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L27      ; 358        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L28      ; 357        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M1       ; 51         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M2       ; 50         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1178,7 +1177,7 @@ The pin-out file can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Inve
 ; W22      ; 321        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; W23      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; W24      ;            ; 5        ; VCCIO5                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; W25      ; 300        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; W25      ; 300        ; 5        ; user_dip[0]                                               ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; W26      ; 299        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; W27      ; 301        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; W28      ; 302        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1307,14 +1306,14 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                  ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                                                     ; Entity Name      ; Library Name ;
 +---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |c10lp_golden_top                           ; 2386 (854)  ; 1368 (545)                ; 0 (0)         ; 8192        ; 1    ; 0            ; 0       ; 0         ; 18   ; 0            ; 1018 (309)   ; 249 (2)           ; 1119 (544)       ; |c10lp_golden_top                                                                                                                                       ; c10lp_golden_top ; work         ;
-;    |aes_tiny:gen_code_label[0].aes_tinyi|   ; 774 (74)    ; 268 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 506 (74)     ; 21 (0)            ; 247 (8)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi                                                                                                  ; aes_tiny         ; work         ;
-;       |controler:fsm|                       ; 22 (13)     ; 12 (6)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (7)       ; 1 (1)             ; 11 (5)           ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm                                                                                    ; controler        ; work         ;
+; |c10lp_golden_top                           ; 2909 (1021) ; 1636 (710)                ; 0 (0)         ; 8192        ; 1    ; 0            ; 0       ; 0         ; 18   ; 0            ; 1273 (311)   ; 257 (24)          ; 1379 (690)       ; |c10lp_golden_top                                                                                                                                       ; c10lp_golden_top ; work         ;
+;    |aes_tiny:gen_code_label[0].aes_tinyi|   ; 770 (80)    ; 268 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 502 (80)     ; 16 (0)            ; 252 (8)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi                                                                                                  ; aes_tiny         ; work         ;
+;       |controler:fsm|                       ; 23 (14)     ; 12 (6)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (8)       ; 0 (0)             ; 12 (6)           ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm                                                                                    ; controler        ; work         ;
 ;          |counter:cnt_block|                ; 3 (3)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 2 (2)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|counter:cnt_block                                                                  ; counter          ; work         ;
 ;          |counter:cnt_round|                ; 6 (6)       ; 4 (4)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 4 (4)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|counter:cnt_round                                                                  ; counter          ; work         ;
-;       |dataBody:Inst_dataBody|              ; 154 (0)     ; 128 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 26 (0)       ; 20 (0)            ; 108 (0)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody                                                                           ; dataBody         ; work         ;
-;          |reg:state_FF|                     ; 154 (0)     ; 128 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 26 (0)       ; 20 (0)            ; 108 (0)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody|reg:state_FF                                                              ; reg              ; work         ;
-;             |flipflop_en:\gen_ff:1:ff|      ; 44 (44)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 7 (7)             ; 25 (25)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody|reg:state_FF|flipflop_en:\gen_ff:1:ff                                     ; flipflop_en      ; work         ;
+;       |dataBody:Inst_dataBody|              ; 144 (0)     ; 128 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (0)       ; 16 (0)            ; 112 (0)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody                                                                           ; dataBody         ; work         ;
+;          |reg:state_FF|                     ; 144 (0)     ; 128 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (0)       ; 16 (0)            ; 112 (0)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody|reg:state_FF                                                              ; reg              ; work         ;
+;             |flipflop_en:\gen_ff:1:ff|      ; 34 (34)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 3 (3)             ; 29 (29)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody|reg:state_FF|flipflop_en:\gen_ff:1:ff                                     ; flipflop_en      ; work         ;
 ;             |flipflop_en:\gen_ff:2:ff|      ; 37 (37)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 5 (5)             ; 27 (27)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody|reg:state_FF|flipflop_en:\gen_ff:2:ff                                     ; flipflop_en      ; work         ;
 ;             |flipflop_en:\gen_ff:3:ff|      ; 37 (37)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 5 (5)             ; 27 (27)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody|reg:state_FF|flipflop_en:\gen_ff:3:ff                                     ; flipflop_en      ; work         ;
 ;             |flipflop_en:\gen_ff:4:ff|      ; 36 (36)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 3 (3)             ; 29 (29)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody|reg:state_FF|flipflop_en:\gen_ff:4:ff                                     ; flipflop_en      ; work         ;
@@ -1325,39 +1324,39 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;             |flipflop_en:\gen_ff:2:ff|      ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|keyschedule:Inst_keyschedule|reg:keystate|flipflop_en:\gen_ff:2:ff                               ; flipflop_en      ; work         ;
 ;             |flipflop_en:\gen_ff:3:ff|      ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|keyschedule:Inst_keyschedule|reg:keystate|flipflop_en:\gen_ff:3:ff                               ; flipflop_en      ; work         ;
 ;             |flipflop_en:\gen_ff:4:ff|      ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|keyschedule:Inst_keyschedule|reg:keystate|flipflop_en:\gen_ff:4:ff                               ; flipflop_en      ; work         ;
-;       |mix_column:Inst_mix_column|          ; 77 (77)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 77 (77)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|mix_column:Inst_mix_column                                                                       ; mix_column       ; work         ;
-;       |sbox:Inst_sbox|                      ; 305 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 305 (0)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox                                                                                   ; sbox             ; work         ;
-;          |sbox8:bits15_8|                   ; 72 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 72 (0)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8                                                                    ; sbox8            ; work         ;
-;             |bSbox:Inst_bSbox|              ; 72 (23)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 72 (23)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox                                                   ; bSbox            ; work         ;
-;                |GF_INV_8:inv|               ; 49 (19)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 49 (19)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv                                      ; GF_INV_8         ; work         ;
-;                   |GF_INV_4:dinv|           ; 13 (9)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (9)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv                        ; GF_INV_4         ; work         ;
-;                      |GF_MULS_2:pmul|       ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv|GF_MULS_2:pmul         ; GF_MULS_2        ; work         ;
-;                      |GF_MULS_2:qmul|       ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv|GF_MULS_2:qmul         ; GF_MULS_2        ; work         ;
-;                   |GF_MULS_4:pmul|          ; 10 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul                       ; GF_MULS_4        ; work         ;
-;                      |GF_MULS_2:himul|      ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_2:himul       ; GF_MULS_2        ; work         ;
+;       |mix_column:Inst_mix_column|          ; 79 (79)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 79 (79)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|mix_column:Inst_mix_column                                                                       ; mix_column       ; work         ;
+;       |sbox:Inst_sbox|                      ; 302 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 302 (0)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox                                                                                   ; sbox             ; work         ;
+;          |sbox8:bits15_8|                   ; 78 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 78 (0)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8                                                                    ; sbox8            ; work         ;
+;             |bSbox:Inst_bSbox|              ; 78 (24)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 78 (24)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox                                                   ; bSbox            ; work         ;
+;                |GF_INV_8:inv|               ; 54 (19)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 54 (19)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv                                      ; GF_INV_8         ; work         ;
+;                   |GF_INV_4:dinv|           ; 18 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (10)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv                        ; GF_INV_4         ; work         ;
+;                      |GF_MULS_2:pmul|       ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv|GF_MULS_2:pmul         ; GF_MULS_2        ; work         ;
+;                      |GF_MULS_2:qmul|       ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv|GF_MULS_2:qmul         ; GF_MULS_2        ; work         ;
+;                   |GF_MULS_4:pmul|          ; 11 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (0)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul                       ; GF_MULS_4        ; work         ;
+;                      |GF_MULS_2:himul|      ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_2:himul       ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_2:lomul|      ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_2:lomul       ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_SCL_2:summul| ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_SCL_2:summul  ; GF_MULS_SCL_2    ; work         ;
-;                   |GF_MULS_4:qmul|          ; 7 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul                       ; GF_MULS_4        ; work         ;
+;                   |GF_MULS_4:qmul|          ; 6 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (1)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul                       ; GF_MULS_4        ; work         ;
 ;                      |GF_MULS_2:himul|      ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_2:himul       ; GF_MULS_2        ; work         ;
-;                      |GF_MULS_2:lomul|      ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_2:lomul       ; GF_MULS_2        ; work         ;
-;                      |GF_MULS_SCL_2:summul| ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_SCL_2:summul  ; GF_MULS_SCL_2    ; work         ;
-;          |sbox8:bits23_16|                  ; 76 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 76 (0)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16                                                                   ; sbox8            ; work         ;
-;             |bSbox:Inst_bSbox|              ; 76 (24)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 76 (24)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox                                                  ; bSbox            ; work         ;
-;                |GF_INV_8:inv|               ; 52 (18)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 52 (18)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv                                     ; GF_INV_8         ; work         ;
-;                   |GF_INV_4:dinv|           ; 13 (9)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (9)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv                       ; GF_INV_4         ; work         ;
+;                      |GF_MULS_2:lomul|      ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_2:lomul       ; GF_MULS_2        ; work         ;
+;                      |GF_MULS_SCL_2:summul| ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits15_8|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_SCL_2:summul  ; GF_MULS_SCL_2    ; work         ;
+;          |sbox8:bits23_16|                  ; 74 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 74 (0)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16                                                                   ; sbox8            ; work         ;
+;             |bSbox:Inst_bSbox|              ; 74 (23)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 74 (23)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox                                                  ; bSbox            ; work         ;
+;                |GF_INV_8:inv|               ; 51 (17)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 51 (17)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv                                     ; GF_INV_8         ; work         ;
+;                   |GF_INV_4:dinv|           ; 14 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (10)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv                       ; GF_INV_4         ; work         ;
 ;                      |GF_MULS_2:pmul|       ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv|GF_MULS_2:pmul        ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_2:qmul|       ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv|GF_MULS_2:qmul        ; GF_MULS_2        ; work         ;
 ;                   |GF_MULS_4:pmul|          ; 11 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (0)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul                      ; GF_MULS_4        ; work         ;
 ;                      |GF_MULS_2:himul|      ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_2:himul      ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_2:lomul|      ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_2:lomul      ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_SCL_2:summul| ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_SCL_2:summul ; GF_MULS_SCL_2    ; work         ;
-;                   |GF_MULS_4:qmul|          ; 10 (2)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (2)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul                      ; GF_MULS_4        ; work         ;
+;                   |GF_MULS_4:qmul|          ; 9 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (1)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul                      ; GF_MULS_4        ; work         ;
 ;                      |GF_MULS_2:himul|      ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_2:himul      ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_2:lomul|      ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_2:lomul      ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_SCL_2:summul| ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits23_16|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_SCL_2:summul ; GF_MULS_SCL_2    ; work         ;
-;          |sbox8:bits31_24|                  ; 76 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 76 (0)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24                                                                   ; sbox8            ; work         ;
-;             |bSbox:Inst_bSbox|              ; 76 (24)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 76 (24)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox                                                  ; bSbox            ; work         ;
-;                |GF_INV_8:inv|               ; 52 (20)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 52 (20)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox|GF_INV_8:inv                                     ; GF_INV_8         ; work         ;
+;          |sbox8:bits31_24|                  ; 75 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 75 (0)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24                                                                   ; sbox8            ; work         ;
+;             |bSbox:Inst_bSbox|              ; 75 (25)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 75 (25)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox                                                  ; bSbox            ; work         ;
+;                |GF_INV_8:inv|               ; 50 (19)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 50 (19)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox|GF_INV_8:inv                                     ; GF_INV_8         ; work         ;
 ;                   |GF_INV_4:dinv|           ; 14 (8)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (8)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv                       ; GF_INV_4         ; work         ;
 ;                      |GF_MULS_2:pmul|       ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv|GF_MULS_2:pmul        ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_2:qmul|       ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv|GF_MULS_2:qmul        ; GF_MULS_2        ; work         ;
@@ -1365,34 +1364,32 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;                      |GF_MULS_2:himul|      ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_2:himul      ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_2:lomul|      ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_2:lomul      ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_SCL_2:summul| ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_SCL_2:summul ; GF_MULS_SCL_2    ; work         ;
-;                   |GF_MULS_4:qmul|          ; 8 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (1)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul                      ; GF_MULS_4        ; work         ;
-;                      |GF_MULS_2:himul|      ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_2:himul      ; GF_MULS_2        ; work         ;
+;                   |GF_MULS_4:qmul|          ; 7 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul                      ; GF_MULS_4        ; work         ;
 ;                      |GF_MULS_2:lomul|      ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_2:lomul      ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_SCL_2:summul| ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits31_24|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_SCL_2:summul ; GF_MULS_SCL_2    ; work         ;
-;          |sbox8:bits7_0|                    ; 81 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 81 (0)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0                                                                     ; sbox8            ; work         ;
-;             |bSbox:Inst_bSbox|              ; 81 (23)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 81 (23)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox                                                    ; bSbox            ; work         ;
-;                |GF_INV_8:inv|               ; 58 (21)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 58 (21)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv                                       ; GF_INV_8         ; work         ;
-;                   |GF_INV_4:dinv|           ; 18 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (10)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv                         ; GF_INV_4         ; work         ;
-;                      |GF_MULS_2:pmul|       ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv|GF_MULS_2:pmul          ; GF_MULS_2        ; work         ;
-;                      |GF_MULS_2:qmul|       ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv|GF_MULS_2:qmul          ; GF_MULS_2        ; work         ;
-;                   |GF_MULS_4:pmul|          ; 11 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (0)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul                        ; GF_MULS_4        ; work         ;
-;                      |GF_MULS_2:himul|      ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_2:himul        ; GF_MULS_2        ; work         ;
+;          |sbox8:bits7_0|                    ; 75 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 75 (0)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0                                                                     ; sbox8            ; work         ;
+;             |bSbox:Inst_bSbox|              ; 75 (25)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 75 (25)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox                                                    ; bSbox            ; work         ;
+;                |GF_INV_8:inv|               ; 50 (20)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 50 (20)      ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv                                       ; GF_INV_8         ; work         ;
+;                   |GF_INV_4:dinv|           ; 13 (9)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (9)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv                         ; GF_INV_4         ; work         ;
+;                      |GF_MULS_2:pmul|       ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv|GF_MULS_2:pmul          ; GF_MULS_2        ; work         ;
+;                      |GF_MULS_2:qmul|       ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_INV_4:dinv|GF_MULS_2:qmul          ; GF_MULS_2        ; work         ;
+;                   |GF_MULS_4:pmul|          ; 10 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul                        ; GF_MULS_4        ; work         ;
+;                      |GF_MULS_2:himul|      ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_2:himul        ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_2:lomul|      ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_2:lomul        ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_SCL_2:summul| ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:pmul|GF_MULS_SCL_2:summul   ; GF_MULS_SCL_2    ; work         ;
-;                   |GF_MULS_4:qmul|          ; 8 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul                        ; GF_MULS_4        ; work         ;
-;                      |GF_MULS_2:himul|      ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_2:himul        ; GF_MULS_2        ; work         ;
+;                   |GF_MULS_4:qmul|          ; 7 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul                        ; GF_MULS_4        ; work         ;
 ;                      |GF_MULS_2:lomul|      ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_2:lomul        ; GF_MULS_2        ; work         ;
 ;                      |GF_MULS_SCL_2:summul| ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|sbox:Inst_sbox|sbox8:bits7_0|bSbox:Inst_bSbox|GF_INV_8:inv|GF_MULS_4:qmul|GF_MULS_SCL_2:summul   ; GF_MULS_SCL_2    ; work         ;
-;    |cipher_memory:cm0|                      ; 388 (388)   ; 384 (384)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 189 (189)         ; 195 (195)        ; |c10lp_golden_top|cipher_memory:cm0                                                                                                                     ; cipher_memory    ; work         ;
+;    |cipher_memory:cm0|                      ; 388 (388)   ; 384 (384)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 188 (188)         ; 196 (196)        ; |c10lp_golden_top|cipher_memory:cm0                                                                                                                     ; cipher_memory    ; work         ;
 ;    |clock:clkmanager|                       ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|clock:clkmanager                                                                                                                      ; clock            ; work         ;
 ;       |pll:p1|                              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|clock:clkmanager|pll:p1                                                                                                               ; pll              ; work         ;
 ;          |altpll:altpll_component|          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|clock:clkmanager|pll:p1|altpll:altpll_component                                                                                       ; altpll           ; work         ;
 ;             |pll_altpll:auto_generated|     ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated                                                             ; pll_altpll       ; work         ;
-;    |receiver:r0|                            ; 135 (83)    ; 88 (61)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 47 (22)      ; 25 (24)           ; 63 (37)          ; |c10lp_golden_top|receiver:r0                                                                                                                           ; receiver         ; work         ;
+;    |receiver:r0|                            ; 95 (43)     ; 56 (29)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 39 (14)      ; 17 (16)           ; 39 (13)          ; |c10lp_golden_top|receiver:r0                                                                                                                           ; receiver         ; work         ;
 ;       |uart_rx:ur0|                         ; 52 (52)     ; 27 (27)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 25 (25)      ; 1 (1)             ; 26 (26)          ; |c10lp_golden_top|receiver:r0|uart_rx:ur0                                                                                                               ; uart_rx          ; work         ;
-;    |sender:s0|                              ; 426 (378)   ; 82 (48)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 151 (137)    ; 12 (8)            ; 263 (233)        ; |c10lp_golden_top|sender:s0                                                                                                                             ; sender           ; work         ;
+;    |sender:s0|                              ; 426 (378)   ; 82 (48)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 152 (138)    ; 12 (8)            ; 262 (232)        ; |c10lp_golden_top|sender:s0                                                                                                                             ; sender           ; work         ;
 ;       |uart_tx:uartTX|                      ; 48 (48)     ; 34 (34)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (14)      ; 4 (4)             ; 30 (30)          ; |c10lp_golden_top|sender:s0|uart_tx:uartTX                                                                                                              ; uart_tx          ; work         ;
-;    |tdc_decode:tdc_decode|                  ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |c10lp_golden_top|tdc_decode:tdc_decode                                                                                                                 ; tdc_decode       ; work         ;
+;    |tdc_decode:tdc_decode|                  ; 400 (400)   ; 136 (136)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 264 (264)    ; 0 (0)             ; 136 (136)        ; |c10lp_golden_top|tdc_decode:tdc_decode                                                                                                                 ; tdc_decode       ; work         ;
 ;    |trace_memory:tm0|                       ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 8192        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; |c10lp_golden_top|trace_memory:tm0                                                                                                                      ; trace_memory     ; work         ;
 ;       |altsyncram:traceMemory_rtl_0|        ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 8192        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|trace_memory:tm0|altsyncram:traceMemory_rtl_0                                                                                         ; altsyncram       ; work         ;
 ;          |altsyncram_tke1:auto_generated|   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 8192        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |c10lp_golden_top|trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated                                                          ; altsyncram_tke1  ; work         ;
@@ -1453,46 +1450,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                                                                    ; Location           ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; STATE.ENC_DRDY                                                                                                          ; FF_X40_Y29_N3      ; 131     ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; STATE.ENC_DVLD                                                                                                          ; FF_X40_Y29_N29     ; 133     ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; STATE.ENC_WAIT_DVLD                                                                                                     ; FF_X52_Y27_N13     ; 132     ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; STATE.START_ENC                                                                                                         ; FF_X40_Y29_N7      ; 14      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; STATE_SAMPLE.SAMPLE_COLLECT                                                                                             ; FF_X38_Y29_N23     ; 20      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; Selector465~0                                                                                                           ; LCCOMB_X43_Y29_N20 ; 10      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|Selector6~0                                                          ; LCCOMB_X53_Y25_N12 ; 128     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|WideOr5~0                                                            ; LCCOMB_X53_Y25_N18 ; 96      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|aes_state.S_DATA_IN                                                  ; FF_X53_Y25_N23     ; 248     ; Sync. clear, Sync. load    ; no     ; --                   ; --               ; --                        ;
-; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|aes_state.S_KEYSCHED_SHIFTROWS                                       ; FF_X53_Y25_N3      ; 132     ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|counter:cnt_block|count_reg[1]~1                                     ; LCCOMB_X52_Y25_N16 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|counter:cnt_round|count_reg[0]~1                                     ; LCCOMB_X52_Y25_N2  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|ctrlData[1]                                                          ; LCCOMB_X55_Y27_N30 ; 59      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody|reg:state_FF|flipflop_en:\gen_ff:4:ff|s_current_state[31]~0 ; LCCOMB_X52_Y25_N14 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Areg[0]~0                                                                                                               ; LCCOMB_X46_Y8_N6   ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; STATE.ENC_DRDY                                                                                                          ; FF_X26_Y32_N23     ; 131     ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; STATE.ENC_DVLD                                                                                                          ; FF_X27_Y32_N17     ; 133     ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; STATE.ENC_WAIT_DVLD                                                                                                     ; FF_X23_Y46_N15     ; 132     ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; STATE.START_ENC                                                                                                         ; FF_X27_Y32_N19     ; 15      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; STATE_SAMPLE.SAMPLE_COLLECT                                                                                             ; FF_X27_Y32_N7      ; 28      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; Selector466~0                                                                                                           ; LCCOMB_X30_Y33_N0  ; 10      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|Selector6~0                                                          ; LCCOMB_X30_Y40_N6  ; 128     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|WideOr5~0                                                            ; LCCOMB_X30_Y40_N24 ; 96      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|aes_state.S_DATA_IN                                                  ; FF_X30_Y40_N15     ; 248     ; Sync. clear, Sync. load    ; no     ; --                   ; --               ; --                        ;
+; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|aes_state.S_KEYSCHED_SHIFTROWS                                       ; FF_X30_Y40_N31     ; 131     ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|counter:cnt_block|count_reg[0]~1                                     ; LCCOMB_X30_Y40_N22 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|counter:cnt_round|count_reg[0]~1                                     ; LCCOMB_X30_Y40_N20 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|ctrlData[1]                                                          ; LCCOMB_X30_Y40_N26 ; 59      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody|reg:state_FF|flipflop_en:\gen_ff:4:ff|s_current_state[31]~0 ; LCCOMB_X30_Y40_N10 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 ; c10_clk50m                                                                                                              ; PIN_Y2             ; 26      ; Clock                      ; yes    ; Global Clock         ; GCLK1            ; --                        ;
 ; c10_clk50m                                                                                                              ; PIN_Y2             ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; c10_resetn                                                                                                              ; PIN_Y1             ; 330     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 ; c10_resetn                                                                                                              ; PIN_Y1             ; 151     ; Async. clear               ; yes    ; Global Clock         ; GCLK0            ; --                        ;
-; cipher_memory:cm0|Decoder1~1                                                                                            ; LCCOMB_X36_Y29_N10 ; 128     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; cipher_memory:cm0|Decoder1~2                                                                                            ; LCCOMB_X36_Y29_N0  ; 128     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; cipher_memory:cm0|Decoder1~3                                                                                            ; LCCOMB_X36_Y29_N26 ; 128     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; cipher_w_data[127]~0                                                                                                    ; LCCOMB_X49_Y29_N2  ; 128     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0]                              ; PLL_1              ; 51      ; Clock                      ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[1]                              ; PLL_1              ; 1293    ; Clock                      ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; delay[7]~17                                                                                                             ; LCCOMB_X43_Y29_N18 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; receiver:r0|data_memory~68                                                                                              ; LCCOMB_X34_Y32_N0  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; receiver:r0|data_memory~70                                                                                              ; LCCOMB_X35_Y33_N16 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; receiver:r0|data_memory~71                                                                                              ; LCCOMB_X35_Y33_N6  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; receiver:r0|data_memory~72                                                                                              ; LCCOMB_X35_Y33_N20 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; receiver:r0|data_memory~73                                                                                              ; LCCOMB_X35_Y33_N18 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; receiver:r0|uart_rx:ur0|r_Clock_Count[7]~25                                                                             ; LCCOMB_X36_Y30_N26 ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; receiver:r0|uart_rx:ur0|r_Clock_Count[7]~26                                                                             ; LCCOMB_X36_Y30_N14 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; sender:s0|STATE.TRANSMIT_PARAM_DONE                                                                                     ; FF_X41_Y31_N3      ; 12      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; sender:s0|WideOr3                                                                                                       ; LCCOMB_X42_Y33_N24 ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; sender:s0|addr[15]~0                                                                                                    ; LCCOMB_X40_Y30_N14 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; sender:s0|uart_tx:uartTX|Selector23~0                                                                                   ; LCCOMB_X43_Y33_N30 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; sender:s0|uart_tx:uartTX|r_Clock_Count[0]~28                                                                            ; LCCOMB_X45_Y31_N18 ; 16      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; sender:s0|uart_tx:uartTX|r_SM_Main.s_CLEANUP                                                                            ; FF_X45_Y31_N27     ; 19      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; trace_memory:tm0|comb~0                                                                                                 ; LCCOMB_X36_Y29_N8  ; 1       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; trace_memory:tm0|read_datareg[7]~0                                                                                      ; LCCOMB_X39_Y31_N26 ; 1       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; c10_resetn                                                                                                              ; PIN_Y1             ; 340     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; cipher_memory:cm0|Decoder1~1                                                                                            ; LCCOMB_X26_Y32_N30 ; 128     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; cipher_memory:cm0|Decoder1~2                                                                                            ; LCCOMB_X26_Y32_N16 ; 128     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; cipher_memory:cm0|Decoder1~3                                                                                            ; LCCOMB_X26_Y32_N26 ; 128     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; cipher_w_data[127]~0                                                                                                    ; LCCOMB_X26_Y32_N0  ; 128     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0]                              ; PLL_1              ; 329     ; Clock                      ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[1]                              ; PLL_1              ; 1284    ; Clock                      ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; delay[7]~17                                                                                                             ; LCCOMB_X29_Y33_N26 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; keyRdy                                                                                                                  ; FF_X45_Y4_N23      ; 137     ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; outReg[11]~142                                                                                                          ; LCCOMB_X36_Y8_N8   ; 128     ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; param[0][0]~0                                                                                                           ; LCCOMB_X46_Y8_N22  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; processedOutReg[0]~0                                                                                                    ; LCCOMB_X35_Y32_N24 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; receiver:r0|data_memory[0][7]~2                                                                                         ; LCCOMB_X31_Y28_N0  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; receiver:r0|uart_rx:ur0|r_Clock_Count[1]~25                                                                             ; LCCOMB_X34_Y27_N16 ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; receiver:r0|uart_rx:ur0|r_Clock_Count[1]~26                                                                             ; LCCOMB_X34_Y27_N28 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; sender:s0|STATE.TRANSMIT_PARAM_DONE                                                                                     ; FF_X30_Y32_N21     ; 12      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; sender:s0|WideOr3                                                                                                       ; LCCOMB_X30_Y32_N26 ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; sender:s0|addr[15]~0                                                                                                    ; LCCOMB_X30_Y32_N18 ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; sender:s0|uart_tx:uartTX|Selector23~0                                                                                   ; LCCOMB_X31_Y34_N18 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; sender:s0|uart_tx:uartTX|r_Clock_Count[13]~28                                                                           ; LCCOMB_X31_Y34_N2  ; 16      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; sender:s0|uart_tx:uartTX|r_SM_Main.s_CLEANUP                                                                            ; FF_X31_Y34_N21     ; 19      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; trace_memory:tm0|comb~0                                                                                                 ; LCCOMB_X36_Y32_N16 ; 1       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; trace_memory:tm0|read_datareg[7]~0                                                                                      ; LCCOMB_X25_Y32_N2  ; 1       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 +-------------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1503,8 +1501,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; c10_clk50m                                                                                 ; PIN_Y2   ; 26      ; 0                                    ; Global Clock         ; GCLK1            ; --                        ;
 ; c10_resetn                                                                                 ; PIN_Y1   ; 151     ; 0                                    ; Global Clock         ; GCLK0            ; --                        ;
-; clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1    ; 51      ; 0                                    ; Global Clock         ; GCLK3            ; --                        ;
-; clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[1] ; PLL_1    ; 1293    ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
+; clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1    ; 329     ; 0                                    ; Global Clock         ; GCLK3            ; --                        ;
+; clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[1] ; PLL_1    ; 1284    ; 12                                   ; Global Clock         ; GCLK4            ; --                        ;
 +--------------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1513,7 +1511,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 ; Name                                                                                    ; Type ; Mode             ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF  ; Location       ; Mixed Width RDW Mode ; Port A RDW Mode        ; Port B RDW Mode        ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
 +-----------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
-; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Dual Clocks ; 1024         ; 8            ; 1024         ; 8            ; yes                    ; no                      ; yes                    ; yes                     ; 8192 ; 1024                        ; 8                           ; 1024                        ; 8                           ; 8192                ; 1    ; None ; M9K_X37_Y29_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
+; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Dual Clocks ; 1024         ; 8            ; 1024         ; 8            ; yes                    ; no                      ; yes                    ; yes                     ; 8192 ; 1024                        ; 8                           ; 1024                        ; 8                           ; 8192                ; 1    ; None ; M9K_X37_Y32_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
 +-----------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
@@ -1523,166 +1521,170 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------------+---------------------------+
 ; Routing Resource Type ; Usage                     ;
 +-----------------------+---------------------------+
-; Block interconnects   ; 3,018 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 16 / 10,120 ( < 1 % )     ;
-; C4 interconnects      ; 1,329 / 209,544 ( < 1 % ) ;
-; Direct links          ; 535 / 342,891 ( < 1 % )   ;
+; Block interconnects   ; 3,568 / 342,891 ( 1 % )   ;
+; C16 interconnects     ; 37 / 10,120 ( < 1 % )     ;
+; C4 interconnects      ; 1,783 / 209,544 ( < 1 % ) ;
+; Direct links          ; 641 / 342,891 ( < 1 % )   ;
 ; Global clocks         ; 4 / 20 ( 20 % )           ;
-; Local interconnects   ; 1,339 / 119,088 ( 1 % )   ;
-; R24 interconnects     ; 24 / 9,963 ( < 1 % )      ;
-; R4 interconnects      ; 1,585 / 289,782 ( < 1 % ) ;
+; Local interconnects   ; 1,389 / 119,088 ( 1 % )   ;
+; R24 interconnects     ; 32 / 9,963 ( < 1 % )      ;
+; R4 interconnects      ; 1,925 / 289,782 ( < 1 % ) ;
 +-----------------------+---------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 13.95) ; Number of LABs  (Total = 171) ;
+; Number of Logic Elements  (Average = 13.85) ; Number of LABs  (Total = 210) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 3                             ;
-; 2                                           ; 7                             ;
-; 3                                           ; 1                             ;
-; 4                                           ; 2                             ;
-; 5                                           ; 2                             ;
-; 6                                           ; 2                             ;
+; 1                                           ; 12                            ;
+; 2                                           ; 5                             ;
+; 3                                           ; 2                             ;
+; 4                                           ; 1                             ;
+; 5                                           ; 0                             ;
+; 6                                           ; 0                             ;
 ; 7                                           ; 2                             ;
-; 8                                           ; 1                             ;
-; 9                                           ; 2                             ;
-; 10                                          ; 0                             ;
-; 11                                          ; 1                             ;
-; 12                                          ; 1                             ;
-; 13                                          ; 15                            ;
-; 14                                          ; 6                             ;
+; 8                                           ; 2                             ;
+; 9                                           ; 1                             ;
+; 10                                          ; 2                             ;
+; 11                                          ; 2                             ;
+; 12                                          ; 6                             ;
+; 13                                          ; 10                            ;
+; 14                                          ; 12                            ;
 ; 15                                          ; 22                            ;
-; 16                                          ; 104                           ;
+; 16                                          ; 131                           ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 1.97) ; Number of LABs  (Total = 171) ;
+; LAB-wide Signals  (Average = 1.81) ; Number of LABs  (Total = 210) ;
 +------------------------------------+-------------------------------+
-; 1 Async. clear                     ; 21                            ;
-; 1 Clock                            ; 136                           ;
-; 1 Clock enable                     ; 57                            ;
-; 1 Sync. clear                      ; 6                             ;
-; 1 Sync. load                       ; 57                            ;
-; 2 Clock enables                    ; 58                            ;
-; 2 Clocks                           ; 2                             ;
+; 1 Async. clear                     ; 20                            ;
+; 1 Clock                            ; 169                           ;
+; 1 Clock enable                     ; 79                            ;
+; 1 Sync. clear                      ; 7                             ;
+; 1 Sync. load                       ; 46                            ;
+; 2 Clock enables                    ; 56                            ;
+; 2 Clocks                           ; 3                             ;
 +------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 21.44) ; Number of LABs  (Total = 171) ;
+; Number of Signals Sourced  (Average = 21.29) ; Number of LABs  (Total = 210) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
-; 1                                            ; 2                             ;
-; 2                                            ; 5                             ;
-; 3                                            ; 3                             ;
-; 4                                            ; 3                             ;
+; 1                                            ; 6                             ;
+; 2                                            ; 8                             ;
+; 3                                            ; 4                             ;
+; 4                                            ; 1                             ;
 ; 5                                            ; 0                             ;
 ; 6                                            ; 1                             ;
-; 7                                            ; 1                             ;
-; 8                                            ; 3                             ;
+; 7                                            ; 0                             ;
+; 8                                            ; 0                             ;
 ; 9                                            ; 1                             ;
-; 10                                           ; 0                             ;
-; 11                                           ; 1                             ;
+; 10                                           ; 2                             ;
+; 11                                           ; 0                             ;
 ; 12                                           ; 0                             ;
-; 13                                           ; 1                             ;
-; 14                                           ; 1                             ;
+; 13                                           ; 2                             ;
+; 14                                           ; 3                             ;
 ; 15                                           ; 7                             ;
-; 16                                           ; 19                            ;
+; 16                                           ; 23                            ;
 ; 17                                           ; 4                             ;
 ; 18                                           ; 5                             ;
-; 19                                           ; 0                             ;
-; 20                                           ; 6                             ;
-; 21                                           ; 5                             ;
-; 22                                           ; 5                             ;
-; 23                                           ; 9                             ;
+; 19                                           ; 6                             ;
+; 20                                           ; 4                             ;
+; 21                                           ; 6                             ;
+; 22                                           ; 22                            ;
+; 23                                           ; 10                            ;
 ; 24                                           ; 10                            ;
 ; 25                                           ; 11                            ;
-; 26                                           ; 20                            ;
-; 27                                           ; 14                            ;
-; 28                                           ; 9                             ;
+; 26                                           ; 16                            ;
+; 27                                           ; 8                             ;
+; 28                                           ; 11                            ;
 ; 29                                           ; 5                             ;
-; 30                                           ; 4                             ;
-; 31                                           ; 1                             ;
-; 32                                           ; 15                            ;
+; 30                                           ; 11                            ;
+; 31                                           ; 2                             ;
+; 32                                           ; 21                            ;
 +----------------------------------------------+-------------------------------+
 
 
 +---------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                         ;
 +-------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 8.74) ; Number of LABs  (Total = 171) ;
+; Number of Signals Sourced Out  (Average = 8.74) ; Number of LABs  (Total = 210) ;
 +-------------------------------------------------+-------------------------------+
 ; 0                                               ; 3                             ;
-; 1                                               ; 10                            ;
-; 2                                               ; 11                            ;
-; 3                                               ; 11                            ;
-; 4                                               ; 11                            ;
-; 5                                               ; 6                             ;
-; 6                                               ; 6                             ;
-; 7                                               ; 7                             ;
-; 8                                               ; 16                            ;
-; 9                                               ; 8                             ;
-; 10                                              ; 17                            ;
+; 1                                               ; 26                            ;
+; 2                                               ; 8                             ;
+; 3                                               ; 7                             ;
+; 4                                               ; 16                            ;
+; 5                                               ; 10                            ;
+; 6                                               ; 9                             ;
+; 7                                               ; 8                             ;
+; 8                                               ; 13                            ;
+; 9                                               ; 9                             ;
+; 10                                              ; 16                            ;
 ; 11                                              ; 10                            ;
-; 12                                              ; 9                             ;
-; 13                                              ; 14                            ;
-; 14                                              ; 4                             ;
-; 15                                              ; 7                             ;
-; 16                                              ; 20                            ;
-; 17                                              ; 0                             ;
+; 12                                              ; 15                            ;
+; 13                                              ; 11                            ;
+; 14                                              ; 8                             ;
+; 15                                              ; 4                             ;
+; 16                                              ; 35                            ;
+; 17                                              ; 1                             ;
 ; 18                                              ; 0                             ;
-; 19                                              ; 1                             ;
+; 19                                              ; 0                             ;
+; 20                                              ; 0                             ;
+; 21                                              ; 0                             ;
+; 22                                              ; 1                             ;
 +-------------------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 17.19) ; Number of LABs  (Total = 171) ;
+; Number of Distinct Inputs  (Average = 16.69) ; Number of LABs  (Total = 210) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 0                             ;
-; 2                                            ; 5                             ;
-; 3                                            ; 10                            ;
-; 4                                            ; 0                             ;
-; 5                                            ; 3                             ;
+; 2                                            ; 6                             ;
+; 3                                            ; 13                            ;
+; 4                                            ; 4                             ;
+; 5                                            ; 2                             ;
 ; 6                                            ; 4                             ;
-; 7                                            ; 5                             ;
-; 8                                            ; 2                             ;
+; 7                                            ; 6                             ;
+; 8                                            ; 3                             ;
 ; 9                                            ; 4                             ;
-; 10                                           ; 2                             ;
+; 10                                           ; 9                             ;
 ; 11                                           ; 5                             ;
-; 12                                           ; 4                             ;
-; 13                                           ; 10                            ;
-; 14                                           ; 4                             ;
-; 15                                           ; 3                             ;
-; 16                                           ; 7                             ;
-; 17                                           ; 7                             ;
+; 12                                           ; 5                             ;
+; 13                                           ; 14                            ;
+; 14                                           ; 6                             ;
+; 15                                           ; 9                             ;
+; 16                                           ; 10                            ;
+; 17                                           ; 8                             ;
 ; 18                                           ; 6                             ;
-; 19                                           ; 9                             ;
-; 20                                           ; 24                            ;
-; 21                                           ; 12                            ;
-; 22                                           ; 4                             ;
-; 23                                           ; 5                             ;
-; 24                                           ; 8                             ;
-; 25                                           ; 3                             ;
-; 26                                           ; 9                             ;
-; 27                                           ; 4                             ;
-; 28                                           ; 2                             ;
-; 29                                           ; 3                             ;
+; 19                                           ; 17                            ;
+; 20                                           ; 10                            ;
+; 21                                           ; 11                            ;
+; 22                                           ; 16                            ;
+; 23                                           ; 8                             ;
+; 24                                           ; 3                             ;
+; 25                                           ; 6                             ;
+; 26                                           ; 4                             ;
+; 27                                           ; 3                             ;
+; 28                                           ; 3                             ;
+; 29                                           ; 0                             ;
 ; 30                                           ; 1                             ;
-; 31                                           ; 3                             ;
-; 32                                           ; 1                             ;
-; 33                                           ; 1                             ;
-; 34                                           ; 0                             ;
-; 35                                           ; 1                             ;
+; 31                                           ; 4                             ;
+; 32                                           ; 0                             ;
+; 33                                           ; 0                             ;
+; 34                                           ; 1                             ;
+; 35                                           ; 2                             ;
+; 36                                           ; 7                             ;
 +----------------------------------------------+-------------------------------+
 
 
@@ -1809,7 +1811,8 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------------------------------------------------+-----------------------------------------------------------+-------------------+
 ; Source Clock(s)                                           ; Destination Clock(s)                                      ; Delay Added in ns ;
 +-----------------------------------------------------------+-----------------------------------------------------------+-------------------+
-; clkmanager|p1|altpll_component|auto_generated|pll1|clk[0] ; clkmanager|p1|altpll_component|auto_generated|pll1|clk[0] ; 2.6               ;
+; clkmanager|p1|altpll_component|auto_generated|pll1|clk[1] ; clkmanager|p1|altpll_component|auto_generated|pll1|clk[0] ; 3.2               ;
+; clkmanager|p1|altpll_component|auto_generated|pll1|clk[0] ; clkmanager|p1|altpll_component|auto_generated|pll1|clk[0] ; 3.1               ;
 ; clkmanager|p1|altpll_component|auto_generated|pll1|clk[0] ; clkmanager|p1|altpll_component|auto_generated|pll1|clk[1] ; 2.2               ;
 +-----------------------------------------------------------+-----------------------------------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
@@ -1822,20 +1825,32 @@ This will disable optimization of problematic paths and expose them for further 
 ; Source Register                                                                                                             ; Destination Register                                                                                                        ; Delay Added in ns ;
 +-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------+
 ; STATE_SAMPLE.SAMPLE_DONE                                                                                                    ; STATE.TRANSMIT_PARAM                                                                                                        ; 0.487             ;
-; sampleData[0]                                                                                                               ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a3~porta_datain_reg0                 ; 0.288             ;
-; STATE.TRANSMIT_PT                                                                                                           ; transmit_sel[1]                                                                                                             ; 0.071             ;
-; tracer_w_addr[2]                                                                                                            ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a5~porta_address_reg0                ; 0.042             ;
-; tracer_w_addr[5]                                                                                                            ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a5~porta_address_reg0                ; 0.040             ;
-; tracer_w_addr[4]                                                                                                            ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a5~porta_address_reg0                ; 0.040             ;
-; tracer_w_addr[9]                                                                                                            ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a5~porta_address_reg0                ; 0.038             ;
-; tracer_w_addr[8]                                                                                                            ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a5~porta_address_reg0                ; 0.038             ;
-; tracer_w_addr[6]                                                                                                            ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a5~porta_address_reg0                ; 0.033             ;
-; aes_tiny:gen_code_label[0].aes_tinyi|keyschedule:Inst_keyschedule|reg:keystate|flipflop_en:\gen_ff:1:ff|s_current_state[16] ; aes_tiny:gen_code_label[0].aes_tinyi|keyschedule:Inst_keyschedule|reg:keystate|flipflop_en:\gen_ff:2:ff|s_current_state[16] ; 0.025             ;
-; aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody|reg:state_FF|flipflop_en:\gen_ff:2:ff|s_current_state[13]       ; aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody|reg:state_FF|flipflop_en:\gen_ff:4:ff|s_current_state[13]       ; 0.025             ;
-; tracer_w_addr[3]                                                                                                            ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a5~porta_address_reg0                ; 0.020             ;
-; tracer_w_addr[7]                                                                                                            ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a5~porta_address_reg0                ; 0.020             ;
+; sampleData[3]                                                                                                               ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a3~porta_datain_reg0                 ; 0.382             ;
+; sampleData[0]                                                                                                               ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a0~porta_datain_reg0                 ; 0.382             ;
+; sampleData[1]                                                                                                               ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a1~porta_datain_reg0                 ; 0.382             ;
+; sampleData[2]                                                                                                               ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a2~porta_datain_reg0                 ; 0.382             ;
+; sampleData[7]                                                                                                               ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a7~porta_datain_reg0                 ; 0.382             ;
+; sampleData[4]                                                                                                               ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a4~porta_datain_reg0                 ; 0.382             ;
+; sampleData[6]                                                                                                               ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a6~porta_datain_reg0                 ; 0.382             ;
+; sampleData[5]                                                                                                               ; trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated|ram_block1a5~porta_datain_reg0                 ; 0.382             ;
+; keyRdy                                                                                                                      ; tdc_decode:tdc_decode|tdc_input_buf_reg[76]                                                                                 ; 0.373             ;
+; aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|aes_state.S_DONE                                                         ; sampleData[0]                                                                                                               ; 0.187             ;
+; STATE.ENC_DRDY1                                                                                                             ; cipher_w_memsel[1]                                                                                                          ; 0.068             ;
+; STATE.TRANSMIT_PT                                                                                                           ; STATE_SAMPLE.SAMPLE_WAIT                                                                                                    ; 0.068             ;
+; STATE.ENC_DRDY                                                                                                              ; dataRdy                                                                                                                     ; 0.067             ;
+; sender:s0|STATE.TRANSMIT_CT                                                                                                 ; sender:s0|cipher_mem_sel_reg[2]                                                                                             ; 0.051             ;
+; param[0][7]                                                                                                                 ; Areg[103]                                                                                                                   ; 0.048             ;
+; param[0][6]                                                                                                                 ; Areg[102]                                                                                                                   ; 0.048             ;
+; param[0][5]                                                                                                                 ; Areg[101]                                                                                                                   ; 0.048             ;
+; param[0][4]                                                                                                                 ; Areg[100]                                                                                                                   ; 0.048             ;
+; param[0][3]                                                                                                                 ; Areg[107]                                                                                                                   ; 0.048             ;
+; param[0][2]                                                                                                                 ; Areg[106]                                                                                                                   ; 0.048             ;
+; param[0][1]                                                                                                                 ; Areg[105]                                                                                                                   ; 0.048             ;
+; param[0][0]                                                                                                                 ; Areg[0]                                                                                                                     ; 0.048             ;
+; aes_tiny:gen_code_label[0].aes_tinyi|keyschedule:Inst_keyschedule|reg:keystate|flipflop_en:\gen_ff:1:ff|s_current_state[27] ; aes_tiny:gen_code_label[0].aes_tinyi|keyschedule:Inst_keyschedule|reg:keystate|flipflop_en:\gen_ff:2:ff|s_current_state[27] ; 0.024             ;
+; aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody|reg:state_FF|flipflop_en:\gen_ff:2:ff|s_current_state[14]       ; aes_tiny:gen_code_label[0].aes_tinyi|dataBody:Inst_dataBody|reg:state_FF|flipflop_en:\gen_ff:4:ff|s_current_state[14]       ; 0.023             ;
 +-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 13 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 25 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1846,9 +1861,9 @@ Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors
 Info (119006): Selected device EP4CE115F29C7 for design "DE2-project"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Info (15535): Implemented PLL "clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|pll1" as Cyclone IV E PLL type File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-project/db/pll_altpll.v Line: 51
-    Info (15099): Implementing clock multiplication of 4, clock division of 1, and phase shift of 0 degrees (0 ps) for clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] port File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-project/db/pll_altpll.v Line: 51
-    Info (15099): Implementing clock multiplication of 6, clock division of 25, and phase shift of 0 degrees (0 ps) for clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[1] port File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-project/db/pll_altpll.v Line: 51
+Info (15535): Implemented PLL "clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|pll1" as Cyclone IV E PLL type File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/DE2-project/db/pll_altpll.v Line: 51
+    Info (15099): Implementing clock multiplication of 4, clock division of 1, and phase shift of 0 degrees (0 ps) for clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] port File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/DE2-project/db/pll_altpll.v Line: 51
+    Info (15099): Implementing clock multiplication of 6, clock division of 25, and phase shift of 0 degrees (0 ps) for clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[1] port File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/DE2-project/db/pll_altpll.v Line: 51
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
@@ -1877,25 +1892,25 @@ Info (332096): The command derive_clocks did not find any clocks to derive.  No 
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
-Info (176353): Automatically promoted node c10_clk50m~input (placed in PIN Y2 (CLK2, DIFFCLK_1p)) File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/altera/c10lp_golden_top.v Line: 8
+Info (176353): Automatically promoted node c10_clk50m~input (placed in PIN Y2 (CLK2, DIFFCLK_1p)) File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 8
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G1
-Info (176353): Automatically promoted node clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_1) File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-project/db/pll_altpll.v Line: 93
+Info (176353): Automatically promoted node clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_1) File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/DE2-project/db/pll_altpll.v Line: 93
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G3
-Info (176353): Automatically promoted node clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[1] (placed in counter C1 of PLL_1) File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-project/db/pll_altpll.v Line: 93
+Info (176353): Automatically promoted node clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[1] (placed in counter C1 of PLL_1) File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/DE2-project/db/pll_altpll.v Line: 93
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
-Info (176353): Automatically promoted node c10_resetn~input (placed in PIN Y1 (CLK3, DIFFCLK_1n)) File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/altera/c10lp_golden_top.v Line: 12
+Info (176353): Automatically promoted node c10_resetn~input (placed in PIN Y1 (CLK3, DIFFCLK_1n)) File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 12
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G0
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node enc_LED File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/altera/c10lp_golden_top.v Line: 215
-        Info (176357): Destination node counter[10] File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/altera/c10lp_golden_top.v Line: 215
-        Info (176357): Destination node counter[9] File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/altera/c10lp_golden_top.v Line: 215
-        Info (176357): Destination node counter[8] File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/altera/c10lp_golden_top.v Line: 215
-        Info (176357): Destination node counter[7] File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/altera/c10lp_golden_top.v Line: 215
-        Info (176357): Destination node counter[6] File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/altera/c10lp_golden_top.v Line: 215
-        Info (176357): Destination node counter[5] File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/altera/c10lp_golden_top.v Line: 215
-        Info (176357): Destination node counter[4] File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/altera/c10lp_golden_top.v Line: 215
-        Info (176357): Destination node counter[3] File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/altera/c10lp_golden_top.v Line: 215
-        Info (176357): Destination node counter[2] File: C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/altera/c10lp_golden_top.v Line: 215
+        Info (176357): Destination node enc_LED File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 233
+        Info (176357): Destination node counter[10] File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 233
+        Info (176357): Destination node counter[9] File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 233
+        Info (176357): Destination node counter[8] File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 233
+        Info (176357): Destination node counter[7] File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 233
+        Info (176357): Destination node counter[6] File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 233
+        Info (176357): Destination node counter[5] File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 233
+        Info (176357): Destination node counter[4] File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 233
+        Info (176357): Destination node counter[3] File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 233
+        Info (176357): Destination node counter[2] File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 233
         Info (176358): Non-global destination nodes limited to 10 nodes
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -1913,36 +1928,36 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  57 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has 2.5V VCCIO pins. 4 total pin(s) used --  68 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  71 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:04
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:15
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 15% of the available device resources in the region that extends from location X46_Y24 to location X57_Y36
+    Info (170196): Router estimated peak interconnect usage is 19% of the available device resources in the region that extends from location X23_Y37 to location X33_Y48
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 1.81 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:05
+Info (11888): Total time spent on timing analysis during the Fitter is 3.04 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
-Info (144001): Generated suppressed messages file C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-project/output_files/DE2-project.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5743 megabytes
-    Info: Processing ended: Fri Jun 23 16:22:32 2023
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:34
+Info (144001): Generated suppressed messages file C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/DE2-project/output_files/DE2-project.fit.smsg
+Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 5742 megabytes
+    Info: Processing ended: Thu Jun 29 07:10:56 2023
+    Info: Elapsed time: 00:00:40
+    Info: Total CPU time (on all processors): 00:01:15
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-project/output_files/DE2-project.fit.smsg.
+The suppressed messages can be found in C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/DE2-project/output_files/DE2-project.fit.smsg.
 
 
