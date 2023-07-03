@@ -42,6 +42,7 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 
 ## Abstract
+Side channel attacks exploit factors like power consumption, timing information, and defective computations to extract sensitive information from cryptographic systems. Techniques such as Correlation Power Analysis (CPA) and Differential Power Analysis (DPA) are commonly used in these attacks. The correlation between power consumption and the Hamming Distance is important in side channel analysis. Cryptographic algorithms like AES, ECC, and RSA are vulnerable to power analysis attacks despite being considered secure. Field-Programmable Gate Arrays (FPGAs) are flexible hardware devices commonly used in cryptography, but their parallel nature can lead to unintended side channel leakage. On-chip voltage sensors are employed to monitor power fluctuations and detect potential issues. FPGA-based side channel attacks can occur in various scenarios and require effective countermeasures. Machine learning techniques have been successful in extracting sensitive information from side channels, enabling accurate prediction of secret information. Lightweight ciphers used in IoT devices, such as Simon and PRESENT, are efficient but vulnerable, necessitating the identification of vulnerabilities and implementation of countermeasures.
 
 ## Related works
 
