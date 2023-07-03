@@ -47,6 +47,48 @@ Side channel attacks exploit factors like power consumption, timing information,
 ## Related works
 
 ## Methodology
+- Getting the Power Traces
+  - Do the hardware implementation of lightweight ciphers using verilog.
+    - PRESENT
+    - SIMON
+    - SPECK
+  - The cipher runs on a Altera DE2 FPGA:
+    - Known plaintext values are used for encryption purposes
+    - The same key is used in every encryption
+  - Each time the FPGA encrypts a given plaintext:
+    - Developed internal sensor (RO or TDC) on same FPGA captures the waveform
+    - Each instance of captured waveform corresponding to a known plaintext consists of constant number of sampling points 
+  - Captured waveforms along with the relevant ciphertext, plaintext, and key are transmitted to a PC
+
+- Handling data at PC end
+  - Following data is written to a three separate text files:
+    - Generated ciphertexts
+    - Used plaintexts
+    - Secret key
+  - The power trace for each encryption operation is written to a binary file (.data)
+
+- Executing the attack
+  - Captured data is used to perform a CPA attack
+  - PRESENT cipher
+    - Hamming Distance model: to model the power consumption for each key guess
+    - Modeled power consumptions are compared with the observed power consumption using linear correlation analysis
+    - Target: S-box operation
+  - SIMON cipher
+    - Target: Bitwise AND operation
+    - The same hamming distance model can be used
+  - SPECK cipher
+    - Target: modular subtraction
+    - The same hamming distance model can be used
+
+- Evaluating Results
+  - Using the Success Rate.
+  - Success Rate can be used,
+      - Execute attack n times using same data
+      - Count successful guesses
+      - Success Rate =  (Number of Successful Attacks / Total Number of Attacks) * 100
+
+
+
 
 ## Experiment Setup and Implementation
 
