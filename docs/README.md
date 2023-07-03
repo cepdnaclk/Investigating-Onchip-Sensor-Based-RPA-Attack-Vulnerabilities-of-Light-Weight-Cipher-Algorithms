@@ -91,6 +91,11 @@ Side channel attacks exploit factors like power consumption, timing information,
 
 
 ## Experiment Setup and Implementation
+- Experimental Setup
+- Output of the hardware setup (Powertrace Output):
+![Output of the hardware setup (Powertrace Output)](./images/TraceOuput.png)
+- Output of the CPA attack (Using Cuda):
+![Output of the CPA attack (Using Cuda)](./images/CudaCodeOutput.png)
 
 ## Results and Analysis
 
