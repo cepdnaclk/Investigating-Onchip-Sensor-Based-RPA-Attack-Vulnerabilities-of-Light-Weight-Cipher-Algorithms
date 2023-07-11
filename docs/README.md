@@ -152,7 +152,7 @@ On-chip sensors can play a role in side-channel attacks by providing additional 
 [//]: # "Note: Uncomment each once you uploaded the files to the repository"
 
 1. [Semester 7 report](./data/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Ciphers-Liteture-Review.pdf)
-<!-- 2. [Semester 7 slides](./) -->
+2. [Semester 7 slides](./data/project_proposal.pdf)
 <!-- 3. [Semester 8 report](./) -->
 <!-- 4. [Semester 8 slides](./) -->
 <!-- 5. Author 1, Author 2 and Author 3 "Research paper title" (2021). [PDF](./). -->
