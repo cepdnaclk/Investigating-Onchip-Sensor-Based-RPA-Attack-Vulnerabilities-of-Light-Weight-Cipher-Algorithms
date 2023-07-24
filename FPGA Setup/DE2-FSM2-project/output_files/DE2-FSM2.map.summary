@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Jul 24 19:37:38 2023
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : DE2-FSM2
+Top-level Entity Name : top
+Family : Cyclone IV E
+Total logic elements : 16,172
+    Total combinational functions : 15,834
+    Dedicated logic registers : 1,708
+Total registers : 1708
+Total pins : 6
+Total virtual pins : 0
+Total memory bits : 8,192
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

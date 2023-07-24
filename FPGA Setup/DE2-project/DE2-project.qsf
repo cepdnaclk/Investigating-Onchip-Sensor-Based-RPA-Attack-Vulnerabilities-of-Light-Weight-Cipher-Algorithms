@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY c10lp_golden_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:07:28  JUNE 20, 2023"
-set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.1 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
 set_global_assignment -name VERILOG_FILE ../altera/tiny_AES/sboxalg.v
 set_global_assignment -name VERILOG_FILE ../altera/tiny_AES/aes_tiny_TB.v
 set_global_assignment -name VHDL_FILE ../altera/tiny_AES/timesx.vhd
