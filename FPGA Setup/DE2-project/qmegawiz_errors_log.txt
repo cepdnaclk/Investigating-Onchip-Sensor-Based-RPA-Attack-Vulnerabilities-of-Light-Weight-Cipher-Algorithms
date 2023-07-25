@@ -1,0 +1,46 @@
+
+
+C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/pll.v
+
+Jul 07 09AM:57:49>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/pll.v
+
+Jul 07 09AM:58:23>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/pll.v
+
+Jul 07 10AM:03:15>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/pll.v
+
+Jul 07 10AM:03:33>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/pll.v
+
+Jul 07 10AM:04:36>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)

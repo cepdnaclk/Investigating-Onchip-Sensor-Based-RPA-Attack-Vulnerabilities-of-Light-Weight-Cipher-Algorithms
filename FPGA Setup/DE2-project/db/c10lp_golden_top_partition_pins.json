@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "user_led[0]",
+					"strict" : false
+				},
+				{
+					"name" : "user_led[1]",
+					"strict" : false
+				},
+				{
+					"name" : "user_led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "user_led[3]",
+					"strict" : false
+				},
+				{
+					"name" : "tx",
+					"strict" : false
+				},
+				{
+					"name" : "c10_clk50m",
+					"strict" : false
+				},
+				{
+					"name" : "c10_resetn",
+					"strict" : false
+				},
+				{
+					"name" : "rx",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
