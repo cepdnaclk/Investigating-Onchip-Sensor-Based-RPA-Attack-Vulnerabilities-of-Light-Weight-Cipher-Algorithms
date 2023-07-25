@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CYC10-project
-Tue Jul 25 13:41:40 2023
+Tue Jul 25 15:50:33 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 25 13:41:39 2023          ;
+; Analysis & Synthesis Status        ; Successful - Tue Jul 25 15:50:33 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; CYC10-project                                  ;
 ; Top-level Entity Name              ; top                                            ;
@@ -989,6 +989,16 @@ Encoding Type:  One-Hot
 ; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; AES_Composite_enc:gen_code_label[0].aes_tinyi ;
 ; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; AES_Composite_enc:gen_code_label[1].aes_tinyi ;
 ; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; AES_Composite_enc:gen_code_label[2].aes_tinyi ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; latch:gen_code_label1[0].li                   ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; latch:gen_code_label1[1].li                   ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; latch:gen_code_label1[2].li                   ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; latch:gen_code_label1[3].li                   ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; latch:gen_code_label1[4].li                   ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; latch:gen_code_label1[5].li                   ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; latch:gen_code_label1[6].li                   ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; latch:gen_code_label1[7].li                   ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; latch:gen_code_label1[8].li                   ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; latch:gen_code_label1[9].li                   ;
 +---------------------------+-------+------+-----------------------------------------------+
 
 
@@ -1057,7 +1067,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK3_MULTIPLY_BY              ; 1                       ; Untyped                ;
 ; CLK2_MULTIPLY_BY              ; 1                       ; Untyped                ;
 ; CLK1_MULTIPLY_BY              ; 6                       ; Signed Integer         ;
-; CLK0_MULTIPLY_BY              ; 4                       ; Signed Integer         ;
+; CLK0_MULTIPLY_BY              ; 24                      ; Signed Integer         ;
 ; CLK9_DIVIDE_BY                ; 0                       ; Untyped                ;
 ; CLK8_DIVIDE_BY                ; 0                       ; Untyped                ;
 ; CLK7_DIVIDE_BY                ; 0                       ; Untyped                ;
@@ -1067,7 +1077,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK3_DIVIDE_BY                ; 1                       ; Untyped                ;
 ; CLK2_DIVIDE_BY                ; 1                       ; Untyped                ;
 ; CLK1_DIVIDE_BY                ; 25                      ; Signed Integer         ;
-; CLK0_DIVIDE_BY                ; 1                       ; Signed Integer         ;
+; CLK0_DIVIDE_BY                ; 5                       ; Signed Integer         ;
 ; CLK9_PHASE_SHIFT              ; 0                       ; Untyped                ;
 ; CLK8_PHASE_SHIFT              ; 0                       ; Untyped                ;
 ; CLK7_PHASE_SHIFT              ; 0                       ; Untyped                ;
@@ -1606,7 +1616,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:02:05     ;
+; Top            ; 00:02:07     ;
 +----------------+--------------+
 
 
@@ -1616,7 +1626,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Tue Jul 25 13:39:23 2023
+    Info: Processing started: Tue Jul 25 15:48:13 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CYC10-project -c CYC10-project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1666,21 +1676,21 @@ Warning (10036): Verilog HDL or VHDL warning at top.v(92): object "adj" assigned
 Warning (10036): Verilog HDL or VHDL warning at top.v(92): object "adjEN" assigned a value but never read File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 92
 Warning (10036): Verilog HDL or VHDL warning at top.v(93): object "count" assigned a value but never read File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 93
 Warning (10036): Verilog HDL or VHDL warning at top.v(136): object "adjust" assigned a value but never read File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 136
-Warning (10230): Verilog HDL assignment warning at top.v(198): truncated value with size 32 to match size of target (16) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 198
-Warning (10230): Verilog HDL assignment warning at top.v(291): truncated value with size 32 to match size of target (8) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 291
-Warning (10230): Verilog HDL assignment warning at top.v(361): truncated value with size 32 to match size of target (16) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 361
-Warning (10230): Verilog HDL assignment warning at top.v(393): truncated value with size 32 to match size of target (16) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 393
-Warning (10230): Verilog HDL assignment warning at top.v(417): truncated value with size 32 to match size of target (16) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 417
-Warning (10230): Verilog HDL assignment warning at top.v(443): truncated value with size 32 to match size of target (16) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 443
-Warning (10230): Verilog HDL assignment warning at top.v(490): truncated value with size 32 to match size of target (16) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 490
+Warning (10230): Verilog HDL assignment warning at top.v(218): truncated value with size 32 to match size of target (16) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 218
+Warning (10230): Verilog HDL assignment warning at top.v(311): truncated value with size 32 to match size of target (8) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 311
+Warning (10230): Verilog HDL assignment warning at top.v(381): truncated value with size 32 to match size of target (16) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 381
+Warning (10230): Verilog HDL assignment warning at top.v(413): truncated value with size 32 to match size of target (16) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 413
+Warning (10230): Verilog HDL assignment warning at top.v(437): truncated value with size 32 to match size of target (16) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 437
+Warning (10230): Verilog HDL assignment warning at top.v(463): truncated value with size 32 to match size of target (16) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 463
+Warning (10230): Verilog HDL assignment warning at top.v(510): truncated value with size 32 to match size of target (16) File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 510
 Info (12128): Elaborating entity "clock" for hierarchy "clock:clock" File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/DE2-FSM2-project/src/top.v Line: 116
 Info (12128): Elaborating entity "altpll" for hierarchy "clock:clock|altpll:altpll_component" File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/CYC10-FSM2-project/clock.v Line: 99
 Info (12130): Elaborated megafunction instantiation "clock:clock|altpll:altpll_component" File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/CYC10-FSM2-project/clock.v Line: 99
 Info (12133): Instantiated megafunction "clock:clock|altpll:altpll_component" with the following parameter: File: C:/Users/sca-djay/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/CYC10-FSM2-project/clock.v Line: 99
     Info (12134): Parameter "bandwidth_type" = "AUTO"
-    Info (12134): Parameter "clk0_divide_by" = "1"
+    Info (12134): Parameter "clk0_divide_by" = "5"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
-    Info (12134): Parameter "clk0_multiply_by" = "4"
+    Info (12134): Parameter "clk0_multiply_by" = "24"
     Info (12134): Parameter "clk0_phase_shift" = "0"
     Info (12134): Parameter "clk1_divide_by" = "25"
     Info (12134): Parameter "clk1_duty_cycle" = "50"
@@ -1874,9 +1884,9 @@ Info (21057): Implemented 16773 device resources after synthesis - the final res
     Info (21064): Implemented 8 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 55 warnings
-    Info: Peak virtual memory: 4925 megabytes
-    Info: Processing ended: Tue Jul 25 13:41:40 2023
-    Info: Elapsed time: 00:02:17
-    Info: Total CPU time (on all processors): 00:02:28
+    Info: Peak virtual memory: 4910 megabytes
+    Info: Processing ended: Tue Jul 25 15:50:33 2023
+    Info: Elapsed time: 00:02:20
+    Info: Total CPU time (on all processors): 00:02:32
 
 

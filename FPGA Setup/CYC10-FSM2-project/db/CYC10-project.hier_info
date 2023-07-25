@@ -2,10 +2,10 @@
 clk => clk.IN1
 c10_resetn => ~NO_FANOUT~
 rx => rx.IN1
-led[0] <= counter2[25].DB_MAX_OUTPUT_PORT_TYPE
-led[1] <= counter2[26].DB_MAX_OUTPUT_PORT_TYPE
-led[2] <= counter2[27].DB_MAX_OUTPUT_PORT_TYPE
-tx <= uart_tx:uartTX.o_Tx_Serial
+led[0] << counter2[25].DB_MAX_OUTPUT_PORT_TYPE
+led[1] << counter2[26].DB_MAX_OUTPUT_PORT_TYPE
+led[2] << counter2[27].DB_MAX_OUTPUT_PORT_TYPE
+tx << uart_tx:uartTX.o_Tx_Serial
 
 
 |top|clock:clock

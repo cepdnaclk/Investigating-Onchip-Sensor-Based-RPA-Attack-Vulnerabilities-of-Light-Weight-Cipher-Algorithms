@@ -100,7 +100,7 @@ assign SensorBusy = busy;
 assign PWR=1;
 
 
-assign Bwire= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,7'b0000000,clk0};
+assign Bwire= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,7'b0000000,delay_wire[9]};
 assign Awire= {~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay};
 
 //assign Awire= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,8'b00000001};
@@ -163,6 +163,26 @@ assign Dvld = &DvldTemp;
 		(* noprune *)	AES_Composite_enc aes_tinyi (.Kin(Kin), .Din(Din), .Dout(DoutTemp[i]), .Krdy(Krdy), .Drdy1(Drdy), .EncDec(1'b0), .Kvld(), .Dvld(DvldTemp[i]), .EN(EN), .BSY(), .CLK(clk1), .RSTn(AESResetn));
 	end
 	endgenerate
+	
+	
+	wire [10:0] delay_wire;
+	
+	generate
+	for(i=0;i<10; i = i+1)
+	begin: gen_code_label1
+	
+	if(i==0) begin
+	
+	(* noprune *) latch li (.d(clk0), .ena(1'b1), .q(delay_wire[i]));
+	
+	end
+	else begin
+	(* noprune *) latch li (.d(delay_wire[i-1]), .ena(1'b1), .q(delay_wire[i]));
+	
+	end
+	
+	end
+	endgenerate	
 	
 
 always @(posedge clk0) begin
