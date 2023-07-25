@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity tdc_decode is
-    generic ( input_len : integer := 160; output_width : integer := 8 );
+    generic ( input_len : integer := 128; output_width : integer := 8 );
     port ( clk : in std_ulogic;
            rst : in std_ulogic;
 		   chainvalue_i : in std_logic_vector(input_len-1 downto 0);

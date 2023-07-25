@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:10:12  JULY 24, 2023"
-set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.1 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -51,12 +51,6 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VHDL_FILE src/lattice_sensor.vhd
-set_global_assignment -name VERILOG_FILE src/uartTX.v
-set_global_assignment -name VERILOG_FILE src/uartrx.v
-set_global_assignment -name VERILOG_FILE src/top.v
-set_global_assignment -name VERILOG_FILE src/aes_composite_enc.v
-set_global_assignment -name QIP_FILE clock.qip
 set_location_assignment PIN_Y2 -to clk
 set_location_assignment PIN_G19 -to led[0]
 set_location_assignment PIN_E19 -to led[1]
@@ -65,4 +59,10 @@ set_location_assignment PIN_AB22 -to rx
 set_location_assignment PIN_AC15 -to tx
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rx
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to tx
+set_global_assignment -name VHDL_FILE src/lattice_sensor.vhd
+set_global_assignment -name VERILOG_FILE src/uartTX.v
+set_global_assignment -name VERILOG_FILE src/uartrx.v
+set_global_assignment -name VERILOG_FILE src/top.v
+set_global_assignment -name VERILOG_FILE src/aes_composite_enc.v
+set_global_assignment -name QIP_FILE clock.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

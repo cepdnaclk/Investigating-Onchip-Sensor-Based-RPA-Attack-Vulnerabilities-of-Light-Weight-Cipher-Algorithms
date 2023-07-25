@@ -1,6 +1,6 @@
 Timing Analyzer report for DE2-FSM2
-Mon Jul 24 19:38:54 2023
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Tue Jul 25 09:09:35 2023
+Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
 ---------------------
@@ -66,7 +66,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2023  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -83,18 +83,18 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                     ;
-+-----------------------+-----------------------------------------------------+
-; Quartus Prime Version ; Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Timing Analyzer       ; Legacy Timing Analyzer                              ;
-; Revision Name         ; DE2-FSM2                                            ;
-; Device Family         ; Cyclone IV E                                        ;
-; Device Name           ; EP4CE115F29C7                                       ;
-; Timing Models         ; Final                                               ;
-; Delay Model           ; Combined                                            ;
-; Rise/Fall Delays      ; Enabled                                             ;
-+-----------------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                        ;
++-----------------------+--------------------------------------------------------+
+; Quartus Prime Version ; Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                 ;
+; Revision Name         ; DE2-FSM2                                               ;
+; Device Family         ; Cyclone IV E                                           ;
+; Device Name           ; EP4CE115F29C7                                          ;
+; Timing Models         ; Final                                                  ;
+; Delay Model           ; Combined                                               ;
+; Rise/Fall Delays      ; Enabled                                                ;
++-----------------------+--------------------------------------------------------+
 
 
 +------------------------------------------+
@@ -105,14 +105,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.35        ;
+; Average used               ; 1.29        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  15.0%      ;
-;     Processor 3            ;  12.8%      ;
-;     Processor 4            ;   6.8%      ;
+;     Processor 2            ;  13.2%      ;
+;     Processor 3            ;  10.3%      ;
+;     Processor 4            ;   6.0%      ;
 +----------------------------+-------------+
 
 
@@ -352,8 +352,8 @@ No paths to report.
 ; 71.235 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[67]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[57]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.085     ; 12.011     ;
 ; 71.235 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[118] ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[7]   ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.072     ; 12.024     ;
 ; 71.246 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[38]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[17]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.106     ; 11.979     ;
-; 71.255 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[33]  ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[23]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.081     ; 11.995     ;
 ; 71.255 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[123] ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[99]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.079     ; 11.997     ;
+; 71.255 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[33]  ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[23]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.081     ; 11.995     ;
 ; 71.258 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[70]  ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[50]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.082     ; 11.991     ;
 ; 71.258 ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[56]  ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[44]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.090     ; 11.983     ;
 ; 71.260 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[125] ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[107] ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.097     ; 11.974     ;
@@ -834,8 +834,8 @@ No paths to report.
 ; 72.051 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[88]  ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[69]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.076     ; 11.205     ;
 ; 72.052 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[74]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[25]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.090     ; 11.190     ;
 ; 72.053 ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[49]  ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[81]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.069     ; 11.210     ;
-; 72.054 ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[40]  ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[108] ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.083     ; 11.195     ;
 ; 72.054 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[66]  ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[57]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.079     ; 11.199     ;
+; 72.054 ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[40]  ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[108] ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.083     ; 11.195     ;
 ; 72.075 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[119] ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[25]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.072     ; 11.185     ;
 ; 72.080 ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[50]  ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[92]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.084     ; 11.168     ;
 ; 72.104 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[114] ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[7]   ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.063     ; 11.165     ;
@@ -884,8 +884,8 @@ No paths to report.
 ; 72.323 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[36]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[22]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.080     ; 10.929     ;
 ; 72.330 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[123] ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[115] ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.089     ; 10.913     ;
 ; 72.334 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[33]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[23]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.060     ; 10.938     ;
-; 72.345 ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[50]  ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[84]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.051     ; 10.936     ;
 ; 72.345 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[109] ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[50]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.066     ; 10.921     ;
+; 72.345 ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[50]  ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[84]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.051     ; 10.936     ;
 ; 72.351 ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[80]  ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[108] ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.077     ; 10.904     ;
 ; 72.353 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[110] ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[49]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.073     ; 10.906     ;
 ; 72.358 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[65]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[41]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.080     ; 10.894     ;
@@ -1336,18 +1336,18 @@ No paths to report.
 ; 77.027 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[39]  ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[12]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.027     ; 6.266      ;
 ; 77.031 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[123] ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[99]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.040     ; 6.249      ;
 ; 77.038 ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[63]  ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[35]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.030     ; 6.252      ;
-; 77.052 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[32]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[17]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.047     ; 6.221      ;
 ; 77.052 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[89]  ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[81]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.039     ; 6.229      ;
-; 77.055 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[74]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[18]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.059     ; 6.206      ;
+; 77.052 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[32]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[17]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.047     ; 6.221      ;
 ; 77.055 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[91]  ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[65]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.051     ; 6.214      ;
+; 77.055 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[74]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[18]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.059     ; 6.206      ;
 ; 77.056 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[33]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[20]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.028     ; 6.236      ;
-; 77.057 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[118] ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[7]   ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.028     ; 6.235      ;
 ; 77.057 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[33]  ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[23]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.039     ; 6.224      ;
+; 77.057 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[118] ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[7]   ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.028     ; 6.235      ;
 ; 77.065 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[38]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[17]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.055     ; 6.200      ;
 ; 77.071 ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[50]  ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[71]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.042     ; 6.207      ;
 ; 77.072 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[70]  ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[57]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.048     ; 6.200      ;
-; 77.078 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[65]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[38]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.062     ; 6.180      ;
 ; 77.078 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[110] ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[57]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.045     ; 6.197      ;
+; 77.078 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[65]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[38]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.062     ; 6.180      ;
 ; 77.079 ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[56]  ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[44]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.051     ; 6.190      ;
 ; 77.081 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[123] ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[100] ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.043     ; 6.196      ;
 ; 77.086 ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[57]  ; AES_Composite_enc:gen_code_label[1].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[35]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.020     ; 6.214      ;
@@ -1355,8 +1355,8 @@ No paths to report.
 ; 77.095 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[65]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[41]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.048     ; 6.177      ;
 ; 77.096 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[88]  ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[85]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.041     ; 6.183      ;
 ; 77.097 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[36]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[23]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.051     ; 6.172      ;
-; 77.100 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[123] ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[115] ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.059     ; 6.161      ;
 ; 77.100 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[65]  ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[57]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.039     ; 6.181      ;
+; 77.100 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[123] ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[115] ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.059     ; 6.161      ;
 ; 77.101 ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[41]  ; AES_Composite_enc:gen_code_label[0].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[100] ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.047     ; 6.172      ;
 ; 77.103 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[119] ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[7]   ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.028     ; 6.189      ;
 ; 77.106 ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[38]  ; AES_Composite_enc:gen_code_label[2].aes_tinyi|AES_Comp_ENC:AES_Comp_ENC0|Drg[11]  ; clock|altpll_component|auto_generated|pll1|clk[1] ; clock|altpll_component|auto_generated|pll1|clk[1] ; 83.333       ; -0.042     ; 6.172      ;
@@ -1809,8 +1809,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +--------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Jul 24 19:38:48 2023
+    Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+    Info: Processing started: Tue Jul 25 09:09:29 2023
 Info: Command: quartus_sta DE2-FSM2 -c DE2-FSM2
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1916,9 +1916,9 @@ Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4981 megabytes
-    Info: Processing ended: Mon Jul 24 19:38:54 2023
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4992 megabytes
+    Info: Processing ended: Tue Jul 25 09:09:35 2023
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:07
 

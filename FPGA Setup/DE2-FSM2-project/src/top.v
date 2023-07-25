@@ -20,6 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module top(
 	input 	clk,
+	input    c10_resetn,
 	input 	rx,
 	//input 	rstn,
 	output [2:0]led,
@@ -80,8 +81,10 @@ reg [15:0] addr2;
 reg [2:0] encCounter;
 reg [9:0] total, total_old;
 reg [7:0] senData  [3:0]; 
+reg [127:0] A, B;
+wire [127:0] Awire, Bwire, S;
 
-reg [4:0] delay=15;
+reg [7:0] delay=15;
 wire [4:0] Cdelay;
 
 wire  TXDone, txActive, rxReady, delClk, err, done;
@@ -90,11 +93,20 @@ reg start, trig, AESResetn, one, adj, adjEN;
 reg  [7:0]  count;
 
 
-assign led	=counter1[27:25];
+assign led	=counter2[27:25];
 assign HB 	=counter2[28];
 reg busy;
 assign SensorBusy = busy;
 assign PWR=1;
+
+
+assign Bwire= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,7'b0000000,clk0};
+assign Awire= {~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay};
+
+//assign Awire= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,8'b00000001};
+//assign Bwire= {~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,7'b1111111,clk0};
+
+assign S= Awire+Bwire;
 
 //////////////////////////
 ///   Clock and UARTs  ///
@@ -116,7 +128,7 @@ uart_rx uartRX(.i_Clock(clk1), .i_Rx_Serial(rx), .o_Rx_DV(rxReady), .o_Rx_Byte(R
 ///   On-chip Sensor   ///
 /////////////////////////
 parameter regsize =511;
-parameter ADSIZE=160;
+parameter ADSIZE=128;
 
 wire 	[ADSIZE-1:0] out;		
 reg 	[ADSIZE-1:0] outReg;		
@@ -153,7 +165,7 @@ assign Dvld = &DvldTemp;
 	endgenerate
 	
 
-always @(posedge clk) begin
+always @(posedge clk0) begin
 		counter2 <= counter2+1;
 end
 
@@ -174,7 +186,7 @@ always @(posedge clk0) begin		// onchip sensor values samples FSM, clock0 >>>> c
 	end
 	else if(SEN_FSM==SEN_WAIT) begin
 		   data2[addr2] 	<= 250;//processedOut;		// we just want to put a flag to detect start of AES; // remove this later
-			outReg 			<= out;
+			outReg 			<= S;
 			addr2 			<= 0;
 			if(Drdy ==1) begin
 			
@@ -182,7 +194,7 @@ always @(posedge clk0) begin		// onchip sensor values samples FSM, clock0 >>>> c
 			end
 	end
 	else if(SEN_FSM==SEN_CAPTURE) begin
-	      outReg 			<= out;    
+	      outReg 			<= S;    
 			addr2 			<= addr2 +1;
 			
 			if(Dvld==1) begin   // when ct is ready, we want to indicate it in the onchip sensor trace -- normally there is a clock cycle delay so if we dont capture 
@@ -238,12 +250,12 @@ always @(posedge clk1) begin	// Main FSM which also control AES  and data transm
 		
 		if (MAIN_FSM==MAIN_RESET) begin
 		     
-			  if(rxReady ==1 && RXdata==250)  begin				// you dont need to worry about these values they are from PC -> FPGA parameters
-				  MAIN_FSM <=MAIN_AES_RESET;
-				  inc <=1;
-				  encCounter 	<= encCounter + 1;
-			  end
-			  else if(rxReady ==1 && (RXdata >= 0 & RXdata <= 31)) begin
+			  //if(rxReady ==1 && RXdata==250)  begin				// you dont need to worry about these values they are from PC -> FPGA parameters
+			  //	  MAIN_FSM <=MAIN_AES_RESET;
+			  // inc <=1;
+			  //  encCounter 	<= encCounter + 1;
+			  //end
+			  if(rxReady ==1 && (RXdata >= 0)) begin
 				  MAIN_FSM <=MAIN_AES_RESET;
 				  inc <=0;
 				  delay <= RXdata;
@@ -265,6 +277,9 @@ always @(posedge clk1) begin	// Main FSM which also control AES  and data transm
 			R  <=0;
 			CE <=0;
 			adj <=1;
+			
+			B<= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay};
+			A<= {~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay};
 			
 			MAIN_FSM <=MAIN_AES_RESET1;
 		end
