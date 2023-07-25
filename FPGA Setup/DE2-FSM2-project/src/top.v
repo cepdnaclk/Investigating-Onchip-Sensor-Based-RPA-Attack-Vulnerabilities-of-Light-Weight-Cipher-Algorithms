@@ -100,7 +100,7 @@ assign SensorBusy = busy;
 assign PWR=1;
 
 
-assign Bwire= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,7'b0000000,delay_wire[9]};
+assign Bwire= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,7'b0000000,delay_wire[9]}; //delay_wire[9]
 assign Awire= {~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay};
 
 //assign Awire= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,8'b00000001};
