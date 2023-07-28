@@ -298,8 +298,8 @@ always @(posedge clk1) begin	// Main FSM which also control AES  and data transm
 			CE <=0;
 			adj <=1;
 			
-			B<= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay};
-			A<= {~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay};
+			//B<= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay};
+			//A<= {~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay};
 			
 			MAIN_FSM <=MAIN_AES_RESET1;
 		end
