@@ -35,50 +35,77 @@ STATE.TRANSMIT_PARAM_WAIT 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
 STATE.TRANSMIT_PARAM_DELAY 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
 STATE.WRAP_UP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
 
-State Machine - |c10lp_golden_top|aes_tiny:gen_code_label[4].aes_tinyi|controler:fsm|aes_state
-Name aes_state.S_DONE aes_state.S_ROUND aes_state.S_KEYSCHED_SHIFTROWS aes_state.S_DATA_IN aes_state.S_GAMMEL aes_state.S_IDLE 
-aes_state.S_IDLE 0 0 0 0 0 0 
-aes_state.S_GAMMEL 0 0 0 0 1 1 
-aes_state.S_DATA_IN 0 0 0 1 0 1 
-aes_state.S_KEYSCHED_SHIFTROWS 0 0 1 0 0 1 
-aes_state.S_ROUND 0 1 0 0 0 1 
-aes_state.S_DONE 1 0 0 0 0 1 
+State Machine - |c10lp_golden_top|aes128_table_ecb:aes_tiny11|now_state
+Name now_state.000 now_state.010 now_state.001 
+now_state.000 0 0 0 
+now_state.001 1 0 1 
+now_state.010 1 1 0 
 
-State Machine - |c10lp_golden_top|aes_tiny:gen_code_label[3].aes_tinyi|controler:fsm|aes_state
-Name aes_state.S_DONE aes_state.S_ROUND aes_state.S_KEYSCHED_SHIFTROWS aes_state.S_DATA_IN aes_state.S_GAMMEL aes_state.S_IDLE 
-aes_state.S_IDLE 0 0 0 0 0 0 
-aes_state.S_GAMMEL 0 0 0 0 1 1 
-aes_state.S_DATA_IN 0 0 0 1 0 1 
-aes_state.S_KEYSCHED_SHIFTROWS 0 0 1 0 0 1 
-aes_state.S_ROUND 0 1 0 0 0 1 
-aes_state.S_DONE 1 0 0 0 0 1 
+State Machine - |c10lp_golden_top|aes128_table_ecb:aes_tiny10|now_state
+Name now_state.000 now_state.010 now_state.001 
+now_state.000 0 0 0 
+now_state.001 1 0 1 
+now_state.010 1 1 0 
 
-State Machine - |c10lp_golden_top|aes_tiny:gen_code_label[2].aes_tinyi|controler:fsm|aes_state
-Name aes_state.S_DONE aes_state.S_ROUND aes_state.S_KEYSCHED_SHIFTROWS aes_state.S_DATA_IN aes_state.S_GAMMEL aes_state.S_IDLE 
-aes_state.S_IDLE 0 0 0 0 0 0 
-aes_state.S_GAMMEL 0 0 0 0 1 1 
-aes_state.S_DATA_IN 0 0 0 1 0 1 
-aes_state.S_KEYSCHED_SHIFTROWS 0 0 1 0 0 1 
-aes_state.S_ROUND 0 1 0 0 0 1 
-aes_state.S_DONE 1 0 0 0 0 1 
+State Machine - |c10lp_golden_top|aes128_table_ecb:aes_tiny9|now_state
+Name now_state.000 now_state.010 now_state.001 
+now_state.000 0 0 0 
+now_state.001 1 0 1 
+now_state.010 1 1 0 
 
-State Machine - |c10lp_golden_top|aes_tiny:gen_code_label[1].aes_tinyi|controler:fsm|aes_state
-Name aes_state.S_DONE aes_state.S_ROUND aes_state.S_KEYSCHED_SHIFTROWS aes_state.S_DATA_IN aes_state.S_GAMMEL aes_state.S_IDLE 
-aes_state.S_IDLE 0 0 0 0 0 0 
-aes_state.S_GAMMEL 0 0 0 0 1 1 
-aes_state.S_DATA_IN 0 0 0 1 0 1 
-aes_state.S_KEYSCHED_SHIFTROWS 0 0 1 0 0 1 
-aes_state.S_ROUND 0 1 0 0 0 1 
-aes_state.S_DONE 1 0 0 0 0 1 
+State Machine - |c10lp_golden_top|aes128_table_ecb:aes_tiny8|now_state
+Name now_state.000 now_state.010 now_state.001 
+now_state.000 0 0 0 
+now_state.001 1 0 1 
+now_state.010 1 1 0 
 
-State Machine - |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|aes_state
-Name aes_state.S_DONE aes_state.S_ROUND aes_state.S_KEYSCHED_SHIFTROWS aes_state.S_DATA_IN aes_state.S_GAMMEL aes_state.S_IDLE 
-aes_state.S_IDLE 0 0 0 0 0 0 
-aes_state.S_GAMMEL 0 0 0 0 1 1 
-aes_state.S_DATA_IN 0 0 0 1 0 1 
-aes_state.S_KEYSCHED_SHIFTROWS 0 0 1 0 0 1 
-aes_state.S_ROUND 0 1 0 0 0 1 
-aes_state.S_DONE 1 0 0 0 0 1 
+State Machine - |c10lp_golden_top|aes128_table_ecb:aes_tiny7|now_state
+Name now_state.000 now_state.010 now_state.001 
+now_state.000 0 0 0 
+now_state.001 1 0 1 
+now_state.010 1 1 0 
+
+State Machine - |c10lp_golden_top|aes128_table_ecb:aes_tiny6|now_state
+Name now_state.000 now_state.010 now_state.001 
+now_state.000 0 0 0 
+now_state.001 1 0 1 
+now_state.010 1 1 0 
+
+State Machine - |c10lp_golden_top|aes128_table_ecb:aes_tiny5|now_state
+Name now_state.000 now_state.010 now_state.001 
+now_state.000 0 0 0 
+now_state.001 1 0 1 
+now_state.010 1 1 0 
+
+State Machine - |c10lp_golden_top|aes128_table_ecb:aes_tiny4|now_state
+Name now_state.000 now_state.010 now_state.001 
+now_state.000 0 0 0 
+now_state.001 1 0 1 
+now_state.010 1 1 0 
+
+State Machine - |c10lp_golden_top|aes128_table_ecb:aes_tiny3|now_state
+Name now_state.000 now_state.010 now_state.001 
+now_state.000 0 0 0 
+now_state.001 1 0 1 
+now_state.010 1 1 0 
+
+State Machine - |c10lp_golden_top|aes128_table_ecb:aes_tiny2|now_state
+Name now_state.000 now_state.010 now_state.001 
+now_state.000 0 0 0 
+now_state.001 1 0 1 
+now_state.010 1 1 0 
+
+State Machine - |c10lp_golden_top|aes128_table_ecb:aes_tiny1|now_state
+Name now_state.000 now_state.010 now_state.001 
+now_state.000 0 0 0 
+now_state.001 1 0 1 
+now_state.010 1 1 0 
+
+State Machine - |c10lp_golden_top|aes128_table_ecb:aes_tiny0|now_state
+Name now_state.000 now_state.010 now_state.001 
+now_state.000 0 0 0 
+now_state.001 1 0 1 
+now_state.010 1 1 0 
 
 State Machine - |c10lp_golden_top|receiver:r0|STATE
 Name STATE.DONE STATE.UART_WAIT STATE.READ STATE.WAIT 

@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Jul 24 18:41:19 2023
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Revision Name : c10lp_golden_top
+Top-level Entity Name : c10lp_golden_top
+Family : Cyclone IV E
+Device : EP4CE115F29C7
+Timing Models : Final
+Total logic elements : 61,205 / 114,480 ( 53 % )
+    Total combinational functions : 60,954 / 114,480 ( 53 % )
+    Dedicated logic registers : 4,561 / 114,480 ( 4 % )
+Total registers : 4561
+Total pins : 18 / 529 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 8,192 / 3,981,312 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )

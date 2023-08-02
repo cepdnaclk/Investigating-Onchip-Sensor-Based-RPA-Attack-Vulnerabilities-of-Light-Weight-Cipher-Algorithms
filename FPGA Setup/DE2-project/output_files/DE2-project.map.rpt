@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2-project
-Thu Jun 29 07:10:15 2023
+Sun Jul  2 20:22:59 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -138,13 +138,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun 29 07:10:15 2023          ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul  2 20:22:59 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; DE2-project                                    ;
 ; Top-level Entity Name              ; c10lp_golden_top                               ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 3,097                                          ;
-;     Total combinational functions  ; 2,650                                          ;
+; Total logic elements               ; 3,094                                          ;
+;     Total combinational functions  ; 2,647                                          ;
 ;     Dedicated logic registers      ; 1,644                                          ;
 ; Total registers                    ; 1644                                           ;
 ; Total pins                         ; 18                                             ;
@@ -254,9 +254,9 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -311,16 +311,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                      ;
 +---------------------------------------------+--------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 3,097                                                                                      ;
+; Estimated Total logic elements              ; 3,094                                                                                      ;
 ;                                             ;                                                                                            ;
-; Total combinational functions               ; 2650                                                                                       ;
+; Total combinational functions               ; 2647                                                                                       ;
 ; Logic element usage by number of LUT inputs ;                                                                                            ;
-;     -- 4 input functions                    ; 1022                                                                                       ;
-;     -- 3 input functions                    ; 687                                                                                        ;
-;     -- <=2 input functions                  ; 941                                                                                        ;
+;     -- 4 input functions                    ; 1021                                                                                       ;
+;     -- 3 input functions                    ; 689                                                                                        ;
+;     -- <=2 input functions                  ; 937                                                                                        ;
 ;                                             ;                                                                                            ;
 ; Logic elements by mode                      ;                                                                                            ;
-;     -- normal mode                          ; 2114                                                                                       ;
+;     -- normal mode                          ; 2111                                                                                       ;
 ;     -- arithmetic mode                      ; 536                                                                                        ;
 ;                                             ;                                                                                            ;
 ; Total registers                             ; 1644                                                                                       ;
@@ -337,7 +337,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                            ;
 ; Maximum fan-out node                        ; clock:clkmanager|pll:p1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 1628                                                                                       ;
-; Total fan-out                               ; 13817                                                                                      ;
+; Total fan-out                               ; 13810                                                                                      ;
 ; Average fan-out                             ; 3.18                                                                                       ;
 +---------------------------------------------+--------------------------------------------------------------------------------------------+
 
@@ -347,7 +347,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                     ; Entity Name      ; Library Name ;
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |c10lp_golden_top                           ; 2650 (999)          ; 1644 (710)                ; 8192        ; 0            ; 0       ; 0         ; 18   ; 0            ; |c10lp_golden_top                                                                                                                                       ; c10lp_golden_top ; work         ;
+; |c10lp_golden_top                           ; 2647 (997)          ; 1644 (710)                ; 8192        ; 0            ; 0       ; 0         ; 18   ; 0            ; |c10lp_golden_top                                                                                                                                       ; c10lp_golden_top ; work         ;
 ;    |aes_tiny:gen_code_label[0].aes_tinyi|   ; 753 (88)            ; 268 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi                                                                                                  ; aes_tiny         ; work         ;
 ;       |controler:fsm|                       ; 22 (13)             ; 12 (6)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm                                                                                    ; controler        ; work         ;
 ;          |counter:cnt_block|                ; 3 (3)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |c10lp_golden_top|aes_tiny:gen_code_label[0].aes_tinyi|controler:fsm|counter:cnt_block                                                                  ; counter          ; work         ;
@@ -430,7 +430,7 @@ https://fpgasoftware.intel.com/eula.
 ;       |uart_rx:ur0|                         ; 51 (51)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |c10lp_golden_top|receiver:r0|uart_rx:ur0                                                                                                               ; uart_rx          ; work         ;
 ;    |sender:s0|                              ; 414 (370)           ; 82 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |c10lp_golden_top|sender:s0                                                                                                                             ; sender           ; work         ;
 ;       |uart_tx:uartTX|                      ; 44 (44)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |c10lp_golden_top|sender:s0|uart_tx:uartTX                                                                                                              ; uart_tx          ; work         ;
-;    |tdc_decode:tdc_decode|                  ; 400 (400)           ; 136 (136)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |c10lp_golden_top|tdc_decode:tdc_decode                                                                                                                 ; tdc_decode       ; work         ;
+;    |tdc_decode:tdc_decode|                  ; 399 (399)           ; 136 (136)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |c10lp_golden_top|tdc_decode:tdc_decode                                                                                                                 ; tdc_decode       ; work         ;
 ;    |trace_memory:tm0|                       ; 2 (2)               ; 8 (8)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |c10lp_golden_top|trace_memory:tm0                                                                                                                      ; trace_memory     ; work         ;
 ;       |altsyncram:traceMemory_rtl_0|        ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |c10lp_golden_top|trace_memory:tm0|altsyncram:traceMemory_rtl_0                                                                                         ; altsyncram       ; work         ;
 ;          |altsyncram_tke1:auto_generated|   ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |c10lp_golden_top|trace_memory:tm0|altsyncram:traceMemory_rtl_0|altsyncram_tke1:auto_generated                                                          ; altsyncram_tke1  ; work         ;
@@ -3139,21 +3139,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 393                         ;
 ;     SLD               ; 8                           ;
 ;     plain             ; 163                         ;
-; cycloneiii_lcell_comb ; 2650                        ;
+; cycloneiii_lcell_comb ; 2647                        ;
 ;     arith             ; 536                         ;
 ;         2 data inputs ; 290                         ;
 ;         3 data inputs ; 246                         ;
-;     normal            ; 2114                        ;
+;     normal            ; 2111                        ;
 ;         0 data inputs ; 30                          ;
-;         1 data inputs ; 25                          ;
-;         2 data inputs ; 596                         ;
-;         3 data inputs ; 441                         ;
-;         4 data inputs ; 1022                        ;
+;         1 data inputs ; 26                          ;
+;         2 data inputs ; 591                         ;
+;         3 data inputs ; 443                         ;
+;         4 data inputs ; 1021                        ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 15.00                       ;
-; Average LUT depth     ; 5.73                        ;
+; Average LUT depth     ; 5.71                        ;
 +-----------------------+-----------------------------+
 
 
@@ -3162,7 +3162,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:18     ;
+; Top            ; 00:00:25     ;
 +----------------+--------------+
 
 
@@ -3172,7 +3172,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Thu Jun 29 07:09:43 2023
+    Info: Processing started: Sun Jul  2 20:22:06 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2-project -c DE2-project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -3452,17 +3452,17 @@ Warning (21074): Design contains 10 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "user_dip[0]" File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 17
     Warning (15610): No output dependent on input pin "user_dip[1]" File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 17
     Warning (15610): No output dependent on input pin "user_dip[2]" File: C:/Users/wmesi/OneDrive/Documents/Acadamics/FYP/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Cipher-Algorithms/FPGA Setup/altera/c10lp_golden_top.v Line: 17
-Info (21057): Implemented 3141 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3138 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 3114 logic cells
+    Info (21061): Implemented 3111 logic cells
     Info (21064): Implemented 8 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 54 warnings
-    Info: Peak virtual memory: 4878 megabytes
-    Info: Processing ended: Thu Jun 29 07:10:15 2023
-    Info: Elapsed time: 00:00:32
-    Info: Total CPU time (on all processors): 00:00:49
+    Info: Peak virtual memory: 4894 megabytes
+    Info: Processing ended: Sun Jul  2 20:22:59 2023
+    Info: Elapsed time: 00:00:53
+    Info: Total CPU time (on all processors): 00:01:28
 
 
 +------------------------------------------+

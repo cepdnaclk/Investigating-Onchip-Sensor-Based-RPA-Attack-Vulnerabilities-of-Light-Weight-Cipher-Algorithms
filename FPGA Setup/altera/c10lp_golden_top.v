@@ -83,7 +83,7 @@ module  c10lp_golden_top (
 parameter CounterSize= 31;
 parameter SAMPLES 	= 1024;
 parameter SAMPLESTART= 0;
-parameter AES_COUNT	= 5;
+parameter AES_COUNT	= 12;
 parameter TDC_SIZE	= 128;
 //parameter NUM_ROSensors=64;
 
@@ -192,14 +192,25 @@ receiver r0 (.clk(clk1), .rstn(c10_resetn), .start(receive_start), .rx(rx), .add
 tdc_decode tdc_decode(.clk(clk0), .rst(~keyRdy), .chainvalue_i(outReg), .coded_o(processedOut));
 
 
-    genvar i;  genvar j;
-	 generate
-        for(i = 0; i < AES_COUNT; i = i+1) 
-		  begin:gen_code_label
-				aes_tiny aes_tinyi ( .clk(clk1),  .rst(dataRdy),  .din(ptReg), .key(keyReg), .dout(doutTemp[i]),  .done(dvldTemp[i]) ); //changed ~dataRdy to dataRdy
-				//aes128_table_ecb aes_tinyi   (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[i]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[i]), .busy());
-		  end
-	endgenerate
+//   genvar i;  genvar j;
+//	generate
+//		for(i = 0; i < AES_COUNT; i = i+1) 
+//			begin:gen_code_label
+//				(* preserve *) aes_tiny aes_tinyi ( .clk(clk1),  .rst(dataRdy),  .din(ptReg), .key(keyReg), .dout(doutTemp[i]),  .done(dvldTemp[i]) ); //changed ~dataRdy to dataRdy
+	(* preserve *)			aes128_table_ecb aes_tiny0   (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[0]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[0]), .busy());
+	(* preserve *)			aes128_table_ecb aes_tiny1   (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[1]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[1]), .busy());
+	(* preserve *)			aes128_table_ecb aes_tiny2   (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[2]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[2]), .busy());
+	(* preserve *)			aes128_table_ecb aes_tiny3   (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[3]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[3]), .busy());
+	(* preserve *)			aes128_table_ecb aes_tiny4   (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[4]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[4]), .busy());
+	(* preserve *)			aes128_table_ecb aes_tiny5   (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[5]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[5]), .busy());
+	(* preserve *)			aes128_table_ecb aes_tiny6   (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[6]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[6]), .busy());
+	(* preserve *)			aes128_table_ecb aes_tiny7   (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[7]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[7]), .busy());
+	(* preserve *)			aes128_table_ecb aes_tiny8   (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[8]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[8]), .busy());
+	(* preserve *)			aes128_table_ecb aes_tiny9   (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[9]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[9]), .busy());
+	(* preserve *)			aes128_table_ecb aes_tiny10   (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[10]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[10]), .busy());
+	(* preserve *)			aes128_table_ecb aes_tiny11  (.resetn(AESResetn), .clock(clk1), .enc_dec(0), .key_exp(keyRdy), .start(dataRdy), .key_val(), .text_val(dvldTemp[11]), .key_in(keyReg), .text_in(ptReg), .text_out(doutTemp[11]), .busy());
+//			end
+//	endgenerate
 
 
 
@@ -210,7 +221,7 @@ assign user_led[1] = heart_beat12_cnt[25];
 assign user_led[2] = heart_beat200_cnt[25];
 assign user_led[3] = enc_LED;
 
-assign dout 			= doutTemp[0]  & doutTemp[1] & doutTemp[2]  & doutTemp[3] & doutTemp[4];
+assign dout 			= doutTemp[0]  & doutTemp[1] & doutTemp[2] & doutTemp[3] & doutTemp[4] & doutTemp[5] & doutTemp[6] & doutTemp[7] & doutTemp[8] & doutTemp[9] & doutTemp[10] & doutTemp[11];
 assign dvld 			= &dvldTemp;
 assign trace_w_data  = sampleData;
 
