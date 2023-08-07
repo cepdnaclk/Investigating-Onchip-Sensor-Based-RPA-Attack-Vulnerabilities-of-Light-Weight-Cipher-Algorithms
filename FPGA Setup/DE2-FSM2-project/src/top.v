@@ -27,55 +27,69 @@ module top(
 	output 	tx
 	//output PWR,  // not used
 	//output HB    // not used
-    );
+);
 
-parameter CounterSize=31;
-parameter SAMPLESTOCOLLECT=1024;
+//PARAMETERS
+parameter COUNTER_SIZE=31;
+parameter SAMPLES_TO_COLLECT=1024;
+parameter CIPHERS_COUNT = 1;
+parameter N = 16; //word size in bits
+parameter M = 4; //number of words in a key
+parameter BLOCK_SIZE = 2*N;
+parameter KEY_SIZE = N*M;
+parameter REG_SIZE =511;
+parameter AD_SIZE=128;
 
+//////////////////////
+//	regs and wires	//
+//////////////////////
 
+reg busy;
+
+//for clock signals
+wire clk0, clk1, clk2, clk3, clk4, clk5, clk0t, clk3t, clk4t, clk5x; 
+wire roClk;
 
 reg [9:0] counter;
-reg [CounterSize:0] counter1=0;
-reg [CounterSize:0] counter2=0;
+reg [COUNTER_SIZE:0] counter1 = 0;
+reg [COUNTER_SIZE:0] counter2 = 0;
 wire SensorBusy;
-wire clk0, clk1, clk5, clk0t, clk3t, clk4t, clk2, clk3, clk4, clk5x; 
-wire roClk;
 wire [35:0] control0;		
 
-//////////////////////////
-///   FSMs				  ///
-/////////////////////////
-
-
+//for FSM
 reg  [9:0] MAIN_FSM=0;
 reg  [9:0] SEN_FSM=0;
 reg  [9:0] fsm1=0;
 
+//for signals and regs of Simon cipher
+reg  [BLOCK_SIZE -1:0] Din;
+reg  [KEY_SIZE-1:0] Kin;
+wire [BLOCK_SIZE-1:0] Dout;
+reg Krdy, Drdy, EncDec, AESResetn, EN;
+wire Kvld, Dvld, BSY, EncDone;
 
-//////////////////////////
-///   Regs and Wires  ///
-/////////////////////////
-
-// AES signals and regs
-reg  [127:0] Kin, Din;
-wire [127:0] Dout;
-reg Krdy, Drdy, EncDec, RSTn, EN;
-wire Kvld, Dvld, BSY;
 
 reg CE, C, R, inc;
 wire [9:0] Q;
 
-// UART signal and regs
+//for onchip sensor
+wire [AD_SIZE-1:0] out;		
+reg [AD_SIZE-1:0] outReg;		
+wire [7:0] processedOut;
+reg	[AD_SIZE-1:0] adjust;
+
+//for UART signal and regs
 reg  [7:0] TXdata;
 wire  [7:0] RXdata;
+wire  TXDone, txActive, rxReady, delClk, err, done;
+reg  transmitReg;
+reg start, trig, one, adj, adjEN;
 
-// Sample memory for onchip sensor readings
-reg [7:0] data2   [SAMPLESTOCOLLECT-1:0]; 
-
-
-reg [7:0] dataCt   [15:0]; 
-reg [7:0] dataIn   [15:0]; 
-reg [7:0] dataKey   [15:0]; 
+//for Sample memory of onchip sensor readings
+reg [7:0] data2   [SAMPLES_TO_COLLECT-1:0]; 
+reg [7:0] dataCt   [3:0]; 
+reg [7:0] dataIn   [3:0]; 
+reg [7:0] dataKey   [7:0]; 
 reg [15:0] addr1;
 reg [15:0] addr2;
 reg [2:0] encCounter;
@@ -87,31 +101,27 @@ wire [127:0] Awire, Bwire, S;
 reg [7:0] delay=15;
 wire [4:0] Cdelay;
 
-wire  TXDone, txActive, rxReady, delClk, err, done;
-reg  transmitReg;
-reg start, trig, AESResetn, one, adj, adjEN;
-reg  [7:0]  count;
+// reg  [7:0]  count;
 
+//////////////////////////
+//	Value Assignments	//
+//////////////////////////
 
 assign led	=counter2[27:25];
-assign HB 	=counter2[28];
-reg busy;
+//assign HB 	=counter2[28];
 assign SensorBusy = busy;
-assign PWR=1;
+//assign PWR=1;
 
-
+//
 assign Bwire= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,7'b0000000,delay_wire[9]}; //delay_wire[9]
 assign Awire= {~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay};
-
 //assign Awire= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,8'b00000001};
 //assign Bwire= {~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,7'b1111111,clk0};
-
 assign S= Awire+Bwire;
 
 //////////////////////////
 ///   Clock and UARTs  ///
-/////////////////////////
-
+//////////////////////////
 
 clock clock(.inclk0(clk), .c0(clk0), .c1(clk1), .locked());
 //clock (
@@ -127,63 +137,49 @@ uart_rx uartRX(.i_Clock(clk1), .i_Rx_Serial(rx), .o_Rx_DV(rxReady), .o_Rx_Byte(R
 //////////////////////////
 ///   On-chip Sensor   ///
 /////////////////////////
-parameter regsize =511;
-parameter ADSIZE=128;
 
-wire 	[ADSIZE-1:0] out;		
-reg 	[ADSIZE-1:0] outReg;		
-wire	[7:0] processedOut;
-reg	[ADSIZE-1:0] adjust;
-
-
-
-//tdc_top tp (clk0, clk0, out);					// TDC sensor
-tdc_decode tdc_decode(.clk(clk0), .rst(AESResetn), .chainvalue_i(outReg), .coded_o(processedOut));   // calculate number of 1's in the TDC Sensor
+//tdc_top tp (clk0, clk0, out); // TDC sensor
+tdc_decode tdc_decode(.clk(clk0), .rst(AESResetn), .chainvalue_i(outReg), .coded_o(processedOut)); // calculate number of 1's in the TDC Sensor
 
 
 
 //////////////////////////
-///   AES LOOP        ///
-/////////////////////////
-parameter AES_COUNT = 3;
+///   CIPHERS LOOP    ////
+//////////////////////////
 
-wire [127:0] DoutTemp [AES_COUNT-1:0] ;
-wire  [AES_COUNT-1:0] DvldTemp;
+wire [BLOCK_SIZE -1:0] DoutTemp [CIPHERS_COUNT-1:0] ;
 
-assign Dout = DoutTemp[0] &  DoutTemp[1] &  DoutTemp[2];   // this line we manually need to change ; I will modify this duing next version
+wire  [CIPHERS_COUNT-1:0] DvldTemp;
+
+assign Dout = DoutTemp[0]; //&  DoutTemp[1] &  DoutTemp[2];   // this line we manually need to change ; I will modify this duing next version
 assign Dvld = &DvldTemp;
 
+genvar i;
 
-
- genvar i;
-	 generate
-        for(i = 0; i < AES_COUNT; i = i+1) 
-		  begin:gen_code_label
+generate
+	for(i = 0; i < CIPHERS_COUNT; i = i+1) 
+		begin:gen_code_label
 			//aes_tiny aes_tinyi ( .clk(clk1),  .rst(Drdy),  .din(Din), .key(Kin), .dout(DoutTemp[i]),  .done(DvldTemp[i]) );
-		(* noprune *)	AES_Composite_enc aes_tinyi (.Kin(Kin), .Din(Din), .Dout(DoutTemp[i]), .Krdy(Krdy), .Drdy1(Drdy), .EncDec(1'b0), .Kvld(), .Dvld(DvldTemp[i]), .EN(EN), .BSY(), .CLK(clk1), .RSTn(AESResetn));
-	end
-	endgenerate
+			//(* noprune *)	AES_Composite_enc aes_tinyi (.Kin(Kin), .Din(Din), .Dout(DoutTemp[i]), .Krdy(Krdy), .Drdy1(Drdy), .EncDec(1'b0), .Kvld(), .Dvld(DvldTemp[i]), .EN(EN), .BSY(), .CLK(clk1), .RSTn(AESResetn));
+			simon #(N, M) simon_inst (.clk(clk1), .rst(~AESResetn), .plaintext(Din), .key(Kin), .ciphertext(DoutTemp[i]), .en(EN), .done(EncDone));
+		end
+endgenerate	
+
+wire [10:0] delay_wire;
 	
-	
-	wire [10:0] delay_wire;
-	
-	generate
+generate
 	for(i=0;i<10; i = i+1)
-	begin: gen_code_label1
+		begin: gen_code_label1
+			if(i==0) begin
+				(* noprune *) latch li (.d(clk0), .ena(1'b1), .q(delay_wire[i]));
 	
-	if(i==0) begin
+			end
+			else begin
+				(* noprune *) latch li (.d(delay_wire[i-1]), .ena(1'b1), .q(delay_wire[i]));
 	
-	(* noprune *) latch li (.d(clk0), .ena(1'b1), .q(delay_wire[i]));
-	
-	end
-	else begin
-	(* noprune *) latch li (.d(delay_wire[i-1]), .ena(1'b1), .q(delay_wire[i]));
-	
-	end
-	
-	end
-	endgenerate	
-	
+			end
+		end
+endgenerate		
 
 always @(posedge clk0) begin
 		counter2 <= counter2+1;
@@ -225,7 +221,7 @@ always @(posedge clk0) begin		// onchip sensor values samples FSM, clock0 >>>> c
 				data2[addr2] <=  processedOut;				// sample and save TDC sensor's data
 			end 
 			
-			if(addr2==SAMPLESTOCOLLECT-1) begin 			// once required number of samples are collected we can wait to capture next AES encryption.
+			if(addr2==SAMPLES_TO_COLLECT-1) begin 			// once required number of samples are collected we can wait to capture next AES encryption.
 			
 				SEN_FSM	<=  SEN_WRAP_UP;	
 			end
@@ -326,46 +322,46 @@ always @(posedge clk1) begin	// Main FSM which also control AES  and data transm
 		else if (MAIN_FSM==MAIN_AES_SET_PT) begin
 		
 			//Din <= {Cdelay, 00000, encCounter , Dout[111:0]};	//	we use ciphertext of previous encryption as the pt of the this encryption + some counter values.
-			Din  <= Dout[111:0];
+			Din  <= Dout;
 			Krdy <=0;
 			R <=1;
-				dataKey[0] <= Kin[127:120];
-				dataKey[1] <= Kin[119:112];
-				dataKey[2] <= Kin[111:104];
-				dataKey[3] <= Kin[103:96];
-				dataKey[4] <= Kin[95:88];
-				dataKey[5] <= Kin[87:80];
-				dataKey[6] <= Kin[79:72];
-				dataKey[7] <= Kin[71:64];
-				dataKey[8] <= Kin[63:56];
-				dataKey[9] <= Kin[55:48];
-				dataKey[10] <= Kin[47:40];
-				dataKey[11] <= Kin[39:32];
-				dataKey[12] <= Kin[31:24];
-				dataKey[13] <= Kin[23:16];
-				dataKey[14] <= Kin[15:8];
-				dataKey[15] <= Kin[7:0];
+//				dataKey[0] <= Kin[127:120];
+//				dataKey[1] <= Kin[119:112];
+//				dataKey[2] <= Kin[111:104];
+//				dataKey[3] <= Kin[103:96];
+//				dataKey[4] <= Kin[95:88];
+//				dataKey[5] <= Kin[87:80];
+//				dataKey[6] <= Kin[79:72];
+//				dataKey[7] <= Kin[71:64];
+				dataKey[0] <= Kin[63:56];
+				dataKey[1] <= Kin[55:48];
+				dataKey[2] <= Kin[47:40];
+				dataKey[3] <= Kin[39:32];
+				dataKey[4] <= Kin[31:24];
+				dataKey[5] <= Kin[23:16];
+				dataKey[6] <= Kin[15:8];
+				dataKey[7] <= Kin[7:0];
 				
 				MAIN_FSM <= MAIN_AES_ENCRYPT;
 		end
 		
 		else if (MAIN_FSM==MAIN_AES_ENCRYPT) begin
-			   dataIn[0] <= Din[127:120];
-				dataIn[1] <= Din[119:112];
-				dataIn[2] <= Din[111:104];
-				dataIn[3] <= Din[103:96];
-				dataIn[4] <= Din[95:88];
-				dataIn[5] <= Din[87:80];
-				dataIn[6] <= Din[79:72];
-				dataIn[7] <= Din[71:64];
-				dataIn[8] <= Din[63:56];
-				dataIn[9] <= Din[55:48];
-				dataIn[10] <= Din[47:40];
-				dataIn[11] <= Din[39:32];
-				dataIn[12] <= Din[31:24];
-				dataIn[13] <= Din[23:16];
-				dataIn[14] <= Din[15:8];
-				dataIn[15] <= Din[7:0];
+//			   dataIn[0] <= Din[127:120];
+//				dataIn[1] <= Din[119:112];
+//				dataIn[2] <= Din[111:104];
+//				dataIn[3] <= Din[103:96];
+//				dataIn[4] <= Din[95:88];
+//				dataIn[5] <= Din[87:80];
+//				dataIn[6] <= Din[79:72];
+//				dataIn[7] <= Din[71:64];
+//				dataIn[8] <= Din[63:56];
+//				dataIn[9] <= Din[55:48];
+//				dataIn[10] <= Din[47:40];
+//				dataIn[11] <= Din[39:32];
+				dataIn[0] <= Din[31:24];
+				dataIn[1] <= Din[23:16];
+				dataIn[2] <= Din[15:8];
+				dataIn[3] <= Din[7:0];
 			R 	<=0;
 			Drdy <=1;
 			CE   <=1;
@@ -380,22 +376,22 @@ always @(posedge clk1) begin	// Main FSM which also control AES  and data transm
 			//data1[addr1] <= 9;
 			addr1 <= addr1+1;
 			if(Dvld==1) begin   // when DVLD is 1, AES is finished Dout will have ciphertext
-				dataCt[0] <= Dout[127:120];
-				dataCt[1] <= Dout[119:112];
-				dataCt[2] <= Dout[111:104];
-				dataCt[3] <= Dout[103:96];
-				dataCt[4] <= Dout[95:88];
-				dataCt[5] <= Dout[87:80];
-				dataCt[6] <= Dout[79:72];
-				dataCt[7] <= Dout[71:64];
-				dataCt[8] <= Dout[63:56];
-				dataCt[9] <= Dout[55:48];
-				dataCt[10] <= Dout[47:40];
-				dataCt[11] <= Dout[39:32];
-				dataCt[12] <= Dout[31:24];
-				dataCt[13] <= Dout[23:16];
-				dataCt[14] <= Dout[15:8];
-				dataCt[15] <= Dout[7:0];
+//				dataCt[0] <= Dout[127:120];
+//				dataCt[1] <= Dout[119:112];
+//				dataCt[2] <= Dout[111:104];
+//				dataCt[3] <= Dout[103:96];
+//				dataCt[4] <= Dout[95:88];
+//				dataCt[5] <= Dout[87:80];
+//				dataCt[6] <= Dout[79:72];
+//				dataCt[7] <= Dout[71:64];
+//				dataCt[8] <= Dout[63:56];
+//				dataCt[9] <= Dout[55:48];
+//				dataCt[10] <= Dout[47:40];
+//				dataCt[11] <= Dout[39:32];
+				dataCt[0] <= Dout[31:24];
+				dataCt[1] <= Dout[23:16];
+				dataCt[2] <= Dout[15:8];
+				dataCt[3] <= Dout[7:0];
 				CE   <=0;
 			end
 			if(addr1==1023) begin   // we wait 1024 clock cycles, we also wait for DVLD signal or AES done signal and goto next state
@@ -467,7 +463,7 @@ always @(posedge clk1) begin	// Main FSM which also control AES  and data transm
 		
 	else if(MAIN_FSM==MAIN_CT_WAIT) begin  
 			transmitReg <=0;
-		   count <= 0;
+		   	//count <= 0;
 			
 			if (TXDone==1)
 				MAIN_FSM <= MAIN_CT_WAIT1;
@@ -500,7 +496,7 @@ always @(posedge clk1) begin	// Main FSM which also control AES  and data transm
 		
 		else if(MAIN_FSM==MAIN_SEN_WAIT1) begin  
 			
-			if(addr1==SAMPLESTOCOLLECT-1) begin 
+			if(addr1==SAMPLES_TO_COLLECT-1) begin 
 				counter1 <=0;
 				addr1 <=0;
 				
