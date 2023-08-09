@@ -32,7 +32,7 @@ module top(
 //PARAMETERS
 parameter COUNTER_SIZE=31;
 parameter SAMPLES_TO_COLLECT=1024;
-parameter CIPHERS_COUNT = 1;
+parameter CIPHERS_COUNT = 3;
 parameter N = 16; //word size in bits
 parameter M = 4; //number of words in a key
 parameter BLOCK_SIZE = 2*N;
@@ -107,8 +107,8 @@ wire [4:0] Cdelay;
 //	Value Assignments	//
 //////////////////////////
 
-assign led	=counter2[27:25];
-//assign HB 	=counter2[28];
+assign led	= counter2[27:25];
+//assign HB = counter2[28];
 assign SensorBusy = busy;
 //assign PWR=1;
 
@@ -151,8 +151,8 @@ wire [BLOCK_SIZE -1:0] DoutTemp [CIPHERS_COUNT-1:0] ;
 
 wire  [CIPHERS_COUNT-1:0] DvldTemp;
 
-assign Dout = DoutTemp[0]; //&  DoutTemp[1] &  DoutTemp[2];   // this line we manually need to change ; I will modify this duing next version
-assign Dvld = &DvldTemp;
+assign Dout = DoutTemp[0] &  DoutTemp[1] &  DoutTemp[2];   // this line we manually need to change ; I will modify this duing next version
+assign EncDone = &DvldTemp;
 
 genvar i;
 
@@ -161,7 +161,7 @@ generate
 		begin:gen_code_label
 			//aes_tiny aes_tinyi ( .clk(clk1),  .rst(Drdy),  .din(Din), .key(Kin), .dout(DoutTemp[i]),  .done(DvldTemp[i]) );
 			//(* noprune *)	AES_Composite_enc aes_tinyi (.Kin(Kin), .Din(Din), .Dout(DoutTemp[i]), .Krdy(Krdy), .Drdy1(Drdy), .EncDec(1'b0), .Kvld(), .Dvld(DvldTemp[i]), .EN(EN), .BSY(), .CLK(clk1), .RSTn(Resetn));
-			simon #(N, M) simon_inst (.clk(clk1), .rst(~Resetn), .plaintext(Din), .key(Kin), .ciphertext(DoutTemp[i]), .en(EN), .done(EncDone));
+			(* noprune *) simon #(N, M) simon_inst (.clk(clk1), .rst(Resetn), .plaintext(Din), .key(Kin), .ciphertext(DoutTemp[i]), .en(EN), .done(DvldTemp[i]));
 		end
 endgenerate	
 
@@ -216,7 +216,7 @@ always @(posedge clk0) begin
 	    outReg <= S;    
 		addr2 <= addr2 +1;
 			
-		if(Dvld==1) begin 
+		if(EncDone==1) begin  //changed from Dvld to EncDone
 			//when ct is ready, we want to indicate it in the onchip sensor trace -- normally there is a clock cycle delay so if we dont capture last clock cycle's voltage flucations we are safe.
 			pow_trace[addr2] <= 255;
 		end
@@ -271,20 +271,19 @@ localparam	MAIN_RESET = 8'h00,
 always @(posedge clk1) begin
 		// Main FSM which also control AES  and data transmit
 		if (MAIN_FSM==MAIN_RESET) begin
-			if(rxReady == 1 && (RXdata >= 0)) begin
+			if(rxReady==1 && (RXdata >= 0)) begin
 				MAIN_FSM <= MAIN_SIMON_RESET;
 				inc <= 0; //signal for increment
 				delay <= RXdata;
 				adjust <= RXdata + 1;
 			end
-			
 			adjEN <= 0;
 		end
 		else if (MAIN_FSM==MAIN_SIMON_RESET) begin			// AES circuit signals init and AES circuit reset - active low
 			busy <= 1;			
 			//EncDec <= counter1[24];
 			EN <= 0; //cipher enable signal
-			Resetn <= 0; //cipher reset signal
+			Resetn <= 1; //cipher reset signal
 			Krdy <= 0;
 			Drdy <= 0;
 			addr1 <= 0;
@@ -299,8 +298,7 @@ always @(posedge clk1) begin
 			MAIN_FSM <= MAIN_SIMON_RESET1;
 		end
 		else if (MAIN_FSM==MAIN_SIMON_RESET1) begin
-			
-			Resetn <= 1;
+			Resetn <= 0;
 			//R <= 1;
 			if(inc==1) begin
 				delay <= delay + 1;
@@ -310,9 +308,9 @@ always @(posedge clk1) begin
 			MAIN_FSM <= MAIN_SIMON_SET_KEY;
 		end
 		else if (MAIN_FSM==MAIN_SIMON_SET_KEY) begin
-			EN <= 1;	 // Enable AES circuit
-			Krdy <= 1;	// set key is ready
-			Kin <= 64'h1918111009080100;  // this is AES key and it is hard corded.
+			//EN <= 1;
+			Krdy <= 1; // set key is ready
+			Kin <= 64'h1918111009080100;  // this is the key and it is hard corded.
 			
 			MAIN_FSM <= MAIN_SIMON_SET_PT;
 					
@@ -342,17 +340,19 @@ always @(posedge clk1) begin
 			dataIn[3] <= Din[7:0];
 			//R <= 0;
 			Drdy <= 1;
+			EN <= 1; //enable simon cipher
 			CE <= 1;
 			addr1 <= 0;
 			
 			MAIN_FSM<= MAIN_SIMON_WAIT;
 		end
 		else if(MAIN_FSM==MAIN_SIMON_WAIT) begin  
-			Drdy <=0;
+			Drdy <= 0;
+			EN <= 0; //deassert enable
 			//transmitReg <=1;
 			//data1[addr1] <= 9;
 			addr1 <= addr1+1;
-			if(Dvld==1) begin   // when DVLD is 1, AES is finished Dout will have ciphertext
+			if(EncDone==1) begin   // when DVLD is 1, AES is finished Dout will have ciphertext //change from DVLD to EncDone
 				//store the ciphertext in memory
 				dataCt[0] <= Dout[31:24];
 				dataCt[1] <= Dout[23:16];
