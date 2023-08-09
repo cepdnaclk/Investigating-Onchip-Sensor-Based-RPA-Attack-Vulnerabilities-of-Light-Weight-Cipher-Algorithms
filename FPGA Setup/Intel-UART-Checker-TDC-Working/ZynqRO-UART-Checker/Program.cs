@@ -120,6 +120,7 @@ namespace ZynqRO_UART_Checker
         static void Main(string[] args)
         {
             UInt32 ftdiDeviceCount = 0;
+            UInt32 sampleCount = 0;
             FTDI.FT_STATUS ftStatus = FTDI.FT_STATUS.FT_OK;
             FTDI ftdi = new FTDI();
             
@@ -180,8 +181,8 @@ namespace ZynqRO_UART_Checker
             byte[] readArray6 = new byte[samplingPoints];
             byte[] readArray7 = new byte[samplingPoints];
             byte[] readArrayConfig = new byte[samplingPoints];
-            byte[] readArrayCt = new byte[16];
-            byte[] readArrayCipher = new byte[48];
+            byte[] readArrayCt = new byte[4]; //changed from 16 to 4
+            byte[] readArrayCipher = new byte[16]; //changed from 48 to 16
             UInt32 readbytes = 0;
             byte[] writeData = {48, 255, 20, 80};
             if (args.Length != 0)
@@ -225,7 +226,7 @@ namespace ZynqRO_UART_Checker
                 write(ftdi, writeData, 4);
                 read(ftdi, readArrayConfig, 4);
                 
-                read(ftdi, readArrayCipher, 48);
+                read(ftdi, readArrayCipher, 16); //changed from 48 to 16
                 readbytes = 0;
 
                 for (int i = 0; i < NumROs; i++)
@@ -258,16 +259,16 @@ namespace ZynqRO_UART_Checker
                 else
                 {
                     // read TDC senosr also
-                   // readbytes = readbytes + read(ftdi, readArray1, 1024);
-
-                    for (int i = 0; i < 48; i++)
+                    // readbytes = readbytes + read(ftdi, readArray1, 1024);
+                    sampleCount += 1;
+                    for (int i = 0; i < 16; i++) //changed from 48 to 16
                             Console.Write(readArrayCipher[i] + " ");
                       Console.Write("\n");
 
 
                     // for (int j = 0; j < NumROs; j++)
                     {
-                        Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ");
+                        Console.WriteLine("Sample count : " + sampleCount +" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ");
 
                         for (int i = 0; i < samplingPoints; i++)
                         {
@@ -282,18 +283,18 @@ namespace ZynqRO_UART_Checker
                         String sin = "";
                         String sout = "";
 
-                        for (int j = 0; j < 16; j++)
+                        for (int j = 0; j < 4; j++) //changed from 16 to 4
                         {
 
                             if (j == 0)
                             {
                                 sin = readArrayCipher[j].ToString("X2");
-                                sout = readArrayCipher[j + 32].ToString("X2");
+                                sout = readArrayCipher[j + 12].ToString("X2"); //changed from 32 to 12
                             }
                             else
                             {
                                 sin = sin + " " + readArrayCipher[j].ToString("X2");
-                                sout = sout + " " + readArrayCipher[j + 32].ToString("X2");
+                                sout = sout + " " + readArrayCipher[j + 12].ToString("X2"); //changed from 32 to 12
                             }
                         }
 
