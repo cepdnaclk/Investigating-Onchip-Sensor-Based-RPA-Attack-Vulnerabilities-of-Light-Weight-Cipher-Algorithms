@@ -94,7 +94,7 @@ reg [15:0] addr1;
 reg [15:0] addr2;
 reg [2:0] encCounter;
 reg [9:0] total, total_old;
-reg [7:0] senData  [3:0]; 
+reg [7:0] senData [3:0]; 
 reg [127:0] A, B;
 wire [127:0] Awire, Bwire, S;
 
@@ -246,12 +246,12 @@ localparam	MAIN_RESET = 8'h00,
 	MAIN_DELAY_WAIT	= 8'h01,
 	MAIN_DELAY_SET = 8'h02,
 	MAIN_DELAY_WRAPUP = 8'h03,
-	MAIN_AES_RESET = 8'h04,
-	MAIN_AES_RESET1 = 8'h05,
-	MAIN_AES_SET_KEY = 8'h06,
-	MAIN_AES_SET_PT = 8'h07,
-	MAIN_AES_ENCRYPT = 8'h08,
-	MAIN_AES_WAIT = 8'h09,
+	MAIN_SIMON_RESET = 8'h04,
+	MAIN_SIMON_RESET1 = 8'h05,
+	MAIN_SIMON_SET_KEY = 8'h06,
+	MAIN_SIMON_SET_PT = 8'h07,
+	MAIN_SIMON_ENCRYPT = 8'h08,
+	MAIN_SIMON_WAIT = 8'h09,
 	MAIN_PT_SEND = 8'h0A,
 	MAIN_PT_WAIT = 8'h0B,
 	MAIN_PT_WAIT1 = 8'h0C,
@@ -268,265 +268,212 @@ localparam	MAIN_RESET = 8'h00,
 	MAIN_WRAPUP = 8'hA7;	
 		
 
-always @(posedge clk1) begin	// Main FSM which also control AES  and data transmit
-		
+always @(posedge clk1) begin
+		// Main FSM which also control AES  and data transmit
 		if (MAIN_FSM==MAIN_RESET) begin
-		     
-			  //if(rxReady ==1 && RXdata==250)  begin				// you dont need to worry about these values they are from PC -> FPGA parameters
-			  //	  MAIN_FSM <=MAIN_AES_RESET;
-			  // inc <=1;
-			  //  encCounter 	<= encCounter + 1;
-			  //end
-			  if(rxReady ==1 && (RXdata >= 0)) begin
-				  MAIN_FSM <=MAIN_AES_RESET;
-				  inc <=0;
-				  delay <= RXdata;
-				  adjust <= RXdata + 1;
-			  end
-			  
-			  adjEN <=0;
+			if(rxReady == 1 && (RXdata >= 0)) begin
+				MAIN_FSM <= MAIN_SIMON_RESET;
+				inc <= 0; //signal for increment
+				delay <= RXdata;
+				adjust <= RXdata + 1;
+			end
+			
+			adjEN <= 0;
 		end
-		else if (MAIN_FSM==MAIN_AES_RESET) begin			// AES circuit signals init and AES circuit reset - active low
-			busy   <=1;			
-			EncDec <=counter1[24];
-			EN <=0;
-			Resetn  <=0;
-			Krdy <=0;
-			Drdy <=0;
+		else if (MAIN_FSM==MAIN_SIMON_RESET) begin			// AES circuit signals init and AES circuit reset - active low
+			busy <= 1;			
+			//EncDec <= counter1[24];
+			EN <= 0; //cipher enable signal
+			Resetn <= 0; //cipher reset signal
+			Krdy <= 0;
+			Drdy <= 0;
 			addr1 <= 0;
-			counter1<= counter1+1;
-			R  <=0;
-			CE <=0;
-			adj <=1;
+			counter1 <= counter1+1;
+			//R <= 0;
+			CE <= 0;
+			adj <= 1;
 			
 			//B<= {delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay,delay};
 			//A<= {~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay,~delay};
-			
-			MAIN_FSM <=MAIN_AES_RESET1;
+
+			MAIN_FSM <= MAIN_SIMON_RESET1;
 		end
-		else if (MAIN_FSM==MAIN_AES_RESET1) begin
+		else if (MAIN_FSM==MAIN_SIMON_RESET1) begin
 			
-			Resetn  <=1;
-			R<=1;
+			Resetn <= 1;
+			//R <= 1;
 			if(inc==1) begin
-				delay <= delay +1;
-				adjust <= delay +1;
+				delay <= delay + 1;
+				adjust <= delay + 1;
 			end
 
-			MAIN_FSM <= MAIN_AES_SET_KEY;
+			MAIN_FSM <= MAIN_SIMON_SET_KEY;
 		end
-		else if (MAIN_FSM==MAIN_AES_SET_KEY) begin
-			EN		<=1;	 // Enable AES circuit
-			Krdy <=1;	// set key is ready
-			Kin  <= 64'h1918111009080100;  // this is AES key and it is hard corded.
+		else if (MAIN_FSM==MAIN_SIMON_SET_KEY) begin
+			EN <= 1;	 // Enable AES circuit
+			Krdy <= 1;	// set key is ready
+			Kin <= 64'h1918111009080100;  // this is AES key and it is hard corded.
 			
-			MAIN_FSM <= MAIN_AES_SET_PT;
+			MAIN_FSM <= MAIN_SIMON_SET_PT;
 					
 		end
-	
-		else if (MAIN_FSM==MAIN_AES_SET_PT) begin
-		
+		else if (MAIN_FSM==MAIN_SIMON_SET_PT) begin
 			//Din <= {Cdelay, 00000, encCounter , Dout[111:0]};	//	we use ciphertext of previous encryption as the pt of the this encryption + some counter values.
 			Din  <= 32'h65656877; //Dout;
-			Krdy <=0;
-			R <=1;
-//				dataKey[0] <= Kin[127:120];
-//				dataKey[1] <= Kin[119:112];
-//				dataKey[2] <= Kin[111:104];
-//				dataKey[3] <= Kin[103:96];
-//				dataKey[4] <= Kin[95:88];
-//				dataKey[5] <= Kin[87:80];
-//				dataKey[6] <= Kin[79:72];
-//				dataKey[7] <= Kin[71:64];
-				dataKey[0] <= Kin[63:56];
-				dataKey[1] <= Kin[55:48];
-				dataKey[2] <= Kin[47:40];
-				dataKey[3] <= Kin[39:32];
-				dataKey[4] <= Kin[31:24];
-				dataKey[5] <= Kin[23:16];
-				dataKey[6] <= Kin[15:8];
-				dataKey[7] <= Kin[7:0];
-				
-				MAIN_FSM <= MAIN_AES_ENCRYPT;
+			Krdy <= 0;
+			//R <= 1;
+			//store the key in memory
+			dataKey[0] <= Kin[63:56];
+			dataKey[1] <= Kin[55:48];
+			dataKey[2] <= Kin[47:40];
+			dataKey[3] <= Kin[39:32];
+			dataKey[4] <= Kin[31:24];
+			dataKey[5] <= Kin[23:16];
+			dataKey[6] <= Kin[15:8];
+			dataKey[7] <= Kin[7:0];
+			
+			MAIN_FSM <= MAIN_SIMON_ENCRYPT;
 		end
-		
-		else if (MAIN_FSM==MAIN_AES_ENCRYPT) begin
-//			    dataIn[0] <= Din[127:120];
-//				dataIn[1] <= Din[119:112];
-//				dataIn[2] <= Din[111:104];
-//				dataIn[3] <= Din[103:96];
-//				dataIn[4] <= Din[95:88];
-//				dataIn[5] <= Din[87:80];
-//				dataIn[6] <= Din[79:72];
-//				dataIn[7] <= Din[71:64];
-//				dataIn[8] <= Din[63:56];
-//				dataIn[9] <= Din[55:48];
-//				dataIn[10] <= Din[47:40];
-//				dataIn[11] <= Din[39:32];
-				dataIn[0] <= Din[31:24];
-				dataIn[1] <= Din[23:16];
-				dataIn[2] <= Din[15:8];
-				dataIn[3] <= Din[7:0];
-			R 	<=0;
-			Drdy <=1;
-			CE   <=1;
+		else if (MAIN_FSM==MAIN_SIMON_ENCRYPT) begin
+			//store the plaintext in memory
+			dataIn[0] <= Din[31:24];
+			dataIn[1] <= Din[23:16];
+			dataIn[2] <= Din[15:8];
+			dataIn[3] <= Din[7:0];
+			//R <= 0;
+			Drdy <= 1;
+			CE <= 1;
 			addr1 <= 0;
 			
-			MAIN_FSM<= MAIN_AES_WAIT;
+			MAIN_FSM<= MAIN_SIMON_WAIT;
 		end
-		
-		else if(MAIN_FSM==MAIN_AES_WAIT) begin  
+		else if(MAIN_FSM==MAIN_SIMON_WAIT) begin  
 			Drdy <=0;
 			//transmitReg <=1;
 			//data1[addr1] <= 9;
 			addr1 <= addr1+1;
 			if(Dvld==1) begin   // when DVLD is 1, AES is finished Dout will have ciphertext
-//				dataCt[0] <= Dout[127:120];
-//				dataCt[1] <= Dout[119:112];
-//				dataCt[2] <= Dout[111:104];
-//				dataCt[3] <= Dout[103:96];
-//				dataCt[4] <= Dout[95:88];
-//				dataCt[5] <= Dout[87:80];
-//				dataCt[6] <= Dout[79:72];
-//				dataCt[7] <= Dout[71:64];
-//				dataCt[8] <= Dout[63:56];
-//				dataCt[9] <= Dout[55:48];
-//				dataCt[10] <= Dout[47:40];
-//				dataCt[11] <= Dout[39:32];
+				//store the ciphertext in memory
 				dataCt[0] <= Dout[31:24];
 				dataCt[1] <= Dout[23:16];
 				dataCt[2] <= Dout[15:8];
 				dataCt[3] <= Dout[7:0];
-				CE   <=0;
+				CE <= 0;
 			end
 			if(addr1==1023) begin   // we wait 1024 clock cycles, we also wait for DVLD signal or AES done signal and goto next state
 				addr1 <= 0;
-				counter1 <=0;
-				
+				counter1 <= 0;
 				MAIN_FSM <= MAIN_PT_SEND;
 			end
 		end
-		
-		else if(MAIN_FSM==MAIN_PT_SEND) begin  // PT transmission from FPGA to PC. We have 3 arrays dataIn, dataKey and dataCt
-			busy   <=0;
-			transmitReg <=1;
-			TXdata<=dataIn[addr1];  	// read ith value in plaintext
+		//states used to send the plaintext using uart
+		else if(MAIN_FSM==MAIN_PT_SEND) begin
+			busy <= 0;
+			transmitReg <= 1;
+			TXdata <= dataIn[addr1];  	// read ith value in plaintext
 			addr1 <= addr1+1;
-			
 			MAIN_FSM <= MAIN_PT_WAIT;
 		end
-	else if(MAIN_FSM==MAIN_PT_WAIT) begin  
-			transmitReg <=0;
-			
+		//wait untile current byte is sent
+		else if(MAIN_FSM==MAIN_PT_WAIT) begin  
+			transmitReg <= 0;
+			//if byte is sent
 			if (TXDone==1)
-				MAIN_FSM<=MAIN_PT_WAIT1;
+				MAIN_FSM <= MAIN_PT_WAIT1;
 		
 		end
-		
-	else if(MAIN_FSM==MAIN_PT_WAIT1) begin  
-			if(addr1==16) begin
-				addr1 <=0;
-				MAIN_FSM<=MAIN_KEY_SEND;
+		else if(MAIN_FSM==MAIN_PT_WAIT1) begin  
+			//check whether all bytes of the PT is sent, if not state is set to MAIN_PT_SEND to send next byte
+			if(addr1==BLOCK_SIZE/8) begin
+				//if the last byte of plaintext is sent, start sending the key
+				addr1 <= 0;
+				MAIN_FSM <= MAIN_KEY_SEND;
 				end
 			else
-				MAIN_FSM<=MAIN_PT_SEND;
-		
+				MAIN_FSM <= MAIN_PT_SEND;
 		end
+		//states used to send the key using uart
 		else if(MAIN_FSM==MAIN_KEY_SEND) begin 
-			transmitReg <=1;
-			TXdata<=dataKey[addr1]; // read ith value in key
+			transmitReg <= 1;
+			TXdata <= dataKey[addr1]; // read ith value in key
 			addr1 <= addr1+1;
 			
-			MAIN_FSM<=MAIN_KEY_WAIT;
+			MAIN_FSM <= MAIN_KEY_WAIT;
 		end
-	  else if(MAIN_FSM==MAIN_KEY_WAIT) begin  
-			transmitReg <=0;
-			
+		//wait untile current byte is sent
+	  	else if(MAIN_FSM==MAIN_KEY_WAIT) begin  
+			transmitReg <= 0;
 			if (TXDone==1)
-				MAIN_FSM<=MAIN_KEY_WAIT1;
+				MAIN_FSM <= MAIN_KEY_WAIT1;
 		end
-		
-		else if(MAIN_FSM==MAIN_KEY_WAIT1) begin  
-			
-			if(addr1==16) begin
-				addr1 <=0;
-				
-				MAIN_FSM<=MAIN_CT_SEND;
+		else if(MAIN_FSM==MAIN_KEY_WAIT1) begin 
+			//check whether all bytes are sent, if not state is set to MAIN_KEY_SEND to send next byte
+			if(addr1==KEY_SIZE/8) begin
+				//if all bytes are sent, start transmitting CT
+				addr1 <= 0;
+				MAIN_FSM <= MAIN_CT_SEND;
 				end
 			else
-			
-				MAIN_FSM<=MAIN_KEY_SEND;
+				MAIN_FSM <= MAIN_KEY_SEND;
 		end
-	
+		//states used to send the cipher text
 		else if(MAIN_FSM==MAIN_CT_SEND) begin 
-			transmitReg <=1;
-			TXdata<=dataCt[addr1]; 		// read ith value in ciphertext
+			transmitReg <= 1;
+			TXdata <= dataCt[addr1]; // read ith value in ciphertext
 			addr1 <= addr1+1;
-			
-			MAIN_FSM<=MAIN_CT_WAIT;
+			MAIN_FSM <= MAIN_CT_WAIT;
 		end
-		
-	else if(MAIN_FSM==MAIN_CT_WAIT) begin  
+		//wait untile current byte is sent
+		else if(MAIN_FSM==MAIN_CT_WAIT) begin  
 			transmitReg <=0;
-		   	//count <= 0;
-			
 			if (TXDone==1)
 				MAIN_FSM <= MAIN_CT_WAIT1;
 		end
-		
-		else if(MAIN_FSM==MAIN_CT_WAIT1) begin  
-			
-			if(addr1==16) begin
-				addr1 <=0;
-				
-				MAIN_FSM<=MAIN_SEN_SEND;
+		else if(MAIN_FSM==MAIN_CT_WAIT1) begin 
+			//check for all bytes
+			if(addr1==BLOCK_SIZE/8) begin
+				//if all sent, start transmitting the sensor readings
+				addr1 <= 0;
+				MAIN_FSM <= MAIN_SEN_SEND;
 			end
 			else  begin
-			
+				//if not set state to send next byte
 				MAIN_FSM <= MAIN_CT_SEND;
 			end	
 		end
+		//states used to transmit the sensor readings
 		else if(MAIN_FSM==MAIN_SEN_SEND) begin  
 			transmitReg <=1;
 			TXdata<=pow_trace[addr1];  // sensor memory
-			
 			MAIN_FSM <= MAIN_SEN_WAIT;
 		end
+		//wait until current data is sent
 		else if(MAIN_FSM==MAIN_SEN_WAIT) begin  
 			transmitReg <=0;
-			
 			if (TXDone==1)
 				MAIN_FSM <= MAIN_SEN_WAIT1;
 		end
-		
-		else if(MAIN_FSM==MAIN_SEN_WAIT1) begin  
-			
+		else if(MAIN_FSM==MAIN_SEN_WAIT1) begin
+			//check whether all sampling points are sent
 			if(addr1==SAMPLES_TO_COLLECT-1) begin 
-				counter1 <=0;
-				addr1 <=0;
-				
-				MAIN_FSM<=MAIN_SEN_DELAY;
+				counter1 <= 0;
+				addr1 <= 0;
+				MAIN_FSM <= MAIN_SEN_DELAY;
 			end
 			else begin
+				//if not send the next point
 				addr1 <= addr1+1;
-				
-				MAIN_FSM<=MAIN_SEN_SEND;
+				MAIN_FSM <= MAIN_SEN_SEND;
 		   end
 		end
-		
-		
 		else if (MAIN_FSM==MAIN_SEN_DELAY) begin
-		
-				counter1<= counter1+1;
-				if(counter1[12]==1) begin // we just wait until 2^^12 clock cycles before starting the next iteration. We probably can remove this. This is just let PDN fill power again
-					counter1<=0;
-					adjEN   <=1;
-					
-					MAIN_FSM <=MAIN_RESET;
-				end
+			counter1 <= counter1+1;
+			if(counter1[12]==1) begin // we just wait until 2^^12 clock cycles before starting the next iteration. We probably can remove this. This is just let PDN fill power again
+				counter1 <= 0;
+				adjEN <=1;
+				MAIN_FSM <= MAIN_RESET;
+			end
 		end
-	
-		
 end
 
 endmodule
