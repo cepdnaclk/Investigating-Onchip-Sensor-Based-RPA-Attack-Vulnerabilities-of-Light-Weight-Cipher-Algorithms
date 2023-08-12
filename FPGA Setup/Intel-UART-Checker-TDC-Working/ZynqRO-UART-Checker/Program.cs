@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,7 @@ namespace ZynqRO_UART_Checker
 {
     class Program
     {
-        static int samplingPoints =1024; //256 for ro attacks
+        static int samplingPoints = 1024; //256 for ro attacks
         static int NumROs = 1;
 
         static UInt32 write(FTDI ftdi, byte[] data, int numChars)
@@ -19,7 +19,7 @@ namespace ZynqRO_UART_Checker
             UInt32 numBytesRead = 0;
             FTDI.FT_STATUS ftStatus = FTDI.FT_STATUS.FT_OK;
             //for (i = 0; i < numChars; i++)
-                ftdi.Write(data, numChars, ref numBytesRead);
+            ftdi.Write(data, numChars, ref numBytesRead);
 
             return numBytesRead;
         }
@@ -123,7 +123,8 @@ namespace ZynqRO_UART_Checker
             UInt32 sampleCount = 0;
             FTDI.FT_STATUS ftStatus = FTDI.FT_STATUS.FT_OK;
             FTDI ftdi = new FTDI();
-            
+            string dev = "A5XK3RJT"; //AD0JIHIL //A50285BI AD0JIHILA
+
             ftStatus = ftdi.GetNumberOfDevices(ref ftdiDeviceCount);
 
             if (ftStatus == FTDI.FT_STATUS.FT_OK)
@@ -153,7 +154,7 @@ namespace ZynqRO_UART_Checker
             ftStatus = ftdi.GetDeviceList(ftdiDeviceList);  //AL05SP7N
 
             // Open first device in our list by serial number
-            ftStatus = ftdi.OpenBySerialNumber("AD0JIHIL");  //A50285BI AD0JIHILA
+            ftStatus = ftdi.OpenBySerialNumber(dev);
             ftdi.ResetDevice();
             if (ftStatus != FTDI.FT_STATUS.FT_OK)
             {
@@ -163,9 +164,9 @@ namespace ZynqRO_UART_Checker
                 return;
             }
             else
-                Console.WriteLine("FTDI Device with Serial Number : AD0JIHIL OPENED");
+                Console.WriteLine("FTDI Device with Serial Number : " + dev + " OPENED");
 
-            ftStatus =ftdi.SetBaudRate(400000);
+            ftStatus = ftdi.SetBaudRate(400000);
             ftStatus = ftdi.SetDataCharacteristics(FTDI.FT_DATA_BITS.FT_BITS_8, FTDI.FT_STOP_BITS.FT_STOP_BITS_1, FTDI.FT_PARITY.FT_PARITY_NONE);
             ftStatus = ftdi.SetTimeouts(50000, 0);
 
@@ -182,9 +183,9 @@ namespace ZynqRO_UART_Checker
             byte[] readArray7 = new byte[samplingPoints];
             byte[] readArrayConfig = new byte[samplingPoints];
             byte[] readArrayCt = new byte[4]; //changed from 16 to 4
-            byte[] readArrayCipher = new byte[16]; //changed from 48 to 16
+            byte[] readArrayCipher = new byte[16]; //changed from 48 to 4*2 + 8 = 16
             UInt32 readbytes = 0;
-            byte[] writeData = {48, 255, 20, 80};
+            byte[] writeData = { 0, 255, 255, 255 };
             if (args.Length != 0)
             {
                 int result = Int32.Parse(args[0]);
@@ -201,7 +202,7 @@ namespace ZynqRO_UART_Checker
             //    uint bytesavai = 0;
             //    do
             //    {
-                   
+
             //        ftdi.GetRxBytesAvailable(ref bytesavai);
             //    } while (bytesavai < 48);
             //    //System.Threading.Thread.Sleep(50);
@@ -221,32 +222,32 @@ namespace ZynqRO_UART_Checker
                 for (int j = 0; j < samplingPoints - 1; j++)
                     readProcessed[j] = 0;
 
-                System.Threading.Thread.Sleep(10);
-                
-                write(ftdi, writeData, 4);
-                read(ftdi, readArrayConfig, 4);
-                
+                System.Threading.Thread.Sleep(30);
+
+                write(ftdi, writeData, writeData.Length);
+                //read(ftdi, readArrayConfig, 4);
+
                 read(ftdi, readArrayCipher, 16); //changed from 48 to 16
                 readbytes = 0;
 
                 for (int i = 0; i < NumROs; i++)
                 {
                     readbytes = readbytes + read(ftdi, readArray0, samplingPoints);
-                    for (int j = 0; j < samplingPoints-1; j++)
+                    for (int j = 0; j < samplingPoints - 1; j++)
                     {
 
-                       readProcessed[j] = readArray0[j];
+                        readProcessed[j] = readArray0[j];
                         //readArray[i, j] = convert(readArray0[j]);
                         // Console.Write(convert(readArray0[j]) + " ");
                         //  Console.Write((readArray0[j]) + " ");
-                         //readProcessed[j] = readProcessed[j] + (convert(readArray0[j+1]) - convert(readArray0[j]));
+                        //readProcessed[j] = readProcessed[j] + (convert(readArray0[j+1]) - convert(readArray0[j]));
                         //if ((convert(readArray0[j + 1]) - convert(readArray0[j] ))< 0)
                         //    readProcessed[j] = readProcessed[j] + 16;
                     }
-                   // Console.Write("\n");
+                    // Console.Write("\n");
                     Console.Write(".");
                 }
-                Console.WriteLine("\n"+readbytes+"\n");
+                Console.WriteLine("\n" + readbytes + "\n");
                 //read(ftdi, readArray1, 1024);
                 //Console.WriteLine("read PoSq Data \n");
                 for (int i = 0; i < 4; i++)
@@ -254,7 +255,7 @@ namespace ZynqRO_UART_Checker
 
                 Console.WriteLine();
 
-                if (readbytes != samplingPoints*NumROs)
+                if (readbytes != samplingPoints * NumROs)
                     Console.WriteLine("\nERROR\n\n");
                 else
                 {
@@ -262,28 +263,30 @@ namespace ZynqRO_UART_Checker
                     // readbytes = readbytes + read(ftdi, readArray1, 1024);
                     sampleCount += 1;
                     for (int i = 0; i < 16; i++) //changed from 48 to 16
-                            Console.Write(readArrayCipher[i] + " ");
-                      Console.Write("\n");
+                        Console.Write(readArrayCipher[i] + " ");
+                    Console.Write("\n");
 
 
                     // for (int j = 0; j < NumROs; j++)
                     {
-                        Console.WriteLine("Sample count : " + sampleCount +" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ");
+                        Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Trace Number : " + sampleCount);
 
                         for (int i = 0; i < samplingPoints; i++)
                         {
-                             Console.Write(readProcessed[i] + " ");  //readArray0
+                            if (sampleCount < 2000)
+                            {
+                                Console.Write(readProcessed[i] + " ");  //readArray0
+                            }
                             //Console.Write(readArray0[i] + " ");
                             waveTDC.Write((float)readProcessed[i]);
                         }
                         waveTDC.Flush();
                         Console.Write("\n");
 
-
                         String sin = "";
                         String sout = "";
 
-                        for (int j = 0; j < 4; j++) //changed from 16 to 4
+                        for (int j = 0; j < 4; j++) //changed from 16 to 4 
                         {
 
                             if (j == 0)
