@@ -123,7 +123,7 @@ namespace ZynqRO_UART_Checker
             UInt32 sampleCount = 0;
             FTDI.FT_STATUS ftStatus = FTDI.FT_STATUS.FT_OK;
             FTDI ftdi = new FTDI();
-            string dev = "A5XK3RJT"; //AD0JIHIL //A50285BI AD0JIHILA
+            string dev = "A50285BI"; //AD0JIHIL //A50285BI AD0JIHILA
 
             ftStatus = ftdi.GetNumberOfDevices(ref ftdiDeviceCount);
 

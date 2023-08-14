@@ -32,7 +32,7 @@ module top(
 //PARAMETERS
 parameter COUNTER_SIZE=31;
 parameter SAMPLES_TO_COLLECT=1024;
-parameter CIPHERS_COUNT = 3;
+parameter CIPHERS_COUNT = 5;
 parameter N = 16; //word size in bits
 parameter M = 4; //number of words in a key
 parameter BLOCK_SIZE = 2*N;
@@ -139,7 +139,7 @@ uart_rx uartRX(.i_Clock(clk1), .i_Rx_Serial(rx), .o_Rx_DV(rxReady), .o_Rx_Byte(R
 /////////////////////////
 
 //tdc_top tp (clk0, clk0, out); // TDC sensor
-tdc_decode tdc_decode(.clk(clk0), .rst(Resetn), .chainvalue_i(outReg), .coded_o(processedOut)); // calculate number of 1's in the TDC Sensor
+tdc_decode tdc_decode(.clk(clk0), .rst(~Resetn), .chainvalue_i(outReg), .coded_o(processedOut)); // calculate number of 1's in the TDC Sensor
 
 
 
@@ -151,7 +151,7 @@ wire [BLOCK_SIZE -1:0] DoutTemp [CIPHERS_COUNT-1:0] ;
 
 wire  [CIPHERS_COUNT-1:0] DvldTemp;
 
-assign Dout = DoutTemp[0] &  DoutTemp[1] &  DoutTemp[2];   // this line we manually need to change ; I will modify this duing next version
+assign Dout = DoutTemp[0] &  DoutTemp[1] &  DoutTemp[2] &  DoutTemp[3] &  DoutTemp[4];   // this line we manually need to change ; I will modify this duing next version
 assign EncDone = &DvldTemp;
 
 genvar i;
@@ -213,12 +213,12 @@ always @(posedge clk0) begin
 	end
 	//state for captur samples
 	else if(SEN_FSM==SEN_CAPTURE) begin
-	    outReg <= S;    
+	   outReg <= S;    
 		addr2 <= addr2 +1;
 			
 		if(EncDone==1) begin  //changed from Dvld to EncDone
 			//when ct is ready, we want to indicate it in the onchip sensor trace -- normally there is a clock cycle delay so if we dont capture last clock cycle's voltage flucations we are safe.
-			pow_trace[addr2] <= 255;
+			pow_trace[addr2] <= 253;
 		end
 		else begin
 			//sample and save TDC sensor's data
