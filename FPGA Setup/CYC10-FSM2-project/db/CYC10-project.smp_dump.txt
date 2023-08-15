@@ -1,13 +1,13 @@
 
 State Machine - |top|MAIN_FSM
-Name MAIN_FSM.MAIN_SEN_DELAY MAIN_FSM.MAIN_SEN_WAIT1 MAIN_FSM.MAIN_SEN_WAIT MAIN_FSM.MAIN_SEN_SEND MAIN_FSM.MAIN_CT_WAIT1 MAIN_FSM.MAIN_CT_WAIT MAIN_FSM.MAIN_CT_SEND MAIN_FSM.MAIN_KEY_WAIT1 MAIN_FSM.MAIN_KEY_WAIT MAIN_FSM.MAIN_KEY_SEND MAIN_FSM.MAIN_PT_WAIT1 MAIN_FSM.MAIN_PT_WAIT MAIN_FSM.MAIN_PT_SEND MAIN_FSM.MAIN_AES_WAIT MAIN_FSM.MAIN_AES_ENCRYPT MAIN_FSM.MAIN_AES_SET_PT MAIN_FSM.MAIN_AES_SET_KEY MAIN_FSM.MAIN_AES_RESET1 MAIN_FSM.MAIN_AES_RESET MAIN_FSM.0000000000 
+Name MAIN_FSM.MAIN_SEN_DELAY MAIN_FSM.MAIN_SEN_WAIT1 MAIN_FSM.MAIN_SEN_WAIT MAIN_FSM.MAIN_SEN_SEND MAIN_FSM.MAIN_CT_WAIT1 MAIN_FSM.MAIN_CT_WAIT MAIN_FSM.MAIN_CT_SEND MAIN_FSM.MAIN_KEY_WAIT1 MAIN_FSM.MAIN_KEY_WAIT MAIN_FSM.MAIN_KEY_SEND MAIN_FSM.MAIN_PT_WAIT1 MAIN_FSM.MAIN_PT_WAIT MAIN_FSM.MAIN_PT_SEND MAIN_FSM.MAIN_SIMON_WAIT MAIN_FSM.MAIN_SIMON_ENCRYPT MAIN_FSM.MAIN_SIMON_SET_PT MAIN_FSM.MAIN_SIMON_SET_KEY MAIN_FSM.MAIN_SIMON_RESET1 MAIN_FSM.MAIN_SIMON_RESET MAIN_FSM.0000000000 
 MAIN_FSM.0000000000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-MAIN_FSM.MAIN_AES_RESET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-MAIN_FSM.MAIN_AES_RESET1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-MAIN_FSM.MAIN_AES_SET_KEY 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-MAIN_FSM.MAIN_AES_SET_PT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-MAIN_FSM.MAIN_AES_ENCRYPT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-MAIN_FSM.MAIN_AES_WAIT 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+MAIN_FSM.MAIN_SIMON_RESET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+MAIN_FSM.MAIN_SIMON_RESET1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+MAIN_FSM.MAIN_SIMON_SET_KEY 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+MAIN_FSM.MAIN_SIMON_SET_PT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+MAIN_FSM.MAIN_SIMON_ENCRYPT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+MAIN_FSM.MAIN_SIMON_WAIT 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
 MAIN_FSM.MAIN_PT_SEND 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
 MAIN_FSM.MAIN_PT_WAIT 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
 MAIN_FSM.MAIN_PT_WAIT1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
@@ -28,6 +28,41 @@ SEN_FSM.SEN_WAIT 0 0 0 0
 SEN_FSM.0000000000 0 0 1 1 
 SEN_FSM.SEN_CAPTURE 0 1 0 1 
 SEN_FSM.SEN_WRAP_UP 1 0 0 1 
+
+State Machine - |top|simon:gen_code_label[4].simon_inst|current_state
+Name current_state.s_done current_state.s_busy current_state.s_enable current_state.s_idle 
+current_state.s_idle 0 0 0 0 
+current_state.s_enable 0 0 1 1 
+current_state.s_busy 0 1 0 1 
+current_state.s_done 1 0 0 1 
+
+State Machine - |top|simon:gen_code_label[3].simon_inst|current_state
+Name current_state.s_done current_state.s_busy current_state.s_enable current_state.s_idle 
+current_state.s_idle 0 0 0 0 
+current_state.s_enable 0 0 1 1 
+current_state.s_busy 0 1 0 1 
+current_state.s_done 1 0 0 1 
+
+State Machine - |top|simon:gen_code_label[2].simon_inst|current_state
+Name current_state.s_done current_state.s_busy current_state.s_enable current_state.s_idle 
+current_state.s_idle 0 0 0 0 
+current_state.s_enable 0 0 1 1 
+current_state.s_busy 0 1 0 1 
+current_state.s_done 1 0 0 1 
+
+State Machine - |top|simon:gen_code_label[1].simon_inst|current_state
+Name current_state.s_done current_state.s_busy current_state.s_enable current_state.s_idle 
+current_state.s_idle 0 0 0 0 
+current_state.s_enable 0 0 1 1 
+current_state.s_busy 0 1 0 1 
+current_state.s_done 1 0 0 1 
+
+State Machine - |top|simon:gen_code_label[0].simon_inst|current_state
+Name current_state.s_done current_state.s_busy current_state.s_enable current_state.s_idle 
+current_state.s_idle 0 0 0 0 
+current_state.s_enable 0 0 1 1 
+current_state.s_busy 0 1 0 1 
+current_state.s_done 1 0 0 1 
 
 State Machine - |top|uart_rx:uartRX|r_SM_Main
 Name r_SM_Main.s_RX_STOP_BIT r_SM_Main.s_RX_DATA_BITS r_SM_Main.s_RX_START_BIT r_SM_Main.000 r_SM_Main.s_CLEANUP 
