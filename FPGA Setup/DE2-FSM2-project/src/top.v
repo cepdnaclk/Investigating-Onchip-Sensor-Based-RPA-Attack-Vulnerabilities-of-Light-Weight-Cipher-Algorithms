@@ -65,7 +65,7 @@ reg  [9:0] fsm1=0;
 reg  [BLOCK_SIZE -1:0] Din;
 reg  [KEY_SIZE-1:0] Kin;
 wire [BLOCK_SIZE-1:0] Dout;
-reg Krdy, Drdy, EncDec, Resetn, EN;
+reg Krdy, Drdy, EncDec, reset, EN;
 wire Kvld, Dvld, BSY, EncDone;
 
 
@@ -139,7 +139,9 @@ uart_rx uartRX(.i_Clock(clk1), .i_Rx_Serial(rx), .o_Rx_DV(rxReady), .o_Rx_Byte(R
 /////////////////////////
 
 //tdc_top tp (clk0, clk0, out); // TDC sensor
-tdc_decode tdc_decode(.clk(clk0), .rst(~Resetn), .chainvalue_i(outReg), .coded_o(processedOut)); // calculate number of 1's in the TDC Sensor
+
+tdc_decode tdc_decode(.clk(clk0), .rst(~reset), .chainvalue_i(outReg), .coded_o(processedOut)); // calculate number of 1's in the TDC Sensor
+
 
 
 
@@ -160,8 +162,8 @@ generate
 	for(i = 0; i < CIPHERS_COUNT; i = i+1) 
 		begin:gen_code_label
 			//aes_tiny aes_tinyi ( .clk(clk1),  .rst(Drdy),  .din(Din), .key(Kin), .dout(DoutTemp[i]),  .done(DvldTemp[i]) );
-			//(* noprune *)	AES_Composite_enc aes_tinyi (.Kin(Kin), .Din(Din), .Dout(DoutTemp[i]), .Krdy(Krdy), .Drdy1(Drdy), .EncDec(1'b0), .Kvld(), .Dvld(DvldTemp[i]), .EN(EN), .BSY(), .CLK(clk1), .RSTn(Resetn));
-			(* noprune *) simon #(N, M) simon_inst (.clk(clk1), .rst(Resetn), .plaintext(Din), .key(Kin), .ciphertext(DoutTemp[i]), .en(EN), .done(DvldTemp[i]));
+			//(* noprune *)	AES_Composite_enc aes_tinyi (.Kin(Kin), .Din(Din), .Dout(DoutTemp[i]), .Krdy(Krdy), .Drdy1(Drdy), .EncDec(1'b0), .Kvld(), .Dvld(DvldTemp[i]), .EN(EN), .BSY(), .CLK(clk1), .RSTn(reset));
+			(* noprune *) simon #(N, M) simon_inst (.clk(clk1), .rst(reset), .plaintext(Din), .key(Kin), .ciphertext(DoutTemp[i]), .en(EN), .done(DvldTemp[i]));
 		end
 endgenerate	
 
@@ -283,7 +285,7 @@ always @(posedge clk1) begin
 			busy <= 1;			
 			//EncDec <= counter1[24];
 			EN <= 0; //cipher enable signal
-			Resetn <= 1; //cipher reset signal
+			reset <= 1; //cipher reset signal
 			Krdy <= 0;
 			Drdy <= 0;
 			addr1 <= 0;
@@ -298,7 +300,7 @@ always @(posedge clk1) begin
 			MAIN_FSM <= MAIN_SIMON_RESET1;
 		end
 		else if (MAIN_FSM==MAIN_SIMON_RESET1) begin
-			Resetn <= 0;
+			reset <= 0;
 			//R <= 1;
 			if(inc==1) begin
 				delay <= delay + 1;
@@ -317,7 +319,7 @@ always @(posedge clk1) begin
 		end
 		else if (MAIN_FSM==MAIN_SIMON_SET_PT) begin
 			//Din <= {Cdelay, 00000, encCounter , Dout[111:0]};	//	we use ciphertext of previous encryption as the pt of the this encryption + some counter values.
-			Din  <= 32'h65656877; //Dout;
+			Din  <= {dataCt[0], dataCt[1], dataCt[2], dataCt[3]}; //32'h65656877;
 			Krdy <= 0;
 			//R <= 1;
 			//store the key in memory
