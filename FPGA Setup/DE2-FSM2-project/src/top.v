@@ -317,7 +317,7 @@ always @(posedge clk1) begin
 		end
 		else if (MAIN_FSM==MAIN_SIMON_SET_PT) begin
 			//Din <= {Cdelay, 00000, encCounter , Dout[111:0]};	//	we use ciphertext of previous encryption as the pt of the this encryption + some counter values.
-			Din  <= 32'h65656877; //Dout;
+			Din  <= {dataCt[0], dataCt[1], dataCt[2], dataCt[3]}; //32'h65656877;
 			Krdy <= 0;
 			//R <= 1;
 			//store the key in memory
