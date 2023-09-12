@@ -1,18 +1,48 @@
 // including necessary libraries
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <math.h>
 #include "helpers.h"
 #include "data.h"
 
 // defining paramters
-#define SAMPLES 100
-#define WAVELENGTH 2048
-#define KEYBYTES 16
-#define KEYS 256
+#define SAMPLES 2000
+#define WAVELENGTH 1024
+#define KEYS 65536
+#define n 16
+#define m 4
+#define KEYBYTES 1
+
+// Cipher Operation Macros
+#define shift_one(x_word) (((x_word) << 1) | ((x_word) >> (16 - 1)))
+#define shift_eight(x_word) (((x_word) << 8) | ((x_word) >> (16 - 8)))
+#define shift_two(x_word) (((x_word) << 2) | ((x_word) >> (16 - 2)))
+
+uint64_t z_seq = 0b0001100111000011010100100010111110110011100001101010010001011111;
 
 // array to hold the correlation factors for each key
 float corelation[KEYS][KEYBYTES];
+
+void first_round_out(uint8_t *pt_block, uint16_t key_word, uint16_t *output) {
+	uint16_t *y_word = (uint16_t *)malloc(sizeof(uint16_t));
+    uint16_t *x_word = (uint16_t *)malloc(sizeof(uint16_t));
+
+    *y_word = *(uint16_t *)pt_block;
+    *x_word = *(((uint16_t *)pt_block) + 1);
+
+	uint16_t temp = (shift_one(*x_word) & shift_eight(*x_word)) ^ *y_word ^ shift_two(*x_word);
+
+    // Feistel Cross
+    *y_word = *x_word;
+    
+    // XOR with Round Key
+    *x_word = temp ^ key_word;
+
+    output[0] = *y_word;
+	output[1] = *x_word;
+    //printf("Xi+1 => %04x, Xi+2 => %04x \n", output[0], output[1]);
+}
 
 // to get the maximum value in an array
 double maximum(double *array,int size){
@@ -27,44 +57,61 @@ double maximum(double *array,int size){
 }
 
 // to calculate the hamming distance
-float hamming(unsigned int M, unsigned int R){
+float hamming(uint8_t *M, uint16_t *R){
+	// Initialize the Hamming distance to 0.
+    float distance = 0;
 
-	unsigned int H=M^R;
-	
-	// Count the number of set bits
-	int dist=0;
-	
-	while(H){
-		dist++; 
-		H &= H - 1;
-	}
-	
-	// return the hamming distance
-	return (float)dist;
+    // Iterate through the bits (32 bits in total).
+    for (int i = 0; i < 32; i++) {
+        // Extract the i-th bit from M and R.
+        uint8_t bit_M = (M[i / 8] >> (7 - (i % 8))) & 0x01;
+        uint8_t bit_R = (R[i / 16] >> (15 - (i % 16))) & 0x01;
+
+        // Check if the bits differ, and increment the distance if they do.
+        if (bit_M != bit_R) {
+            distance += 1.0;
+        }
+    }
+
+	int t;
+
+	// for (t=0; t<4; t++) {
+	// 	printf("%02x ,", M[t]);
+	// }
+	// printf("\n");
+	// for (t=0; t<2; t++) {
+	// 	printf("%04x ,", R[t]);
+	// }
+
+	// printf("\ndist : %f", distance);
+	// scanf("%d", &t);
+    return distance;
 }
 
 
-float maxCorelation(float **wavedata, unsigned int **cipher, int keyguess, int keybyte){
+float maxCorelation(float **wavedata, uint8_t **plaintext, uint16_t keyguess, int keybyte){
 	
 	// an array to hold the hamming values
 	int hammingArray[SAMPLES];
+	uint16_t output[2];
 	int i;
 
 	// take all the samples into consideration
 	for(i=0;i<SAMPLES;i++){
-	
-	// get the sbox operation
-	unsigned int st10 = cipher[i][inv_shift[keybyte]];
-	unsigned int st9 = inv_sbox[cipher[i][keybyte]  ^ keyguess] ;
+		first_round_out(plaintext[i], keyguess, output);
+		
+		// get the sbox operation
+		// unsigned int st10 = cipher[i][inv_shift[keybyte]];
+		// unsigned int st9 = inv_sbox[cipher[i][keybyte]  ^ keyguess] ;
 
-	// store the hamming distance in the array
-	hammingArray[i]=hamming(st9,st10);
+		// store the hamming distance in the array
+		hammingArray[i]=hamming(plaintext[i], output);
 
-	// uncomment below lines for debugging purposes
-	//printf("haming[%d]=%f\n",i,hammingArray[i]);
-	// if(keyguess == 65){
-	// 	printf("i=%d keybyte(n)=%d keyguess(key)=%d dist=%d\n",i,keybyte,keyguess,hammingArray[i]);
-	// }
+		// uncomment below lines for debugging purposes
+		//printf("haming[%d]=%f\n",i,hammingArray[i]);
+		// if(keyguess == 65){
+		// 	printf("i=%d keybyte(n)=%d keyguess(key)=%d dist=%d\n",i,keybyte,keyguess,hammingArray[i]);
+		// }
 
 	}
 
@@ -141,7 +188,7 @@ int main(int argc, char *argv[]){
 	int i,j;
 
 	//check args
-	if(argc!=3){
+	if(argc!=4){
 		fprintf(stderr,"%s\n", "Not enough args. eg ./cpa wavedata.txt cipher.txt");
 		exit(EXIT_FAILURE);
 	}
@@ -170,48 +217,70 @@ int main(int argc, char *argv[]){
 	}
 	
 	//create a 2d array to store ciphertexts
-	unsigned int **cipher=malloc(sizeof(unsigned int*)*SAMPLES);
+	uint8_t **cipher=malloc(sizeof(uint8_t*)*SAMPLES);
 	checkMalloc(cipher);
 	for (i=0; i<SAMPLES; i++){
-		cipher[i]=malloc(sizeof(unsigned int)*KEYBYTES);
+		cipher[i]=malloc(sizeof(uint8_t)* (2*n/8));
 		checkMalloc(cipher[i]);
 	}
 	
 	// assign ciphertext values to the array
 	file=openFile(argv[2],"r");
 	for(i=0; i<SAMPLES ;i++){
-		for(j=0; j<KEYBYTES; j++){
-			fscanf(file,"%x",&cipher[i][j]);
+		for(j=0; j<(2*n/8); j++){
+			fscanf(file,"%hhx",&cipher[i][j]);
+			// printf("%hhx ", cipher[i][j]);
 		}
+		// printf("\n");
 	}
 
-	// calculate the correlation max correlation factors for all the keybytes in 
-	// all the keys
+	//create a 2d array to store plaintext
+	uint8_t **plain=malloc(sizeof(uint8_t*)*SAMPLES);
+	checkMalloc(plain);
+	for (i=0; i<SAMPLES; i++){
+		plain[i]=malloc(sizeof(uint8_t)* (2*n/8));
+		checkMalloc(plain[i]);
+	}
+	
+
+	// assign plaintext values to the array
+	file=openFile(argv[3],"r");
+	for(i=0; i<SAMPLES ;i++){
+		for(j=0; j<(2*n/8); j++){
+			fscanf(file,"%hhx",&plain[i][j]);
+			// printf("%hhx ", plain[i][j]);
+		}
+		// printf("\n");
+	}
+
+	//calculate the correlation max correlation factors for all the keybytes in all the keys
 	for (i=0;i<KEYS;i++){
 		for(j=0;j<KEYBYTES;j++){
-			corelation[i][j]=maxCorelation(wavedata, cipher, i, j);
+			corelation[i][j]=maxCorelation(wavedata, plain, i, j);
 		}
 	}
 
 	// printing the key
 	int p=0;
 	int positions[KEYS][KEYBYTES];
-	double n = 0;
+	double x = 0;
 
 	// first sort the results
 	for(j=0;j<KEYBYTES;j++){
-		for(i=0;i<KEYS;i++) positions[i][j] =i;
-		for (p=0;p<255;p++){
+		
+		for(i=0;i<KEYS;i++){ 
+			positions[i][j] =i;
+		}
 
+		for (p=0;p<KEYS-1;p++){
 			for (i=0;i<KEYS-p-1;i++){
-
 				if(corelation[i][j]<corelation[i+1][j]) { 
-					n=corelation[i][j];
+					x=corelation[i][j];
 					corelation[i][j]=corelation[i+1][j];
-					corelation[i+1][j]=n; 
-					n=positions[i][j];
+					corelation[i+1][j]=x; 
+					x=positions[i][j];
 					positions[i][j]=positions[i+1][j];
-					positions[i+1][j]=n; 
+					positions[i+1][j]=x; 
 				}
 			}
 		}
@@ -226,7 +295,7 @@ int main(int argc, char *argv[]){
 	for (i=0;i<5;i++){
 
 		for(j=0;j<KEYBYTES;j++){
-			printf("  %02x\t",positions[i][j]);
+			printf("  %04x\t",positions[i][j]);
 		}
 		printf("\n");
 
