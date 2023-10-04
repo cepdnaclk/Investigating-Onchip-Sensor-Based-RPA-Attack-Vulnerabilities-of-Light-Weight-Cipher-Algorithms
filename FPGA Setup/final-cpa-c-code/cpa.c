@@ -7,9 +7,9 @@
 #include "data.h"
 
 // defining paramters
-#define SAMPLES 2000
+#define SAMPLES 10000
 #define WAVELENGTH 1024
-#define KEYS 65536
+#define KEYS 32
 #define n 16
 #define m 4
 #define KEYBYTES 1
@@ -88,8 +88,49 @@ float hamming(uint8_t *M, uint16_t *R){
     return distance;
 }
 
+uint8_t get_first_round_bit_out(int bit_pos, uint8_t **plaintext, uint8_t bitguess, int sample_num) {
 
-float maxCorelation(float **wavedata, uint8_t **plaintext, uint16_t keyguess, int keybyte){
+	int term = 0;
+
+	if(bit_pos>=1 && bit_pos<=8){
+		term = 3;
+	}else{
+		term = 2;
+	}
+
+	uint8_t R = (plaintext[sample_num][term] >> ((bit_pos-1) % 8)) & 0x01;
+	uint8_t L_pos_1 = (13+bit_pos)%16+1;
+	uint8_t L_pos_2 = (14+bit_pos)%16+1;
+	uint8_t L_pos_3 = (7+bit_pos)%16+1;
+
+	if(L_pos_1>=1 && L_pos_1<=8){
+		term = 1;
+	}else{
+		term = 0;
+	}
+	uint8_t L1 = (plaintext[sample_num][term] >> ((L_pos_1-1) % 8)) & 0x01;
+
+	if(L_pos_2>=1 && L_pos_2<=8){
+		term = 1;
+	}else{
+		term = 0;
+	}
+	uint8_t L2 = (plaintext[sample_num][term] >> ((L_pos_2-1) % 8)) & 0x01;
+
+	if(L_pos_3>=1 && L_pos_3<=8){
+		term = 1;
+	}else{
+		term = 0;
+	}
+	uint8_t L3 = (plaintext[sample_num][term] >> ((L_pos_3-1) % 8)) & 0x01;
+
+	// printf("pos: %x, %x, %x\n", L_pos_1, L_pos_2, L_pos_3);
+	// printf("R:%x L1:%x L2:%x L3:%x\n", R, L1, L2, L3);
+	return bitguess ^ R ^ L1 ^ (L2 & L3);
+}
+
+
+float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int keybyte){
 	
 	// an array to hold the hamming values
 	int hammingArray[SAMPLES];
@@ -98,14 +139,37 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint16_t keyguess, in
 
 	// take all the samples into consideration
 	for(i=0;i<SAMPLES;i++){
-		first_round_out(plaintext[i], keyguess, output);
+		// first_round_out(plaintext[i], keyguess, output);
+
+		// uint8_t L_2_1 = get_first_round_bit_out(1,plaintext,((keyguess >> 1) & 0x01),i);
+		// uint8_t L_3_1 = (keyguess >> 0 & 0x01) ^ (plaintext[i][1] & 0x01) ^   get_first_round_bit_out(15,plaintext,((keyguess >> 3) & 0x01),i) 
+		// ^ (get_first_round_bit_out(16,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_bit_out(9,plaintext,((keyguess >> 2) & 0x01),i));
+
+		// uint8_t L_2_2 = get_first_round_bit_out(2,plaintext,((keyguess >> 1) & 0x01),i);
+		// uint8_t L_3_2 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 1) & 0x01) ^ get_first_round_bit_out(16,plaintext,((keyguess >> 4) & 0x01),i) 
+		// ^ (get_first_round_bit_out(1,plaintext,((keyguess >> 3) & 0x01),i) & get_first_round_bit_out(10,plaintext,((keyguess >> 2) & 0x01),i));
 		
+		
+		uint8_t L_2_3 = get_first_round_bit_out(3,plaintext,((keyguess >> 1) & 0x01),i);
+		uint8_t L_3_3 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 2) & 0x01) ^ get_first_round_bit_out(1,plaintext,((keyguess >> 4) & 0x01),i) 
+		^ (get_first_round_bit_out(2,plaintext,((keyguess >> 3) & 0x01),i) & get_first_round_bit_out(11,plaintext,((keyguess >> 2) & 0x01),i));
+
+		
+		// if(i==5) {
+		// 	printf("%x, %x, %x, %x \n", plaintext[i][0], plaintext[i][1], plaintext[i][2], plaintext[i][3]);
+		// 	printf("%x, %x, %x, %x\n", R_1_1, L_1_15, L_1_16, L_1_9);
+		// }
+
 		// get the sbox operation
 		// unsigned int st10 = cipher[i][inv_shift[keybyte]];
 		// unsigned int st9 = inv_sbox[cipher[i][keybyte]  ^ keyguess] ;
 
 		// store the hamming distance in the array
-		hammingArray[i]=hamming(plaintext[i], output);
+		// hammingArray[i] = L_2_1 ^ L_3_1;
+		// hammingArray[i] = L_2_2 ^ L_3_2;
+		hammingArray[i] = L_2_3 ^ L_3_3;
+
+
 
 		// uncomment below lines for debugging purposes
 		//printf("haming[%d]=%f\n",i,hammingArray[i]);
@@ -162,7 +226,7 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint16_t keyguess, in
 		// }
 
 		// calculate the numerator and the denominator to calculate the pearson correlation
-		double numerator=abs(SAMPLES*sigmaWH - sigmaW*sigmaH);
+		double numerator= SAMPLES*sigmaWH - sigmaW*sigmaH;
 		double denominator=sqrt(SAMPLES*sigmaW2 - sigmaW*sigmaW)*sqrt(SAMPLES*sigmaH2 - sigmaH*sigmaH);
 
 		// assign a very small value to denominator if its 0, otherwise it will output nan
@@ -253,6 +317,23 @@ int main(int argc, char *argv[]){
 		// printf("\n");
 	}
 
+	//0001 1011, 1000 0100, 0000 1100, 0101 0101
+
+
+	// uint8_t **plaint=malloc(sizeof(uint8_t*)*1);
+	// plaint[0]=malloc(sizeof(uint8_t)*4);
+
+	// plaint[0][0] = 0x1b;
+	// plaint[0][1] = 0x84;
+	// plaint[0][2] = 0x0c;
+	// plaint[0][3] = 0x55;
+	//uint8_t keyguess = 0b10111;
+	
+	// for(int i=1;i<=16;i++){
+		
+	// 	printf("%x\n\n", get_first_round_bit_out(i, plaint, 0, 0));
+	// }
+
 	//calculate the correlation max correlation factors for all the keybytes in all the keys
 	for (i=0;i<KEYS;i++){
 		for(j=0;j<KEYBYTES;j++){
@@ -292,10 +373,10 @@ int main(int argc, char *argv[]){
 	}
 	printf("\n");
 
-	for (i=0;i<5;i++){
+	for (i=0;i<10;i++){
 
 		for(j=0;j<KEYBYTES;j++){
-			printf("  %04x\t",positions[i][j]);
+			printf("  %02x\t",positions[i][j]);
 		}
 		printf("\n");
 
