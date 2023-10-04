@@ -120,6 +120,7 @@ namespace ZynqRO_UART_Checker
         static void Main(string[] args)
         {
             UInt32 ftdiDeviceCount = 0;
+            UInt32 sampleCount = 0;
             FTDI.FT_STATUS ftStatus = FTDI.FT_STATUS.FT_OK;
             FTDI ftdi = new FTDI();
             
@@ -152,7 +153,7 @@ namespace ZynqRO_UART_Checker
             ftStatus = ftdi.GetDeviceList(ftdiDeviceList);  //AL05SP7N
 
             // Open first device in our list by serial number
-            ftStatus = ftdi.OpenBySerialNumber("AD0JIHIL");  //A50285BI AD0JIHILA
+            ftStatus = ftdi.OpenBySerialNumber("A50285BI");  //A50285BI AD0JIHILA
             ftdi.ResetDevice();
             if (ftStatus != FTDI.FT_STATUS.FT_OK)
             {
@@ -183,7 +184,7 @@ namespace ZynqRO_UART_Checker
             byte[] readArrayCt = new byte[16];
             byte[] readArrayCipher = new byte[48];
             UInt32 readbytes = 0;
-            byte[] writeData = {48, 255, 20, 80};
+            byte[] writeData = { 0, 255, 255, 255};
             if (args.Length != 0)
             {
                 int result = Int32.Parse(args[0]);
@@ -223,7 +224,7 @@ namespace ZynqRO_UART_Checker
                 System.Threading.Thread.Sleep(10);
                 
                 write(ftdi, writeData, 4);
-                read(ftdi, readArrayConfig, 4);
+                //read(ftdi, readArrayConfig, 4);
                 
                 read(ftdi, readArrayCipher, 48);
                 readbytes = 0;
@@ -258,8 +259,8 @@ namespace ZynqRO_UART_Checker
                 else
                 {
                     // read TDC senosr also
-                   // readbytes = readbytes + read(ftdi, readArray1, 1024);
-
+                    // readbytes = readbytes + read(ftdi, readArray1, 1024);
+                    sampleCount += 1;
                     for (int i = 0; i < 48; i++)
                             Console.Write(readArrayCipher[i] + " ");
                       Console.Write("\n");
@@ -267,11 +268,16 @@ namespace ZynqRO_UART_Checker
 
                     // for (int j = 0; j < NumROs; j++)
                     {
-                        Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ");
+                        Console.WriteLine("+++++++++++++++++++++++++ Trace Number : " + sampleCount + " +++++++++++++++++++++++++");
 
                         for (int i = 0; i < samplingPoints; i++)
                         {
-                             Console.Write(readProcessed[i] + " ");  //readArray0
+                            
+                            if (sampleCount < 2000)
+                            {
+                                Console.Write(readProcessed[i] + " ");  //readArray0
+                            }
+
                             //Console.Write(readArray0[i] + " ");
                             waveTDC.Write((float)readProcessed[i]);
                         }
