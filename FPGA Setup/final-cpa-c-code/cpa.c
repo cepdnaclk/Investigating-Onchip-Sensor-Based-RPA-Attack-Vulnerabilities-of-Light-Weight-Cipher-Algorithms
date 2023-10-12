@@ -7,42 +7,15 @@
 #include "data.h"
 
 // defining paramters
-#define SAMPLES 10000
+#define SAMPLES 2000
 #define WAVELENGTH 1024
 #define KEYS 32
 #define n 16
 #define m 4
 #define KEYBYTES 1
 
-// Cipher Operation Macros
-#define shift_one(x_word) (((x_word) << 1) | ((x_word) >> (16 - 1)))
-#define shift_eight(x_word) (((x_word) << 8) | ((x_word) >> (16 - 8)))
-#define shift_two(x_word) (((x_word) << 2) | ((x_word) >> (16 - 2)))
-
-uint64_t z_seq = 0b0001100111000011010100100010111110110011100001101010010001011111;
-
 // array to hold the correlation factors for each key
 float corelation[KEYS][KEYBYTES];
-
-void first_round_out(uint8_t *pt_block, uint16_t key_word, uint16_t *output) {
-	uint16_t *y_word = (uint16_t *)malloc(sizeof(uint16_t));
-    uint16_t *x_word = (uint16_t *)malloc(sizeof(uint16_t));
-
-    *y_word = *(uint16_t *)pt_block;
-    *x_word = *(((uint16_t *)pt_block) + 1);
-
-	uint16_t temp = (shift_one(*x_word) & shift_eight(*x_word)) ^ *y_word ^ shift_two(*x_word);
-
-    // Feistel Cross
-    *y_word = *x_word;
-    
-    // XOR with Round Key
-    *x_word = temp ^ key_word;
-
-    output[0] = *y_word;
-	output[1] = *x_word;
-    //printf("Xi+1 => %04x, Xi+2 => %04x \n", output[0], output[1]);
-}
 
 // to get the maximum value in an array
 double maximum(double *array,int size){
@@ -57,38 +30,47 @@ double maximum(double *array,int size){
 }
 
 // to calculate the hamming distance
-float hamming(uint8_t *M, uint16_t *R){
-	// Initialize the Hamming distance to 0.
-    float distance = 0;
+// float hamming(uint8_t *M, uint16_t *R){
+// 	// Initialize the Hamming distance to 0.
+//     float distance = 0;
 
-    // Iterate through the bits (32 bits in total).
-    for (int i = 0; i < 32; i++) {
-        // Extract the i-th bit from M and R.
-        uint8_t bit_M = (M[i / 8] >> (7 - (i % 8))) & 0x01;
-        uint8_t bit_R = (R[i / 16] >> (15 - (i % 16))) & 0x01;
+//     // Iterate through the bits (32 bits in total).
+//     for (int i = 0; i < 32; i++) {
+//         // Extract the i-th bit from M and R.
+//         uint8_t bit_M = (M[i / 8] >> (7 - (i % 8))) & 0x01;
+//         uint8_t bit_R = (R[i / 16] >> (15 - (i % 16))) & 0x01;
 
-        // Check if the bits differ, and increment the distance if they do.
-        if (bit_M != bit_R) {
-            distance += 1.0;
-        }
-    }
+//         // Check if the bits differ, and increment the distance if they do.
+//         if (bit_M != bit_R) {
+//             distance += 1.0;
+//         }
+//     }
 
-	int t;
+// 	int t;
 
-	// for (t=0; t<4; t++) {
-	// 	printf("%02x ,", M[t]);
-	// }
-	// printf("\n");
-	// for (t=0; t<2; t++) {
-	// 	printf("%04x ,", R[t]);
-	// }
+// 	// for (t=0; t<4; t++) {
+// 	// 	printf("%02x ,", M[t]);
+// 	// }
+// 	// printf("\n");
+// 	// for (t=0; t<2; t++) {
+// 	// 	printf("%04x ,", R[t]);
+// 	// }
 
-	// printf("\ndist : %f", distance);
-	// scanf("%d", &t);
-    return distance;
-}
+// 	// printf("\ndist : %f", distance);
+// 	// scanf("%d", &t);
+//     return distance;
+// }
 
-uint8_t get_first_round_bit_out(int bit_pos, uint8_t **plaintext, uint8_t bitguess, int sample_num) {
+/*
+This function calculates a given bit of first round output of the SIMON cipher
+Arguments:
+	bit_pos => required bit
+	plaintext => plaintext
+	key_bit => guessed key bit
+	sample_num => number of the sample to get the correct plaintext
+Returns: The value of requested bit
+*/
+uint8_t get_first_round_nth_output_bit(int bit_pos, uint8_t **plaintext, uint8_t key_bit, int sample_num) {
 
 	int term = 0;
 
@@ -126,7 +108,7 @@ uint8_t get_first_round_bit_out(int bit_pos, uint8_t **plaintext, uint8_t bitgue
 
 	// printf("pos: %x, %x, %x\n", L_pos_1, L_pos_2, L_pos_3);
 	// printf("R:%x L1:%x L2:%x L3:%x\n", R, L1, L2, L3);
-	return bitguess ^ R ^ L1 ^ (L2 & L3);
+	return key_bit ^ R ^ L1 ^ (L2 & L3);
 }
 
 
@@ -139,20 +121,20 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int
 
 	// take all the samples into consideration
 	for(i=0;i<SAMPLES;i++){
-		// first_round_out(plaintext[i], keyguess, output);
+		//get the bit 1 of the input to second round
+		uint8_t L_2_1 = get_first_round_nth_output_bit(1,plaintext,((keyguess >> 1) & 0x01),i);
+		//calculate the bit 1 of the output of second round
+		uint8_t L_3_1 = (keyguess >> 0 & 0x01) ^ (plaintext[i][1] & 0x01) ^   get_first_round_nth_output_bit(15,plaintext,((keyguess >> 3) & 0x01),i) 
+		^ (get_first_round_nth_output_bit(16,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(9,plaintext,((keyguess >> 2) & 0x01),i));
 
-		// uint8_t L_2_1 = get_first_round_bit_out(1,plaintext,((keyguess >> 1) & 0x01),i);
-		// uint8_t L_3_1 = (keyguess >> 0 & 0x01) ^ (plaintext[i][1] & 0x01) ^   get_first_round_bit_out(15,plaintext,((keyguess >> 3) & 0x01),i) 
-		// ^ (get_first_round_bit_out(16,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_bit_out(9,plaintext,((keyguess >> 2) & 0x01),i));
-
-		// uint8_t L_2_2 = get_first_round_bit_out(2,plaintext,((keyguess >> 1) & 0x01),i);
-		// uint8_t L_3_2 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 1) & 0x01) ^ get_first_round_bit_out(16,plaintext,((keyguess >> 4) & 0x01),i) 
-		// ^ (get_first_round_bit_out(1,plaintext,((keyguess >> 3) & 0x01),i) & get_first_round_bit_out(10,plaintext,((keyguess >> 2) & 0x01),i));
+		// uint8_t L_2_2 = get_first_round_nth_output_bit(2,plaintext,((keyguess >> 1) & 0x01),i);
+		// uint8_t L_3_2 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 1) & 0x01) ^ get_first_round_nth_output_bit(16,plaintext,((keyguess >> 4) & 0x01),i) 
+		// ^ (get_first_round_nth_output_bit(1,plaintext,((keyguess >> 3) & 0x01),i) & get_first_round_nth_output_bit(10,plaintext,((keyguess >> 2) & 0x01),i));
 		
 		
-		uint8_t L_2_3 = get_first_round_bit_out(3,plaintext,((keyguess >> 1) & 0x01),i);
-		uint8_t L_3_3 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 2) & 0x01) ^ get_first_round_bit_out(1,plaintext,((keyguess >> 4) & 0x01),i) 
-		^ (get_first_round_bit_out(2,plaintext,((keyguess >> 3) & 0x01),i) & get_first_round_bit_out(11,plaintext,((keyguess >> 2) & 0x01),i));
+		// uint8_t L_2_3 = get_first_round_nth_output_bit(3,plaintext,((keyguess >> 1) & 0x01),i);
+		// uint8_t L_3_3 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 2) & 0x01) ^ get_first_round_nth_output_bit(1,plaintext,((keyguess >> 4) & 0x01),i) 
+		// ^ (get_first_round_nth_output_bit(2,plaintext,((keyguess >> 3) & 0x01),i) & get_first_round_nth_output_bit(11,plaintext,((keyguess >> 2) & 0x01),i));
 
 		
 		// if(i==5) {
@@ -165,11 +147,9 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int
 		// unsigned int st9 = inv_sbox[cipher[i][keybyte]  ^ keyguess] ;
 
 		// store the hamming distance in the array
-		// hammingArray[i] = L_2_1 ^ L_3_1;
-		// hammingArray[i] = L_2_2 ^ L_3_2;
-		hammingArray[i] = L_2_3 ^ L_3_3;
-
-
+		hammingArray[i] = L_2_1 ^ L_3_1;
+		//hammingArray[i] = L_2_2 ^ L_3_2;
+		//hammingArray[i] = L_2_3 ^ L_3_3;
 
 		// uncomment below lines for debugging purposes
 		//printf("haming[%d]=%f\n",i,hammingArray[i]);
@@ -331,7 +311,7 @@ int main(int argc, char *argv[]){
 	
 	// for(int i=1;i<=16;i++){
 		
-	// 	printf("%x\n\n", get_first_round_bit_out(i, plaint, 0, 0));
+	// 	printf("%x\n\n", get_first_round_nth_output_bit(i, plaint, 0, 0));
 	// }
 
 	//calculate the correlation max correlation factors for all the keybytes in all the keys
