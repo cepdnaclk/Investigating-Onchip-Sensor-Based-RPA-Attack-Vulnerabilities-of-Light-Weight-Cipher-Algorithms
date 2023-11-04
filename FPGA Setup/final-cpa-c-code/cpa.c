@@ -7,7 +7,7 @@
 #include "data.h"
 
 // defining paramters
-#define SAMPLES 2000
+#define SAMPLES 40000
 #define WAVELENGTH 1024
 #define KEYS 32
 #define n 16
@@ -121,20 +121,45 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int
 
 	// take all the samples into consideration
 	for(i=0;i<SAMPLES;i++){
+
 		//get the bit 1 of the input to second round
-		uint8_t L_2_1 = get_first_round_nth_output_bit(1,plaintext,((keyguess >> 1) & 0x01),i);
+		// uint8_t L_2_1 = get_first_round_nth_output_bit(1,plaintext,((keyguess >> 1) & 0x01),i);
 		//calculate the bit 1 of the output of second round
-		uint8_t L_3_1 = (keyguess >> 0 & 0x01) ^ (plaintext[i][1] & 0x01) ^   get_first_round_nth_output_bit(15,plaintext,((keyguess >> 3) & 0x01),i) 
-		^ (get_first_round_nth_output_bit(16,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(9,plaintext,((keyguess >> 2) & 0x01),i));
+		// uint8_t L_3_1 = (keyguess >> 0 & 0x01) ^ (plaintext[i][1] & 0x01) ^   get_first_round_nth_output_bit(15,plaintext,((keyguess >> 3) & 0x01),i) 
+		// ^ (get_first_round_nth_output_bit(16,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(9,plaintext,((keyguess >> 2) & 0x01),i));
 
 		// uint8_t L_2_2 = get_first_round_nth_output_bit(2,plaintext,((keyguess >> 1) & 0x01),i);
-		// uint8_t L_3_2 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 1) & 0x01) ^ get_first_round_nth_output_bit(16,plaintext,((keyguess >> 4) & 0x01),i) 
-		// ^ (get_first_round_nth_output_bit(1,plaintext,((keyguess >> 3) & 0x01),i) & get_first_round_nth_output_bit(10,plaintext,((keyguess >> 2) & 0x01),i));
+		// uint8_t L_3_2 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 1) & 0x01) ^ get_first_round_nth_output_bit(16,plaintext,((keyguess >> 3) & 0x01),i) 
+		// ^ (get_first_round_nth_output_bit(1,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(10,plaintext,((keyguess >> 2) & 0x01),i));
 		
 		
 		// uint8_t L_2_3 = get_first_round_nth_output_bit(3,plaintext,((keyguess >> 1) & 0x01),i);
-		// uint8_t L_3_3 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 2) & 0x01) ^ get_first_round_nth_output_bit(1,plaintext,((keyguess >> 4) & 0x01),i) 
-		// ^ (get_first_round_nth_output_bit(2,plaintext,((keyguess >> 3) & 0x01),i) & get_first_round_nth_output_bit(11,plaintext,((keyguess >> 2) & 0x01),i));
+		// uint8_t L_3_3 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 2) & 0x01) ^ get_first_round_nth_output_bit(1,plaintext,((keyguess >> 3) & 0x01),i) 
+		// ^ (get_first_round_nth_output_bit(2,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(11,plaintext,((keyguess >> 2) & 0x01),i));
+
+		// uint8_t L_2_4 = get_first_round_nth_output_bit(4,plaintext,((keyguess >> 1) & 0x01),i);
+		// uint8_t L_3_4 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 3) & 0x01) ^ get_first_round_nth_output_bit(2,plaintext,((keyguess >> 3) & 0x01),i) 
+		// ^ (get_first_round_nth_output_bit(3,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(12,plaintext,((keyguess >> 2) & 0x01),i));
+
+		// uint8_t L_2_5 = get_first_round_nth_output_bit(5,plaintext,((keyguess >> 1) & 0x01),i);
+		// uint8_t L_3_5 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 4) & 0x01) ^ get_first_round_nth_output_bit(3,plaintext,((keyguess >> 3) & 0x01),i) 
+		// ^ (get_first_round_nth_output_bit(4,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(13,plaintext,((keyguess >> 2) & 0x01),i));
+
+		// uint8_t L_2_6 = get_first_round_nth_output_bit(6,plaintext,((keyguess >> 1) & 0x01),i);
+		// uint8_t L_3_6 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 5) & 0x01) ^ get_first_round_nth_output_bit(4,plaintext,((keyguess >> 3) & 0x01),i) 
+		// ^ (get_first_round_nth_output_bit(5,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(14,plaintext,((keyguess >> 2) & 0x01),i));
+
+		// uint8_t L_2_7 = get_first_round_nth_output_bit(7,plaintext,((keyguess >> 1) & 0x01),i);
+		// uint8_t L_3_7 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 6) & 0x01) ^ get_first_round_nth_output_bit(5,plaintext,((keyguess >> 3) & 0x01),i) 
+		// ^ (get_first_round_nth_output_bit(6,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(15,plaintext,((keyguess >> 2) & 0x01),i));
+
+		// uint8_t L_2_8 = get_first_round_nth_output_bit(8,plaintext,((keyguess >> 1) & 0x01),i);
+		// uint8_t L_3_8 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 7) & 0x01) ^ get_first_round_nth_output_bit(6,plaintext,((keyguess >> 3) & 0x01),i) 
+		// ^ (get_first_round_nth_output_bit(7,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(16,plaintext,((keyguess >> 2) & 0x01),i));
+
+		uint8_t L_2_9 = get_first_round_nth_output_bit(9,plaintext,((keyguess >> 1) & 0x01),i);
+		uint8_t L_3_9 = (keyguess & 0x01) ^ ((plaintext[i][2] >> 0) & 0x01) ^ get_first_round_nth_output_bit(7,plaintext,((keyguess >> 3) & 0x01),i) 
+		^ (get_first_round_nth_output_bit(8,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(1,plaintext,((keyguess >> 2) & 0x01),i));
 
 		
 		// if(i==5) {
@@ -147,9 +172,17 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int
 		// unsigned int st9 = inv_sbox[cipher[i][keybyte]  ^ keyguess] ;
 
 		// store the hamming distance in the array
-		hammingArray[i] = L_2_1 ^ L_3_1;
-		//hammingArray[i] = L_2_2 ^ L_3_2;
-		//hammingArray[i] = L_2_3 ^ L_3_3;
+		// hammingArray[i] = L_2_1 ^ L_3_1;
+		// hammingArray[i] = L_2_2 ^ L_3_2;
+		// hammingArray[i] = L_2_3 ^ L_3_3;
+		// hammingArray[i] = L_2_4 ^ L_3_4;
+		// hammingArray[i] = L_2_5 ^ L_3_5;
+		// hammingArray[i] = L_2_6 ^ L_3_6;
+		// hammingArray[i] = L_2_7 ^ L_3_7;
+		// hammingArray[i] = L_2_8 ^ L_3_8;
+		hammingArray[i] = L_2_9 ^ L_3_9;
+
+
 
 		// uncomment below lines for debugging purposes
 		//printf("haming[%d]=%f\n",i,hammingArray[i]);
@@ -206,7 +239,10 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int
 		// }
 
 		// calculate the numerator and the denominator to calculate the pearson correlation
-		double numerator= SAMPLES*sigmaWH - sigmaW*sigmaH;
+
+		// if we add , abs, we can get the correct value in the first 8 values
+		// if we remove abs , we can get the correct value in the first 4 value set or the second 4 value set
+		double numerator= abs(SAMPLES*sigmaWH - sigmaW*sigmaH);
 		double denominator=sqrt(SAMPLES*sigmaW2 - sigmaW*sigmaW)*sqrt(SAMPLES*sigmaH2 - sigmaH*sigmaH);
 
 		// assign a very small value to denominator if its 0, otherwise it will output nan
