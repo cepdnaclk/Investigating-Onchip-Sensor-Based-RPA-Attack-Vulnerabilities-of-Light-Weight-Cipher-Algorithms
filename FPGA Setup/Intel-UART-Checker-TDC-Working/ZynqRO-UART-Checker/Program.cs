@@ -181,10 +181,10 @@ namespace ZynqRO_UART_Checker
             byte[] readArray6 = new byte[samplingPoints];
             byte[] readArray7 = new byte[samplingPoints];
             byte[] readArrayConfig = new byte[samplingPoints];
-            byte[] readArrayCt = new byte[16];
-            byte[] readArrayCipher = new byte[48];
+            byte[] readArrayCt = new byte[8]; //block is 64 bits
+            byte[] readArrayCipher = new byte[26]; // (2*8 + 10) (2*block + key)
             UInt32 readbytes = 0;
-            byte[] writeData = { 0, 255, 255, 255};
+            byte[] writeData = { 0, 0, 0, 0};
             if (args.Length != 0)
             {
                 int result = Int32.Parse(args[0]);
@@ -226,7 +226,7 @@ namespace ZynqRO_UART_Checker
                 write(ftdi, writeData, 4);
                 //read(ftdi, readArrayConfig, 4);
                 
-                read(ftdi, readArrayCipher, 48);
+                read(ftdi, readArrayCipher, 26);
                 readbytes = 0;
 
                 for (int i = 0; i < NumROs; i++)
@@ -261,7 +261,7 @@ namespace ZynqRO_UART_Checker
                     // read TDC senosr also
                     // readbytes = readbytes + read(ftdi, readArray1, 1024);
                     sampleCount += 1;
-                    for (int i = 0; i < 48; i++)
+                    for (int i = 0; i < 26; i++)
                             Console.Write(readArrayCipher[i] + " ");
                       Console.Write("\n");
 
@@ -288,18 +288,18 @@ namespace ZynqRO_UART_Checker
                         String sin = "";
                         String sout = "";
 
-                        for (int j = 0; j < 16; j++)
+                        for (int j = 0; j < 8; j++)
                         {
 
                             if (j == 0)
                             {
                                 sin = readArrayCipher[j].ToString("X2");
-                                sout = readArrayCipher[j + 32].ToString("X2");
+                                sout = readArrayCipher[j + 18].ToString("X2");
                             }
                             else
                             {
                                 sin = sin + " " + readArrayCipher[j].ToString("X2");
-                                sout = sout + " " + readArrayCipher[j + 32].ToString("X2");
+                                sout = sout + " " + readArrayCipher[j + 18].ToString("X2");
                             }
                         }
 
