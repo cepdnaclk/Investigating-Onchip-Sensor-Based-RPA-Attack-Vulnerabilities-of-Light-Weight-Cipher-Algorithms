@@ -111,8 +111,17 @@ uint8_t get_first_round_nth_output_bit(int bit_pos, uint8_t **plaintext, uint8_t
 	return key_bit ^ R ^ L1 ^ (L2 & L3);
 }
 
+uint8_t getSecondRoundOutput(uint8_t **plaintext, uint8_t keyguess, int bitPosition, int i) {
+	uint8_t L_pos_1 = (13+bitPosition)%16+1;
+	uint8_t L_pos_2 = (14+bitPosition)%16+1;
+	uint8_t L_pos_3 = (7+bitPosition)%16+1;
+	return (keyguess & 0x01)
+		^ ((plaintext[i][(1 + bitPosition / 9)] >> ((bitPosition - 1) % 8)) & 0x01)
+		^ get_first_round_nth_output_bit(L_pos_1,plaintext,((keyguess >> 3) & 0x01),i) 
+		^ (get_first_round_nth_output_bit(L_pos_2,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(L_pos_3,plaintext,((keyguess >> 2) & 0x01),i));
+}
 
-float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int keybyte){
+float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int bitPosition){
 	
 	// an array to hold the hamming values
 	int hammingArray[SAMPLES];
@@ -123,12 +132,12 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int
 	for(i=0;i<SAMPLES;i++){
 
 		//get the bit 1 of the input to second round
-		// uint8_t L_2_1 = get_first_round_nth_output_bit(1,plaintext,((keyguess >> 1) & 0x01),i);
+		uint8_t L_2_1 = get_first_round_nth_output_bit(1,plaintext,((keyguess >> 1) & 0x01),i);
 		//calculate the bit 1 of the output of second round
-		// uint8_t L_3_1 = (keyguess >> 0 & 0x01) ^ (plaintext[i][1] & 0x01) ^   get_first_round_nth_output_bit(15,plaintext,((keyguess >> 3) & 0x01),i) 
-		// ^ (get_first_round_nth_output_bit(16,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(9,plaintext,((keyguess >> 2) & 0x01),i));
+		uint8_t L_3_1 = (keyguess >> 0 & 0x01) ^ (plaintext[i][1] & 0x01) ^   get_first_round_nth_output_bit(15,plaintext,((keyguess >> 3) & 0x01),i) 
+		^ (get_first_round_nth_output_bit(16,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(9,plaintext,((keyguess >> 2) & 0x01),i));
 
-		// uint8_t L_2_2 = get_first_round_nth_output_bit(2,plaintext,((keyguess >> 1) & 0x01),i);
+		// uint8_t L_2_2 = get_first_round_nth_output_bit(bitPosition,plaintext,((keyguess >> 1) & 0x01),i);
 		// uint8_t L_3_2 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 1) & 0x01) ^ get_first_round_nth_output_bit(16,plaintext,((keyguess >> 3) & 0x01),i) 
 		// ^ (get_first_round_nth_output_bit(1,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(10,plaintext,((keyguess >> 2) & 0x01),i));
 		
@@ -157,9 +166,9 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int
 		// uint8_t L_3_8 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 7) & 0x01) ^ get_first_round_nth_output_bit(6,plaintext,((keyguess >> 3) & 0x01),i) 
 		// ^ (get_first_round_nth_output_bit(7,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(16,plaintext,((keyguess >> 2) & 0x01),i));
 
-		uint8_t L_2_9 = get_first_round_nth_output_bit(9,plaintext,((keyguess >> 1) & 0x01),i);
-		uint8_t L_3_9 = (keyguess & 0x01) ^ ((plaintext[i][2] >> 0) & 0x01) ^ get_first_round_nth_output_bit(7,plaintext,((keyguess >> 3) & 0x01),i) 
-		^ (get_first_round_nth_output_bit(8,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(1,plaintext,((keyguess >> 2) & 0x01),i));
+		// uint8_t L_2_9 = get_first_round_nth_output_bit(9,plaintext,((keyguess >> 1) & 0x01),i);
+		// uint8_t L_3_9 = (keyguess & 0x01) ^ ((plaintext[i][2] >> 0) & 0x01) ^ get_first_round_nth_output_bit(7,plaintext,((keyguess >> 3) & 0x01),i) 
+		// ^ (get_first_round_nth_output_bit(8,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(1,plaintext,((keyguess >> 2) & 0x01),i));
 
 		
 		// if(i==5) {
@@ -172,7 +181,7 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int
 		// unsigned int st9 = inv_sbox[cipher[i][keybyte]  ^ keyguess] ;
 
 		// store the hamming distance in the array
-		// hammingArray[i] = L_2_1 ^ L_3_1;
+		hammingArray[i] = L_2_1 ^ L_3_1;
 		// hammingArray[i] = L_2_2 ^ L_3_2;
 		// hammingArray[i] = L_2_3 ^ L_3_3;
 		// hammingArray[i] = L_2_4 ^ L_3_4;
@@ -180,7 +189,7 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int
 		// hammingArray[i] = L_2_6 ^ L_3_6;
 		// hammingArray[i] = L_2_7 ^ L_3_7;
 		// hammingArray[i] = L_2_8 ^ L_3_8;
-		hammingArray[i] = L_2_9 ^ L_3_9;
+		// hammingArray[i] = L_2_9 ^ L_3_9;
 
 
 
