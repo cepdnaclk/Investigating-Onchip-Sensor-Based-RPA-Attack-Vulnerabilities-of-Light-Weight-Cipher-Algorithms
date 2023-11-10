@@ -40,12 +40,12 @@ reg  [63:0] dreg;               // data register
 reg  [4:0]  round;              // round counter
 wire [63:0] dat1,dat2,dat3;     // intermediate data
 wire [79:0] kdat1,kdat2;        // intermediate subkey data
-
+reg [63:0] finalCipherText;
 
 //---------combinational processes----------
 
 assign dat1 = dreg ^ kreg[79:16];        // add round key
-assign odat = dat1;                      // output ciphertext
+assign odat = finalCipherText;
 
 // key update
 assign kdat1        = {kreg[18:0], kreg[79:19]}; // rotate key 61 bits to the left
@@ -102,10 +102,12 @@ begin
 end
 
 //done signal
-// always @(posedge clk)
-// begin
-   
-// end
+always @(posedge clk)
+begin
+   if (round==31) begin
+      finalCipherText = dat1;
+   end
+end
 
 //-------------------Debug stuff -------------------
 
