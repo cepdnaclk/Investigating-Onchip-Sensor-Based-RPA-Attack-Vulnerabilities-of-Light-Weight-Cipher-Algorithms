@@ -12,7 +12,7 @@
 #define KEYS 32
 #define n 16
 #define m 4
-#define KEYBYTES 1
+#define KEYBYTES 9
 
 // array to hold the correlation factors for each key
 float corelation[KEYS][KEYBYTES];
@@ -132,6 +132,7 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int
 	for(i=0;i<SAMPLES;i++){
 
 		//get the bit 1 of the input to second round
+
 		uint8_t L_2_1 = get_first_round_nth_output_bit(1,plaintext,((keyguess >> 1) & 0x01),i);
 		//calculate the bit 1 of the output of second round
 		uint8_t L_3_1 = (keyguess >> 0 & 0x01) ^ (plaintext[i][1] & 0x01) ^   get_first_round_nth_output_bit(15,plaintext,((keyguess >> 3) & 0x01),i) 
@@ -412,5 +413,22 @@ int main(int argc, char *argv[]){
 	}
 
 
+	int key = 0;
+	for (int k = 1; k < KEYBYTES; k++) {
+		key += (positions[0][k] >> 4) << (k - 1);
+	}
+
+	for (int k = 0; k < KEYBYTES - 1; k++) {
+		key += ((positions[0][k] >> 2) & 1) << (k + 8);
+	}
+
+	printf("key = %04x\nkey = ", key);
+	for (i = 15; i >= 0; i--) {
+        int bit = (key >> i) & 1;
+        printf("%d", bit);
+        if (i % 4 == 0)
+            printf(" ");
+    }
+	printf("\n");
 }
 
