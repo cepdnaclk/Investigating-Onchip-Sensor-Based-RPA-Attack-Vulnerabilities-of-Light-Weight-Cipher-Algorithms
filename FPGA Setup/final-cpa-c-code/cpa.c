@@ -132,13 +132,13 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int
 	for(i=0;i<SAMPLES;i++){
 
 		//get the bit 1 of the input to second round
-		uint8_t L_2_1 = get_first_round_nth_output_bit(bitPosition + 1,plaintext,((keyguess >> 1) & 0x01),i);
-		//calculate the bit 1 of the output of second round
-		uint8_t L_3_1 = getSecondRoundOutput(plaintext, keyguess, bitPosition + 1, i);
-		// uint8_t L_3_1 = (keyguess >> 0 & 0x01) ^ (plaintext[i][1] & 0x01) ^   get_first_round_nth_output_bit(15,plaintext,((keyguess >> 3) & 0x01),i) 
-		// ^ (get_first_round_nth_output_bit(16,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(9,plaintext,((keyguess >> 2) & 0x01),i));
 
-		// uint8_t L_2_2 = get_first_round_nth_output_bit(2,plaintext,((keyguess >> 1) & 0x01),i);
+		uint8_t L_2_1 = get_first_round_nth_output_bit(1,plaintext,((keyguess >> 1) & 0x01),i);
+		//calculate the bit 1 of the output of second round
+		uint8_t L_3_1 = (keyguess >> 0 & 0x01) ^ (plaintext[i][1] & 0x01) ^   get_first_round_nth_output_bit(15,plaintext,((keyguess >> 3) & 0x01),i) 
+		^ (get_first_round_nth_output_bit(16,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(9,plaintext,((keyguess >> 2) & 0x01),i));
+
+		// uint8_t L_2_2 = get_first_round_nth_output_bit(bitPosition,plaintext,((keyguess >> 1) & 0x01),i);
 		// uint8_t L_3_2 = (keyguess & 0x01) ^ ((plaintext[i][1] >> 1) & 0x01) ^ get_first_round_nth_output_bit(16,plaintext,((keyguess >> 3) & 0x01),i) 
 		// ^ (get_first_round_nth_output_bit(1,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(10,plaintext,((keyguess >> 2) & 0x01),i));
 		
@@ -170,7 +170,7 @@ float maxCorelation(float **wavedata, uint8_t **plaintext, uint8_t keyguess, int
 		// uint8_t L_2_9 = get_first_round_nth_output_bit(9,plaintext,((keyguess >> 1) & 0x01),i);
 		// uint8_t L_3_9 = (keyguess & 0x01) ^ ((plaintext[i][2] >> 0) & 0x01) ^ get_first_round_nth_output_bit(7,plaintext,((keyguess >> 3) & 0x01),i) 
 		// ^ (get_first_round_nth_output_bit(8,plaintext,((keyguess >> 4) & 0x01),i) & get_first_round_nth_output_bit(1,plaintext,((keyguess >> 2) & 0x01),i));
-		
+
 		
 		// if(i==5) {
 		// 	printf("%x, %x, %x, %x \n", plaintext[i][0], plaintext[i][1], plaintext[i][2], plaintext[i][3]);
