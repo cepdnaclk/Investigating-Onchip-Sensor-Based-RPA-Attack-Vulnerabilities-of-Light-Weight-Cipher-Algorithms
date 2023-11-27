@@ -48,7 +48,7 @@ Side channel attacks exploit factors like power consumption, timing information,
 ### Correlation Power Analysis (CPA)
 
 <p align="center">
-    <img src="./images/cpa.png" alt="architecture-of-system" width="200" /><br />
+    <img src="./images/cpa.png" alt="cpa-diagram" width="200" /><br />
     <span><i>Figure 01: Overview of Correlation Power Analysis (CPA)</i></span>
 </p>
 
@@ -65,7 +65,7 @@ Previous research has made crucial assumptions supporting a linear relationship 
 ### Remote Power Analysis (RPA)
 
 <p align="center">
-    <img src="./images/rpa.png" alt="architecture-of-system" width="300" /><br />
+    <img src="./images/rpa.png" alt="rpa-diagram" width="300" /><br />
     <span><i>Figure 02: Overview of Remote Power Analysis (RPA)</i></span>
 </p>
 
@@ -81,14 +81,14 @@ By combining RPA and CPA, attackers can overcome physical barriers and extract s
 On-chip sensors can play a role in side-channel attacks by providing additional sources of information that can be exploited to extract sensitive data. Side-channel attacks aim to uncover secret information, such as encryption keys, by analyzing unintended information leakage during the operation of a cryptographic device. While on-chip sensors are not specific to side-channel attacks, they can potentially be leveraged as additional side channels for extracting information. Followings are some comparisons between them:
 
 <p align="center">
-    <img src="./images/tdc-vs-ro.png" alt="architecture-of-system" width="700" /><br />
+    <img src="./images/tdc-vs-ro.png" alt="tdc-vs-ro-comparison" width="700" /><br />
     <span><i>Figure 03: Comparison of On-chip Sensors</i></span>
 </p>
 
 ### Previous Work
 
 <p align="center">
-    <img src="./images/ciphers-comparison.png" alt="architecture-of-system" width="500" /><br />
+    <img src="./images/ciphers-comparison.png" alt="ciphers-comparison" width="500" /><br />
     <span><i>Figure 04: Previous experiments done against some Ciphers</i></span>
 </p>
 
@@ -145,16 +145,29 @@ On-chip sensors can play a role in side-channel attacks by providing additional 
 ![Output of the CPA attack (Using Cuda)](./images/CudaCodeOutput.png)
 
 ## Results and Analysis
+Regarding the Success Rate, AES and SIMON exhibit comparable trends. Examining Figure 5 reveals that RPA on AES achieves a 100% success rate at approximately 40,000 samples, with vulnerability starting around 20,000 samples. In contrast, RPA effectiveness on SIMON improves with an increasing number of samples, reaching complete success at around 50,000 samples. SIMON remains resistant to RPA attacks until approximately 10,000 samples, as depicted in Figure 6.
+
+<p align="center">
+    <img src="./images/success-rate-aes.png" alt="success-rate-aes" width="500" /><br />
+    <span><i>Figure 05: Success Rate vs. Sample Size in AES</i></span>
+</p>
+
+<p align="center">
+    <img src="./images/success-rate-simon.png" alt="success-rate-simon" width="500" /><br />
+    <span><i>Figure 06: Success Rate vs. Sample Size in SIMON</i></span>
+</p>
+
 
 ## Conclusion
+In summary, our research confirms the vulnerability of AES attacks on Intel Cyclone FPGAs, consistent with prior findings on Xilinx platforms. Importantly, we experimentally reveal SIMON's susceptibility to RPA attacks on Intel FPGAs, highlighting the AND operation in the SIMON round as the primary vulnerability. Notably, 8 key guesses exhibit the same highest Pearson Correlation Coefficient, underscoring the influence of bit combinations. This study emphasizes the need for precise key bit predictions in SIMON due to the cumulative error effect, distinguishing it critically from AES. As cryptographic weaknesses are exposed, our work encourages further exploration and considerations for enhanced security measures in FPGA-based implementations.
 
 ## Publications
 [//]: # "Note: Uncomment each once you uploaded the files to the repository"
 
 1. [Semester 7 report](./data/Investigating-Onchip-Sensor-Based-RPA-Attack-Vulnerabilities-of-Light-Weight-Ciphers-Liteture-Review.pdf)
 2. [Semester 7 slides](./data/project_proposal.pdf)
+3. [Semester 8 slides](./data/final_presentation.pdf)
 <!-- 3. [Semester 8 report](./) -->
-<!-- 4. [Semester 8 slides](./) -->
 <!-- 5. Author 1, Author 2 and Author 3 "Research paper title" (2021). [PDF](./). -->
 
 
