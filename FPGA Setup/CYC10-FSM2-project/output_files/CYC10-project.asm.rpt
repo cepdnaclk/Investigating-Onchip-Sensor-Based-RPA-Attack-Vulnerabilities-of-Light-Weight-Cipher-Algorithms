@@ -1,5 +1,5 @@
 Assembler report for CYC10-project
-Tue Jul 25 18:17:14 2023
+Mon Jan 08 22:13:10 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Jul 25 18:17:14 2023 ;
+; Assembler Status      ; Successful - Mon Jan 08 22:13:10 2024 ;
 ; Revision Name         ; CYC10-project                         ;
 ; Top-level Entity Name ; top                                   ;
 ; Family                ; Cyclone 10 LP                         ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+--------------------------------------------------------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                                                                        ;
 +----------------+--------------------------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00A53B8C                                                                                                                     ;
-; Checksum       ; 0x00A53B8C                                                                                                                     ;
+; JTAG usercode  ; 0x001C726D                                                                                                                     ;
+; Checksum       ; 0x001C726D                                                                                                                     ;
 +----------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -78,15 +78,15 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Jul 25 18:17:13 2023
+    Info: Processing started: Mon Jan 08 22:12:53 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off CYC10-project -c CYC10-project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4718 megabytes
-    Info: Processing ended: Tue Jul 25 18:17:14 2023
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 4687 megabytes
+    Info: Processing ended: Mon Jan 08 22:13:10 2024
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:01
 
 

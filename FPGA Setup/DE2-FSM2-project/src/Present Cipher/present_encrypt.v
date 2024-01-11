@@ -70,7 +70,10 @@ PRESENT_ENCRYPT_PBOX UPBOX    ( .odat(dat3), .idat(dat2) );
 // instantiate substitution box (s-box) for key expansion
 PRESENT_ENCRYPT_SBOX USBOXKEY ( .odat(kdat2[79:76]), .idat(kdat1[79:76]) );
 
-assign done = (round==0)?1:0;
+// orig
+//assign done = (round==0)?1:0;
+// dj changed
+assign done = (round==31)?1:0;
 
 //---------sequential processes----------
 

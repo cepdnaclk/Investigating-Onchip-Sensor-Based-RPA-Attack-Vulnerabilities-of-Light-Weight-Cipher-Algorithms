@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Tue Jul 25 18:16:07 2023
+Analysis & Synthesis Status : Successful - Mon Jan 08 22:12:26 2024
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : CYC10-project
 Top-level Entity Name : top
 Family : Cyclone 10 LP
-Total logic elements : 16,634
-    Total combinational functions : 16,292
-    Dedicated logic registers : 1,991
-Total registers : 1991
+Total logic elements : 1,181
+    Total combinational functions : 1,098
+    Dedicated logic registers : 717
+Total registers : 717
 Total pins : 7
 Total virtual pins : 0
 Total memory bits : 8,192
