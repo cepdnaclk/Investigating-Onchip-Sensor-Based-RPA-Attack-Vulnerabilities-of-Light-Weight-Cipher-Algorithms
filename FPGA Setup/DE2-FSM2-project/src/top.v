@@ -32,7 +32,7 @@ module top(
 //PARAMETERS
 parameter COUNTER_SIZE=31;
 parameter SAMPLES_TO_COLLECT=1024;
-parameter CIPHERS_COUNT = 1;
+parameter CIPHERS_COUNT = 5;
 
 parameter BLOCK_SIZE = 64;
 parameter KEY_SIZE = 80;
@@ -64,7 +64,7 @@ reg  [9:0] fsm1=0;
 reg  [BLOCK_SIZE -1:0] Din;
 reg  [KEY_SIZE-1:0] Kin;
 wire [BLOCK_SIZE-1:0] Dout;
-reg Krdy, Drdy, EncDec, reset, EN;
+reg Krdy, Drdy, EncDec, reset;
 wire Kvld, Dvld, BSY, EncDone;
 
 
@@ -140,8 +140,14 @@ uart_rx uartRX(.i_Clock(clk1), .i_Rx_Serial(rx), .o_Rx_DV(rxReady), .o_Rx_Byte(R
 
 //tdc_top tp (clk0, clk0, out); // TDC sensor
 
-tdc_decode tdc_decode(.clk(clk0), .rst(~reset), .chainvalue_i(outReg), .coded_o(processedOut)); // calculate number of 1's in the TDC Sensor
+//	plaintext  : in std_logic_vector(w_64 - 1 downto 0);
+//		key		  : in std_logic_vector(w_80 - 1 downto 0);
+//		ciphertext : out std_logic_vector(w_64 - 1 downto 0);		
+//		start, clk, reset : in std_logic;
+//		ready : out std_logic		
+//	);
 
+tdc_decode tdc_decode(.clk(clk0), .rst(~reset), .chainvalue_i(outReg), .coded_o(processedOut)); // calculate number of 1's in the TDC Sensor
 
 
 
@@ -154,14 +160,15 @@ wire [BLOCK_SIZE -1:0] DoutTemp [CIPHERS_COUNT-1:0] ;
 wire  [CIPHERS_COUNT-1:0] DvldTemp;
 
 assign Dout = DoutTemp[0]; //&  DoutTemp[1] &  DoutTemp[2] &  DoutTemp[3] &  DoutTemp[4];   // this line we manually need to change ; I will modify this duing next version
-assign EncDone = &DvldTemp;
+assign EncDone = DvldTemp;
 
 genvar i;
 
 generate
 	for(i = 0; i < CIPHERS_COUNT; i = i+1) 
 		begin:gen_code_label
-			(* noprune *) PRESENT_ENCRYPT (.odat(DoutTemp[i]), .done(DvldTemp[i]), .idat(Din), .key(Kin), .load(EN), .clk(clk1)); 
+			//(* noprune *) PRESENT_ENCRYPT (.odat(DoutTemp[i]), .done(DvldTemp[i]), .idat(Din), .key(Kin), .load(EN), .clk(clk1));
+			(* noprune *) PresentEnc PresentEnc(.clk(clk1), .start(start), .reset(reset), .plaintext(Din), .key(Kin), .ciphertext(DoutTemp[i]), .ready(DvldTemp[i]));
 		end
 endgenerate	
 
@@ -282,7 +289,7 @@ always @(posedge clk1) begin
 		else if (MAIN_FSM==MAIN_SIMON_RESET) begin			// AES circuit signals init and AES circuit reset - active low
 			busy <= 1;			
 			//EncDec <= counter1[24];
-			EN <= 0; //cipher enable signal
+			start <= 0; //cipher enable signal
 			reset <= 1; //cipher reset signal
 			Krdy <= 0;
 			Drdy <= 0;
@@ -317,8 +324,8 @@ always @(posedge clk1) begin
 		end
 		else if (MAIN_FSM==MAIN_SIMON_SET_PT) begin
 			
-			//Din  <= {dataCt[0], dataCt[1], dataCt[2], dataCt[3]}; //32'h65656877;
-			Din <= 64'h0000000000000000;
+			Din  <= {dataCt[0], dataCt[1], dataCt[2], dataCt[3]}; //32'h65656877;
+			//Din <= 64'h0000000000000000;
 			Krdy <= 0;
 			//R <= 1;
 			//store the key in memory
@@ -347,7 +354,7 @@ always @(posedge clk1) begin
 			dataIn[7] <= Din[7:0];
 			//R <= 0;
 			Drdy <= 1;
-			EN <= 1; //enable cipher
+			start <= 1; //enable cipher
 			CE <= 1;
 			addr1 <= 0;
 			
@@ -355,7 +362,7 @@ always @(posedge clk1) begin
 		end
 		else if(MAIN_FSM==MAIN_SIMON_WAIT) begin  
 			Drdy <= 0;
-			EN <= 0;
+			
 			
 			//transmitReg <=1;
 			//data1[addr1] <= 9;
@@ -370,6 +377,8 @@ always @(posedge clk1) begin
 				dataCt[5] <= Dout[23:16];
 				dataCt[6] <= Dout[15:8];
 				dataCt[7] <= Dout[7:0];
+				
+				start <= 0;
 				CE <= 0;
 			end
 			if(addr1==1023) begin   // we wait 1024 clock cycles, we also wait for DVLD signal or AES done signal and goto next state
