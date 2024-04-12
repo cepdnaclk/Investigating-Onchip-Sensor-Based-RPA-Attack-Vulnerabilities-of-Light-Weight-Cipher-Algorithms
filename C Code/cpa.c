@@ -4,15 +4,25 @@
 #include <math.h>
 #include "helpers.h"
 #include "data.h"
+#include <stdint.h>
+#include <inttypes.h>
 
 // defining paramters
-#define SAMPLES 20000
+#define SAMPLES 50000
 #define WAVELENGTH 1024
-#define KEYBYTES 1 //number of bytes in the key
+#define KEYBYTES 8 //number of bytes in the key
 #define KEYS 256 //number of possible keys guesses
+
+//#define DEBUG 0  //
 
 // array to hold the correlation factors for each key
 float corelation[KEYS][KEYBYTES];
+
+uint8_t P[] = {0, 16, 32, 48, 1, 17, 33, 49, 2, 18, 34, 50, 3, 19, 35, 51,
+                    4, 20, 36, 52, 5, 21, 37, 53, 6, 22, 38, 54, 7, 23, 39, 55,
+                    8, 24, 40, 56, 9, 25, 41, 57, 10, 26, 42, 58, 11, 27, 43, 59,
+                    12, 28, 44, 60, 13, 29, 45, 61, 14, 30, 46, 62, 15, 31, 47, 63};
+uint8_t invS[] = {0x5, 0xe, 0xf, 0x8, 0xC, 0x1, 0x2, 0xD, 0xB, 0x4, 0x6, 0x3, 0x0, 0x7, 0x9, 0xA};
 
 // to get the maximum value in an array
 double maximum(double *array,int size){
@@ -27,9 +37,9 @@ double maximum(double *array,int size){
 }
 
 // to calculate the hamming distance
-float hamming(unsigned int M, unsigned int R){
+float hamming(uint64_t  M, uint64_t R){
 
-	unsigned int H=M^R;
+	uint64_t  H=M^R;
 	
 	// Count the number of set bits
 	int dist=0;
@@ -73,56 +83,132 @@ void apply_permutation(const unsigned int *inv_pLayer, const unsigned int *word,
     }
 }
 
+uint64_t fromBytesToLong (unsigned int* bytes){
+    uint64_t result = 0;
+    int i;
+    // multiplication with 16 replaced with shifting right 4 times
+    // addition replaced with bitwise OR, since one of the operands is always 0
+    for (i=0; i<8; i++){
+        result = (result << 8) | (bytes[i]&0xFF);
+        //result = (result << 4) | (bytes[i].nibble2 & 0xFUL);
+    }
+    return result;
+}
+
+unsigned int* fromLongToBytes (uint64_t block){
+    unsigned int* bytes = malloc (8 * sizeof(unsigned int));
+    int i;
+    // the nibbles for each byte are obtained by shifting the number to the right for appropriate number of places (a multiple of 4)
+    // each nibble is obtained after masking the bits by performing bitwise AND with 1111 (all bits except the least significant 4 become 0)
+    for (i=0; i<8; i++){
+        bytes[i] = (block >> 8*i) & 0xFF;
+       // bytes[i].nibble1 = (block >> (2 * (7 - i) + 1) * 4) & 0xFLL;
+    }
+    return bytes;
+}
+
+char* fromLongToHexString (uint64_t block){
+    char* hexString = malloc (17 * sizeof(char));
+    //we print the integer in a String in hexadecimal format
+    sprintf(hexString, "%016llx", block);
+    return hexString;
+}
+
+uint64_t inversepermute(uint64_t source){
+    uint64_t permutation = 0;
+    int i;
+    for (i=0; i<64; i++){
+        int distance = 63 - P[i];
+        permutation = (permutation << 1) | ((source >> distance) & 0x1);
+    }
+    return permutation;
+}
+
 float maxCorelation(float **wavedata, unsigned int **cipher, int keyguess, int keybyte){
 	
 	// an array to hold the hamming values
-	float hammingArray[SAMPLES];
+	float * hammingArray = malloc(SAMPLES*sizeof(float));
+
+	//malloc
 	int i,k;
 
 	unsigned int word[8];
 	unsigned int permuted_word[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 	// Hardcoded array with each byte of the 64-bit key
 	unsigned int key[] = {126, 233, 103, 213, 194, 174, 30, 9};
+    //6d ab 31 74 4f 41 d7 00
+	//unsigned int key[] = {0x6d, 0xab, 0x31, 0x74, 0x4f, 0x41, 0xd7, 0x00};
+
+	key[1] = (unsigned int) keyguess;
+	
 
 	// take all the samples into consideration
 	for(i=0;i<SAMPLES;i++){
 
-		unsigned int considered_byte = cipher[i][keybyte];
-
-		//get the word
+		//unsigned int considered_byte = cipher[i][keybyte];
+		uint64_t R31 = 0;
+		uint64_t RKey31 = 0;
+		
 		for(k=0;k<8;k++) {
-			word[k] = cipher[i][k];
+			R31 = (R31 <<8 |(cipher[i][k] & 0xFF));
+			RKey31 = (RKey31 <<8 |(key[k] & 0xFF));
+ 
 		}
+		
+		//DEBUG
+		#ifdef DEBUG
+			char* temp_state= fromLongToHexString(R31);
+			printf("STATE:\t\t %s \n",temp_state);
+		#endif
 
-		key[keybyte] = keyguess;
+		uint64_t result_XOR = R31 ^  RKey31;// fromBytesToLong(word);
+		
+		#ifdef DEBUG
+			char* temp_adr= fromLongToHexString(result_XOR);
+			printf("ADR:\t\t %s \n",temp_adr);
+		#endif
 
-		bitwise_xor(word, key, 8);
+		uint64_t result_invPer= inversepermute(result_XOR);
+		
+		#ifdef DEBUG
+			char* temp_ipr= fromLongToHexString(result_invPer);
+			printf("IP:\t\t %s \n",temp_ipr);
+		#endif
 
-		apply_permutation(inv_pLayer, word, permuted_word);
+		uint64_t result_invSbox=0;
 
-		unsigned int player_inversed = permuted_word[keybyte];
+		for (int j=7;j>=0;j--){
+			unsigned int low_nib = (result_invPer >> (8*j)) & 0x0F;
+			unsigned int high_nib = (result_invPer >> (8*j+4)) & 0x0F;
+			
+			unsigned int high_nib_sbox_inversed = inv_sbox[high_nib];
+		    unsigned int low_nib_sbox_inversed = inv_sbox[low_nib];
 
-		unsigned int first_block = (player_inversed >> 4) && 0x0F;
-		unsigned int second_block = player_inversed && 0x0F;
+			result_invSbox = (result_invSbox <<4 | high_nib_sbox_inversed) ;
+			result_invSbox = (result_invSbox  <<4 | low_nib_sbox_inversed);
 
-		unsigned int first_block_sbox_inversed = inv_sbox[first_block];
-		unsigned int second_block_sbox_inversed = inv_sbox[second_block];
+			//printf("%x %x ", high_nib_sbox_inversed, low_nib_sbox_inversed);
 
-		unsigned int sbox_inversed = (first_block_sbox_inversed << 4) || second_block_sbox_inversed;
-
-		// printf("st10 = %d | keyguess = %d\n", st10, keyguess);
-		// printf("anded with key:%02x & %d | player inversed:%02x | sbox_inversed:%02x\n", st9, st9, player_inversed, sbox_inversed);
-		// printf("first_block:%02x | second_block:%02x | first_block_sbox_inversed:%02x | second_block_sbox_inversed:%02x\n", first_block, second_block, first_block_sbox_inversed, second_block_sbox_inversed);
+		}
+		
+		#ifdef DEBUG
+			char* temp_isb= fromLongToHexString(result_invSbox);
+			printf("IS:\t\t %s \n",temp_isb);
+		#endif
 
 		// store the hamming distance in the array
-		hammingArray[i]=hamming(sbox_inversed, considered_byte);
+		hammingArray[i]=hamming(result_invSbox, R31);
+
+		uint64_t HD = result_invSbox ^ R31;
+		
+		#ifdef DEBUG
+			char* temp_HD= fromLongToHexString(HD);
+			printf("HD:\t\t %s \n",temp_HD);
+		#endif
 
 		// uncomment below lines for debugging purposes
-		//printf("haming[%d]=%d\n",i,hammingArray[i]);
-		//printf("%d ==> st10 = %d && st9 = %d keyguess = %d hamming distance = %d \n",i, st10, st9, keyguess, hammingArray[i]);
-		// if(keyguess == 65){
-		// 	printf("i=%d keybyte(n)=%d keyguess(key)=%d dist=%d\n",i,keybyte,keyguess,hammingArray[i]);
-		// }
+		//printf("haming[%d]=%f\n",i , hammingArray[i] );
+		
 
 	}
 
@@ -198,7 +284,7 @@ float maxCorelation(float **wavedata, unsigned int **cipher, int keyguess, int k
 	  
 	  // get the maxium value of the correlations
 	  float max=maximum(corelations,WAVELENGTH);
-
+	  free(hammingArray);
 	  // return the maximum value
 	  return max;
 }
