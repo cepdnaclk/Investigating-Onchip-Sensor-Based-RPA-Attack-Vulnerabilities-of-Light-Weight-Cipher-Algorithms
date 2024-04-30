@@ -6,9 +6,10 @@
 #include "data.h"
 #include <stdint.h>
 #include <inttypes.h>
+#include <pthread.h> 
 
 // defining paramters
-#define SAMPLES 50000
+#define SAMPLES 35000
 #define WAVELENGTH 1024
 #define KEYBYTES 8 //number of bytes in the key
 #define KEYS 256 //number of possible keys guesses
@@ -23,6 +24,13 @@ uint8_t P[] = {0, 16, 32, 48, 1, 17, 33, 49, 2, 18, 34, 50, 3, 19, 35, 51,
                     8, 24, 40, 56, 9, 25, 41, 57, 10, 26, 42, 58, 11, 27, 43, 59,
                     12, 28, 44, 60, 13, 29, 45, 61, 14, 30, 46, 62, 15, 31, 47, 63};
 uint8_t invS[] = {0x5, 0xe, 0xf, 0x8, 0xC, 0x1, 0x2, 0xD, 0xB, 0x4, 0x6, 0x3, 0x0, 0x7, 0x9, 0xA};
+
+struct args {
+    int keyGuess;
+    float ** wavedata;
+	unsigned int **cipher;
+	float * corelation;
+};
 
 // to get the maximum value in an array
 double maximum(double *array,int size){
@@ -136,10 +144,11 @@ float maxCorelation(float **wavedata, unsigned int **cipher, int keyguess, int k
 	unsigned int permuted_word[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 	// Hardcoded array with each byte of the 64-bit key
 	unsigned int key[] = {126, 233, 103, 213, 194, 174, 30, 9};
+	//7e e9 67 d5 c2 ae 1e 9
     //6d ab 31 74 4f 41 d7 00
 	//unsigned int key[] = {0x6d, 0xab, 0x31, 0x74, 0x4f, 0x41, 0xd7, 0x00};
 
-	key[1] = (unsigned int) keyguess;
+	key[keybyte] = (unsigned int) keyguess;
 	
 
 	// take all the samples into consideration
@@ -341,6 +350,18 @@ int main(int argc, char *argv[]){
 
 	// calculate the correlation max correlation factors for all the keybytes in 
 	// all the keys
+	// struct args data[KEYBYTES];
+	 
+	// for(i=0;i<KEYBYTES;i++){
+	// data[i] = (struct args )malloc(sizeof(struct args));
+	// }
+	//pthread_t tid; 
+  
+    // Let us create three threads 
+    //for (i = 0; i < 3; i++) 
+    //    pthread_create(&tid, NULL, myThreadFun, (void *)&tid); 
+  
+    //pthread_exit(NULL); 
 	for (i=0;i<KEYS;i++){
 		for(j=0;j<KEYBYTES;j++){
 			corelation[i][j]=maxCorelation(wavedata, cipher, i, j);
