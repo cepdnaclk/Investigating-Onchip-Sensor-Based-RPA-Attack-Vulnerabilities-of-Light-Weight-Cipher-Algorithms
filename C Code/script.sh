@@ -4,7 +4,7 @@
 string ="#define SAMPLES "
 echo ""> ans.txt
 max = 20000
-for i in {25000..50000..5000}
+for i in {35000..80000..5000}
 do
     #string1 = "#define SAMPLES ${i}"
     #echo "${string1}"

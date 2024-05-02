@@ -9,7 +9,7 @@
 #include <pthread.h> 
 
 // defining paramters
-#define SAMPLES 35000
+#define SAMPLES 10000
 #define WAVELENGTH 1024
 #define KEYBYTES 8 //number of bytes in the key
 #define KEYS 256 //number of possible keys guesses
@@ -138,7 +138,7 @@ float maxCorelation(float **wavedata, unsigned int **cipher, int keyguess, int k
 	float * hammingArray = malloc(SAMPLES*sizeof(float));
 
 	//malloc
-	int i,k;
+	int i, k;
 
 	unsigned int word[8];
 	unsigned int permuted_word[8] = {0, 0, 0, 0, 0, 0, 0, 0};
@@ -147,6 +147,8 @@ float maxCorelation(float **wavedata, unsigned int **cipher, int keyguess, int k
 	//7e e9 67 d5 c2 ae 1e 9
     //6d ab 31 74 4f 41 d7 00
 	//unsigned int key[] = {0x6d, 0xab, 0x31, 0x74, 0x4f, 0x41, 0xd7, 0x00};
+	// keybyte
+	//for(j=0;j<KEYS;j++){
 
 	key[keybyte] = (unsigned int) keyguess;
 	
@@ -350,11 +352,13 @@ int main(int argc, char *argv[]){
 
 	// calculate the correlation max correlation factors for all the keybytes in 
 	// all the keys
-	// struct args data[KEYBYTES];
+	 //struct args data[KEYBYTES];
 	 
-	// for(i=0;i<KEYBYTES;i++){
-	// data[i] = (struct args )malloc(sizeof(struct args));
-	// }
+	 //for(i=0;i<KEYBYTES;i++){
+	 //data[i].wavedata = wavedata;
+	 //data[i].cipher = cipher;
+	 //data[i].cipher = cipher;
+	 //}
 	//pthread_t tid; 
   
     // Let us create three threads 
