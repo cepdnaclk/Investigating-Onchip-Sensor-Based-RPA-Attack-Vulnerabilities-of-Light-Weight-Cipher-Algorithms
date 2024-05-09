@@ -9,7 +9,7 @@
 #include <pthread.h> 
 
 // defining paramters
-#define SAMPLES 10000
+#define SAMPLES 100000
 #define WAVELENGTH 1024
 #define KEYBYTES 8 //number of bytes in the key
 #define KEYS 16 //number of possible keys guesses
@@ -151,12 +151,13 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 	//unsigned int word[8];
 	//unsigned int permuted_word[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 	// Hardcoded array with each byte of the 64-bit key
-	unsigned int key[] = {126, 233, 103, 213, 194, 174, 30, 9};
+	//unsigned int key[] = {126, 233, 103, 213, 194, 174, 30, 9};
+	unsigned int key[] = {0x07, 0x0e, 0x0e, 0x09, 0x06, 0x07, 0x0d, 0x05, 0x0c, 0x02, 0x0a, 0x0e, 0x01, 0x0e, 0x00, 0x09};
 	//7e e9 67 d5 c2 ae 1e 9
     //6d ab 31 74 4f 41 d7 00
 	//unsigned int key[] = {0x6d, 0xab, 0x31, 0x74, 0x4f, 0x41, 0xd7, 0x00};
 	// keybyte
-	for(z=0;z<KEYS;z++){
+	for(z=0;z<16;z++){
 
 	key[keybyte] = (unsigned int) z;
 	
@@ -169,8 +170,12 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 		uint64_t RKey31 = 0;
 		
 		for(k=0;k<8;k++) {
-			R31 = (R31 <<8 |(cipher[i][k] & 0xFF));
-			RKey31 = (RKey31 <<8 |(key[k] & 0xFF));
+			R31 = (R31 <<4 |((cipher[i][k])>>4 & 0x0F));
+			R31 = (R31 <<4 |(cipher[i][k] & 0x0F));
+
+			RKey31 = (RKey31 <<4 |(key[2*k] & 0x0F));
+			RKey31 = (RKey31 <<4 |(key[2*k+1] & 0x0F));
+			//RKey31 = (RKey31 <<8 |(key[k] & 0xFF));
  
 		}
 		
@@ -178,6 +183,10 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 		#ifdef DEBUG
 			char* temp_state= fromLongToHexString(R31);
 			printf("STATE:\t\t %s \n",temp_state);
+		#endif
+		#ifdef DEBUG
+			char* temp_rkey= fromLongToHexString(RKey31);
+			printf("RKEY:\t\t %s \n",temp_rkey);
 		#endif
 
 		uint64_t result_XOR = R31 ^  RKey31;// fromBytesToLong(word);
@@ -222,7 +231,7 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 		
 		#ifdef DEBUG
 			char* temp_HD= fromLongToHexString(HD);
-			printf("HD:\t\t %s \n",temp_HD);
+			printf("HD:\t\t %s \n\n",temp_HD);
 		#endif
 
 		// uncomment below lines for debugging purposes
@@ -318,9 +327,9 @@ int main(int argc, char *argv[]){
 	// for controlling loops
 	int i,j;
 	
-	float **corelation=malloc(sizeof(float*) * KEYBYTES);
+	float **corelation=malloc(sizeof(float*) * KEYBYTES*2);
 	checkMalloc(corelation);
-	for (i=0; i<KEYBYTES; i++){
+	for (i=0; i<KEYBYTES*2; i++){
 		corelation[i]=malloc(sizeof(float) * KEYS);
 		checkMalloc(corelation[i]);
 	}
@@ -372,12 +381,12 @@ int main(int argc, char *argv[]){
 
 	// calculate the correlation max correlation factors for all the keybytes in 
 	// all the keys
-	 struct args data[KEYBYTES];
+	 struct args data[KEYBYTES*2];
 	 //struct args data[];// = (struct args*)malloc(sizeof (struct args));
 
      
 
-	 for(i=0;i<KEYBYTES;i++){
+	 for(i=0;i<KEYBYTES*2;i++){
 	 data[i].wavedata = wavedata;
 	 data[i].cipher = cipher;
 	 data[i].keybyte = i;
@@ -391,9 +400,9 @@ int main(int argc, char *argv[]){
   
     //pthread_exit(NULL); 
 	//for (i=0;i<KEYS;i++){
-		pthread_t threads[KEYBYTES];
+		pthread_t threads[KEYBYTES*2];
 		int rc;
-		for(j=0;j<KEYBYTES;j++){
+		for(j=0;j<KEYBYTES*2;j++){
 			
 			rc = pthread_create(&threads[j], NULL, maxCorelation, (void *)&data[j]);
 			if (rc)  printf("Error:unable to create thread, %d ", rc);
@@ -401,7 +410,7 @@ int main(int argc, char *argv[]){
 			//maxCorelation(&data[0]);
 		}
 	//}
-   for (j=0;j<KEYBYTES;j++) {  
+   for (j=0;j<KEYBYTES*2;j++) {  
 	pthread_join(threads[j], NULL);  
  }  
 	
@@ -411,13 +420,13 @@ int main(int argc, char *argv[]){
 
 	// printing the key
 	int p=0;
-	int positions[KEYBYTES][KEYS];
+	int positions[KEYBYTES*2][KEYS];
 	double n = 0;
 
 	// first sort the results
-for(j=0;j<KEYBYTES;j++){
+for(j=0;j<KEYBYTES*2;j++){
 		for(i=0;i<KEYS;i++) positions[j][i] =i;
-		for (p=0;p<255;p++){
+		for (p=0;p<KEYS-1;p++){
 
 			for (i=0;i<KEYS-p-1;i++){
 
@@ -434,19 +443,19 @@ for(j=0;j<KEYBYTES;j++){
 	}
 
 	// then print the key
-	for(j=0;j<KEYBYTES;j++){
+	for(j=0;j<KEYBYTES*2;j++){
 		printf("  |%d|\t",j);
 	}
 	printf("\n");
 
 	for (i=0;i<KEYS;i++){
 
-		for(j=0;j<KEYBYTES;j++){
+		for(j=0;j<KEYBYTES*2;j++){
 			printf("  %02x\t",positions[j][i]);
 		}
 		printf("\n");
 
-		for(j=0;j<KEYBYTES;j++){
+		for(j=0;j<KEYBYTES*2;j++){
 			printf("%.4f \t",corelation[j][i]);
 		}
 		printf("\n\n");

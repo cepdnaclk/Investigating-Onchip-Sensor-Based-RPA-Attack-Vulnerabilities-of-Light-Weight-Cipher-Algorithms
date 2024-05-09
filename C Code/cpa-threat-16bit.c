@@ -9,7 +9,7 @@
 #include <pthread.h> 
 
 // defining paramters
-#define SAMPLES 10000
+#define SAMPLES 1000
 #define WAVELENGTH 1024
 #define KEYBYTES 8 //number of bytes in the key
 #define KEYS 16 //number of possible keys guesses
@@ -151,14 +151,15 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 	//unsigned int word[8];
 	//unsigned int permuted_word[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 	// Hardcoded array with each byte of the 64-bit key
-	unsigned int key[] = {126, 233, 103, 213, 194, 174, 30, 9};
+	//unsigned int key[] = {126, 233, 103, 213, 194, 174, 30, 9};
+	unsigned int key[] = {0x07, 0x0e, 0x0e, 0x09, 0x06, 0x07, 0x0d, 0x05, 0x0c, 0x02, 0x0a, 0x0e, 0x01, 0x0e, 0x00, 0x09};
 	//7e e9 67 d5 c2 ae 1e 9
     //6d ab 31 74 4f 41 d7 00
 	//unsigned int key[] = {0x6d, 0xab, 0x31, 0x74, 0x4f, 0x41, 0xd7, 0x00};
 	// keybyte
-	for(z=0;z<KEYS;z++){
+	for(z=0;z<65536;z++){
 
-	key[keybyte] = (unsigned int) z;
+	//key[keybyte] = (unsigned int) z;
 	
 
 	// take all the samples into consideration
@@ -166,21 +167,45 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 
 		//unsigned int considered_byte = cipher[i][keybyte];
 		uint64_t R31 = 0;
+		uint64_t R31_16bit = 0;
+
 		uint64_t RKey31 = 0;
+		uint64_t RKey31_16bit = 0;
 		
 		for(k=0;k<8;k++) {
-			R31 = (R31 <<8 |(cipher[i][k] & 0xFF));
-			RKey31 = (RKey31 <<8 |(key[k] & 0xFF));
+			R31 = (R31 <<4 |((cipher[i][k])>>4 & 0x0F));
+			R31 = (R31 <<4 |(cipher[i][k] & 0x0F));
+
+			//RKey31 = (RKey31 <<4 |(key[2*k] & 0x0F));
+			//RKey31 = (RKey31 <<4 |(key[2*k+1] & 0x0F));
+			
  
 		}
-		
+		// get 16 bits
+		for(k=0;k<16;k++) {
+			int shift = 63-P[k];
+			R31_16bit 	 = (R31_16bit <<1 | ((R31>>shift)&0x01));
+
+			
+		}
+		RKey31_16bit = (unsigned int)z; //(RKey31_16bit <<1 |((RKey31>>shift)&0x01));
+
 		//DEBUG
 		#ifdef DEBUG
 			char* temp_state= fromLongToHexString(R31);
+			char* temp_state1= fromLongToHexString(R31_16bit);
 			printf("STATE:\t\t %s \n",temp_state);
+			printf("STATE_16:\t %s \n",temp_state1);
+		#endif
+		#ifdef DEBUG
+			char* temp_rkey= fromLongToHexString(RKey31);
+			char* temp_rkey1= fromLongToHexString(RKey31_16bit);
+			printf("RKEY:\t\t %s \n",temp_rkey);
+			printf("RKEY_16:\t %s \n",temp_rkey1);
 		#endif
 
-		uint64_t result_XOR = R31 ^  RKey31;// fromBytesToLong(word);
+		uint64_t result_XOR 		= R31       ^  RKey31;// fromBytesToLong(word);
+		uint64_t result_XOR_16bit 	= R31_16bit ^  RKey31_16bit;
 		
 		#ifdef DEBUG
 			char* temp_adr= fromLongToHexString(result_XOR);
@@ -191,10 +216,13 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 		
 		#ifdef DEBUG
 			char* temp_ipr= fromLongToHexString(result_invPer);
+			char* temp_ipr1= fromLongToHexString(result_XOR_16bit);
 			printf("IP:\t\t %s \n",temp_ipr);
+			printf("IP_16:\t\t %s \n",temp_ipr1);
 		#endif
 
 		uint64_t result_invSbox=0;
+		uint64_t result_invSbox_16bit=0;
 
 		for (int j=7;j>=0;j--){
 			unsigned int low_nib = (result_invPer >> (8*j)) & 0x0F;
@@ -209,20 +237,44 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 			//printf("%x %x ", high_nib_sbox_inversed, low_nib_sbox_inversed);
 
 		}
+		for (int j=1;j>=0;j--){
+			unsigned int low_nib = (result_XOR_16bit >> (8*j)) & 0x0F;
+			unsigned int high_nib = (result_XOR_16bit >> (8*j+4)) & 0x0F;
+			
+			unsigned int high_nib_sbox_inversed = inv_sbox[high_nib];
+		    unsigned int low_nib_sbox_inversed = inv_sbox[low_nib];
+
+			result_invSbox_16bit = (result_invSbox_16bit <<4 | high_nib_sbox_inversed) ;
+			result_invSbox_16bit = (result_invSbox_16bit  <<4 | low_nib_sbox_inversed);
+
+			//printf("%x %x ", high_nib_sbox_inversed, low_nib_sbox_inversed);
+
+		}
+
+		
 		
 		#ifdef DEBUG
 			char* temp_isb= fromLongToHexString(result_invSbox);
+			char* temp_isb1= fromLongToHexString(result_invSbox_16bit);
 			printf("IS:\t\t %s \n",temp_isb);
+			printf("IS16:\t\t %s \n",temp_isb1);
 		#endif
 
-		// store the hamming distance in the array
-		hammingArray[i]=hamming(result_invSbox, R31);
+		uint64_t CT_16bit=(R31>>((3-keybyte)*16)) & 0xFFFF;
+		//uint64_t CT_16bit=(R31>>((3-0)*16)) & 0xFFFF;
 
-		uint64_t HD = result_invSbox ^ R31;
+		// store the hamming distance in the array
+		//hammingArray[i]=hamming(result_invSbox, R31);
+		hammingArray[i]=hamming(result_invSbox_16bit, CT_16bit);
+
+		uint64_t HD    = result_invSbox ^ R31;
+		uint64_t HD_16 = result_invSbox_16bit ^ CT_16bit;
 		
 		#ifdef DEBUG
 			char* temp_HD= fromLongToHexString(HD);
+			char* temp_HD1= fromLongToHexString(HD_16);
 			printf("HD:\t\t %s \n",temp_HD);
+			printf("HD_16:\t\t %s \n\n",temp_HD1);
 		#endif
 
 		// uncomment below lines for debugging purposes
@@ -318,10 +370,10 @@ int main(int argc, char *argv[]){
 	// for controlling loops
 	int i,j;
 	
-	float **corelation=malloc(sizeof(float*) * KEYBYTES);
+	float **corelation=malloc(sizeof(float*) * 4);
 	checkMalloc(corelation);
-	for (i=0; i<KEYBYTES; i++){
-		corelation[i]=malloc(sizeof(float) * KEYS);
+	for (i=0; i<4; i++){
+		corelation[i]=malloc(sizeof(float) * 65536);
 		checkMalloc(corelation[i]);
 	}
 
@@ -372,12 +424,12 @@ int main(int argc, char *argv[]){
 
 	// calculate the correlation max correlation factors for all the keybytes in 
 	// all the keys
-	 struct args data[KEYBYTES];
+	 struct args data[4];
 	 //struct args data[];// = (struct args*)malloc(sizeof (struct args));
 
      
 
-	 for(i=0;i<KEYBYTES;i++){
+	 for(i=0;i<4;i++){
 	 data[i].wavedata = wavedata;
 	 data[i].cipher = cipher;
 	 data[i].keybyte = i;
@@ -391,9 +443,9 @@ int main(int argc, char *argv[]){
   
     //pthread_exit(NULL); 
 	//for (i=0;i<KEYS;i++){
-		pthread_t threads[KEYBYTES];
+		pthread_t threads[4];
 		int rc;
-		for(j=0;j<KEYBYTES;j++){
+		for(j=0;j<4;j++){
 			
 			rc = pthread_create(&threads[j], NULL, maxCorelation, (void *)&data[j]);
 			if (rc)  printf("Error:unable to create thread, %d ", rc);
@@ -401,7 +453,7 @@ int main(int argc, char *argv[]){
 			//maxCorelation(&data[0]);
 		}
 	//}
-   for (j=0;j<KEYBYTES;j++) {  
+   for (j=0;j<4;j++) {  
 	pthread_join(threads[j], NULL);  
  }  
 	
@@ -411,13 +463,13 @@ int main(int argc, char *argv[]){
 
 	// printing the key
 	int p=0;
-	int positions[KEYBYTES][KEYS];
+	int positions[4][2^16];
 	double n = 0;
 
 	// first sort the results
-for(j=0;j<KEYBYTES;j++){
+for(j=0;j<4;j++){
 		for(i=0;i<KEYS;i++) positions[j][i] =i;
-		for (p=0;p<255;p++){
+		for (p=0;p<KEYS-1;p++){
 
 			for (i=0;i<KEYS-p-1;i++){
 
@@ -434,19 +486,19 @@ for(j=0;j<KEYBYTES;j++){
 	}
 
 	// then print the key
-	for(j=0;j<KEYBYTES;j++){
+	for(j=0;j<4;j++){
 		printf("  |%d|\t",j);
 	}
 	printf("\n");
 
 	for (i=0;i<KEYS;i++){
 
-		for(j=0;j<KEYBYTES;j++){
+		for(j=0;j<4;j++){
 			printf("  %02x\t",positions[j][i]);
 		}
 		printf("\n");
 
-		for(j=0;j<KEYBYTES;j++){
+		for(j=0;j<4;j++){
 			printf("%.4f \t",corelation[j][i]);
 		}
 		printf("\n\n");
