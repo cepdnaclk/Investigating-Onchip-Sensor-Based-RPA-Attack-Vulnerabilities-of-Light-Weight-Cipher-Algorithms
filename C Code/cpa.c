@@ -9,7 +9,7 @@
 #include <pthread.h> 
 
 // defining paramters
-#define SAMPLES 10000
+#define SAMPLES 90000
 #define WAVELENGTH 1024
 #define KEYBYTES 8 //number of bytes in the key
 #define KEYS 256 //number of possible keys guesses
