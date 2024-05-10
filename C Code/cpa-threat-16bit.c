@@ -9,8 +9,8 @@
 #include <pthread.h> 
 
 // defining paramters
-#define SAMPLES 100000
-#define WAVELENGTH 1024
+#define SAMPLES 20000
+#define WAVELENGTH 64
 #define KEYBYTES 8 //number of bytes in the key
 #define KEYS 65536 //number of possible keys guesses
 
@@ -182,10 +182,9 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
  
 		}
 		// get 16 bits
-		for(k=0;k<16;k++) {
+		for(k=16*keybyte;k<16*(keybyte+1);k++) {
 			int shift = 63-P[k];
 			R31_16bit 	 = (R31_16bit <<1 | ((R31>>shift)&0x01));
-
 			
 		}
 		RKey31_16bit = (unsigned int)z; //(RKey31_16bit <<1 |((RKey31>>shift)&0x01));
@@ -204,7 +203,7 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 			printf("RKEY_16:\t %s \n",temp_rkey1);
 		#endif
 
-		uint64_t result_XOR 		= R31       ^  RKey31;// fromBytesToLong(word);
+		//uint64_t result_XOR 		= R31       ^  RKey31;// fromBytesToLong(word);
 		uint64_t result_XOR_16bit 	= R31_16bit ^  RKey31_16bit;
 		
 		#ifdef DEBUG
@@ -212,7 +211,7 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 			printf("ADR:\t\t %s \n",temp_adr);
 		#endif
 
-		uint64_t result_invPer= inversepermute(result_XOR);
+		//uint64_t result_invPer= inversepermute(result_XOR);
 		
 		#ifdef DEBUG
 			char* temp_ipr= fromLongToHexString(result_invPer);
@@ -224,7 +223,7 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 		uint64_t result_invSbox=0;
 		uint64_t result_invSbox_16bit=0;
 
-		for (int j=7;j>=0;j--){
+		/* for (int j=7;j>=0;j--){
 			unsigned int low_nib = (result_invPer >> (8*j)) & 0x0F;
 			unsigned int high_nib = (result_invPer >> (8*j+4)) & 0x0F;
 			
@@ -236,7 +235,7 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 
 			//printf("%x %x ", high_nib_sbox_inversed, low_nib_sbox_inversed);
 
-		}
+		} */
 		for (int j=1;j>=0;j--){
 			unsigned int low_nib = (result_XOR_16bit >> (8*j)) & 0x0F;
 			unsigned int high_nib = (result_XOR_16bit >> (8*j+4)) & 0x0F;

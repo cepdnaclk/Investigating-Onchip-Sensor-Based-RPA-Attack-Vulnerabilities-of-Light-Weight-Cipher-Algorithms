@@ -10,7 +10,7 @@
 
 // defining paramters
 #define SAMPLES 100000
-#define WAVELENGTH 1024
+#define WAVELENGTH 64
 #define KEYBYTES 8 //number of bytes in the key
 #define KEYS 16 //number of possible keys guesses
 
