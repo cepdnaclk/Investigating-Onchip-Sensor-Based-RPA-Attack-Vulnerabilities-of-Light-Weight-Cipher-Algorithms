@@ -32,7 +32,7 @@ module top(
 //PARAMETERS
 parameter COUNTER_SIZE=31;
 parameter SAMPLES_TO_COLLECT=1024;
-parameter CIPHERS_COUNT = 5;
+parameter CIPHERS_COUNT = 15;
 
 parameter BLOCK_SIZE = 64;
 parameter KEY_SIZE = 80;
@@ -97,7 +97,7 @@ reg [7:0] senData [3:0];
 reg [127:0] A, B;
 wire [127:0] Awire, Bwire, S;
 
-reg [7:0] delay=15;
+reg [7:0] delay=5;
 wire [4:0] Cdelay;
 
 
@@ -159,7 +159,7 @@ wire [BLOCK_SIZE -1:0] DoutTemp [CIPHERS_COUNT-1:0] ;
 
 wire  [CIPHERS_COUNT-1:0] DvldTemp;
 
-assign Dout = DoutTemp[0]; //&  DoutTemp[1] &  DoutTemp[2] &  DoutTemp[3] &  DoutTemp[4];   // this line we manually need to change ; I will modify this duing next version
+assign Dout = DoutTemp[0] &  DoutTemp[1] &  DoutTemp[2] &  DoutTemp[3] &  DoutTemp[4] & DoutTemp[5] &  DoutTemp[6] &  DoutTemp[7] &  DoutTemp[8] &  DoutTemp[9]& DoutTemp[10] &  DoutTemp[11] &  DoutTemp[12] &  DoutTemp[13] &  DoutTemp[14];   // this line we manually need to change ; I will modify this duing next version
 assign EncDone = DvldTemp;
 
 genvar i;
@@ -317,7 +317,7 @@ always @(posedge clk1) begin
 		else if (MAIN_FSM==MAIN_SIMON_SET_KEY) begin
 			//EN <= 1;
 			Krdy <= 1; // set key is ready
-			Kin <= 80'h00000000000000000000;  // this is the key and it is hard corded.
+			Kin <= 80'h3b6a8cf71e295d0b4f2e;  // this is the key and it is hard corded.
 			
 			MAIN_FSM <= MAIN_SIMON_SET_PT;
 					
