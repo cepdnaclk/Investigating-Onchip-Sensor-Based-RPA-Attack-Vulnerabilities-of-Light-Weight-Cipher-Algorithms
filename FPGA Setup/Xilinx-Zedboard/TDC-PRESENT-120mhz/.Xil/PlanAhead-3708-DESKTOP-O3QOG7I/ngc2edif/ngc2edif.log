@@ -1,0 +1,93 @@
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design top.ngc ...
+WARNING:NetListWriters:298 - No output is written to top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus Kin[105 : 0] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus dataIn_0[127 : 0] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   gen_code_label[1].aes_tinyi/mixcol_out[31 : 0] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[1].aes_tinyi/sboxOut[31 :
+   0] on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[1].aes_tinyi/sboxIn[31 :
+   1] on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[1].aes_tinyi/ctrlKey[2 :
+   0] on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[1].aes_tinyi/ctrlData[2 :
+   0] on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   gen_code_label[0].aes_tinyi/mixcol_out[31 : 0] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[0].aes_tinyi/sboxOut[31 :
+   0] on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[0].aes_tinyi/sboxIn[31 :
+   1] on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[0].aes_tinyi/ctrlKey[2 :
+   0] on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[0].aes_tinyi/ctrlData[2 :
+   0] on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   tdc_decode/ADDERTREE_INTERNAL_Madd124_lut[4 : 0] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   tdc_decode/ADDERTREE_INTERNAL_Madd93_cy[4 : 2] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   tdc_decode/ADDERTREE_INTERNAL_Madd93_lut[4 : 0] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   tdc_decode/ADDERTREE_INTERNAL_Madd108_lut[3 : 0] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   tdc_decode/ADDERTREE_INTERNAL_Madd77_lut[3 : 0] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   tdc_decode/ADDERTREE_INTERNAL_Madd60_lut[3 : 0] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   tdc_decode/ADDERTREE_INTERNAL_Madd14_cy[4 : 2] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   tdc_decode/ADDERTREE_INTERNAL_Madd14_lut[3 : 0] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   gen_code_label[0].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/C[7 : 0] on block
+   top is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C[7 : 0] on block
+   top is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   gen_code_label[0].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/C[7 : 0] on block
+   top is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   gen_code_label[0].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/C[7 : 0] on block
+   top is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   gen_code_label[1].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/C[7 : 0] on block
+   top is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   gen_code_label[1].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C[7 : 0] on block
+   top is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   gen_code_label[1].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/C[7 : 0] on block
+   top is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   gen_code_label[1].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/C[7 : 0] on block
+   top is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file top.edif ...
+ngc2edif: Total memory usage is 4321968 kilobytes
+

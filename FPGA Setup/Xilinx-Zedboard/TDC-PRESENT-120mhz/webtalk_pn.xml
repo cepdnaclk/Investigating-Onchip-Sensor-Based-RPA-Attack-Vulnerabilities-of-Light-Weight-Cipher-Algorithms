@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pn" timeStamp="Thu Aug 15 20:06:05 2024">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="73694503E85C44FD85EC548D8A02C5AC" type="project"/>
+<property name="ProjectIteration" value="988" type="project"/>
+<property name="ProjectFile" value="/mnt/c/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/Xilinx-Zedboard/TDC-PRESENT-120mhz/test.xise" type="project"/>
+<property name="ProjectCreationTimestamp" value="2020-03-26T10:52:51" type="project"/>
+</section>
+<section name="Project Statistics" visible="true">
+<property name="PROPEXT_xilxPARstrat_virtex5" value="Reentrant Route" type="process"/>
+<property name="PROP_Enable_Message_Filtering" value="false" type="design"/>
+<property name="PROP_FitterReportFormat" value="HTML" type="process"/>
+<property name="PROP_LastAppliedGoal" value="Balanced" type="design"/>
+<property name="PROP_LastAppliedStrategy" value="Xilinx Default (unlocked)" type="design"/>
+<property name="PROP_ManualCompileOrderImp" value="false" type="design"/>
+<property name="PROP_MapLUTCombining_virtex5" value="Auto" type="process"/>
+<property name="PROP_MapLogicOptimization_virtex5" value="true" type="process"/>
+<property name="PROP_PropSpecInProjFile" value="Store all values" type="design"/>
+<property name="PROP_Simulator" value="ISim (VHDL/Verilog)" type="design"/>
+<property name="PROP_SynthTopFile" value="changed" type="process"/>
+<property name="PROP_Top_Level_Module_Type" value="HDL" type="design"/>
+<property name="PROP_UseSmartGuide" value="false" type="design"/>
+<property name="PROP_UserConstraintEditorPreference" value="Text Editor" type="process"/>
+<property name="PROP_intProjectCreationTimestamp" value="2020-03-26T10:52:51" type="design"/>
+<property name="PROP_intWbtProjectID" value="73694503E85C44FD85EC548D8A02C5AC" type="design"/>
+<property name="PROP_intWbtProjectIteration" value="988" type="process"/>
+<property name="PROP_intWorkingDirLocWRTProjDir" value="Same" type="design"/>
+<property name="PROP_intWorkingDirUsed" value="No" type="design"/>
+<property name="PROP_xilxMapReportDetail" value="true" type="process"/>
+<property name="PROP_xilxMapTrimUnconnSig" value="false" type="process"/>
+<property name="PROP_xstEquivRegRemoval" value="false" type="process"/>
+<property name="PROP_AutoTop" value="true" type="design"/>
+<property name="PROP_CompxlibEdkSimLib" value="true" type="process"/>
+<property name="PROP_DevFamily" value="Zynq" type="design"/>
+<property name="PROP_MapExtraEffort_virtex5" value="Continue on Impossible" type="process"/>
+<property name="PROP_xilxMapEnableMultiThreading" value="2" type="process"/>
+<property name="PROPEXT_xilxPARextraEffortLevel_virtex5" value="Continue on Impossible" type="process"/>
+<property name="PROP_DevDevice" value="xc7z020" type="design"/>
+<property name="PROP_DevFamilyPMName" value="zynq" type="design"/>
+<property name="PROP_DevPackage" value="clg484" type="design"/>
+<property name="PROP_Synthesis_Tool" value="XST (VHDL/Verilog)" type="design"/>
+<property name="PROP_parEnableMultiThreading_virtex5" value="4" type="process"/>
+<property name="PROP_DevSpeed" value="-1" type="design"/>
+<property name="PROP_PreferredLanguage" value="Verilog" type="design"/>
+<property name="FILE_COREGEN" value="3" type="source"/>
+<property name="FILE_UCF" value="1" type="source"/>
+<property name="FILE_VERILOG" value="16" type="source"/>
+<property name="FILE_VHDL" value="14" type="source"/>
+</section>
+</application>
+</document>

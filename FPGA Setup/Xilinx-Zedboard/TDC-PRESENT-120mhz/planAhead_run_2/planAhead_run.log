@@ -1,0 +1,22 @@
+
+****** PlanAhead v14.7 (64-bit)
+  **** Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Common 17-86] Your PlanAhead license expires in -2946 day(s)
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+INFO: [Common 17-81] Feature available: PartialReconfiguration
+source {D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/ZEDBOARD-OrigTDCSensor-8del-new/pa.fromNetlist.tcl}
+# create_project -name test -dir "D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/ZEDBOARD-OrigTDCSensor-8del-new/planAhead_run_2" -part xc7z020clg484-1
+
+    while executing
+"create_project -name test -dir "D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/..."
+    (file "D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/ZEDBOARD-OrigTDCSensor-8del-new/..." line 4)
+exit
+INFO: [Common 17-206] Exiting PlanAhead at Tue May 24 23:17:15 2022...
+INFO: [Common 17-83] Releasing license: PlanAhead

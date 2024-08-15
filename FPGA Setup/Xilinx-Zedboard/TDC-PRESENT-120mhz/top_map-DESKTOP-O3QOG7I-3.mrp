@@ -1,0 +1,1767 @@
+Release 14.7 Map P.20131013 (nt64)
+Xilinx Mapping Report File for Design 'top'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt on -ol high
+-xe c -t 1 -xt 0 -register_duplication off -r 4 -mt 2 -detail -ir off -pr off
+-lc auto -power off -o top_map.ncd top.ngd top.pcf 
+Target Device  : xc7z020
+Target Package : clg484
+Target Speed   : -1
+Mapper Version : zynq -- $Revision: 1.55 $
+Mapped Date    : Thu Aug 05 19:13:49 2021
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    4
+Slice Logic Utilization:
+  Number of Slice Registers:                 5,891 out of 106,400    5%
+    Number used as Flip Flops:               4,223
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:            1,668
+  Number of Slice LUTs:                      6,495 out of  53,200   12%
+    Number used as logic:                    6,471 out of  53,200   12%
+      Number using O6 output only:           2,912
+      Number using O5 output only:              73
+      Number using O5 and O6:                3,486
+      Number used as ROM:                        0
+    Number used as Memory:                       1 out of  17,400    1%
+      Number used as Dual Port RAM:              0
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:             1
+        Number using O6 output only:             1
+        Number using O5 output only:             0
+        Number using O5 and O6:                  0
+    Number used exclusively as route-thrus:     23
+      Number with same-slice register load:     20
+      Number with same-slice carry load:         3
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 1,690 out of  13,300   12%
+  Number of LUT Flip Flop pairs used:        6,590
+    Number with an unused Flip Flop:         1,411 out of   6,590   21%
+    Number with an unused LUT:                  95 out of   6,590    1%
+    Number of fully used LUT-FF pairs:       5,084 out of   6,590   77%
+    Number of unique control sets:              29
+    Number of slice register sites lost
+      to control set restrictions:              88 out of 106,400    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                         8 out of     200    4%
+    Number of LOCed IOBs:                        8 out of       8  100%
+
+Specific Feature Utilization:
+  Number of RAMB36E1/FIFO36E1s:                  0 out of     140    0%
+  Number of RAMB18E1/FIFO18E1s:                  3 out of     280    1%
+    Number using RAMB18E1 only:                  3
+    Number using FIFO18E1 only:                  0
+  Number of BUFG/BUFGCTRLs:                      5 out of      32   15%
+    Number used as BUFGs:                        5
+    Number used as BUFGCTRLs:                    0
+  Number of IDELAYE2/IDELAYE2_FINEDELAYs:        0 out of     200    0%
+  Number of ILOGICE2/ILOGICE3/ISERDESE2s:        0 out of     200    0%
+  Number of ODELAYE2/ODELAYE2_FINEDELAYs:        0
+  Number of OLOGICE2/OLOGICE3/OSERDESE2s:        0 out of     200    0%
+  Number of PHASER_IN/PHASER_IN_PHYs:            0 out of      16    0%
+  Number of PHASER_OUT/PHASER_OUT_PHYs:          0 out of      16    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHCEs:                             0 out of      72    0%
+  Number of BUFRs:                               0 out of      16    0%
+  Number of CAPTUREs:                            0 out of       1    0%
+  Number of DNA_PORTs:                           0 out of       1    0%
+  Number of DSP48E1s:                            0 out of     220    0%
+  Number of EFUSE_USRs:                          0 out of       1    0%
+  Number of FRAME_ECCs:                          0 out of       1    0%
+  Number of ICAPs:                               0 out of       2    0%
+  Number of IDELAYCTRLs:                         0 out of       4    0%
+  Number of IN_FIFOs:                            0 out of      16    0%
+  Number of MMCME2_ADVs:                         1 out of       4   25%
+  Number of OUT_FIFOs:                           0 out of      16    0%
+  Number of PHASER_REFs:                         0 out of       4    0%
+  Number of PHY_CONTROLs:                        0 out of       4    0%
+  Number of PLLE2_ADVs:                          0 out of       4    0%
+  Number of PS7s:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of XADCs:                               0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                3.01
+
+Peak Memory Usage:  5215 MB
+Total REAL time to MAP completion:  2 mins 26 secs 
+Total CPU time to MAP completion (all processors):   2 mins 14 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+WARNING:Pack:1653 - At least one timing constraint is impossible to meet because component delays alone exceed the constraint. A timing
+   constraint summary below shows the failing constraints (preceded with an Asterisk (*)). Please use the Timing Analyzer (GUI) or TRCE
+   (command line) with the Mapped NCD and PCF files to identify which constraints and paths are failing because of the component delays
+   alone. If the failing path(s) is mapped to Xilinx components as expected, consider relaxing the constraint. If it is not mapped to
+   components as expected, re-evaluate your HDL and how synthesis is optimizing the path. To allow the tools to bypass this error, set the
+   environment variable XIL_TIMING_ALLOW_IMPOSSIBLE to 1.
+
+
+   For more information about the Timing Analyzer, consult the Xilinx Timing Analyzer Reference manual; for more information on TRCE,
+   consult the Xilinx Command Line Tools User Guide "TRACE" chapter.
+WARNING:PhysDesignRules:2500 - This design does not have a PS7 block.
+   Instantiate the PS7 block in order to ensure proper fabric tie-offs and
+   correct operation of the processing_system7.
+WARNING:PhysDesignRules:367 - The signal <clk2> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <del1/delLATCH<7>> is incomplete. The
+   signal does not drive any load pins in the design.
+
+Section 3 - Informational
+-------------------------
+INFO:Map:284 - Map is running with the multi-threading option on. Map currently
+   supports the use of up to 2 processors. Based on the the user options and
+   machine load, Map will use 2 processors during this run.
+INFO:Security:54 - 'xc7z020' is a WebPack part.
+INFO:LIT:243 - Logical network del1/delLATCH<7> has no load.
+INFO:MapLib:950 - SAVE has been detected on block
+   "del1/gen_code_label3[6].LUT1_insti"
+INFO:MapLib:950 - SAVE has been detected on block
+   "del1/gen_code_label3[5].LUT1_insti"
+INFO:MapLib:950 - SAVE has been detected on block
+   "del1/gen_code_label3[4].LUT1_insti"
+INFO:MapLib:950 - SAVE has been detected on block
+   "del1/gen_code_label3[3].LUT1_insti"
+INFO:MapLib:950 - SAVE has been detected on block
+   "del1/gen_code_label3[2].LUT1_insti"
+INFO:MapLib:950 - SAVE has been detected on block
+   "del1/gen_code_label3[1].LUT1_insti"
+INFO:MapLib:950 - SAVE has been detected on block
+   "del1/gen_code_label3[0].LUT1_insti"
+INFO:MapLib:1078 - IDELAYCTRL symbol "IDELAYCTRL_inst" (output signal=<none>)
+   does not have assigned IODELAY_GROUP. A default GROUP
+   "MapGeneratedIodelayGroup" will be assigned.
+   The following IODELAY Components are assigned to the same GROUP:
+   IDELAYE2 symbol "IDELAYE2_inst0" (output signal=<none>)
+
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 0.950 Volts. (default - Range: 0.950 to
+   1.050 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 143 block(s) removed
+ 830 block(s) optimized away
+ 120 signal(s) removed
+  70 Block(s) redundant
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "IDELAYE2_inst0" (IDELAYE2) removed.
+Loadless block "clock/u3" (CKBUF) removed.
+ The signal "clock/clk5t" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00000ad9" (XOR) removed.
+ The signal "rca/blk00000001/sig000020ae" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00000add" (MUX) removed.
+   The signal "rca/blk00000001/sig000020af" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00000adf" (MUX) removed.
+   The signal "rca/blk00000001/sig00002132" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00002130" is loadless and has been removed.
+ The signal "rca/blk00000001/sig0000212f" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00000ada" (MUX) removed.
+Loadless block "rca/blk00000001/blk00000adb" (XOR) removed.
+Loadless block "rca/blk00000001/blk00000c5e" (XOR) removed.
+ The signal "rca/blk00000001/sig00002231" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00000c62" (MUX) removed.
+   The signal "rca/blk00000001/sig00002232" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00000c64" (MUX) removed.
+   The signal "rca/blk00000001/sig000022b5" is loadless and has been removed.
+   The signal "rca/blk00000001/sig000022b3" is loadless and has been removed.
+ The signal "rca/blk00000001/sig000022b2" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00000c5f" (MUX) removed.
+Loadless block "rca/blk00000001/blk00000c60" (XOR) removed.
+Loadless block "rca/blk00000001/blk00000de3" (XOR) removed.
+ The signal "rca/blk00000001/sig000023b4" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00000de7" (MUX) removed.
+   The signal "rca/blk00000001/sig000023b5" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00000de9" (MUX) removed.
+   The signal "rca/blk00000001/sig00002438" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00002436" is loadless and has been removed.
+ The signal "rca/blk00000001/sig00002435" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00000de4" (MUX) removed.
+Loadless block "rca/blk00000001/blk00000de5" (XOR) removed.
+Loadless block "rca/blk00000001/blk00000f68" (XOR) removed.
+ The signal "rca/blk00000001/sig00002537" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00000f6c" (MUX) removed.
+   The signal "rca/blk00000001/sig00002538" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00000f6e" (MUX) removed.
+   The signal "rca/blk00000001/sig000025bb" is loadless and has been removed.
+   The signal "rca/blk00000001/sig000025b9" is loadless and has been removed.
+ The signal "rca/blk00000001/sig000025b8" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00000f69" (MUX) removed.
+Loadless block "rca/blk00000001/blk00000f6a" (XOR) removed.
+Loadless block "rca/blk00000001/blk000010ed" (XOR) removed.
+ The signal "rca/blk00000001/sig000026ba" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk000010f1" (MUX) removed.
+   The signal "rca/blk00000001/sig000026bb" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk000010f3" (MUX) removed.
+   The signal "rca/blk00000001/sig0000273e" is loadless and has been removed.
+   The signal "rca/blk00000001/sig0000273c" is loadless and has been removed.
+ The signal "rca/blk00000001/sig0000273b" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk000010ee" (MUX) removed.
+Loadless block "rca/blk00000001/blk000010ef" (XOR) removed.
+Loadless block "rca/blk00000001/blk00001272" (XOR) removed.
+ The signal "rca/blk00000001/sig0000283d" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00001276" (MUX) removed.
+   The signal "rca/blk00000001/sig0000283e" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00001278" (MUX) removed.
+   The signal "rca/blk00000001/sig000028c1" is loadless and has been removed.
+   The signal "rca/blk00000001/sig000028bf" is loadless and has been removed.
+ The signal "rca/blk00000001/sig000028be" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00001273" (MUX) removed.
+Loadless block "rca/blk00000001/blk00001274" (XOR) removed.
+Loadless block "rca/blk00000001/blk000013f7" (XOR) removed.
+ The signal "rca/blk00000001/sig000029c0" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk000013fb" (MUX) removed.
+   The signal "rca/blk00000001/sig000029c1" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk000013fd" (MUX) removed.
+   The signal "rca/blk00000001/sig00002a44" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00002a42" is loadless and has been removed.
+ The signal "rca/blk00000001/sig00002a41" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk000013f8" (MUX) removed.
+Loadless block "rca/blk00000001/blk000013f9" (XOR) removed.
+Loadless block "rca/blk00000001/blk0000157c" (XOR) removed.
+ The signal "rca/blk00000001/sig00002b43" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00001580" (MUX) removed.
+   The signal "rca/blk00000001/sig00002b44" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00001582" (MUX) removed.
+     The signal "rca/blk00000001/sig00002bc9" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00002bc7" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00002bc5" is loadless and has been removed.
+ The signal "rca/blk00000001/sig00002bc4" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk0000157d" (MUX) removed.
+Loadless block "rca/blk00000001/blk0000157e" (XOR) removed.
+Loadless block "rca/blk00000001/blk00001701" (XOR) removed.
+ The signal "rca/blk00000001/sig00002cc6" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00001705" (MUX) removed.
+   The signal "rca/blk00000001/sig00002cc7" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00001707" (MUX) removed.
+     The signal "rca/blk00000001/sig00002d4c" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00002d4a" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00002d48" is loadless and has been removed.
+ The signal "rca/blk00000001/sig00002d47" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00001702" (MUX) removed.
+Loadless block "rca/blk00000001/blk00001703" (XOR) removed.
+Loadless block "rca/blk00000001/blk00001886" (XOR) removed.
+ The signal "rca/blk00000001/sig00002e49" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk0000188a" (MUX) removed.
+   The signal "rca/blk00000001/sig00002e4a" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk0000188c" (MUX) removed.
+     The signal "rca/blk00000001/sig00002ecf" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00002ecd" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00002ecb" is loadless and has been removed.
+ The signal "rca/blk00000001/sig00002eca" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00001887" (MUX) removed.
+Loadless block "rca/blk00000001/blk00001888" (XOR) removed.
+Loadless block "rca/blk00000001/blk00001a0b" (XOR) removed.
+ The signal "rca/blk00000001/sig00002fcc" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00001a0f" (MUX) removed.
+   The signal "rca/blk00000001/sig00002fcd" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00001a11" (MUX) removed.
+     The signal "rca/blk00000001/sig00003052" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00003050" is loadless and has been removed.
+   The signal "rca/blk00000001/sig0000304e" is loadless and has been removed.
+ The signal "rca/blk00000001/sig0000304d" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00001a0c" (MUX) removed.
+Loadless block "rca/blk00000001/blk00001a0d" (XOR) removed.
+Loadless block "rca/blk00000001/blk00001b90" (XOR) removed.
+ The signal "rca/blk00000001/sig0000314f" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00001b94" (MUX) removed.
+   The signal "rca/blk00000001/sig00003150" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00001b96" (MUX) removed.
+     The signal "rca/blk00000001/sig000031d5" is loadless and has been removed.
+   The signal "rca/blk00000001/sig000031d3" is loadless and has been removed.
+   The signal "rca/blk00000001/sig000031d1" is loadless and has been removed.
+ The signal "rca/blk00000001/sig000031d0" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00001b91" (MUX) removed.
+Loadless block "rca/blk00000001/blk00001b92" (XOR) removed.
+Loadless block "rca/blk00000001/blk00001d15" (XOR) removed.
+ The signal "rca/blk00000001/sig000032d2" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00001d19" (MUX) removed.
+   The signal "rca/blk00000001/sig000032d3" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00001d1b" (MUX) removed.
+     The signal "rca/blk00000001/sig00003358" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00003356" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00003354" is loadless and has been removed.
+ The signal "rca/blk00000001/sig00003353" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00001d16" (MUX) removed.
+Loadless block "rca/blk00000001/blk00001d17" (XOR) removed.
+Loadless block "rca/blk00000001/blk00001e9a" (XOR) removed.
+ The signal "rca/blk00000001/sig00003455" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00001e9e" (MUX) removed.
+   The signal "rca/blk00000001/sig00003456" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00001ea0" (MUX) removed.
+     The signal "rca/blk00000001/sig000034db" is loadless and has been removed.
+   The signal "rca/blk00000001/sig000034d9" is loadless and has been removed.
+   The signal "rca/blk00000001/sig000034d7" is loadless and has been removed.
+ The signal "rca/blk00000001/sig000034d6" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00001e9b" (MUX) removed.
+Loadless block "rca/blk00000001/blk00001e9c" (XOR) removed.
+Loadless block "rca/blk00000001/blk0000201f" (XOR) removed.
+ The signal "rca/blk00000001/sig000035d8" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00002023" (MUX) removed.
+   The signal "rca/blk00000001/sig000035d9" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00002025" (MUX) removed.
+     The signal "rca/blk00000001/sig0000365e" is loadless and has been removed.
+   The signal "rca/blk00000001/sig0000365c" is loadless and has been removed.
+   The signal "rca/blk00000001/sig0000365a" is loadless and has been removed.
+ The signal "rca/blk00000001/sig00003659" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00002020" (MUX) removed.
+Loadless block "rca/blk00000001/blk00002021" (XOR) removed.
+Loadless block "rca/blk00000001/blk000021a4" (XOR) removed.
+ The signal "rca/blk00000001/sig0000375b" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk000021a8" (MUX) removed.
+   The signal "rca/blk00000001/sig0000375c" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk000021aa" (MUX) removed.
+     The signal "rca/blk00000001/sig000037e1" is loadless and has been removed.
+   The signal "rca/blk00000001/sig000037df" is loadless and has been removed.
+   The signal "rca/blk00000001/sig000037dd" is loadless and has been removed.
+ The signal "rca/blk00000001/sig000037dc" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk000021a5" (MUX) removed.
+Loadless block "rca/blk00000001/blk000021a6" (XOR) removed.
+Loadless block "rca/blk00000001/blk00002329" (XOR) removed.
+ The signal "rca/blk00000001/sig000038de" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk0000232d" (MUX) removed.
+   The signal "rca/blk00000001/sig000038df" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk0000232f" (MUX) removed.
+     The signal "rca/blk00000001/sig00003964" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00003962" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00003960" is loadless and has been removed.
+ The signal "rca/blk00000001/sig0000395f" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk0000232a" (MUX) removed.
+Loadless block "rca/blk00000001/blk0000232b" (XOR) removed.
+Loadless block "rca/blk00000001/blk000024ae" (XOR) removed.
+ The signal "rca/blk00000001/sig00003a61" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk000024b2" (MUX) removed.
+   The signal "rca/blk00000001/sig00003a62" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk000024b4" (MUX) removed.
+     The signal "rca/blk00000001/sig00003ae7" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00003ae5" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00003ae3" is loadless and has been removed.
+ The signal "rca/blk00000001/sig00003ae2" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk000024af" (MUX) removed.
+Loadless block "rca/blk00000001/blk000024b0" (XOR) removed.
+Loadless block "rca/blk00000001/blk00002633" (XOR) removed.
+ The signal "rca/blk00000001/sig00003be4" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00002637" (MUX) removed.
+   The signal "rca/blk00000001/sig00003be5" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00002639" (MUX) removed.
+     The signal "rca/blk00000001/sig00003c6a" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00003c68" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00003c66" is loadless and has been removed.
+ The signal "rca/blk00000001/sig00003c65" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk00002634" (MUX) removed.
+Loadless block "rca/blk00000001/blk00002635" (XOR) removed.
+Loadless block "rca/blk00000001/blk000027b8" (XOR) removed.
+ The signal "rca/blk00000001/sig00003d67" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk000027bc" (MUX) removed.
+   The signal "rca/blk00000001/sig00003d68" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk000027be" (MUX) removed.
+     The signal "rca/blk00000001/sig00003ded" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00003deb" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00003de9" is loadless and has been removed.
+ The signal "rca/blk00000001/sig00003de8" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk000027b9" (MUX) removed.
+Loadless block "rca/blk00000001/blk000027ba" (XOR) removed.
+Loadless block "rca/blk00000001/blk0000293d" (XOR) removed.
+ The signal "rca/blk00000001/sig00003eea" is loadless and has been removed.
+  Loadless block "rca/blk00000001/blk00002941" (MUX) removed.
+   The signal "rca/blk00000001/sig00003eeb" is loadless and has been removed.
+    Loadless block "rca/blk00000001/blk00002943" (MUX) removed.
+     The signal "rca/blk00000001/sig00003f70" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00003f6e" is loadless and has been removed.
+   The signal "rca/blk00000001/sig00003f6c" is loadless and has been removed.
+ The signal "rca/blk00000001/sig00003f6b" is loadless and has been removed.
+Loadless block "rca/blk00000001/blk0000293e" (MUX) removed.
+Loadless block "rca/blk00000001/blk0000293f" (XOR) removed.
+Loadless block "u3" (CKBUF) removed.
+Unused block "rca/blk00000001/blk00000bdd" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00000d62" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00000ee7" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk0000106c" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk000011f1" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00001376" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk000014fb" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00001680" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00001805" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk0000198a" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00001b0f" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00001c94" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00001e19" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00001f9e" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00002123" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk000022a8" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk0000242d" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk000025b2" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00002737" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk000028bc" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00002a41" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00001681" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00001806" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk0000198b" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00001b10" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00001c95" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00001e1a" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00001f9f" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00002124" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk000022a9" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk0000242e" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk000025b3" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00002738" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk000028bd" (LUT6_2) removed.
+Unused block "rca/blk00000001/blk00002a42" (LUT6_2) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+VCC 		rca/blk00000001/blk00000002
+GND 		rca/blk00000001/blk00000003
+LUT6_2 		rca/blk00000001/blk000016c5
+LUT6_2 		rca/blk00000001/blk000016c6
+LUT6_2 		rca/blk00000001/blk000016c7
+LUT6_2 		rca/blk00000001/blk000016c8
+LUT6_2 		rca/blk00000001/blk000016c9
+LUT6_2 		rca/blk00000001/blk000016ca
+LUT6_2 		rca/blk00000001/blk000016cb
+LUT6_2 		rca/blk00000001/blk000016cc
+LUT6_2 		rca/blk00000001/blk000016cd
+LUT6_2 		rca/blk00000001/blk000016ce
+LUT6_2 		rca/blk00000001/blk000016cf
+LUT6_2 		rca/blk00000001/blk000016d0
+LUT6_2 		rca/blk00000001/blk000016d1
+LUT6_2 		rca/blk00000001/blk000016d2
+LUT6_2 		rca/blk00000001/blk000016d3
+LUT6_2 		rca/blk00000001/blk000016d4
+LUT6_2 		rca/blk00000001/blk000016d5
+LUT6_2 		rca/blk00000001/blk000016d6
+LUT6_2 		rca/blk00000001/blk000016d7
+LUT6_2 		rca/blk00000001/blk000016d8
+LUT6_2 		rca/blk00000001/blk000016d9
+LUT6_2 		rca/blk00000001/blk000016da
+LUT6_2 		rca/blk00000001/blk000016db
+LUT6_2 		rca/blk00000001/blk000016dc
+LUT6_2 		rca/blk00000001/blk000016dd
+LUT6_2 		rca/blk00000001/blk000016de
+LUT6_2 		rca/blk00000001/blk000016df
+LUT6_2 		rca/blk00000001/blk000016e0
+LUT6_2 		rca/blk00000001/blk000016e1
+LUT6_2 		rca/blk00000001/blk000016e2
+LUT6_2 		rca/blk00000001/blk000016e3
+LUT6_2 		rca/blk00000001/blk000016e4
+LUT6_2 		rca/blk00000001/blk000016e5
+LUT6_2 		rca/blk00000001/blk000016e6
+LUT6_2 		rca/blk00000001/blk000016e7
+LUT6_2 		rca/blk00000001/blk000016e8
+LUT6_2 		rca/blk00000001/blk000016e9
+LUT6_2 		rca/blk00000001/blk000016ea
+LUT6_2 		rca/blk00000001/blk000016eb
+LUT6_2 		rca/blk00000001/blk000016ec
+LUT6_2 		rca/blk00000001/blk000016ed
+LUT6_2 		rca/blk00000001/blk000016ee
+LUT6_2 		rca/blk00000001/blk000016ef
+LUT6_2 		rca/blk00000001/blk000016f0
+LUT6_2 		rca/blk00000001/blk000016f1
+LUT6_2 		rca/blk00000001/blk000016f2
+LUT6_2 		rca/blk00000001/blk000016f3
+LUT6_2 		rca/blk00000001/blk000016f4
+LUT6_2 		rca/blk00000001/blk000016f5
+LUT6_2 		rca/blk00000001/blk000016f6
+LUT6_2 		rca/blk00000001/blk000016f7
+LUT6_2 		rca/blk00000001/blk000016f8
+LUT6_2 		rca/blk00000001/blk000016f9
+LUT6_2 		rca/blk00000001/blk000016fa
+LUT6_2 		rca/blk00000001/blk000016fb
+LUT6_2 		rca/blk00000001/blk000016fc
+LUT6_2 		rca/blk00000001/blk000016fd
+LUT6_2 		rca/blk00000001/blk000016fe
+LUT6_2 		rca/blk00000001/blk000016ff
+LUT6_2 		rca/blk00000001/blk00001700
+LUT6_2 		rca/blk00000001/blk00001807
+LUT6_2 		rca/blk00000001/blk00001808
+LUT6_2 		rca/blk00000001/blk00001809
+LUT6_2 		rca/blk00000001/blk0000180a
+LUT6_2 		rca/blk00000001/blk00001850
+LUT6_2 		rca/blk00000001/blk00001851
+LUT6_2 		rca/blk00000001/blk00001852
+LUT6_2 		rca/blk00000001/blk00001853
+LUT6_2 		rca/blk00000001/blk00001854
+LUT6_2 		rca/blk00000001/blk00001855
+LUT6_2 		rca/blk00000001/blk00001856
+LUT6_2 		rca/blk00000001/blk00001857
+LUT6_2 		rca/blk00000001/blk00001858
+LUT6_2 		rca/blk00000001/blk00001859
+LUT6_2 		rca/blk00000001/blk0000185a
+LUT6_2 		rca/blk00000001/blk0000185b
+LUT6_2 		rca/blk00000001/blk0000185c
+LUT6_2 		rca/blk00000001/blk0000185d
+LUT6_2 		rca/blk00000001/blk0000185e
+LUT6_2 		rca/blk00000001/blk0000185f
+LUT6_2 		rca/blk00000001/blk00001860
+LUT6_2 		rca/blk00000001/blk00001861
+LUT6_2 		rca/blk00000001/blk00001862
+LUT6_2 		rca/blk00000001/blk00001863
+LUT6_2 		rca/blk00000001/blk00001864
+LUT6_2 		rca/blk00000001/blk00001865
+LUT6_2 		rca/blk00000001/blk00001866
+LUT6_2 		rca/blk00000001/blk00001867
+LUT6_2 		rca/blk00000001/blk00001868
+LUT6_2 		rca/blk00000001/blk00001869
+LUT6_2 		rca/blk00000001/blk0000186a
+LUT6_2 		rca/blk00000001/blk0000186b
+LUT6_2 		rca/blk00000001/blk0000186c
+LUT6_2 		rca/blk00000001/blk0000186d
+LUT6_2 		rca/blk00000001/blk0000186e
+LUT6_2 		rca/blk00000001/blk0000186f
+LUT6_2 		rca/blk00000001/blk00001870
+LUT6_2 		rca/blk00000001/blk00001871
+LUT6_2 		rca/blk00000001/blk00001872
+LUT6_2 		rca/blk00000001/blk00001873
+LUT6_2 		rca/blk00000001/blk00001874
+LUT6_2 		rca/blk00000001/blk00001875
+LUT6_2 		rca/blk00000001/blk00001876
+LUT6_2 		rca/blk00000001/blk00001877
+LUT6_2 		rca/blk00000001/blk00001878
+LUT6_2 		rca/blk00000001/blk00001879
+LUT6_2 		rca/blk00000001/blk0000187a
+LUT6_2 		rca/blk00000001/blk0000187b
+LUT6_2 		rca/blk00000001/blk0000187c
+LUT6_2 		rca/blk00000001/blk0000187d
+LUT6_2 		rca/blk00000001/blk0000187e
+LUT6_2 		rca/blk00000001/blk0000187f
+LUT6_2 		rca/blk00000001/blk00001880
+LUT6_2 		rca/blk00000001/blk00001881
+LUT6_2 		rca/blk00000001/blk00001882
+LUT6_2 		rca/blk00000001/blk00001883
+LUT6_2 		rca/blk00000001/blk00001884
+LUT6_2 		rca/blk00000001/blk00001885
+LUT6_2 		rca/blk00000001/blk0000198c
+LUT6_2 		rca/blk00000001/blk0000198d
+LUT6_2 		rca/blk00000001/blk0000198e
+LUT6_2 		rca/blk00000001/blk0000198f
+LUT6_2 		rca/blk00000001/blk00001990
+LUT6_2 		rca/blk00000001/blk00001991
+LUT6_2 		rca/blk00000001/blk00001992
+LUT6_2 		rca/blk00000001/blk00001993
+LUT6_2 		rca/blk00000001/blk00001994
+LUT6_2 		rca/blk00000001/blk000019d8
+LUT6_2 		rca/blk00000001/blk000019d9
+LUT6_2 		rca/blk00000001/blk000019da
+LUT6_2 		rca/blk00000001/blk000019db
+LUT6_2 		rca/blk00000001/blk000019dc
+LUT6_2 		rca/blk00000001/blk000019dd
+LUT6_2 		rca/blk00000001/blk000019de
+LUT6_2 		rca/blk00000001/blk000019df
+LUT6_2 		rca/blk00000001/blk000019e0
+LUT6_2 		rca/blk00000001/blk000019e1
+LUT6_2 		rca/blk00000001/blk000019e2
+LUT6_2 		rca/blk00000001/blk000019e3
+LUT6_2 		rca/blk00000001/blk000019e4
+LUT6_2 		rca/blk00000001/blk000019e5
+LUT6_2 		rca/blk00000001/blk000019e6
+LUT6_2 		rca/blk00000001/blk000019e7
+LUT6_2 		rca/blk00000001/blk000019e8
+LUT6_2 		rca/blk00000001/blk000019e9
+LUT6_2 		rca/blk00000001/blk000019ea
+LUT6_2 		rca/blk00000001/blk000019eb
+LUT6_2 		rca/blk00000001/blk000019ec
+LUT6_2 		rca/blk00000001/blk000019ed
+LUT6_2 		rca/blk00000001/blk000019ee
+LUT6_2 		rca/blk00000001/blk000019ef
+LUT6_2 		rca/blk00000001/blk000019f0
+LUT6_2 		rca/blk00000001/blk000019f1
+LUT6_2 		rca/blk00000001/blk000019f2
+LUT6_2 		rca/blk00000001/blk000019f3
+LUT6_2 		rca/blk00000001/blk000019f4
+LUT6_2 		rca/blk00000001/blk000019f5
+LUT6_2 		rca/blk00000001/blk000019f6
+LUT6_2 		rca/blk00000001/blk000019f7
+LUT6_2 		rca/blk00000001/blk000019f8
+LUT6_2 		rca/blk00000001/blk000019f9
+LUT6_2 		rca/blk00000001/blk000019fa
+LUT6_2 		rca/blk00000001/blk000019fb
+LUT6_2 		rca/blk00000001/blk000019fc
+LUT6_2 		rca/blk00000001/blk000019fd
+LUT6_2 		rca/blk00000001/blk000019fe
+LUT6_2 		rca/blk00000001/blk000019ff
+LUT6_2 		rca/blk00000001/blk00001a00
+LUT6_2 		rca/blk00000001/blk00001a01
+LUT6_2 		rca/blk00000001/blk00001a02
+LUT6_2 		rca/blk00000001/blk00001a03
+LUT6_2 		rca/blk00000001/blk00001a04
+LUT6_2 		rca/blk00000001/blk00001a05
+LUT6_2 		rca/blk00000001/blk00001a06
+LUT6_2 		rca/blk00000001/blk00001a07
+LUT6_2 		rca/blk00000001/blk00001a08
+LUT6_2 		rca/blk00000001/blk00001a09
+LUT6_2 		rca/blk00000001/blk00001a0a
+LUT6_2 		rca/blk00000001/blk00001b11
+LUT6_2 		rca/blk00000001/blk00001b12
+LUT6_2 		rca/blk00000001/blk00001b13
+LUT6_2 		rca/blk00000001/blk00001b14
+LUT6_2 		rca/blk00000001/blk00001b15
+LUT6_2 		rca/blk00000001/blk00001b16
+LUT6_2 		rca/blk00000001/blk00001b17
+LUT6_2 		rca/blk00000001/blk00001b18
+LUT6_2 		rca/blk00000001/blk00001b19
+LUT6_2 		rca/blk00000001/blk00001b1a
+LUT6_2 		rca/blk00000001/blk00001b1b
+LUT6_2 		rca/blk00000001/blk00001b1c
+LUT6_2 		rca/blk00000001/blk00001b1d
+LUT6_2 		rca/blk00000001/blk00001b63
+LUT6_2 		rca/blk00000001/blk00001b64
+LUT6_2 		rca/blk00000001/blk00001b65
+LUT6_2 		rca/blk00000001/blk00001b66
+LUT6_2 		rca/blk00000001/blk00001b67
+LUT6_2 		rca/blk00000001/blk00001b68
+LUT6_2 		rca/blk00000001/blk00001b69
+LUT6_2 		rca/blk00000001/blk00001b6a
+LUT6_2 		rca/blk00000001/blk00001b6b
+LUT6_2 		rca/blk00000001/blk00001b6c
+LUT6_2 		rca/blk00000001/blk00001b6d
+LUT6_2 		rca/blk00000001/blk00001b6e
+LUT6_2 		rca/blk00000001/blk00001b6f
+LUT6_2 		rca/blk00000001/blk00001b70
+LUT6_2 		rca/blk00000001/blk00001b71
+LUT6_2 		rca/blk00000001/blk00001b72
+LUT6_2 		rca/blk00000001/blk00001b73
+LUT6_2 		rca/blk00000001/blk00001b74
+LUT6_2 		rca/blk00000001/blk00001b75
+LUT6_2 		rca/blk00000001/blk00001b76
+LUT6_2 		rca/blk00000001/blk00001b77
+LUT6_2 		rca/blk00000001/blk00001b78
+LUT6_2 		rca/blk00000001/blk00001b79
+LUT6_2 		rca/blk00000001/blk00001b7a
+LUT6_2 		rca/blk00000001/blk00001b7b
+LUT6_2 		rca/blk00000001/blk00001b7c
+LUT6_2 		rca/blk00000001/blk00001b7d
+LUT6_2 		rca/blk00000001/blk00001b7e
+LUT6_2 		rca/blk00000001/blk00001b7f
+LUT6_2 		rca/blk00000001/blk00001b80
+LUT6_2 		rca/blk00000001/blk00001b81
+LUT6_2 		rca/blk00000001/blk00001b82
+LUT6_2 		rca/blk00000001/blk00001b83
+LUT6_2 		rca/blk00000001/blk00001b84
+LUT6_2 		rca/blk00000001/blk00001b85
+LUT6_2 		rca/blk00000001/blk00001b86
+LUT6_2 		rca/blk00000001/blk00001b87
+LUT6_2 		rca/blk00000001/blk00001b88
+LUT6_2 		rca/blk00000001/blk00001b89
+LUT6_2 		rca/blk00000001/blk00001b8a
+LUT6_2 		rca/blk00000001/blk00001b8b
+LUT6_2 		rca/blk00000001/blk00001b8c
+LUT6_2 		rca/blk00000001/blk00001b8d
+LUT6_2 		rca/blk00000001/blk00001b8e
+LUT6_2 		rca/blk00000001/blk00001b8f
+LUT6_2 		rca/blk00000001/blk00001c96
+LUT6_2 		rca/blk00000001/blk00001c97
+LUT6_2 		rca/blk00000001/blk00001c98
+LUT6_2 		rca/blk00000001/blk00001c99
+LUT6_2 		rca/blk00000001/blk00001c9a
+LUT6_2 		rca/blk00000001/blk00001c9b
+LUT6_2 		rca/blk00000001/blk00001c9c
+LUT6_2 		rca/blk00000001/blk00001c9d
+LUT6_2 		rca/blk00000001/blk00001c9e
+LUT6_2 		rca/blk00000001/blk00001c9f
+LUT6_2 		rca/blk00000001/blk00001ca0
+LUT6_2 		rca/blk00000001/blk00001ca1
+LUT6_2 		rca/blk00000001/blk00001ca2
+LUT6_2 		rca/blk00000001/blk00001ca3
+LUT6_2 		rca/blk00000001/blk00001ca4
+LUT6_2 		rca/blk00000001/blk00001ca5
+LUT6_2 		rca/blk00000001/blk00001ca6
+LUT6_2 		rca/blk00000001/blk00001ca7
+LUT6_2 		rca/blk00000001/blk00001ceb
+LUT6_2 		rca/blk00000001/blk00001cec
+LUT6_2 		rca/blk00000001/blk00001ced
+LUT6_2 		rca/blk00000001/blk00001cee
+LUT6_2 		rca/blk00000001/blk00001cef
+LUT6_2 		rca/blk00000001/blk00001cf0
+LUT6_2 		rca/blk00000001/blk00001cf1
+LUT6_2 		rca/blk00000001/blk00001cf2
+LUT6_2 		rca/blk00000001/blk00001cf3
+LUT6_2 		rca/blk00000001/blk00001cf4
+LUT6_2 		rca/blk00000001/blk00001cf5
+LUT6_2 		rca/blk00000001/blk00001cf6
+LUT6_2 		rca/blk00000001/blk00001cf7
+LUT6_2 		rca/blk00000001/blk00001cf8
+LUT6_2 		rca/blk00000001/blk00001cf9
+LUT6_2 		rca/blk00000001/blk00001cfa
+LUT6_2 		rca/blk00000001/blk00001cfb
+LUT6_2 		rca/blk00000001/blk00001cfc
+LUT6_2 		rca/blk00000001/blk00001cfd
+LUT6_2 		rca/blk00000001/blk00001cfe
+LUT6_2 		rca/blk00000001/blk00001cff
+LUT6_2 		rca/blk00000001/blk00001d00
+LUT6_2 		rca/blk00000001/blk00001d01
+LUT6_2 		rca/blk00000001/blk00001d02
+LUT6_2 		rca/blk00000001/blk00001d03
+LUT6_2 		rca/blk00000001/blk00001d04
+LUT6_2 		rca/blk00000001/blk00001d05
+LUT6_2 		rca/blk00000001/blk00001d06
+LUT6_2 		rca/blk00000001/blk00001d07
+LUT6_2 		rca/blk00000001/blk00001d08
+LUT6_2 		rca/blk00000001/blk00001d09
+LUT6_2 		rca/blk00000001/blk00001d0a
+LUT6_2 		rca/blk00000001/blk00001d0b
+LUT6_2 		rca/blk00000001/blk00001d0c
+LUT6_2 		rca/blk00000001/blk00001d0d
+LUT6_2 		rca/blk00000001/blk00001d0e
+LUT6_2 		rca/blk00000001/blk00001d0f
+LUT6_2 		rca/blk00000001/blk00001d10
+LUT6_2 		rca/blk00000001/blk00001d11
+LUT6_2 		rca/blk00000001/blk00001d12
+LUT6_2 		rca/blk00000001/blk00001d13
+LUT6_2 		rca/blk00000001/blk00001d14
+LUT6_2 		rca/blk00000001/blk00001e1b
+LUT6_2 		rca/blk00000001/blk00001e1c
+LUT6_2 		rca/blk00000001/blk00001e1d
+LUT6_2 		rca/blk00000001/blk00001e1e
+LUT6_2 		rca/blk00000001/blk00001e1f
+LUT6_2 		rca/blk00000001/blk00001e20
+LUT6_2 		rca/blk00000001/blk00001e21
+LUT6_2 		rca/blk00000001/blk00001e22
+LUT6_2 		rca/blk00000001/blk00001e23
+LUT6_2 		rca/blk00000001/blk00001e24
+LUT6_2 		rca/blk00000001/blk00001e25
+LUT6_2 		rca/blk00000001/blk00001e26
+LUT6_2 		rca/blk00000001/blk00001e27
+LUT6_2 		rca/blk00000001/blk00001e28
+LUT6_2 		rca/blk00000001/blk00001e29
+LUT6_2 		rca/blk00000001/blk00001e2a
+LUT6_2 		rca/blk00000001/blk00001e2b
+LUT6_2 		rca/blk00000001/blk00001e2c
+LUT6_2 		rca/blk00000001/blk00001e2d
+LUT6_2 		rca/blk00000001/blk00001e2e
+LUT6_2 		rca/blk00000001/blk00001e2f
+LUT6_2 		rca/blk00000001/blk00001e30
+LUT6_2 		rca/blk00000001/blk00001e76
+LUT6_2 		rca/blk00000001/blk00001e77
+LUT6_2 		rca/blk00000001/blk00001e78
+LUT6_2 		rca/blk00000001/blk00001e79
+LUT6_2 		rca/blk00000001/blk00001e7a
+LUT6_2 		rca/blk00000001/blk00001e7b
+LUT6_2 		rca/blk00000001/blk00001e7c
+LUT6_2 		rca/blk00000001/blk00001e7d
+LUT6_2 		rca/blk00000001/blk00001e7e
+LUT6_2 		rca/blk00000001/blk00001e7f
+LUT6_2 		rca/blk00000001/blk00001e80
+LUT6_2 		rca/blk00000001/blk00001e81
+LUT6_2 		rca/blk00000001/blk00001e82
+LUT6_2 		rca/blk00000001/blk00001e83
+LUT6_2 		rca/blk00000001/blk00001e84
+LUT6_2 		rca/blk00000001/blk00001e85
+LUT6_2 		rca/blk00000001/blk00001e86
+LUT6_2 		rca/blk00000001/blk00001e87
+LUT6_2 		rca/blk00000001/blk00001e88
+LUT6_2 		rca/blk00000001/blk00001e89
+LUT6_2 		rca/blk00000001/blk00001e8a
+LUT6_2 		rca/blk00000001/blk00001e8b
+LUT6_2 		rca/blk00000001/blk00001e8c
+LUT6_2 		rca/blk00000001/blk00001e8d
+LUT6_2 		rca/blk00000001/blk00001e8e
+LUT6_2 		rca/blk00000001/blk00001e8f
+LUT6_2 		rca/blk00000001/blk00001e90
+LUT6_2 		rca/blk00000001/blk00001e91
+LUT6_2 		rca/blk00000001/blk00001e92
+LUT6_2 		rca/blk00000001/blk00001e93
+LUT6_2 		rca/blk00000001/blk00001e94
+LUT6_2 		rca/blk00000001/blk00001e95
+LUT6_2 		rca/blk00000001/blk00001e96
+LUT6_2 		rca/blk00000001/blk00001e97
+LUT6_2 		rca/blk00000001/blk00001e98
+LUT6_2 		rca/blk00000001/blk00001e99
+LUT6_2 		rca/blk00000001/blk00001fa0
+LUT6_2 		rca/blk00000001/blk00001fa1
+LUT6_2 		rca/blk00000001/blk00001fa2
+LUT6_2 		rca/blk00000001/blk00001fa3
+LUT6_2 		rca/blk00000001/blk00001fa4
+LUT6_2 		rca/blk00000001/blk00001fa5
+LUT6_2 		rca/blk00000001/blk00001fa6
+LUT6_2 		rca/blk00000001/blk00001fa7
+LUT6_2 		rca/blk00000001/blk00001fa8
+LUT6_2 		rca/blk00000001/blk00001fa9
+LUT6_2 		rca/blk00000001/blk00001faa
+LUT6_2 		rca/blk00000001/blk00001fab
+LUT6_2 		rca/blk00000001/blk00001fac
+LUT6_2 		rca/blk00000001/blk00001fad
+LUT6_2 		rca/blk00000001/blk00001fae
+LUT6_2 		rca/blk00000001/blk00001faf
+LUT6_2 		rca/blk00000001/blk00001fb0
+LUT6_2 		rca/blk00000001/blk00001fb1
+LUT6_2 		rca/blk00000001/blk00001fb2
+LUT6_2 		rca/blk00000001/blk00001fb3
+LUT6_2 		rca/blk00000001/blk00001fb4
+LUT6_2 		rca/blk00000001/blk00001fb5
+LUT6_2 		rca/blk00000001/blk00001fb6
+LUT6_2 		rca/blk00000001/blk00001fb7
+LUT6_2 		rca/blk00000001/blk00001fb8
+LUT6_2 		rca/blk00000001/blk00001fb9
+LUT6_2 		rca/blk00000001/blk00001fba
+LUT6_2 		rca/blk00000001/blk00001ffe
+LUT6_2 		rca/blk00000001/blk00001fff
+LUT6_2 		rca/blk00000001/blk00002000
+LUT6_2 		rca/blk00000001/blk00002001
+LUT6_2 		rca/blk00000001/blk00002002
+LUT6_2 		rca/blk00000001/blk00002003
+LUT6_2 		rca/blk00000001/blk00002004
+LUT6_2 		rca/blk00000001/blk00002005
+LUT6_2 		rca/blk00000001/blk00002006
+LUT6_2 		rca/blk00000001/blk00002007
+LUT6_2 		rca/blk00000001/blk00002008
+LUT6_2 		rca/blk00000001/blk00002009
+LUT6_2 		rca/blk00000001/blk0000200a
+LUT6_2 		rca/blk00000001/blk0000200b
+LUT6_2 		rca/blk00000001/blk0000200c
+LUT6_2 		rca/blk00000001/blk0000200d
+LUT6_2 		rca/blk00000001/blk0000200e
+LUT6_2 		rca/blk00000001/blk0000200f
+LUT6_2 		rca/blk00000001/blk00002010
+LUT6_2 		rca/blk00000001/blk00002011
+LUT6_2 		rca/blk00000001/blk00002012
+LUT6_2 		rca/blk00000001/blk00002013
+LUT6_2 		rca/blk00000001/blk00002014
+LUT6_2 		rca/blk00000001/blk00002015
+LUT6_2 		rca/blk00000001/blk00002016
+LUT6_2 		rca/blk00000001/blk00002017
+LUT6_2 		rca/blk00000001/blk00002018
+LUT6_2 		rca/blk00000001/blk00002019
+LUT6_2 		rca/blk00000001/blk0000201a
+LUT6_2 		rca/blk00000001/blk0000201b
+LUT6_2 		rca/blk00000001/blk0000201c
+LUT6_2 		rca/blk00000001/blk0000201d
+LUT6_2 		rca/blk00000001/blk0000201e
+LUT6_2 		rca/blk00000001/blk00002125
+LUT6_2 		rca/blk00000001/blk00002126
+LUT6_2 		rca/blk00000001/blk00002127
+LUT6_2 		rca/blk00000001/blk00002128
+LUT6_2 		rca/blk00000001/blk00002129
+LUT6_2 		rca/blk00000001/blk0000212a
+LUT6_2 		rca/blk00000001/blk0000212b
+LUT6_2 		rca/blk00000001/blk0000212c
+LUT6_2 		rca/blk00000001/blk0000212d
+LUT6_2 		rca/blk00000001/blk0000212e
+LUT6_2 		rca/blk00000001/blk0000212f
+LUT6_2 		rca/blk00000001/blk00002130
+LUT6_2 		rca/blk00000001/blk00002131
+LUT6_2 		rca/blk00000001/blk00002132
+LUT6_2 		rca/blk00000001/blk00002133
+LUT6_2 		rca/blk00000001/blk00002134
+LUT6_2 		rca/blk00000001/blk00002135
+LUT6_2 		rca/blk00000001/blk00002136
+LUT6_2 		rca/blk00000001/blk00002137
+LUT6_2 		rca/blk00000001/blk00002138
+LUT6_2 		rca/blk00000001/blk00002139
+LUT6_2 		rca/blk00000001/blk0000213a
+LUT6_2 		rca/blk00000001/blk0000213b
+LUT6_2 		rca/blk00000001/blk0000213c
+LUT6_2 		rca/blk00000001/blk0000213d
+LUT6_2 		rca/blk00000001/blk0000213e
+LUT6_2 		rca/blk00000001/blk0000213f
+LUT6_2 		rca/blk00000001/blk00002140
+LUT6_2 		rca/blk00000001/blk00002141
+LUT6_2 		rca/blk00000001/blk00002142
+LUT6_2 		rca/blk00000001/blk00002143
+LUT6_2 		rca/blk00000001/blk00002189
+LUT6_2 		rca/blk00000001/blk0000218a
+LUT6_2 		rca/blk00000001/blk0000218b
+LUT6_2 		rca/blk00000001/blk0000218c
+LUT6_2 		rca/blk00000001/blk0000218d
+LUT6_2 		rca/blk00000001/blk0000218e
+LUT6_2 		rca/blk00000001/blk0000218f
+LUT6_2 		rca/blk00000001/blk00002190
+LUT6_2 		rca/blk00000001/blk00002191
+LUT6_2 		rca/blk00000001/blk00002192
+LUT6_2 		rca/blk00000001/blk00002193
+LUT6_2 		rca/blk00000001/blk00002194
+LUT6_2 		rca/blk00000001/blk00002195
+LUT6_2 		rca/blk00000001/blk00002196
+LUT6_2 		rca/blk00000001/blk00002197
+LUT6_2 		rca/blk00000001/blk00002198
+LUT6_2 		rca/blk00000001/blk00002199
+LUT6_2 		rca/blk00000001/blk0000219a
+LUT6_2 		rca/blk00000001/blk0000219b
+LUT6_2 		rca/blk00000001/blk0000219c
+LUT6_2 		rca/blk00000001/blk0000219d
+LUT6_2 		rca/blk00000001/blk0000219e
+LUT6_2 		rca/blk00000001/blk0000219f
+LUT6_2 		rca/blk00000001/blk000021a0
+LUT6_2 		rca/blk00000001/blk000021a1
+LUT6_2 		rca/blk00000001/blk000021a2
+LUT6_2 		rca/blk00000001/blk000021a3
+LUT6_2 		rca/blk00000001/blk000022aa
+LUT6_2 		rca/blk00000001/blk000022ab
+LUT6_2 		rca/blk00000001/blk000022ac
+LUT6_2 		rca/blk00000001/blk000022ad
+LUT6_2 		rca/blk00000001/blk000022ae
+LUT6_2 		rca/blk00000001/blk000022af
+LUT6_2 		rca/blk00000001/blk000022b0
+LUT6_2 		rca/blk00000001/blk000022b1
+LUT6_2 		rca/blk00000001/blk000022b2
+LUT6_2 		rca/blk00000001/blk000022b3
+LUT6_2 		rca/blk00000001/blk000022b4
+LUT6_2 		rca/blk00000001/blk000022b5
+LUT6_2 		rca/blk00000001/blk000022b6
+LUT6_2 		rca/blk00000001/blk000022b7
+LUT6_2 		rca/blk00000001/blk000022b8
+LUT6_2 		rca/blk00000001/blk000022b9
+LUT6_2 		rca/blk00000001/blk000022ba
+LUT6_2 		rca/blk00000001/blk000022bb
+LUT6_2 		rca/blk00000001/blk000022bc
+LUT6_2 		rca/blk00000001/blk000022bd
+LUT6_2 		rca/blk00000001/blk000022be
+LUT6_2 		rca/blk00000001/blk000022bf
+LUT6_2 		rca/blk00000001/blk000022c0
+LUT6_2 		rca/blk00000001/blk000022c1
+LUT6_2 		rca/blk00000001/blk000022c2
+LUT6_2 		rca/blk00000001/blk000022c3
+LUT6_2 		rca/blk00000001/blk000022c4
+LUT6_2 		rca/blk00000001/blk000022c5
+LUT6_2 		rca/blk00000001/blk000022c6
+LUT6_2 		rca/blk00000001/blk000022c7
+LUT6_2 		rca/blk00000001/blk000022c8
+LUT6_2 		rca/blk00000001/blk000022c9
+LUT6_2 		rca/blk00000001/blk000022ca
+LUT6_2 		rca/blk00000001/blk000022cb
+LUT6_2 		rca/blk00000001/blk000022cc
+LUT6_2 		rca/blk00000001/blk000022cd
+LUT6_2 		rca/blk00000001/blk00002311
+LUT6_2 		rca/blk00000001/blk00002312
+LUT6_2 		rca/blk00000001/blk00002313
+LUT6_2 		rca/blk00000001/blk00002314
+LUT6_2 		rca/blk00000001/blk00002315
+LUT6_2 		rca/blk00000001/blk00002316
+LUT6_2 		rca/blk00000001/blk00002317
+LUT6_2 		rca/blk00000001/blk00002318
+LUT6_2 		rca/blk00000001/blk00002319
+LUT6_2 		rca/blk00000001/blk0000231a
+LUT6_2 		rca/blk00000001/blk0000231b
+LUT6_2 		rca/blk00000001/blk0000231c
+LUT6_2 		rca/blk00000001/blk0000231d
+LUT6_2 		rca/blk00000001/blk0000231e
+LUT6_2 		rca/blk00000001/blk0000231f
+LUT6_2 		rca/blk00000001/blk00002320
+LUT6_2 		rca/blk00000001/blk00002321
+LUT6_2 		rca/blk00000001/blk00002322
+LUT6_2 		rca/blk00000001/blk00002323
+LUT6_2 		rca/blk00000001/blk00002324
+LUT6_2 		rca/blk00000001/blk00002325
+LUT6_2 		rca/blk00000001/blk00002326
+LUT6_2 		rca/blk00000001/blk00002327
+LUT6_2 		rca/blk00000001/blk00002328
+LUT6_2 		rca/blk00000001/blk0000242f
+LUT6_2 		rca/blk00000001/blk00002430
+LUT6_2 		rca/blk00000001/blk00002431
+LUT6_2 		rca/blk00000001/blk00002432
+LUT6_2 		rca/blk00000001/blk00002433
+LUT6_2 		rca/blk00000001/blk00002434
+LUT6_2 		rca/blk00000001/blk00002435
+LUT6_2 		rca/blk00000001/blk00002436
+LUT6_2 		rca/blk00000001/blk00002437
+LUT6_2 		rca/blk00000001/blk00002438
+LUT6_2 		rca/blk00000001/blk00002439
+LUT6_2 		rca/blk00000001/blk0000243a
+LUT6_2 		rca/blk00000001/blk0000243b
+LUT6_2 		rca/blk00000001/blk0000243c
+LUT6_2 		rca/blk00000001/blk0000243d
+LUT6_2 		rca/blk00000001/blk0000243e
+LUT6_2 		rca/blk00000001/blk0000243f
+LUT6_2 		rca/blk00000001/blk00002440
+LUT6_2 		rca/blk00000001/blk00002441
+LUT6_2 		rca/blk00000001/blk00002442
+LUT6_2 		rca/blk00000001/blk00002443
+LUT6_2 		rca/blk00000001/blk00002444
+LUT6_2 		rca/blk00000001/blk00002445
+LUT6_2 		rca/blk00000001/blk00002446
+LUT6_2 		rca/blk00000001/blk00002447
+LUT6_2 		rca/blk00000001/blk00002448
+LUT6_2 		rca/blk00000001/blk00002449
+LUT6_2 		rca/blk00000001/blk0000244a
+LUT6_2 		rca/blk00000001/blk0000244b
+LUT6_2 		rca/blk00000001/blk0000244c
+LUT6_2 		rca/blk00000001/blk0000244d
+LUT6_2 		rca/blk00000001/blk0000244e
+LUT6_2 		rca/blk00000001/blk0000244f
+LUT6_2 		rca/blk00000001/blk00002450
+LUT6_2 		rca/blk00000001/blk00002451
+LUT6_2 		rca/blk00000001/blk00002452
+LUT6_2 		rca/blk00000001/blk00002453
+LUT6_2 		rca/blk00000001/blk00002454
+LUT6_2 		rca/blk00000001/blk00002455
+LUT6_2 		rca/blk00000001/blk00002456
+LUT6_2 		rca/blk00000001/blk0000249c
+LUT6_2 		rca/blk00000001/blk0000249d
+LUT6_2 		rca/blk00000001/blk0000249e
+LUT6_2 		rca/blk00000001/blk0000249f
+LUT6_2 		rca/blk00000001/blk000024a0
+LUT6_2 		rca/blk00000001/blk000024a1
+LUT6_2 		rca/blk00000001/blk000024a2
+LUT6_2 		rca/blk00000001/blk000024a3
+LUT6_2 		rca/blk00000001/blk000024a4
+LUT6_2 		rca/blk00000001/blk000024a5
+LUT6_2 		rca/blk00000001/blk000024a6
+LUT6_2 		rca/blk00000001/blk000024a7
+LUT6_2 		rca/blk00000001/blk000024a8
+LUT6_2 		rca/blk00000001/blk000024a9
+LUT6_2 		rca/blk00000001/blk000024aa
+LUT6_2 		rca/blk00000001/blk000024ab
+LUT6_2 		rca/blk00000001/blk000024ac
+LUT6_2 		rca/blk00000001/blk000024ad
+LUT6_2 		rca/blk00000001/blk000025b4
+LUT6_2 		rca/blk00000001/blk000025b5
+LUT6_2 		rca/blk00000001/blk000025b6
+LUT6_2 		rca/blk00000001/blk000025b7
+LUT6_2 		rca/blk00000001/blk000025b8
+LUT6_2 		rca/blk00000001/blk000025b9
+LUT6_2 		rca/blk00000001/blk000025ba
+LUT6_2 		rca/blk00000001/blk000025bb
+LUT6_2 		rca/blk00000001/blk000025bc
+LUT6_2 		rca/blk00000001/blk000025bd
+LUT6_2 		rca/blk00000001/blk000025be
+LUT6_2 		rca/blk00000001/blk000025bf
+LUT6_2 		rca/blk00000001/blk000025c0
+LUT6_2 		rca/blk00000001/blk000025c1
+LUT6_2 		rca/blk00000001/blk000025c2
+LUT6_2 		rca/blk00000001/blk000025c3
+LUT6_2 		rca/blk00000001/blk000025c4
+LUT6_2 		rca/blk00000001/blk000025c5
+LUT6_2 		rca/blk00000001/blk000025c6
+LUT6_2 		rca/blk00000001/blk000025c7
+LUT6_2 		rca/blk00000001/blk000025c8
+LUT6_2 		rca/blk00000001/blk000025c9
+LUT6_2 		rca/blk00000001/blk000025ca
+LUT6_2 		rca/blk00000001/blk000025cb
+LUT6_2 		rca/blk00000001/blk000025cc
+LUT6_2 		rca/blk00000001/blk000025cd
+LUT6_2 		rca/blk00000001/blk000025ce
+LUT6_2 		rca/blk00000001/blk000025cf
+LUT6_2 		rca/blk00000001/blk000025d0
+LUT6_2 		rca/blk00000001/blk000025d1
+LUT6_2 		rca/blk00000001/blk000025d2
+LUT6_2 		rca/blk00000001/blk000025d3
+LUT6_2 		rca/blk00000001/blk000025d4
+LUT6_2 		rca/blk00000001/blk000025d5
+LUT6_2 		rca/blk00000001/blk000025d6
+LUT6_2 		rca/blk00000001/blk000025d7
+LUT6_2 		rca/blk00000001/blk000025d8
+LUT6_2 		rca/blk00000001/blk000025d9
+LUT6_2 		rca/blk00000001/blk000025da
+LUT6_2 		rca/blk00000001/blk000025db
+LUT6_2 		rca/blk00000001/blk000025dc
+LUT6_2 		rca/blk00000001/blk000025dd
+LUT6_2 		rca/blk00000001/blk000025de
+LUT6_2 		rca/blk00000001/blk000025df
+LUT6_2 		rca/blk00000001/blk000025e0
+LUT6_2 		rca/blk00000001/blk00002624
+LUT6_2 		rca/blk00000001/blk00002625
+LUT6_2 		rca/blk00000001/blk00002626
+LUT6_2 		rca/blk00000001/blk00002627
+LUT6_2 		rca/blk00000001/blk00002628
+LUT6_2 		rca/blk00000001/blk00002629
+LUT6_2 		rca/blk00000001/blk0000262a
+LUT6_2 		rca/blk00000001/blk0000262b
+LUT6_2 		rca/blk00000001/blk0000262c
+LUT6_2 		rca/blk00000001/blk0000262d
+LUT6_2 		rca/blk00000001/blk0000262e
+LUT6_2 		rca/blk00000001/blk0000262f
+LUT6_2 		rca/blk00000001/blk00002630
+LUT6_2 		rca/blk00000001/blk00002631
+LUT6_2 		rca/blk00000001/blk00002632
+LUT6_2 		rca/blk00000001/blk00002739
+LUT6_2 		rca/blk00000001/blk0000273a
+LUT6_2 		rca/blk00000001/blk0000273b
+LUT6_2 		rca/blk00000001/blk0000273c
+LUT6_2 		rca/blk00000001/blk0000273d
+LUT6_2 		rca/blk00000001/blk0000273e
+LUT6_2 		rca/blk00000001/blk0000273f
+LUT6_2 		rca/blk00000001/blk00002740
+LUT6_2 		rca/blk00000001/blk00002741
+LUT6_2 		rca/blk00000001/blk00002742
+LUT6_2 		rca/blk00000001/blk00002743
+LUT6_2 		rca/blk00000001/blk00002744
+LUT6_2 		rca/blk00000001/blk00002745
+LUT6_2 		rca/blk00000001/blk00002746
+LUT6_2 		rca/blk00000001/blk00002747
+LUT6_2 		rca/blk00000001/blk00002748
+LUT6_2 		rca/blk00000001/blk00002749
+LUT6_2 		rca/blk00000001/blk0000274a
+LUT6_2 		rca/blk00000001/blk0000274b
+LUT6_2 		rca/blk00000001/blk0000274c
+LUT6_2 		rca/blk00000001/blk0000274d
+LUT6_2 		rca/blk00000001/blk0000274e
+LUT6_2 		rca/blk00000001/blk0000274f
+LUT6_2 		rca/blk00000001/blk00002750
+LUT6_2 		rca/blk00000001/blk00002751
+LUT6_2 		rca/blk00000001/blk00002752
+LUT6_2 		rca/blk00000001/blk00002753
+LUT6_2 		rca/blk00000001/blk00002754
+LUT6_2 		rca/blk00000001/blk00002755
+LUT6_2 		rca/blk00000001/blk00002756
+LUT6_2 		rca/blk00000001/blk00002757
+LUT6_2 		rca/blk00000001/blk00002758
+LUT6_2 		rca/blk00000001/blk00002759
+LUT6_2 		rca/blk00000001/blk0000275a
+LUT6_2 		rca/blk00000001/blk0000275b
+LUT6_2 		rca/blk00000001/blk0000275c
+LUT6_2 		rca/blk00000001/blk0000275d
+LUT6_2 		rca/blk00000001/blk0000275e
+LUT6_2 		rca/blk00000001/blk0000275f
+LUT6_2 		rca/blk00000001/blk00002760
+LUT6_2 		rca/blk00000001/blk00002761
+LUT6_2 		rca/blk00000001/blk00002762
+LUT6_2 		rca/blk00000001/blk00002763
+LUT6_2 		rca/blk00000001/blk00002764
+LUT6_2 		rca/blk00000001/blk00002765
+LUT6_2 		rca/blk00000001/blk00002766
+LUT6_2 		rca/blk00000001/blk00002767
+LUT6_2 		rca/blk00000001/blk00002768
+LUT6_2 		rca/blk00000001/blk00002769
+LUT6_2 		rca/blk00000001/blk000027af
+LUT6_2 		rca/blk00000001/blk000027b0
+LUT6_2 		rca/blk00000001/blk000027b1
+LUT6_2 		rca/blk00000001/blk000027b2
+LUT6_2 		rca/blk00000001/blk000027b3
+LUT6_2 		rca/blk00000001/blk000027b4
+LUT6_2 		rca/blk00000001/blk000027b5
+LUT6_2 		rca/blk00000001/blk000027b6
+LUT6_2 		rca/blk00000001/blk000027b7
+LUT6_2 		rca/blk00000001/blk000028be
+LUT6_2 		rca/blk00000001/blk000028bf
+LUT6_2 		rca/blk00000001/blk000028c0
+LUT6_2 		rca/blk00000001/blk000028c1
+LUT6_2 		rca/blk00000001/blk000028c2
+LUT6_2 		rca/blk00000001/blk000028c3
+LUT6_2 		rca/blk00000001/blk000028c4
+LUT6_2 		rca/blk00000001/blk000028c5
+LUT6_2 		rca/blk00000001/blk000028c6
+LUT6_2 		rca/blk00000001/blk000028c7
+LUT6_2 		rca/blk00000001/blk000028c8
+LUT6_2 		rca/blk00000001/blk000028c9
+LUT6_2 		rca/blk00000001/blk000028ca
+LUT6_2 		rca/blk00000001/blk000028cb
+LUT6_2 		rca/blk00000001/blk000028cc
+LUT6_2 		rca/blk00000001/blk000028cd
+LUT6_2 		rca/blk00000001/blk000028ce
+LUT6_2 		rca/blk00000001/blk000028cf
+LUT6_2 		rca/blk00000001/blk000028d0
+LUT6_2 		rca/blk00000001/blk000028d1
+LUT6_2 		rca/blk00000001/blk000028d2
+LUT6_2 		rca/blk00000001/blk000028d3
+LUT6_2 		rca/blk00000001/blk000028d4
+LUT6_2 		rca/blk00000001/blk000028d5
+LUT6_2 		rca/blk00000001/blk000028d6
+LUT6_2 		rca/blk00000001/blk000028d7
+LUT6_2 		rca/blk00000001/blk000028d8
+LUT6_2 		rca/blk00000001/blk000028d9
+LUT6_2 		rca/blk00000001/blk000028da
+LUT6_2 		rca/blk00000001/blk000028db
+LUT6_2 		rca/blk00000001/blk000028dc
+LUT6_2 		rca/blk00000001/blk000028dd
+LUT6_2 		rca/blk00000001/blk000028de
+LUT6_2 		rca/blk00000001/blk000028df
+LUT6_2 		rca/blk00000001/blk000028e0
+LUT6_2 		rca/blk00000001/blk000028e1
+LUT6_2 		rca/blk00000001/blk000028e2
+LUT6_2 		rca/blk00000001/blk000028e3
+LUT6_2 		rca/blk00000001/blk000028e4
+LUT6_2 		rca/blk00000001/blk000028e5
+LUT6_2 		rca/blk00000001/blk000028e6
+LUT6_2 		rca/blk00000001/blk000028e7
+LUT6_2 		rca/blk00000001/blk000028e8
+LUT6_2 		rca/blk00000001/blk000028e9
+LUT6_2 		rca/blk00000001/blk000028ea
+LUT6_2 		rca/blk00000001/blk000028eb
+LUT6_2 		rca/blk00000001/blk000028ec
+LUT6_2 		rca/blk00000001/blk000028ed
+LUT6_2 		rca/blk00000001/blk000028ee
+LUT6_2 		rca/blk00000001/blk000028ef
+LUT6_2 		rca/blk00000001/blk000028f0
+LUT6_2 		rca/blk00000001/blk000028f1
+LUT6_2 		rca/blk00000001/blk000028f2
+LUT6_2 		rca/blk00000001/blk000028f3
+LUT6_2 		rca/blk00000001/blk00002937
+LUT6_2 		rca/blk00000001/blk00002938
+LUT6_2 		rca/blk00000001/blk00002939
+LUT6_2 		rca/blk00000001/blk0000293a
+LUT6_2 		rca/blk00000001/blk0000293b
+LUT6_2 		rca/blk00000001/blk0000293c
+LUT6_2 		rca/blk00000001/blk00002a43
+LUT6_2 		rca/blk00000001/blk00002a44
+LUT6_2 		rca/blk00000001/blk00002a45
+LUT6_2 		rca/blk00000001/blk00002a46
+LUT6_2 		rca/blk00000001/blk00002a47
+LUT6_2 		rca/blk00000001/blk00002a48
+LUT6_2 		rca/blk00000001/blk00002a49
+LUT6_2 		rca/blk00000001/blk00002a4a
+LUT6_2 		rca/blk00000001/blk00002a4b
+LUT6_2 		rca/blk00000001/blk00002a4c
+LUT6_2 		rca/blk00000001/blk00002a4d
+LUT6_2 		rca/blk00000001/blk00002a4e
+LUT6_2 		rca/blk00000001/blk00002a4f
+LUT6_2 		rca/blk00000001/blk00002a50
+LUT6_2 		rca/blk00000001/blk00002a51
+LUT6_2 		rca/blk00000001/blk00002a52
+LUT6_2 		rca/blk00000001/blk00002a53
+LUT6_2 		rca/blk00000001/blk00002a54
+LUT6_2 		rca/blk00000001/blk00002a55
+LUT6_2 		rca/blk00000001/blk00002a56
+LUT6_2 		rca/blk00000001/blk00002a57
+LUT6_2 		rca/blk00000001/blk00002a58
+LUT6_2 		rca/blk00000001/blk00002a59
+LUT6_2 		rca/blk00000001/blk00002a5a
+LUT6_2 		rca/blk00000001/blk00002a5b
+LUT6_2 		rca/blk00000001/blk00002a5c
+LUT6_2 		rca/blk00000001/blk00002a5d
+LUT6_2 		rca/blk00000001/blk00002a5e
+LUT6_2 		rca/blk00000001/blk00002a5f
+LUT6_2 		rca/blk00000001/blk00002a60
+LUT6_2 		rca/blk00000001/blk00002a61
+LUT6_2 		rca/blk00000001/blk00002a62
+LUT6_2 		rca/blk00000001/blk00002a63
+LUT6_2 		rca/blk00000001/blk00002a64
+LUT6_2 		rca/blk00000001/blk00002a65
+LUT6_2 		rca/blk00000001/blk00002a66
+LUT6_2 		rca/blk00000001/blk00002a67
+LUT6_2 		rca/blk00000001/blk00002a68
+LUT6_2 		rca/blk00000001/blk00002a69
+LUT6_2 		rca/blk00000001/blk00002a6a
+LUT6_2 		rca/blk00000001/blk00002a6b
+LUT6_2 		rca/blk00000001/blk00002a6c
+LUT6_2 		rca/blk00000001/blk00002a6d
+LUT6_2 		rca/blk00000001/blk00002a6e
+LUT6_2 		rca/blk00000001/blk00002a6f
+LUT6_2 		rca/blk00000001/blk00002a70
+LUT6_2 		rca/blk00000001/blk00002a71
+LUT6_2 		rca/blk00000001/blk00002a72
+LUT6_2 		rca/blk00000001/blk00002a73
+LUT6_2 		rca/blk00000001/blk00002a74
+LUT6_2 		rca/blk00000001/blk00002a75
+LUT6_2 		rca/blk00000001/blk00002a76
+LUT6_2 		rca/blk00000001/blk00002a77
+LUT6_2 		rca/blk00000001/blk00002a78
+LUT6_2 		rca/blk00000001/blk00002a79
+LUT6_2 		rca/blk00000001/blk00002a7a
+LUT6_2 		rca/blk00000001/blk00002a7b
+LUT6_2 		rca/blk00000001/blk00002a7c
+
+Redundant Block(s):
+TYPE 		BLOCK
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<1>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<2>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<3>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<4>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<5>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<6>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<7>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<8>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<9>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<10>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<11>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<12>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<13>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<14>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<15>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<16>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<17>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<18>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<19>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<20>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<21>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<22>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<23>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<24>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<25>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_cy<26>_rt
+LUT1 		Mcount_counter2_cy<1>_rt
+LUT1 		Mcount_counter2_cy<2>_rt
+LUT1 		Mcount_counter2_cy<3>_rt
+LUT1 		Mcount_counter2_cy<4>_rt
+LUT1 		Mcount_counter2_cy<5>_rt
+LUT1 		Mcount_counter2_cy<6>_rt
+LUT1 		Mcount_counter2_cy<7>_rt
+LUT1 		Mcount_counter2_cy<8>_rt
+LUT1 		Mcount_counter2_cy<9>_rt
+LUT1 		Mcount_counter2_cy<10>_rt
+LUT1 		Mcount_counter2_cy<11>_rt
+LUT1 		Mcount_counter2_cy<12>_rt
+LUT1 		Mcount_counter2_cy<13>_rt
+LUT1 		Mcount_counter2_cy<14>_rt
+LUT1 		Mcount_counter2_cy<15>_rt
+LUT1 		Mcount_counter2_cy<16>_rt
+LUT1 		Mcount_counter2_cy<17>_rt
+LUT1 		Mcount_counter2_cy<18>_rt
+LUT1 		Mcount_counter2_cy<19>_rt
+LUT1 		Mcount_counter2_cy<20>_rt
+LUT1 		Mcount_counter2_cy<21>_rt
+LUT1 		Mcount_counter2_cy<22>_rt
+LUT1 		Mcount_counter2_cy<23>_rt
+LUT1 		Mcount_counter2_cy<24>_rt
+LUT1 		Mcount_counter2_cy<25>_rt
+LUT1 		Mcount_counter2_cy<26>_rt
+LUT1 		Mcount_counter2_cy<27>_rt
+LUT1 		Mcount_addr2_cy<1>_rt
+LUT1 		Mcount_addr2_cy<2>_rt
+LUT1 		Mcount_addr2_cy<3>_rt
+LUT1 		Mcount_addr2_cy<4>_rt
+LUT1 		Mcount_addr2_cy<5>_rt
+LUT1 		Mcount_addr2_cy<6>_rt
+LUT1 		Mcount_addr2_cy<7>_rt
+LUT1 		Mcount_addr2_cy<8>_rt
+LUT1 		tdc_decode/ADDERTREE_INTERNAL_Madd62_cy<6>_rt
+LUT1 		uartTX/Madd_r_Clock_Count[15]_GND_5_o_add_19_OUT_cy<3>_rt
+LUT1 		uartTX/Madd_r_Clock_Count[15]_GND_5_o_add_19_OUT_cy<2>_rt
+LUT1 		uartTX/Madd_r_Clock_Count[15]_GND_5_o_add_19_OUT_cy<1>_rt
+LUT1 		Madd_counter1[31]_GND_1_o_add_162_OUT_xor<27>_rt
+LUT1 		Mcount_counter2_xor<28>_rt
+LUT1 		Mcount_addr2_xor<9>_rt
+LUT1 		uartTX/Madd_r_Clock_Count[15]_GND_5_o_add_19_OUT_xor<4>_rt
+INV 		_n1121_inv_INV_0
+
+Section 11 - Timing Report
+--------------------------
+INFO:Timing:3284 - This timing report was generated using estimated delay 
+   information.  For accurate numbers, please refer to the post Place and Route 
+   timing report.
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+* TS_clock_clk0t = PERIOD TIMEGRP "clock_cl | SETUP       |   -12.286ns|    69.785ns|    1301|    12137289
+  k0t" TS_CLK_OSC / 1.2 HIGH 50%            | HOLD        |    -0.422ns|            |     181|        9019
+----------------------------------------------------------------------------------------------------------
+  TS_CLK_OSC = PERIOD TIMEGRP "CLK_OSC_GRP" | SETUP       |     4.731ns|     2.010ns|       0|           0
+   10 ns HIGH 50%                           | HOLD        |     0.144ns|            |       0|           0
+                                            | MINLOWPULSE |     6.000ns|     4.000ns|       0|           0
+----------------------------------------------------------------------------------------------------------
+  TS_clock_clk1t = PERIOD TIMEGRP "clock_cl | SETUP       |    80.358ns|     2.975ns|       0|           0
+  k1t" TS_CLK_OSC / 0.12 HIGH 50%           | HOLD        |     0.003ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Review Timing Report for more details on the following derived constraints.
+To create a Timing Report, run "trce -v 12 -fastpaths -o design_timing_report design.ncd design.pcf"
+or "Run Timing Analysis" from Timing Analyzer (timingan).
+Derived Constraints for TS_CLK_OSC
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_CLK_OSC                     |     10.000ns|      4.000ns|     83.742ns|            0|         1482|        13919| 263566709875|
+| TS_clock_clk1t                |     83.333ns|      2.975ns|          N/A|            0|            0|      2231785|            0|
+| TS_clock_clk0t                |      8.333ns|     69.785ns|          N/A|         1482|            0| 263564478090|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+1 constraint not met.
+
+
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| HB                                 | IOB33            | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          |          |
+| PWR                                | IOB33            | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          |          |
+| clk                                | IOB33            | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| led<0>                             | IOB33            | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          |          |
+| led<1>                             | IOB33            | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          |          |
+| led<2>                             | IOB33            | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          |          |
+| rx                                 | IOB33            | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| tx                                 | IOB33            | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+Area Group "pblock_aes"
+  No COMPRESSION specified for Area Group "pblock_aes"
+  RANGE: DSP48_X0Y0:DSP48_X2Y17
+  RANGE: RAMB18_X0Y0:RAMB18_X2Y17
+  RANGE: RAMB36_X0Y0:RAMB36_X2Y8
+  RANGE: SLICE_X0Y0:SLICE_X49Y48
+  Slice Logic Utilization:
+    Number of Slice Registers:             835 out of 19,600    4%
+    Number of Slice LUTs:                  963 out of  9,800    9%
+      Number used as logic:                963
+  Slice Logic Distribution:
+    Number of occupied Slices:             256 out of  2,450   10%
+    Number of LUT Flip Flop pairs used:    978
+      Number with an unused Flip Flop:     293 out of    978   29%
+      Number with an unused LUT:            15 out of    978    1%
+      Number of fully used LUT-FF pairs:   670 out of    978   68%
+
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+MMCME2_ADV "clock/MMCME2_BASE_inst1":
+BANDWIDTH:OPTIMIZED
+CLKBURST_ENABLE:FALSE
+CLKBURST_REPEAT:FALSE
+CLKFBIN_EDGE:FALSE
+CLKFBIN_NOCOUNT:TRUE
+CLKFBOUT_EDGE:FALSE
+CLKFBOUT_EN:TRUE
+CLKFBOUT_FRAC_EN:FALSE
+CLKFBOUT_FRAC_WF_FALL:FALSE
+CLKFBOUT_FRAC_WF_RISE:FALSE
+CLKFBOUT_NOCOUNT:TRUE
+CLKFBOUT_USE_FINE_PS:FALSE
+CLKOUT0_EDGE:FALSE
+CLKOUT0_EN:FALSE
+CLKOUT0_FRAC_EN:FALSE
+CLKOUT0_FRAC_WF_FALL:FALSE
+CLKOUT0_FRAC_WF_RISE:FALSE
+CLKOUT0_NOCOUNT:TRUE
+CLKOUT0_USE_FINE_PS:FALSE
+CLKOUT1_EDGE:FALSE
+CLKOUT1_EN:FALSE
+CLKOUT1_NOCOUNT:TRUE
+CLKOUT1_USE_FINE_PS:FALSE
+CLKOUT2_EDGE:FALSE
+CLKOUT2_EN:FALSE
+CLKOUT2_NOCOUNT:TRUE
+CLKOUT2_USE_FINE_PS:FALSE
+CLKOUT3_EDGE:FALSE
+CLKOUT3_EN:FALSE
+CLKOUT3_NOCOUNT:TRUE
+CLKOUT3_USE_FINE_PS:FALSE
+CLKOUT4_CASCADE:FALSE
+CLKOUT4_EDGE:FALSE
+CLKOUT4_EN:FALSE
+CLKOUT4_NOCOUNT:TRUE
+CLKOUT4_USE_FINE_PS:FALSE
+CLKOUT5_EDGE:FALSE
+CLKOUT5_EN:FALSE
+CLKOUT5_NOCOUNT:TRUE
+CLKOUT5_USE_FINE_PS:FALSE
+CLKOUT6_EDGE:FALSE
+CLKOUT6_EN:FALSE
+CLKOUT6_NOCOUNT:TRUE
+CLKOUT6_USE_FINE_PS:FALSE
+COMPENSATION:ZHOLD
+DIRECT_PATH_CNTRL:FALSE
+DIVCLK_EDGE:FALSE
+DIVCLK_NOCOUNT:TRUE
+EN_VCO_DIV1:FALSE
+EN_VCO_DIV6:FALSE
+GTS_WAIT:FALSE
+HVLF_CNT_TEST_EN:FALSE
+INTERP_TEST:FALSE
+IN_DLY_EN:TRUE
+LF_LOW_SEL:FALSE
+MMCM_EN:TRUE
+PERF0_USE_CLK:FALSE
+PERF1_USE_CLK:FALSE
+PERF2_USE_CLK:FALSE
+PERF3_USE_CLK:FALSE
+SEL_HV_NMOS:FALSE
+SEL_LV_NMOS:FALSE
+SEL_SLIPD:FALSE
+SS_EN:FALSE
+SS_MODE:CENTER_HIGH
+STARTUP_WAIT:FALSE
+SUP_SEL_AREG:FALSE
+SUP_SEL_DREG:FALSE
+TMUX_MUX_SEL:00
+VLF_HIGH_DIS_B:TRUE
+VLF_HIGH_PWDN_B:TRUE
+CLKFBOUT_MULT_F = 12.0
+CLKFBOUT_PHASE = 0.0
+CLKIN1_PERIOD = 10
+CLKIN2_PERIOD = 0
+CLKOUT0_DIVIDE_F = 10.0
+CLKOUT0_DUTY_CYCLE = 0.5
+CLKOUT0_PHASE = 0.0
+CLKOUT1_DIVIDE = 100
+CLKOUT1_DUTY_CYCLE = 0.5
+CLKOUT1_PHASE = 0.0
+CLKOUT2_DIVIDE = 4
+CLKOUT2_DUTY_CYCLE = 0.5
+CLKOUT2_PHASE = 0.0
+CLKOUT3_DIVIDE = 1
+CLKOUT3_DUTY_CYCLE = 0.5
+CLKOUT3_PHASE = 0.0
+CLKOUT4_DIVIDE = 1
+CLKOUT4_DUTY_CYCLE = 0.5
+CLKOUT4_PHASE = 0.0
+CLKOUT5_DIVIDE = 10
+CLKOUT5_DUTY_CYCLE = 0.5
+CLKOUT5_PHASE = 144.0
+CLKOUT6_DIVIDE = 1
+CLKOUT6_DUTY_CYCLE = 0.5
+CLKOUT6_PHASE = 0.0
+DIVCLK_DIVIDE = 1
+REF_JITTER1 = 0.0
+REF_JITTER2 = 0.01
+SS_MOD_PERIOD = 10000
+
+
+
+Section 12 - Control Set Information
+------------------------------------
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Clock Signal     | Reset Signal                                       | Set Signal | Enable Signal                                 | Slice Load Count | Bel Load Count |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk1             |                                                    |            |                                               | 14               | 25             |
+| clk1             |                                                    |            | GLOBAL_LOGIC1                                 | 1                | 1              |
+| clk1             |                                                    |            | _n0764_inv                                    | 1                | 5              |
+| clk1             |                                                    |            | _n1121_inv                                    | 3                | 10             |
+| clk1             |                                                    |            | _n1458_inv                                    | 4                | 28             |
+| clk1             |                                                    |            | _n1467_inv                                    | 21               | 128            |
+| clk1             |                                                    |            | _n1498_inv                                    | 32               | 125            |
+| clk1             |                                                    |            | _n1524_inv                                    | 30               | 125            |
+| clk1             |                                                    |            | _n1540_inv                                    | 29               | 128            |
+| clk1             |                                                    |            | _n2002_inv                                    | 3                | 8              |
+| clk1             |                                                    |            | gen_code_label[0].aes_tinyi/ctrlData<0>       | 36               | 128            |
+| clk1             |                                                    |            | gen_code_label[0].aes_tinyi/ctrlKey<0>        | 28               | 128            |
+| clk1             |                                                    |            | gen_code_label[1].aes_tinyi/ctrlData<0>       | 40               | 128            |
+| clk1             |                                                    |            | gen_code_label[1].aes_tinyi/ctrlKey<0>        | 29               | 128            |
+| clk1             |                                                    |            | uartRX/_n0146_inv                             | 3                | 8              |
+| clk1             |                                                    |            | uartRX/_n0219_inv                             | 1                | 3              |
+| clk1             |                                                    |            | uartTX/_n0135_inv                             | 1                | 3              |
+| clk1             |                                                    |            | uartTX/r_SM_Main<2>_inv                       | 2                | 6              |
+| clk1             |                                                    |            | uartTX/r_SM_Main_FSM_FFd3-In1                 | 2                | 8              |
+| clk1             | Drdy                                               |            |                                               | 6                | 12             |
+| clk1             | gen_code_label[0].aes_tinyi/fsm/rst_countRound_inv |            | gen_code_label[0].aes_tinyi/fsm/en_countBlock | 1                | 2              |
+| clk1             | gen_code_label[0].aes_tinyi/fsm/rst_countRound_inv |            | gen_code_label[0].aes_tinyi/fsm/en_countRound | 2                | 4              |
+| clk1             | gen_code_label[1].aes_tinyi/fsm/rst_countRound_inv |            | gen_code_label[1].aes_tinyi/fsm/en_countBlock | 1                | 2              |
+| clk1             | gen_code_label[1].aes_tinyi/fsm/rst_countRound_inv |            | gen_code_label[1].aes_tinyi/fsm/en_countRound | 2                | 4              |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk_IBUF_BUFG    |                                                    |            |                                               | 601              | 2802           |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| del1/delLATCH<0> |                                                    |            |                                               | 1                | 1              |
+| del1/delLATCH<0> |                                                    |            | _n0744_inv                                    | 32               | 128            |
+| del1/delLATCH<0> | _n0727                                             |            | _n0744_inv                                    | 3                | 10             |
+| del1/delLATCH<0> | tdc_decode/rst_inv                                 |            |                                               | 34               | 136            |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Module                       | Partition | Slices*       | Slice Reg     | LUTs          | LUTRAM        | BRAM/FIFO | DSP48E1 | BUFG  | BUFIO | BUFR  | MMCME2_AD | Full Hierarchical Name                                                          |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| top/                         |           | 230/1690      | 734/4223      | 404/6495      | 0/1           | 3/3       | 0/0     | 1/5   | 0/0   | 0/0   | 0/1       | top                                                                             |
+| +clock                       |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 4/4   | 0/0   | 0/0   | 1/1       | top/clock                                                                       |
+| +del1                        |           | 2/2           | 0/0           | 4/4           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/del1                                                                        |
+| +gen_code_label[0].aes_tinyi |           | 7/80          | 0/267         | 32/438        | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi                                                 |
+| ++Inst_dataBody              |           | 0/43          | 0/128         | 0/171         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_dataBody                                   |
+| +++state_FF                  |           | 0/43          | 0/128         | 0/171         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF                          |
+| ++++gen_ff[1].ff             |           | 21/21         | 32/32         | 78/78         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff             |
+| ++++gen_ff[2].ff             |           | 9/9           | 32/32         | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[2].ff             |
+| ++++gen_ff[3].ff             |           | 6/6           | 32/32         | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[3].ff             |
+| ++++gen_ff[4].ff             |           | 7/7           | 32/32         | 29/29         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[4].ff             |
+| ++Inst_keyschedule           |           | 0/16          | 0/128         | 0/54          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_keyschedule                                |
+| +++keystate                  |           | 0/16          | 0/128         | 0/54          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_keyschedule/keystate                       |
+| ++++gen_ff[1].ff             |           | 12/12         | 32/32         | 7/7           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_keyschedule/keystate/gen_ff[1].ff          |
+| ++++gen_ff[2].ff             |           | 0/0           | 32/32         | 31/31         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_keyschedule/keystate/gen_ff[2].ff          |
+| ++++gen_ff[3].ff             |           | 4/4           | 32/32         | 16/16         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_keyschedule/keystate/gen_ff[3].ff          |
+| ++++gen_ff[4].ff             |           | 0/0           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_keyschedule/keystate/gen_ff[4].ff          |
+| ++Inst_mix_column            |           | 0/0           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_mix_column                                 |
+| ++Inst_sbox                  |           | 0/12          | 0/0           | 0/169         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox                                       |
+| +++bits15_8                  |           | 0/3           | 0/0           | 0/43          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits15_8                              |
+| ++++Inst_bSbox               |           | 0/3           | 0/0           | 15/43         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox                   |
+| +++++inv                     |           | 2/3           | 0/0           | 13/28         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv               |
+| ++++++dinv                   |           | 0/0           | 0/0           | 0/4           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/dinv          |
+| +++++++pmul                  |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/dinv/pmul     |
+| +++++++qmul                  |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/dinv/qmul     |
+| ++++++pmul                   |           | 0/0           | 0/0           | 4/6           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/pmul          |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/pmul/summul   |
+| ++++++qmul                   |           | 1/1           | 0/0           | 3/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/qmul          |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/qmul/summul   |
+| +++bits23_16                 |           | 0/7           | 0/0           | 0/42          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16                             |
+| ++++Inst_bSbox               |           | 3/7           | 0/0           | 15/42         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox                  |
+| +++++inv                     |           | 2/4           | 0/0           | 12/27         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv              |
+| ++++++dinv                   |           | 0/2           | 0/0           | 0/4           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv         |
+| +++++++pmul                  |           | 1/1           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv/pmul    |
+| +++++++qmul                  |           | 1/1           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv/qmul    |
+| ++++++pmul                   |           | 0/0           | 0/0           | 4/6           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/pmul         |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/pmul/summul  |
+| ++++++qmul                   |           | 0/0           | 0/0           | 3/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/qmul         |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/qmul/summul  |
+| +++bits31_24                 |           | 0/0           | 0/0           | 0/42          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits31_24                             |
+| ++++Inst_bSbox               |           | 0/0           | 0/0           | 15/42         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox                  |
+| +++++inv                     |           | 0/0           | 0/0           | 13/27         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv              |
+| ++++++dinv                   |           | 0/0           | 0/0           | 0/3           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/dinv         |
+| +++++++pmul                  |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/dinv/pmul    |
+| +++++++qmul                  |           | 0/0           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/dinv/qmul    |
+| ++++++pmul                   |           | 0/0           | 0/0           | 4/6           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/pmul         |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/pmul/summul  |
+| ++++++qmul                   |           | 0/0           | 0/0           | 3/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/qmul         |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/qmul/summul  |
+| +++bits7_0                   |           | 0/2           | 0/0           | 0/42          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits7_0                               |
+| ++++Inst_bSbox               |           | 0/2           | 0/0           | 15/42         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox                    |
+| +++++inv                     |           | 1/2           | 0/0           | 12/27         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv                |
+| ++++++dinv                   |           | 0/1           | 0/0           | 0/4           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/dinv           |
+| +++++++pmul                  |           | 1/1           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/dinv/pmul      |
+| +++++++qmul                  |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/dinv/qmul      |
+| ++++++pmul                   |           | 0/0           | 0/0           | 4/6           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/pmul           |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/pmul/summul    |
+| ++++++qmul                   |           | 0/0           | 0/0           | 3/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/qmul           |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/qmul/summul    |
+| ++fsm                        |           | 2/2           | 5/11          | 7/11          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/fsm                                             |
+| +++cnt_block                 |           | 0/0           | 2/2           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/fsm/cnt_block                                   |
+| +++cnt_round                 |           | 0/0           | 4/4           | 3/3           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[0].aes_tinyi/fsm/cnt_round                                   |
+| +gen_code_label[1].aes_tinyi |           | 10/97         | 0/269         | 31/461        | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi                                                 |
+| ++Inst_dataBody              |           | 0/52          | 0/128         | 0/192         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_dataBody                                   |
+| +++state_FF                  |           | 0/52          | 0/128         | 0/192         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_dataBody/state_FF                          |
+| ++++gen_ff[1].ff             |           | 30/30         | 32/32         | 99/99         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff             |
+| ++++gen_ff[2].ff             |           | 8/8           | 32/32         | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_dataBody/state_FF/gen_ff[2].ff             |
+| ++++gen_ff[3].ff             |           | 8/8           | 32/32         | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_dataBody/state_FF/gen_ff[3].ff             |
+| ++++gen_ff[4].ff             |           | 6/6           | 32/32         | 29/29         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_dataBody/state_FF/gen_ff[4].ff             |
+| ++Inst_keyschedule           |           | 0/19          | 0/128         | 0/56          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_keyschedule                                |
+| +++keystate                  |           | 0/19          | 0/128         | 0/56          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_keyschedule/keystate                       |
+| ++++gen_ff[1].ff             |           | 11/11         | 32/32         | 12/12         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_keyschedule/keystate/gen_ff[1].ff          |
+| ++++gen_ff[2].ff             |           | 1/1           | 32/32         | 28/28         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_keyschedule/keystate/gen_ff[2].ff          |
+| ++++gen_ff[3].ff             |           | 4/4           | 32/32         | 16/16         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_keyschedule/keystate/gen_ff[3].ff          |
+| ++++gen_ff[4].ff             |           | 3/3           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_keyschedule/keystate/gen_ff[4].ff          |
+| ++Inst_mix_column            |           | 0/0           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_mix_column                                 |
+| ++Inst_sbox                  |           | 0/15          | 0/0           | 0/170         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox                                       |
+| +++bits15_8                  |           | 0/3           | 0/0           | 0/42          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits15_8                              |
+| ++++Inst_bSbox               |           | 3/3           | 0/0           | 15/42         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox                   |
+| +++++inv                     |           | 0/0           | 0/0           | 12/27         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv               |
+| ++++++dinv                   |           | 0/0           | 0/0           | 0/4           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/dinv          |
+| +++++++pmul                  |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/dinv/pmul     |
+| +++++++qmul                  |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/dinv/qmul     |
+| ++++++pmul                   |           | 0/0           | 0/0           | 4/6           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/pmul          |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/pmul/summul   |
+| ++++++qmul                   |           | 0/0           | 0/0           | 3/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/qmul          |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits15_8/Inst_bSbox/inv/qmul/summul   |
+| +++bits23_16                 |           | 0/5           | 0/0           | 0/42          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits23_16                             |
+| ++++Inst_bSbox               |           | 3/5           | 0/0           | 15/42         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox                  |
+| +++++inv                     |           | 1/2           | 0/0           | 12/27         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv              |
+| ++++++dinv                   |           | 0/0           | 0/0           | 0/4           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv         |
+| +++++++pmul                  |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv/pmul    |
+| +++++++qmul                  |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv/qmul    |
+| ++++++pmul                   |           | 1/1           | 0/0           | 4/6           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/pmul         |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/pmul/summul  |
+| ++++++qmul                   |           | 0/0           | 0/0           | 3/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/qmul         |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/qmul/summul  |
+| +++bits31_24                 |           | 0/5           | 0/0           | 0/40          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits31_24                             |
+| ++++Inst_bSbox               |           | 0/5           | 0/0           | 15/40         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox                  |
+| +++++inv                     |           | 3/5           | 0/0           | 12/25         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv              |
+| ++++++dinv                   |           | 0/1           | 0/0           | 0/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/dinv         |
+| +++++++pmul                  |           | 1/1           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/dinv/pmul    |
+| +++++++qmul                  |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/dinv/qmul    |
+| ++++++pmul                   |           | 0/1           | 0/0           | 4/6           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/pmul         |
+| +++++++summul                |           | 1/1           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/pmul/summul  |
+| ++++++qmul                   |           | 0/0           | 0/0           | 3/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/qmul         |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits31_24/Inst_bSbox/inv/qmul/summul  |
+| +++bits7_0                   |           | 0/2           | 0/0           | 0/46          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits7_0                               |
+| ++++Inst_bSbox               |           | 1/2           | 0/0           | 19/46         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox                    |
+| +++++inv                     |           | 1/1           | 0/0           | 12/27         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv                |
+| ++++++dinv                   |           | 0/0           | 0/0           | 0/4           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/dinv           |
+| +++++++pmul                  |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/dinv/pmul      |
+| +++++++qmul                  |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/dinv/qmul      |
+| ++++++pmul                   |           | 0/0           | 0/0           | 4/6           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/pmul           |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/pmul/summul    |
+| ++++++qmul                   |           | 0/0           | 0/0           | 3/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/qmul           |
+| +++++++summul                |           | 0/0           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/Inst_sbox/bits7_0/Inst_bSbox/inv/qmul/summul    |
+| ++fsm                        |           | 0/1           | 7/13          | 7/11          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/fsm                                             |
+| +++cnt_block                 |           | 1/1           | 2/2           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/fsm/cnt_block                                   |
+| +++cnt_round                 |           | 0/0           | 4/4           | 3/3           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/gen_code_label[1].aes_tinyi/fsm/cnt_round                                   |
+| +rca                         |           | 0/1222        | 0/2773        | 0/4957        | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/rca                                                                         |
+| ++blk00000001                |           | 1222/1222     | 2773/2773     | 4957/4957     | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/rca/blk00000001                                                             |
+| +tdc_decode                  |           | 48/48         | 136/136       | 188/188       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/tdc_decode                                                                  |
+| +uartRX                      |           | 7/7           | 23/23         | 27/27         | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/uartRX                                                                      |
+| +uartTX                      |           | 4/4           | 21/21         | 16/16         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | top/uartTX                                                                      |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Slices can be packed with basic elements from multiple hierarchies.
+  Therefore, a slice will be counted in every hierarchical module
+  that each of its packed basic elements belong to.
+** For each column, there are two numbers reported <A>/<B>.
+   <A> is the number of elements that belong to that specific hierarchical module.
+   <B> is the total number of elements from that hierarchical module and any lower level
+   hierarchical modules below.
+*** The LUTRAM column counts all LUTs used as memory including RAM, ROM, and shift registers.

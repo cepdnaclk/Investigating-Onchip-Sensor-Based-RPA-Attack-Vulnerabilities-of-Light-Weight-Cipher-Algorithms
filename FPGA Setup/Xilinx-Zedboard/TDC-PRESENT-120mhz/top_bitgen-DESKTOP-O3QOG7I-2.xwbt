@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Onedrive\OneDrive - UNSW\My Onedrive\PhD\Src\New-Delay-Sensor\Ripple-Adder\ZEDBoard\ZEDBOARD-OrigTDCSensor-Mult\ZEDBOARD-OrigTDCSensor-8del-new\top.ncd
+OUTFILE=D:\Onedrive\OneDrive - UNSW\My Onedrive\PhD\Src\New-Delay-Sensor\Ripple-Adder\ZEDBoard\ZEDBOARD-OrigTDCSensor-Mult\ZEDBOARD-OrigTDCSensor-8del-new\top.bit
+FAMILY=Zynq
+PART=xc7z020-1clg484
+WORKINGDIR=D:\Onedrive\OneDrive - UNSW\My Onedrive\PhD\Src\New-Delay-Sensor\Ripple-Adder\ZEDBoard\ZEDBOARD-OrigTDCSensor-Mult\ZEDBOARD-OrigTDCSensor-8del-new
+LICENSE=ISE
+USER_INFO=176080079_176910363_210559698_406

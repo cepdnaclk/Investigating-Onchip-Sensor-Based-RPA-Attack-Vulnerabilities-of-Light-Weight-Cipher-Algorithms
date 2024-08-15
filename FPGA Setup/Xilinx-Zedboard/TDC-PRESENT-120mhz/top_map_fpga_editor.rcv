@@ -1,0 +1,41 @@
+#:C9     
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   NT M2.1 P.20131013
+#Current Working Directory:
+#:D   D:\Onedrive\OneDrive - UNSW\My Onedrive\PhD\Src\Briyan-RO\2TDC-1AES\Auto_sensor\CARRY4-WO-latch\ZEDBOARD-CARRY-WO-LATCH-1del
+#Date/Time:
+#:T   Thu Jul 01 17:01:08 2021
+#------------------------------
+	#Reading top_map.ncd...
+	#Loading device for application Rf_Device from file '7z020.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+	#   "top" is an NCD, version 3.2, device xc7z020, package clg484, speed -1
+	#Design creation date: 2021.07.01.06.54.07
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+select -k comp 'out<3>'
+	#3
+unselect -all
+	#4
+select rpm 'Shape_0'
+	#RPM Shape_0, type CARRY
+	#5
+unselect -all
+	#6
+select net 'out<2>'
+	#net "out<2>"
+	#7
+post block
+	#ERROR:FPGAEditor:79 - The "post block" command without any other arguments cannot
+	#be performed unless the selection contains only a single site
+	#or single component.  Change the selection and try again.
+	#8
+unselect -all
+	#9
+select rpm 'Shape_0'
+	#RPM Shape_0, type CARRY
+	#10
+unselect -all

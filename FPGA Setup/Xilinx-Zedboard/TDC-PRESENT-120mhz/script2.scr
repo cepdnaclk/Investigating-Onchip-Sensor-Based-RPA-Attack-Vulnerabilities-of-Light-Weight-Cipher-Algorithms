@@ -1,0 +1,35 @@
+post attr main
+setattr main edit-mode Read-Write
+setattr main case_sensitive off
+setattr main case_sensitive off
+unpost main
+unselect -all
+select comp 'out<3>'
+unplace
+save
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select comp 'tp/delOut<3>'
+post block
+unselect comp 'tp/delOut<3>'
+select -k net 'tp/delOut<0>'
+delete
+select -k net 'tp/delOut<1>'
+delete
+select -k net 'tp/delOut<2>'
+delete
+select -k net 'tp/delOut<3>'
+delete
+select -k net 'tp/co1<0>'
+delete
+select -k net 'tp/co1<1>'
+delete
+select -k net 'tp/co1<2>'
+delete
+select -k net 'tp/co1<3>'
+unselect -all
+select comp 'tp/delOut<3>'
+post block
+save
+end

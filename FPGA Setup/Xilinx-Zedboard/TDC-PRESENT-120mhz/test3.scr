@@ -1,0 +1,84 @@
+post attr main
+setattr main edit-mode Read-Write
+setattr main case_sensitive off
+setattr main case_sensitive off
+unpost main
+unplace
+unselect -all
+#select rpm 'Shape_0'
+#unselect -all
+#select comp 'tp/delOut<3>'
+#post block
+#end block
+#setattr comp tp/delOut<11> Config "A5LUT:#LUT:O5=A4 A6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) ACY0:O5 AFF:#LATCH AFFINIT:INIT0 AFFMUX:CY AFFSR:SRHIGH AOUTMUX:XOR B5LUT:#LUT:O5=A4 B6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) BCY0:O5 BFF:#LATCH BFFINIT:INIT0 BFFMUX:CY BFFSR:SRHIGH BOUTMUX:XOR C5LUT:#LUT:O5=A4 C6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) CCY0:O5 CEUSEDMUX:1 CFF:#LATCH CFFINIT:INIT0 CFFMUX:CY CFFSR:SRHIGH CLKINV:CLK_B COUTMUX:XOR COUTUSED:0 D5LUT:#LUT:O5=A4 D6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) DCY0:O5 DFF:#LATCH DFFINIT:INIT0 DFFMUX:CY DFFSR:SRHIGH DOUTMUX:XOR PRECYINIT:AX SRUSEDMUX:0 SYNC_ATTR:ASYNC"
+#block apply
+#setattr comp tp/delOut<19> Config "A5LUT:#LUT:O5=A4 A6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) ACY0:O5 AFF:#LATCH AFFINIT:INIT0 AFFMUX:CY AFFSR:SRHIGH AOUTMUX:XOR B5LUT:#LUT:O5=A4 B6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) BCY0:O5 BFF:#LATCH BFFINIT:INIT0 BFFMUX:CY BFFSR:SRHIGH BOUTMUX:XOR C5LUT:#LUT:O5=A4 C6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) CCY0:O5 CEUSEDMUX:1 CFF:#LATCH CFFINIT:INIT0 CFFMUX:CY CFFSR:SRHIGH CLKINV:CLK_B COUTMUX:XOR COUTUSED:0 D5LUT:#LUT:O5=A4 D6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) DCY0:O5 DFF:#LATCH DFFINIT:INIT0 DFFMUX:CY DFFSR:SRHIGH DOUTMUX:XOR PRECYINIT:AX SRUSEDMUX:0 SYNC_ATTR:ASYNC"
+#block apply
+unselect -all
+setattr comp tp/delOut<3> Config "A5LUT:#LUT:O5=A4 A6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) ACY0:O5 AFF:#LATCH AFFINIT:INIT0 AFFMUX:CY AFFSR:SRHIGH AOUTMUX:XOR B5LUT:#LUT:O5=A4 B6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) BCY0:O5 BFF:#LATCH BFFINIT:INIT0 BFFMUX:CY BFFSR:SRHIGH BOUTMUX:XOR C5LUT:#LUT:O5=A4 C6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) CCY0:O5 CEUSEDMUX:1 CFF:#LATCH CFFINIT:INIT0 CFFMUX:CY CFFSR:SRHIGH CLKINV:CLK_B COUTMUX:XOR COUTUSED:0 D5LUT:#LUT:O5=A4 D6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) DCY0:O5 DFF:#LATCH DFFINIT:INIT0 DFFMUX:CY DFFSR:SRHIGH DOUTMUX:XOR PRECYINIT:AX SRUSEDMUX:0 SYNC_ATTR:ASYNC"
+block apply
+end block
+select pin 'SLICE_X109Y60.CLK'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.A4'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.B4'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.C4'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.D4'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.AX'
+select pin 'SLICE_X109Y60.CLK'
+add
+unselect -all
+select pin 'SLICE_X109Y60.AQ'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.BQ'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.CQ'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.DQ'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.DQ'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.AMUX'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.BMUX'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.CMUX'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.DMUX'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.AMUX'
+select pin 'SLICE_X109Y60.A4'
+add
+unselect -all
+select pin 'SLICE_X109Y60.BMUX'
+select pin 'SLICE_X109Y60.B4'
+add
+unselect -all
+select pin 'SLICE_X109Y60.CMUX'
+select pin 'SLICE_X109Y60.C4'
+add
+unselect -all
+select pin 'SLICE_X109Y60.DMUX'
+select pin 'SLICE_X109Y60.D4'
+add
+
+
+end

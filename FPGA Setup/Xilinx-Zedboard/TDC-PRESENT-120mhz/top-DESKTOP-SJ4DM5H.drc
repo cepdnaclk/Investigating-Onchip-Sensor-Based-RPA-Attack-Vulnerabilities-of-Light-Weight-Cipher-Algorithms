@@ -1,0 +1,28 @@
+Release 14.7 Drc P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Wed Jun 23 15:17:40 2021
+
+drc -z top.ncd top.pcf
+
+WARNING:PhysDesignRules:2500 - This design does not have a PS7 block.
+   Instantiate the PS7 block in order to ensure proper fabric tie-offs and
+   correct operation of the processing_system7.
+WARNING:PhysDesignRules:367 - The signal <tp/S<1>> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <tp/D<1>> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <tp/S<2>> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <tp/D<2>> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <tp/S<0>> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <tp/D<0>> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <tp/S<3>> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <tp/D<3>> is incomplete. The signal
+   does not drive any load pins in the design.
+DRC detected 0 errors and 9 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

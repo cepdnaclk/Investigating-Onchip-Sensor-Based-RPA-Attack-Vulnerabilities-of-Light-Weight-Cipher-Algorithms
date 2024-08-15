@@ -1,0 +1,53 @@
+Release 14.7 ngdbuild P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Zturn.ucf -p
+xc7z020-clg484-1 top.ngc top.ngd
+
+Reading NGO file "D:/Onedrive/OneDrive - UNSW/My
+Onedrive/PhD/Src/New-Delay-Sensor/Ripple-Adder/ZEDBoard/ZEDBOARD-OrigTDCSensor-M
+ult/ZEDBOARD-OrigTDCSensor-8del-new/top.ngc" ...
+Loading design module "ipcore_dir/multiplier.ngc"...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "Zturn.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem:178 - TNM 'CLK_OSC_GRP', used in period specification
+   'TS_CLK_OSC', was traced into MMCME2_ADV instance clock/MMCME2_BASE_inst1.
+   The following new TNM groups and period specifications were generated at the
+   MMCME2_ADV output(s): 
+   CLKOUT1: <TIMESPEC TS_clock_clk1t = PERIOD "clock_clk1t" TS_CLK_OSC / 0.12
+   HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'CLK_OSC_GRP', used in period specification
+   'TS_CLK_OSC', was traced into MMCME2_ADV instance clock/MMCME2_BASE_inst1.
+   The following new TNM groups and period specifications were generated at the
+   MMCME2_ADV output(s): 
+   CLKOUT0: <TIMESPEC TS_clock_clk0t = PERIOD "clock_clk0t" TS_CLK_OSC / 1.2
+   HIGH 50%>
+
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 4542768 kilobytes
+
+Writing NGD file "top.ngd" ...
+Total REAL time to NGDBUILD completion:  16 sec
+Total CPU time to NGDBUILD completion:   15 sec
+
+Writing NGDBUILD log file "top.bld"...

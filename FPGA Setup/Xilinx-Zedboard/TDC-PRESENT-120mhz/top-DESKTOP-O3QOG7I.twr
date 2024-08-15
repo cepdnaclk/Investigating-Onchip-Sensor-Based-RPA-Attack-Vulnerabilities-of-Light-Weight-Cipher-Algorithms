@@ -1,0 +1,2358 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 1
+-n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf -ucf Zturn.ucf
+
+Design file:              top.ncd
+Physical constraint file: top.pcf
+Device,package,speed:     xc7z020,clg484,C,-1 (PRODUCTION 1.08 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_CLK_OSC = PERIOD TIMEGRP "CLK_OSC_GRP" 10 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 13919 paths analyzed, 13580 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   4.106ns.
+--------------------------------------------------------------------------------
+
+Paths for end point rca/blk00000001/blk000001d8 (SLICE_X16Y47.D1), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     1.871ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               B_46 (FF)
+  Destination:          rca/blk00000001/blk000001d8 (FF)
+  Requirement:          3.334ns
+  Data Path Delay:      3.851ns (Levels of Logic = 1)
+  Clock Path Skew:      2.567ns (1.283 - -1.284)
+  Source Clock:         clk1 rising at 166.666ns
+  Destination Clock:    clk_IBUF_BUFG rising at 170.000ns
+  Clock Uncertainty:    0.179ns
+
+  Clock Uncertainty:          0.179ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.087ns
+
+  Maximum Data Path at Fast Process Corner: B_46 to rca/blk00000001/blk000001d8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y18.CMUX    Tshcko                0.227   B<39>
+                                                       B_46
+    SLICE_X16Y47.D1      net (fanout=106)      3.603   B<46>
+    SLICE_X16Y47.CLK     Tas                   0.021   rca/blk00000001/sig00000dc9
+                                                       rca/blk00000001/blk00002ce9
+                                                       rca/blk00000001/blk000001d8
+    -------------------------------------------------  ---------------------------
+    Total                                      3.851ns (0.248ns logic, 3.603ns route)
+                                                       (6.4% logic, 93.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point rca/blk00000001/blk000009e6 (SLICE_X15Y48.B3), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     1.929ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               B_46 (FF)
+  Destination:          rca/blk00000001/blk000009e6 (FF)
+  Requirement:          3.334ns
+  Data Path Delay:      3.794ns (Levels of Logic = 1)
+  Clock Path Skew:      2.568ns (1.284 - -1.284)
+  Source Clock:         clk1 rising at 166.666ns
+  Destination Clock:    clk_IBUF_BUFG rising at 170.000ns
+  Clock Uncertainty:    0.179ns
+
+  Clock Uncertainty:          0.179ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.087ns
+
+  Maximum Data Path at Fast Process Corner: B_46 to rca/blk00000001/blk000009e6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y18.CMUX    Tshcko                0.227   B<39>
+                                                       B_46
+    SLICE_X15Y48.B3      net (fanout=106)      3.525   B<46>
+    SLICE_X15Y48.CLK     Tas                   0.042   rca/blk00000001/sig00000cbb
+                                                       rca/blk00000001/blk00002de3
+                                                       rca/blk00000001/blk000009e6
+    -------------------------------------------------  ---------------------------
+    Total                                      3.794ns (0.269ns logic, 3.525ns route)
+                                                       (7.1% logic, 92.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point rca/blk00000001/blk000000d6 (SLICE_X12Y46.D1), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     1.957ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               B_46 (FF)
+  Destination:          rca/blk00000001/blk000000d6 (FF)
+  Requirement:          3.334ns
+  Data Path Delay:      3.765ns (Levels of Logic = 1)
+  Clock Path Skew:      2.567ns (1.283 - -1.284)
+  Source Clock:         clk1 rising at 166.666ns
+  Destination Clock:    clk_IBUF_BUFG rising at 170.000ns
+  Clock Uncertainty:    0.179ns
+
+  Clock Uncertainty:          0.179ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.087ns
+
+  Maximum Data Path at Fast Process Corner: B_46 to rca/blk00000001/blk000000d6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y18.CMUX    Tshcko                0.227   B<39>
+                                                       B_46
+    SLICE_X12Y46.D1      net (fanout=106)      3.517   B<46>
+    SLICE_X12Y46.CLK     Tas                   0.021   rca/blk00000001/sig00000cc7
+                                                       rca/blk00000001/blk00002be7
+                                                       rca/blk00000001/blk000000d6
+    -------------------------------------------------  ---------------------------
+    Total                                      3.765ns (0.248ns logic, 3.517ns route)
+                                                       (6.6% logic, 93.4% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_CLK_OSC = PERIOD TIMEGRP "CLK_OSC_GRP" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point rca/blk00000001/blk00000448 (SLICE_X28Y20.D5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.003ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               A_27 (FF)
+  Destination:          rca/blk00000001/blk00000448 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      0.455ns (Levels of Logic = 1)
+  Clock Path Skew:      6.939ns (4.003 - -2.936)
+  Source Clock:         clk1 rising at 166.666ns
+  Destination Clock:    clk_IBUF_BUFG rising at 160.000ns
+  Clock Uncertainty:    0.179ns
+
+  Clock Uncertainty:          0.179ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.087ns
+
+  Minimum Data Path at Slow Process Corner: A_27 to rca/blk00000001/blk00000448
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X29Y20.DQ      Tcko                  0.367   A<27>
+                                                       A_27
+    SLICE_X28Y20.D5      net (fanout=106)      0.283   A<27>
+    SLICE_X28Y20.CLK     Tah         (-Th)     0.195   rca/blk00000001/sig00000fef
+                                                       rca/blk00000001/blk000030bb
+                                                       rca/blk00000001/blk00000448
+    -------------------------------------------------  ---------------------------
+    Total                                      0.455ns (0.172ns logic, 0.283ns route)
+                                                       (37.8% logic, 62.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point rca/blk00000001/blk00000845 (SLICE_X12Y5.C6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.016ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               B_13 (FF)
+  Destination:          rca/blk00000001/blk00000845 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      0.471ns (Levels of Logic = 1)
+  Clock Path Skew:      6.942ns (4.026 - -2.916)
+  Source Clock:         clk1 rising at 166.666ns
+  Destination Clock:    clk_IBUF_BUFG rising at 160.000ns
+  Clock Uncertainty:    0.179ns
+
+  Clock Uncertainty:          0.179ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.087ns
+
+  Minimum Data Path at Slow Process Corner: B_13 to rca/blk00000001/blk00000845
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y5.BQ       Tcko                  0.418   B<15>
+                                                       B_13
+    SLICE_X12Y5.C6       net (fanout=106)      0.284   B<13>
+    SLICE_X12Y5.CLK      Tah         (-Th)     0.231   rca/blk00000001/sig000013f9
+                                                       rca/blk00000001/blk000030aa
+                                                       rca/blk00000001/blk00000845
+    -------------------------------------------------  ---------------------------
+    Total                                      0.471ns (0.187ns logic, 0.284ns route)
+                                                       (39.7% logic, 60.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point rca/blk00000001/blk00000447 (SLICE_X28Y20.D5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.027ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               A_27 (FF)
+  Destination:          rca/blk00000001/blk00000447 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      0.479ns (Levels of Logic = 1)
+  Clock Path Skew:      6.939ns (4.003 - -2.936)
+  Source Clock:         clk1 rising at 166.666ns
+  Destination Clock:    clk_IBUF_BUFG rising at 160.000ns
+  Clock Uncertainty:    0.179ns
+
+  Clock Uncertainty:          0.179ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.087ns
+
+  Minimum Data Path at Slow Process Corner: A_27 to rca/blk00000001/blk00000447
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X29Y20.DQ      Tcko                  0.367   A<27>
+                                                       A_27
+    SLICE_X28Y20.D5      net (fanout=106)      0.283   A<27>
+    SLICE_X28Y20.CLK     Tah         (-Th)     0.171   rca/blk00000001/sig00000fef
+                                                       rca/blk00000001/blk000030ba
+                                                       rca/blk00000001/blk00000447
+    -------------------------------------------------  ---------------------------
+    Total                                      0.479ns (0.196ns logic, 0.283ns route)
+                                                       (40.9% logic, 59.1% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_CLK_OSC = PERIOD TIMEGRP "CLK_OSC_GRP" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 6.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 10.000ns
+  Low pulse: 5.000ns
+  Low pulse limit: 2.000ns (Tmmcmpw_CLKIN1_100_150)
+  Physical resource: clock/MMCME2_BASE_inst1/CLKIN1
+  Logical resource: clock/MMCME2_BASE_inst1/CLKIN1
+  Location pin: MMCME2_ADV_X0Y0.CLKIN1
+  Clock network: clk_IBUF
+--------------------------------------------------------------------------------
+Slack: 6.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 10.000ns
+  High pulse: 5.000ns
+  High pulse limit: 2.000ns (Tmmcmpw_CLKIN1_100_150)
+  Physical resource: clock/MMCME2_BASE_inst1/CLKIN1
+  Logical resource: clock/MMCME2_BASE_inst1/CLKIN1
+  Location pin: MMCME2_ADV_X0Y0.CLKIN1
+  Clock network: clk_IBUF
+--------------------------------------------------------------------------------
+Slack: 7.084ns (period - min period limit)
+  Period: 8.333ns
+  Min period limit: 1.249ns (800.641MHz) (Tmmcmper_CLKOUT(Foutmax))
+  Physical resource: clock/MMCME2_BASE_inst1/CLKOUT0
+  Logical resource: clock/MMCME2_BASE_inst1/CLKOUT0
+  Location pin: MMCME2_ADV_X0Y0.CLKOUT0
+  Clock network: clock/clk0t
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_clock_clk1t = PERIOD TIMEGRP "clock_clk1t" TS_CLK_OSC / 
+0.12 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 2231785 paths analyzed, 4272 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  13.299ns.
+--------------------------------------------------------------------------------
+
+Paths for end point gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_28 (SLICE_X47Y26.A4), 34180 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     70.034ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 (FF)
+  Destination:          gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_28 (FF)
+  Requirement:          83.333ns
+  Data Path Delay:      13.150ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.057ns (0.755 - 0.812)
+  Source Clock:         clk1 rising at 0.000ns
+  Destination Clock:    clk1 rising at 83.333ns
+  Clock Uncertainty:    0.092ns
+
+  Clock Uncertainty:          0.092ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 to gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y26.AMUX    Tshcko                0.649   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3
+                                                       gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y21.D1      net (fanout=7)        1.783   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y21.D       Tilo                  0.124   dataCt_0<123>
+                                                       gen_code_label[0].aes_tinyi/Mmux_sboxIn141
+    SLICE_X46Y27.C4      net (fanout=5)        1.231   gen_code_label[0].aes_tinyi/sboxIn<21>
+    SLICE_X46Y27.C       Tilo                  0.124   dataIn_0<10>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<1>1
+    SLICE_X47Y21.D1      net (fanout=8)        1.743   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<1>
+    SLICE_X47Y21.D       Tilo                  0.124   N195
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<2>_xo<0>_SW1
+    SLICE_X47Y21.C5      net (fanout=1)        0.263   N195
+    SLICE_X47Y21.C       Tilo                  0.124   N195
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<2>_xo<0>
+    SLICE_X45Y25.C5      net (fanout=9)        1.284   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/c<2>
+    SLICE_X45Y25.C       Tilo                  0.124   Din<27>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv/pmul/Mxor_q_xo<0>1
+    SLICE_X48Y23.D3      net (fanout=4)        1.064   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/d<2>
+    SLICE_X48Y23.D       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/pmul/Mxor_Q<3:2>_0_xo<0>1
+    SLICE_X40Y29.D2      net (fanout=7)        1.761   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+    SLICE_X40Y29.D       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Q<3>1
+    SLICE_X40Y29.C6      net (fanout=5)        0.401   gen_code_label[0].aes_tinyi/sboxOut<19>
+    SLICE_X40Y29.C       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_mix_column/o<11>21
+    SLICE_X47Y26.B2      net (fanout=3)        1.327   gen_code_label[0].aes_tinyi/Inst_mix_column/o<11>_bdd2
+    SLICE_X47Y26.B       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<29>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d214
+    SLICE_X47Y26.A4      net (fanout=1)        0.433   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d212
+    SLICE_X47Y26.CLK     Tas                   0.095   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<29>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d215
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_28
+    -------------------------------------------------  ---------------------------
+    Total                                     13.150ns (1.860ns logic, 11.290ns route)
+                                                       (14.1% logic, 85.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     70.182ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 (FF)
+  Destination:          gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_28 (FF)
+  Requirement:          83.333ns
+  Data Path Delay:      13.002ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.057ns (0.755 - 0.812)
+  Source Clock:         clk1 rising at 0.000ns
+  Destination Clock:    clk1 rising at 83.333ns
+  Clock Uncertainty:    0.092ns
+
+  Clock Uncertainty:          0.092ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 to gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y26.AMUX    Tshcko                0.649   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3
+                                                       gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y21.D1      net (fanout=7)        1.783   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y21.D       Tilo                  0.124   dataCt_0<123>
+                                                       gen_code_label[0].aes_tinyi/Mmux_sboxIn141
+    SLICE_X46Y27.C4      net (fanout=5)        1.231   gen_code_label[0].aes_tinyi/sboxIn<21>
+    SLICE_X46Y27.C       Tilo                  0.124   dataIn_0<10>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<1>1
+    SLICE_X47Y22.C1      net (fanout=8)        1.598   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<1>
+    SLICE_X47Y22.C       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<7>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<0>_xo<0>_SW1
+    SLICE_X46Y23.A6      net (fanout=1)        0.306   N193
+    SLICE_X46Y23.A       Tilo                  0.124   Din<115>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<0>_xo<0>
+    SLICE_X45Y25.C2      net (fanout=9)        1.238   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/c<0>
+    SLICE_X45Y25.C       Tilo                  0.124   Din<27>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv/pmul/Mxor_q_xo<0>1
+    SLICE_X48Y23.D3      net (fanout=4)        1.064   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/d<2>
+    SLICE_X48Y23.D       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/pmul/Mxor_Q<3:2>_0_xo<0>1
+    SLICE_X40Y29.D2      net (fanout=7)        1.761   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+    SLICE_X40Y29.D       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Q<3>1
+    SLICE_X40Y29.C6      net (fanout=5)        0.401   gen_code_label[0].aes_tinyi/sboxOut<19>
+    SLICE_X40Y29.C       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_mix_column/o<11>21
+    SLICE_X47Y26.B2      net (fanout=3)        1.327   gen_code_label[0].aes_tinyi/Inst_mix_column/o<11>_bdd2
+    SLICE_X47Y26.B       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<29>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d214
+    SLICE_X47Y26.A4      net (fanout=1)        0.433   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d212
+    SLICE_X47Y26.CLK     Tas                   0.095   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<29>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d215
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_28
+    -------------------------------------------------  ---------------------------
+    Total                                     13.002ns (1.860ns logic, 11.142ns route)
+                                                       (14.3% logic, 85.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     70.183ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 (FF)
+  Destination:          gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_28 (FF)
+  Requirement:          83.333ns
+  Data Path Delay:      13.001ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.057ns (0.755 - 0.812)
+  Source Clock:         clk1 rising at 0.000ns
+  Destination Clock:    clk1 rising at 83.333ns
+  Clock Uncertainty:    0.092ns
+
+  Clock Uncertainty:          0.092ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 to gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y26.AMUX    Tshcko                0.649   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3
+                                                       gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y20.A6      net (fanout=7)        1.260   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y20.A       Tilo                  0.124   Din<99>
+                                                       gen_code_label[0].aes_tinyi/Mmux_sboxIn91
+    SLICE_X42Y27.D3      net (fanout=9)        1.764   gen_code_label[0].aes_tinyi/sboxIn<17>
+    SLICE_X42Y27.D       Tilo                  0.124   dataIn_0<94>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<3>1
+    SLICE_X47Y21.D3      net (fanout=6)        1.584   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<3>
+    SLICE_X47Y21.D       Tilo                  0.124   N195
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<2>_xo<0>_SW1
+    SLICE_X47Y21.C5      net (fanout=1)        0.263   N195
+    SLICE_X47Y21.C       Tilo                  0.124   N195
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<2>_xo<0>
+    SLICE_X45Y25.C5      net (fanout=9)        1.284   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/c<2>
+    SLICE_X45Y25.C       Tilo                  0.124   Din<27>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv/pmul/Mxor_q_xo<0>1
+    SLICE_X48Y23.D3      net (fanout=4)        1.064   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/d<2>
+    SLICE_X48Y23.D       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/pmul/Mxor_Q<3:2>_0_xo<0>1
+    SLICE_X40Y29.D2      net (fanout=7)        1.761   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+    SLICE_X40Y29.D       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Q<3>1
+    SLICE_X40Y29.C6      net (fanout=5)        0.401   gen_code_label[0].aes_tinyi/sboxOut<19>
+    SLICE_X40Y29.C       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_mix_column/o<11>21
+    SLICE_X47Y26.B2      net (fanout=3)        1.327   gen_code_label[0].aes_tinyi/Inst_mix_column/o<11>_bdd2
+    SLICE_X47Y26.B       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<29>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d214
+    SLICE_X47Y26.A4      net (fanout=1)        0.433   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d212
+    SLICE_X47Y26.CLK     Tas                   0.095   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<29>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d215
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_28
+    -------------------------------------------------  ---------------------------
+    Total                                     13.001ns (1.860ns logic, 11.141ns route)
+                                                       (14.3% logic, 85.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_20 (SLICE_X46Y24.A1), 33552 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     70.371ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 (FF)
+  Destination:          gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_20 (FF)
+  Requirement:          83.333ns
+  Data Path Delay:      12.811ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.059ns (0.753 - 0.812)
+  Source Clock:         clk1 rising at 0.000ns
+  Destination Clock:    clk1 rising at 83.333ns
+  Clock Uncertainty:    0.092ns
+
+  Clock Uncertainty:          0.092ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 to gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y26.AMUX    Tshcko                0.649   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3
+                                                       gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y21.D1      net (fanout=7)        1.783   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y21.D       Tilo                  0.124   dataCt_0<123>
+                                                       gen_code_label[0].aes_tinyi/Mmux_sboxIn141
+    SLICE_X46Y27.C4      net (fanout=5)        1.231   gen_code_label[0].aes_tinyi/sboxIn<21>
+    SLICE_X46Y27.C       Tilo                  0.124   dataIn_0<10>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<1>1
+    SLICE_X47Y21.D1      net (fanout=8)        1.743   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<1>
+    SLICE_X47Y21.D       Tilo                  0.124   N195
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<2>_xo<0>_SW1
+    SLICE_X47Y21.C5      net (fanout=1)        0.263   N195
+    SLICE_X47Y21.C       Tilo                  0.124   N195
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<2>_xo<0>
+    SLICE_X45Y25.C5      net (fanout=9)        1.284   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/c<2>
+    SLICE_X45Y25.C       Tilo                  0.124   Din<27>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv/pmul/Mxor_q_xo<0>1
+    SLICE_X48Y23.D3      net (fanout=4)        1.064   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/d<2>
+    SLICE_X48Y23.D       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/pmul/Mxor_Q<3:2>_0_xo<0>1
+    SLICE_X40Y29.D2      net (fanout=7)        1.761   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+    SLICE_X40Y29.D       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Q<3>1
+    SLICE_X46Y24.B3      net (fanout=5)        1.097   gen_code_label[0].aes_tinyi/sboxOut<19>
+    SLICE_X46Y24.B       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<21>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d133
+    SLICE_X46Y24.A1      net (fanout=1)        0.897   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d132
+    SLICE_X46Y24.CLK     Tas                   0.047   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<21>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d134
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_20
+    -------------------------------------------------  ---------------------------
+    Total                                     12.811ns (1.688ns logic, 11.123ns route)
+                                                       (13.2% logic, 86.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     70.519ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 (FF)
+  Destination:          gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_20 (FF)
+  Requirement:          83.333ns
+  Data Path Delay:      12.663ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.059ns (0.753 - 0.812)
+  Source Clock:         clk1 rising at 0.000ns
+  Destination Clock:    clk1 rising at 83.333ns
+  Clock Uncertainty:    0.092ns
+
+  Clock Uncertainty:          0.092ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 to gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y26.AMUX    Tshcko                0.649   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3
+                                                       gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y21.D1      net (fanout=7)        1.783   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y21.D       Tilo                  0.124   dataCt_0<123>
+                                                       gen_code_label[0].aes_tinyi/Mmux_sboxIn141
+    SLICE_X46Y27.C4      net (fanout=5)        1.231   gen_code_label[0].aes_tinyi/sboxIn<21>
+    SLICE_X46Y27.C       Tilo                  0.124   dataIn_0<10>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<1>1
+    SLICE_X47Y22.C1      net (fanout=8)        1.598   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<1>
+    SLICE_X47Y22.C       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<7>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<0>_xo<0>_SW1
+    SLICE_X46Y23.A6      net (fanout=1)        0.306   N193
+    SLICE_X46Y23.A       Tilo                  0.124   Din<115>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<0>_xo<0>
+    SLICE_X45Y25.C2      net (fanout=9)        1.238   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/c<0>
+    SLICE_X45Y25.C       Tilo                  0.124   Din<27>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv/pmul/Mxor_q_xo<0>1
+    SLICE_X48Y23.D3      net (fanout=4)        1.064   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/d<2>
+    SLICE_X48Y23.D       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/pmul/Mxor_Q<3:2>_0_xo<0>1
+    SLICE_X40Y29.D2      net (fanout=7)        1.761   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+    SLICE_X40Y29.D       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Q<3>1
+    SLICE_X46Y24.B3      net (fanout=5)        1.097   gen_code_label[0].aes_tinyi/sboxOut<19>
+    SLICE_X46Y24.B       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<21>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d133
+    SLICE_X46Y24.A1      net (fanout=1)        0.897   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d132
+    SLICE_X46Y24.CLK     Tas                   0.047   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<21>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d134
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_20
+    -------------------------------------------------  ---------------------------
+    Total                                     12.663ns (1.688ns logic, 10.975ns route)
+                                                       (13.3% logic, 86.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     70.520ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 (FF)
+  Destination:          gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_20 (FF)
+  Requirement:          83.333ns
+  Data Path Delay:      12.662ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.059ns (0.753 - 0.812)
+  Source Clock:         clk1 rising at 0.000ns
+  Destination Clock:    clk1 rising at 83.333ns
+  Clock Uncertainty:    0.092ns
+
+  Clock Uncertainty:          0.092ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 to gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y26.AMUX    Tshcko                0.649   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3
+                                                       gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y20.A6      net (fanout=7)        1.260   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y20.A       Tilo                  0.124   Din<99>
+                                                       gen_code_label[0].aes_tinyi/Mmux_sboxIn91
+    SLICE_X42Y27.D3      net (fanout=9)        1.764   gen_code_label[0].aes_tinyi/sboxIn<17>
+    SLICE_X42Y27.D       Tilo                  0.124   dataIn_0<94>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<3>1
+    SLICE_X47Y21.D3      net (fanout=6)        1.584   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<3>
+    SLICE_X47Y21.D       Tilo                  0.124   N195
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<2>_xo<0>_SW1
+    SLICE_X47Y21.C5      net (fanout=1)        0.263   N195
+    SLICE_X47Y21.C       Tilo                  0.124   N195
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<2>_xo<0>
+    SLICE_X45Y25.C5      net (fanout=9)        1.284   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/c<2>
+    SLICE_X45Y25.C       Tilo                  0.124   Din<27>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv/pmul/Mxor_q_xo<0>1
+    SLICE_X48Y23.D3      net (fanout=4)        1.064   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/d<2>
+    SLICE_X48Y23.D       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/pmul/Mxor_Q<3:2>_0_xo<0>1
+    SLICE_X40Y29.D2      net (fanout=7)        1.761   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+    SLICE_X40Y29.D       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Q<3>1
+    SLICE_X46Y24.B3      net (fanout=5)        1.097   gen_code_label[0].aes_tinyi/sboxOut<19>
+    SLICE_X46Y24.B       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<21>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d133
+    SLICE_X46Y24.A1      net (fanout=1)        0.897   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d132
+    SLICE_X46Y24.CLK     Tas                   0.047   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<21>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d134
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_20
+    -------------------------------------------------  ---------------------------
+    Total                                     12.662ns (1.688ns logic, 10.974ns route)
+                                                       (13.3% logic, 86.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_3 (SLICE_X44Y23.C5), 42148 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     70.542ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 (FF)
+  Destination:          gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_3 (FF)
+  Requirement:          83.333ns
+  Data Path Delay:      12.642ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.057ns (0.755 - 0.812)
+  Source Clock:         clk1 rising at 0.000ns
+  Destination Clock:    clk1 rising at 83.333ns
+  Clock Uncertainty:    0.092ns
+
+  Clock Uncertainty:          0.092ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 to gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y26.AMUX    Tshcko                0.649   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3
+                                                       gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y21.D1      net (fanout=7)        1.783   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y21.D       Tilo                  0.124   dataCt_0<123>
+                                                       gen_code_label[0].aes_tinyi/Mmux_sboxIn141
+    SLICE_X46Y27.C4      net (fanout=5)        1.231   gen_code_label[0].aes_tinyi/sboxIn<21>
+    SLICE_X46Y27.C       Tilo                  0.124   dataIn_0<10>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<1>1
+    SLICE_X47Y21.D1      net (fanout=8)        1.743   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<1>
+    SLICE_X47Y21.D       Tilo                  0.124   N195
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<2>_xo<0>_SW1
+    SLICE_X47Y21.C5      net (fanout=1)        0.263   N195
+    SLICE_X47Y21.C       Tilo                  0.124   N195
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<2>_xo<0>
+    SLICE_X45Y25.C5      net (fanout=9)        1.284   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/c<2>
+    SLICE_X45Y25.C       Tilo                  0.124   Din<27>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv/pmul/Mxor_q_xo<0>1
+    SLICE_X48Y23.D3      net (fanout=4)        1.064   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/d<2>
+    SLICE_X48Y23.D       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/pmul/Mxor_Q<3:2>_0_xo<0>1
+    SLICE_X40Y29.D2      net (fanout=7)        1.761   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+    SLICE_X40Y29.D       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Q<3>1
+    SLICE_X40Y29.C6      net (fanout=5)        0.401   gen_code_label[0].aes_tinyi/sboxOut<19>
+    SLICE_X40Y29.C       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_mix_column/o<11>21
+    SLICE_X44Y23.D4      net (fanout=3)        0.974   gen_code_label[0].aes_tinyi/Inst_mix_column/o<11>_bdd2
+    SLICE_X44Y23.D       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<3>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d262
+    SLICE_X44Y23.C5      net (fanout=1)        0.280   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d261
+    SLICE_X44Y23.CLK     Tas                   0.093   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<3>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d263
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_3
+    -------------------------------------------------  ---------------------------
+    Total                                     12.642ns (1.858ns logic, 10.784ns route)
+                                                       (14.7% logic, 85.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     70.690ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 (FF)
+  Destination:          gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_3 (FF)
+  Requirement:          83.333ns
+  Data Path Delay:      12.494ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.057ns (0.755 - 0.812)
+  Source Clock:         clk1 rising at 0.000ns
+  Destination Clock:    clk1 rising at 83.333ns
+  Clock Uncertainty:    0.092ns
+
+  Clock Uncertainty:          0.092ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 to gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y26.AMUX    Tshcko                0.649   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3
+                                                       gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y21.D1      net (fanout=7)        1.783   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y21.D       Tilo                  0.124   dataCt_0<123>
+                                                       gen_code_label[0].aes_tinyi/Mmux_sboxIn141
+    SLICE_X46Y27.C4      net (fanout=5)        1.231   gen_code_label[0].aes_tinyi/sboxIn<21>
+    SLICE_X46Y27.C       Tilo                  0.124   dataIn_0<10>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<1>1
+    SLICE_X47Y22.C1      net (fanout=8)        1.598   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<1>
+    SLICE_X47Y22.C       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<7>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<0>_xo<0>_SW1
+    SLICE_X46Y23.A6      net (fanout=1)        0.306   N193
+    SLICE_X46Y23.A       Tilo                  0.124   Din<115>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<0>_xo<0>
+    SLICE_X45Y25.C2      net (fanout=9)        1.238   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/c<0>
+    SLICE_X45Y25.C       Tilo                  0.124   Din<27>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv/pmul/Mxor_q_xo<0>1
+    SLICE_X48Y23.D3      net (fanout=4)        1.064   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/d<2>
+    SLICE_X48Y23.D       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/pmul/Mxor_Q<3:2>_0_xo<0>1
+    SLICE_X40Y29.D2      net (fanout=7)        1.761   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+    SLICE_X40Y29.D       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Q<3>1
+    SLICE_X40Y29.C6      net (fanout=5)        0.401   gen_code_label[0].aes_tinyi/sboxOut<19>
+    SLICE_X40Y29.C       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_mix_column/o<11>21
+    SLICE_X44Y23.D4      net (fanout=3)        0.974   gen_code_label[0].aes_tinyi/Inst_mix_column/o<11>_bdd2
+    SLICE_X44Y23.D       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<3>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d262
+    SLICE_X44Y23.C5      net (fanout=1)        0.280   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d261
+    SLICE_X44Y23.CLK     Tas                   0.093   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<3>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d263
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_3
+    -------------------------------------------------  ---------------------------
+    Total                                     12.494ns (1.858ns logic, 10.636ns route)
+                                                       (14.9% logic, 85.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     70.691ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 (FF)
+  Destination:          gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_3 (FF)
+  Requirement:          83.333ns
+  Data Path Delay:      12.493ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.057ns (0.755 - 0.812)
+  Source Clock:         clk1 rising at 0.000ns
+  Destination Clock:    clk1 rising at 83.333ns
+  Clock Uncertainty:    0.092ns
+
+  Clock Uncertainty:          0.092ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1 to gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y26.AMUX    Tshcko                0.649   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3
+                                                       gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y20.A6      net (fanout=7)        1.260   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3_1
+    SLICE_X44Y20.A       Tilo                  0.124   Din<99>
+                                                       gen_code_label[0].aes_tinyi/Mmux_sboxIn91
+    SLICE_X42Y27.D3      net (fanout=9)        1.764   gen_code_label[0].aes_tinyi/sboxIn<17>
+    SLICE_X42Y27.D       Tilo                  0.124   dataIn_0<94>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<3>1
+    SLICE_X47Y21.D3      net (fanout=6)        1.584   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Z<3>
+    SLICE_X47Y21.D       Tilo                  0.124   N195
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<2>_xo<0>_SW1
+    SLICE_X47Y21.C5      net (fanout=1)        0.263   N195
+    SLICE_X47Y21.C       Tilo                  0.124   N195
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/Mxor_c<2>_xo<0>
+    SLICE_X45Y25.C5      net (fanout=9)        1.284   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/c<2>
+    SLICE_X45Y25.C       Tilo                  0.124   Din<27>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/dinv/pmul/Mxor_q_xo<0>1
+    SLICE_X48Y23.D3      net (fanout=4)        1.064   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/d<2>
+    SLICE_X48Y23.D       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/inv/pmul/Mxor_Q<3:2>_0_xo<0>1
+    SLICE_X40Y29.D2      net (fanout=7)        1.761   gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/C<6>
+    SLICE_X40Y29.D       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_sbox/bits23_16/Inst_bSbox/Q<3>1
+    SLICE_X40Y29.C6      net (fanout=5)        0.401   gen_code_label[0].aes_tinyi/sboxOut<19>
+    SLICE_X40Y29.C       Tilo                  0.124   Din<123>
+                                                       gen_code_label[0].aes_tinyi/Inst_mix_column/o<11>21
+    SLICE_X44Y23.D4      net (fanout=3)        0.974   gen_code_label[0].aes_tinyi/Inst_mix_column/o<11>_bdd2
+    SLICE_X44Y23.D       Tilo                  0.124   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<3>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d262
+    SLICE_X44Y23.C5      net (fanout=1)        0.280   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d261
+    SLICE_X44Y23.CLK     Tas                   0.093   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<3>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/Mmux_d263
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_3
+    -------------------------------------------------  ---------------------------
+    Total                                     12.493ns (1.858ns logic, 10.635ns route)
+                                                       (14.9% logic, 85.1% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clock_clk1t = PERIOD TIMEGRP "clock_clk1t" TS_CLK_OSC / 0.12 HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point dataCt_0_48 (SLICE_X50Y29.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.019ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gen_code_label[1].aes_tinyi/Inst_dataBody/state_FF/gen_ff[3].ff/s_current_state_8 (FF)
+  Destination:          dataCt_0_48 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.275ns (Levels of Logic = 1)
+  Clock Path Skew:      0.256ns (0.757 - 0.501)
+  Source Clock:         clk1 rising at 83.333ns
+  Destination Clock:    clk1 rising at 83.333ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: gen_code_label[1].aes_tinyi/Inst_dataBody/state_FF/gen_ff[3].ff/s_current_state_8 to dataCt_0_48
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X43Y29.AQ      Tcko                  0.141   gen_code_label[1].aes_tinyi/Inst_dataBody/state_FF/gen_ff[3].ff/s_current_state<11>
+                                                       gen_code_label[1].aes_tinyi/Inst_dataBody/state_FF/gen_ff[3].ff/s_current_state_8
+    SLICE_X50Y29.A6      net (fanout=3)        0.209   gen_code_label[1].aes_tinyi/Inst_dataBody/state_FF/gen_ff[3].ff/s_current_state<8>
+    SLICE_X50Y29.CLK     Tah         (-Th)     0.075   dataCt_0<51>
+                                                       Dout<72>1
+                                                       dataCt_0_48
+    -------------------------------------------------  ---------------------------
+    Total                                      0.275ns (0.066ns logic, 0.209ns route)
+                                                       (24.0% logic, 76.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point Din_4 (SLICE_X50Y26.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.020ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_4 (FF)
+  Destination:          Din_4 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.275ns (Levels of Logic = 1)
+  Clock Path Skew:      0.255ns (0.753 - 0.498)
+  Source Clock:         clk1 rising at 83.333ns
+  Destination Clock:    clk1 rising at 83.333ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_4 to Din_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X46Y26.AQ      Tcko                  0.164   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<5>
+                                                       gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state_4
+    SLICE_X50Y26.A6      net (fanout=3)        0.186   gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[1].ff/s_current_state<4>
+    SLICE_X50Y26.CLK     Tah         (-Th)     0.075   Din<7>
+                                                       Dout<4>1
+                                                       Din_4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.275ns (0.089ns logic, 0.186ns route)
+                                                       (32.4% logic, 67.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point dataIn_0_94 (SLICE_X42Y27.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.028ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               Din_38 (FF)
+  Destination:          dataIn_0_94 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.291ns (Levels of Logic = 0)
+  Clock Path Skew:      0.263ns (0.759 - 0.496)
+  Source Clock:         clk1 rising at 83.333ns
+  Destination Clock:    clk1 rising at 83.333ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: Din_38 to dataIn_0_94
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y27.CQ      Tcko                  0.141   Din<39>
+                                                       Din_38
+    SLICE_X42Y27.DX      net (fanout=3)        0.213   Din<38>
+    SLICE_X42Y27.CLK     Tckdi       (-Th)     0.063   dataIn_0<94>
+                                                       dataIn_0_94
+    -------------------------------------------------  ---------------------------
+    Total                                      0.291ns (0.078ns logic, 0.213ns route)
+                                                       (26.8% logic, 73.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clock_clk1t = PERIOD TIMEGRP "clock_clk1t" TS_CLK_OSC / 0.12 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 80.757ns (period - min period limit)
+  Period: 83.333ns
+  Min period limit: 2.576ns (388.199MHz) (Trper_CLKA)
+  Physical resource: Mram_data1/CLKBWRCLK
+  Logical resource: Mram_data1/CLKBWRCLK
+  Location pin: RAMB18_X1Y10.WRCLK
+  Clock network: clk1
+--------------------------------------------------------------------------------
+Slack: 80.757ns (period - min period limit)
+  Period: 83.333ns
+  Min period limit: 2.576ns (388.199MHz) (Trper_CLKA)
+  Physical resource: Mram_data2/CLKBWRCLK
+  Logical resource: Mram_data2/CLKBWRCLK
+  Location pin: RAMB18_X2Y11.CLKBWRCLK
+  Clock network: clk1
+--------------------------------------------------------------------------------
+Slack: 80.757ns (period - min period limit)
+  Period: 83.333ns
+  Min period limit: 2.576ns (388.199MHz) (Trper_CLKA)
+  Physical resource: Mram_data3/CLKARDCLK
+  Logical resource: Mram_data3/CLKARDCLK
+  Location pin: RAMB18_X2Y13.CLKARDCLK
+  Clock network: clk1
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_clock_clk0t = PERIOD TIMEGRP "clock_clk0t" TS_CLK_OSC / 
+1.2 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 263564478090 paths analyzed, 1866 endpoints analyzed, 1345 failing endpoints
+ 1345 timing errors detected. (1345 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is 120.913ns.
+--------------------------------------------------------------------------------
+
+Paths for end point outReg_125 (SLICE_X12Y43.CIN), 10089153659 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -22.508ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rca/blk00000001/blk00000550 (FF)
+  Destination:          outReg_125 (FF)
+  Requirement:          1.666ns
+  Data Path Delay:      17.092ns (Levels of Logic = 33)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -6.929ns (-2.916 - 4.013)
+  Source Clock:         clk_IBUF_BUFG rising at 40.000ns
+  Destination Clock:    del1/delLATCH<0> rising at 41.666ns
+  Clock Uncertainty:    0.153ns
+
+  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.110ns
+    Phase Error (PE):           0.087ns
+
+  Maximum Data Path at Slow Process Corner: rca/blk00000001/blk00000550 to outReg_125
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y14.DMUX    Tshcko                0.594   rca/blk00000001/sig000010eb
+                                                       rca/blk00000001/blk00000550
+    SLICE_X5Y15.A2       net (fanout=1)        1.694   rca/blk00000001/sig000010ea
+    SLICE_X5Y15.AMUX     Tilo                  0.354   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002495/LUT5
+    SLICE_X5Y15.B3       net (fanout=2)        0.666   rca/blk00000001/sig00003a30
+    SLICE_X5Y15.COUT     Topcyb                0.674   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002494/LUT6
+                                                       rca/blk00000001/blk000023f7
+    SLICE_X5Y16.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003943
+    SLICE_X5Y16.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e4d
+                                                       rca/blk00000001/blk000023ef
+    SLICE_X5Y17.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393f
+    SLICE_X5Y17.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e51
+                                                       rca/blk00000001/blk000023e7
+    SLICE_X5Y18.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393b
+    SLICE_X5Y18.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e55
+                                                       rca/blk00000001/blk000023df
+    SLICE_X5Y19.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003937
+    SLICE_X5Y19.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e59
+                                                       rca/blk00000001/blk000023d7
+    SLICE_X5Y20.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003933
+    SLICE_X5Y20.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e5d
+                                                       rca/blk00000001/blk000023cf
+    SLICE_X5Y21.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000392f
+    SLICE_X5Y21.CQ       Tito_logic            0.579   rca/blk00000001/sig00001e61
+                                                       rca/blk00000001/blk000023c7
+                                                       rca/blk00000001/sig00001e60_rt
+    SLICE_X20Y22.C2      net (fanout=1)        1.673   rca/blk00000001/sig00001e60
+    SLICE_X20Y22.CMUX    Tilo                  0.360   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c4/LUT5
+    SLICE_X20Y22.D1      net (fanout=2)        0.708   rca/blk00000001/sig0000295b
+    SLICE_X20Y22.COUT    Topcyd                0.500   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c3/LUT6
+                                                       rca/blk00000001/blk00001310
+    SLICE_X20Y23.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000288a
+    SLICE_X20Y23.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e5
+                                                       rca/blk00000001/blk00001308
+    SLICE_X20Y24.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002886
+    SLICE_X20Y24.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e9
+                                                       rca/blk00000001/blk00001300
+    SLICE_X20Y25.CIN     net (fanout=1)        0.009   rca/blk00000001/sig00002882
+    SLICE_X20Y25.COUT    Tbyp                  0.117   rca/blk00000001/sig000018ed
+                                                       rca/blk00000001/blk000012f8
+    SLICE_X20Y26.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287e
+    SLICE_X20Y26.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f1
+                                                       rca/blk00000001/blk000012f0
+    SLICE_X20Y27.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287a
+    SLICE_X20Y27.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f5
+                                                       rca/blk00000001/blk000012e8
+    SLICE_X20Y28.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002876
+    SLICE_X20Y28.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f9
+                                                       rca/blk00000001/blk000012e0
+    SLICE_X20Y29.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002872
+    SLICE_X20Y29.COUT    Tbyp                  0.117   rca/blk00000001/sig000018fd
+                                                       rca/blk00000001/blk000012d8
+    SLICE_X20Y30.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286e
+    SLICE_X20Y30.COUT    Tbyp                  0.117   rca/blk00000001/sig00001901
+                                                       rca/blk00000001/blk000012d0
+    SLICE_X20Y31.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286a
+    SLICE_X20Y31.COUT    Tbyp                  0.117   rca/blk00000001/sig00001905
+                                                       rca/blk00000001/blk000012c8
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002866
+    SLICE_X20Y32.COUT    Tbyp                  0.117   rca/blk00000001/sig00001909
+                                                       rca/blk00000001/blk000012c0
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002862
+    SLICE_X20Y33.COUT    Tbyp                  0.117   rca/blk00000001/sig0000190d
+                                                       rca/blk00000001/blk000012b8
+    SLICE_X20Y34.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285e
+    SLICE_X20Y34.COUT    Tbyp                  0.117   rca/blk00000001/sig00001911
+                                                       rca/blk00000001/blk000012b0
+    SLICE_X20Y35.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285a
+    SLICE_X20Y35.COUT    Tbyp                  0.117   rca/blk00000001/sig00001915
+                                                       rca/blk00000001/blk000012a8
+    SLICE_X20Y36.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002856
+    SLICE_X20Y36.AQ      Tito_logic            0.645   rca/blk00000001/sig00001919
+                                                       rca/blk00000001/blk000012a0
+                                                       rca/blk00000001/sig00001916_rt
+    SLICE_X11Y37.A1      net (fanout=1)        1.317   rca/blk00000001/sig00001916
+    SLICE_X11Y37.AMUX    Tilo                  0.354   rca/blk00000001/sig00001719
+                                                       rca/blk00000001/blk00000d7a/LUT5
+    SLICE_X11Y37.B3      net (fanout=2)        0.666   rca/blk00000001/sig000022e3
+    SLICE_X11Y37.COUT    Topcyb                0.674   rca/blk00000001/sig00001719
+                                                       rca/blk00000001/blk00000d79/LUT6
+                                                       rca/blk00000001/blk00000c8c
+    SLICE_X11Y38.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002246
+    SLICE_X11Y38.CQ      Tito_logic            0.579   rca/blk00000001/sig0000171d
+                                                       rca/blk00000001/blk00000c84
+                                                       rca/blk00000001/sig0000171c_rt
+    SLICE_X12Y39.C3      net (fanout=1)        0.822   rca/blk00000001/sig0000171c
+    SLICE_X12Y39.CMUX    Tilo                  0.360   outReg<111>
+                                                       rca/blk00000001/blk00000bef/LUT5
+    SLICE_X12Y39.D1      net (fanout=2)        0.708   rca/blk00000001/sig00002154
+    SLICE_X12Y39.COUT    Topcyd                0.500   outReg<111>
+                                                       rca/blk00000001/blk00000bee/LUT6
+                                                       rca/blk00000001/blk00000aff
+    SLICE_X12Y40.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bf
+    SLICE_X12Y40.COUT    Tbyp                  0.117   outReg<115>
+                                                       rca/blk00000001/blk00000af7
+    SLICE_X12Y41.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bb
+    SLICE_X12Y41.COUT    Tbyp                  0.117   outReg<119>
+                                                       rca/blk00000001/blk00000aef
+    SLICE_X12Y42.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b7
+    SLICE_X12Y42.COUT    Tbyp                  0.117   outReg<123>
+                                                       rca/blk00000001/blk00000ae7
+    SLICE_X12Y43.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b3
+    SLICE_X12Y43.CLK     Tcinck                0.214   outReg<127>
+                                                       rca/blk00000001/blk00000adc
+                                                       outReg_125
+    -------------------------------------------------  ---------------------------
+    Total                                     17.092ns (8.829ns logic, 8.263ns route)
+                                                       (51.7% logic, 48.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -22.505ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rca/blk00000001/blk00000550 (FF)
+  Destination:          outReg_125 (FF)
+  Requirement:          1.666ns
+  Data Path Delay:      17.089ns (Levels of Logic = 33)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -6.929ns (-2.916 - 4.013)
+  Source Clock:         clk_IBUF_BUFG rising at 40.000ns
+  Destination Clock:    del1/delLATCH<0> rising at 41.666ns
+  Clock Uncertainty:    0.153ns
+
+  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.110ns
+    Phase Error (PE):           0.087ns
+
+  Maximum Data Path at Slow Process Corner: rca/blk00000001/blk00000550 to outReg_125
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y14.DMUX    Tshcko                0.594   rca/blk00000001/sig000010eb
+                                                       rca/blk00000001/blk00000550
+    SLICE_X5Y15.A2       net (fanout=1)        1.694   rca/blk00000001/sig000010ea
+    SLICE_X5Y15.AMUX     Tilo                  0.354   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002495/LUT5
+    SLICE_X5Y15.B3       net (fanout=2)        0.666   rca/blk00000001/sig00003a30
+    SLICE_X5Y15.COUT     Topcyb                0.674   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002494/LUT6
+                                                       rca/blk00000001/blk000023f7
+    SLICE_X5Y16.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003943
+    SLICE_X5Y16.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e4d
+                                                       rca/blk00000001/blk000023ef
+    SLICE_X5Y17.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393f
+    SLICE_X5Y17.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e51
+                                                       rca/blk00000001/blk000023e7
+    SLICE_X5Y18.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393b
+    SLICE_X5Y18.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e55
+                                                       rca/blk00000001/blk000023df
+    SLICE_X5Y19.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003937
+    SLICE_X5Y19.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e59
+                                                       rca/blk00000001/blk000023d7
+    SLICE_X5Y20.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003933
+    SLICE_X5Y20.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e5d
+                                                       rca/blk00000001/blk000023cf
+    SLICE_X5Y21.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000392f
+    SLICE_X5Y21.CQ       Tito_logic            0.579   rca/blk00000001/sig00001e61
+                                                       rca/blk00000001/blk000023c7
+                                                       rca/blk00000001/sig00001e60_rt
+    SLICE_X20Y22.C2      net (fanout=1)        1.673   rca/blk00000001/sig00001e60
+    SLICE_X20Y22.CMUX    Tilo                  0.360   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c4/LUT5
+    SLICE_X20Y22.D1      net (fanout=2)        0.708   rca/blk00000001/sig0000295b
+    SLICE_X20Y22.COUT    Topcyd                0.500   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c3/LUT6
+                                                       rca/blk00000001/blk00001310
+    SLICE_X20Y23.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000288a
+    SLICE_X20Y23.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e5
+                                                       rca/blk00000001/blk00001308
+    SLICE_X20Y24.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002886
+    SLICE_X20Y24.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e9
+                                                       rca/blk00000001/blk00001300
+    SLICE_X20Y25.CIN     net (fanout=1)        0.009   rca/blk00000001/sig00002882
+    SLICE_X20Y25.COUT    Tbyp                  0.117   rca/blk00000001/sig000018ed
+                                                       rca/blk00000001/blk000012f8
+    SLICE_X20Y26.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287e
+    SLICE_X20Y26.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f1
+                                                       rca/blk00000001/blk000012f0
+    SLICE_X20Y27.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287a
+    SLICE_X20Y27.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f5
+                                                       rca/blk00000001/blk000012e8
+    SLICE_X20Y28.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002876
+    SLICE_X20Y28.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f9
+                                                       rca/blk00000001/blk000012e0
+    SLICE_X20Y29.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002872
+    SLICE_X20Y29.COUT    Tbyp                  0.117   rca/blk00000001/sig000018fd
+                                                       rca/blk00000001/blk000012d8
+    SLICE_X20Y30.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286e
+    SLICE_X20Y30.COUT    Tbyp                  0.117   rca/blk00000001/sig00001901
+                                                       rca/blk00000001/blk000012d0
+    SLICE_X20Y31.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286a
+    SLICE_X20Y31.COUT    Tbyp                  0.117   rca/blk00000001/sig00001905
+                                                       rca/blk00000001/blk000012c8
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002866
+    SLICE_X20Y32.COUT    Tbyp                  0.117   rca/blk00000001/sig00001909
+                                                       rca/blk00000001/blk000012c0
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002862
+    SLICE_X20Y33.COUT    Tbyp                  0.117   rca/blk00000001/sig0000190d
+                                                       rca/blk00000001/blk000012b8
+    SLICE_X20Y34.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285e
+    SLICE_X20Y34.COUT    Tbyp                  0.117   rca/blk00000001/sig00001911
+                                                       rca/blk00000001/blk000012b0
+    SLICE_X20Y35.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285a
+    SLICE_X20Y35.COUT    Tbyp                  0.117   rca/blk00000001/sig00001915
+                                                       rca/blk00000001/blk000012a8
+    SLICE_X20Y36.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002856
+    SLICE_X20Y36.AQ      Tito_logic            0.645   rca/blk00000001/sig00001919
+                                                       rca/blk00000001/blk000012a0
+                                                       rca/blk00000001/sig00001916_rt
+    SLICE_X11Y37.A1      net (fanout=1)        1.317   rca/blk00000001/sig00001916
+    SLICE_X11Y37.AMUX    Tilo                  0.354   rca/blk00000001/sig00001719
+                                                       rca/blk00000001/blk00000d7a/LUT5
+    SLICE_X11Y37.B3      net (fanout=2)        0.666   rca/blk00000001/sig000022e3
+    SLICE_X11Y37.COUT    Topcyb                0.674   rca/blk00000001/sig00001719
+                                                       rca/blk00000001/blk00000d79/LUT6
+                                                       rca/blk00000001/blk00000c8c
+    SLICE_X11Y38.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002246
+    SLICE_X11Y38.COUT    Tbyp                  0.114   rca/blk00000001/sig0000171d
+                                                       rca/blk00000001/blk00000c84
+    SLICE_X11Y39.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002242
+    SLICE_X11Y39.CQ      Tito_logic            0.579   rca/blk00000001/sig00001721
+                                                       rca/blk00000001/blk00000c7c
+                                                       rca/blk00000001/sig00001720_rt
+    SLICE_X12Y40.C3      net (fanout=1)        0.822   rca/blk00000001/sig00001720
+    SLICE_X12Y40.CMUX    Tilo                  0.360   outReg<115>
+                                                       rca/blk00000001/blk00000beb/LUT5
+    SLICE_X12Y40.D1      net (fanout=2)        0.708   rca/blk00000001/sig0000214c
+    SLICE_X12Y40.COUT    Topcyd                0.500   outReg<115>
+                                                       rca/blk00000001/blk00000bea/LUT6
+                                                       rca/blk00000001/blk00000af7
+    SLICE_X12Y41.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bb
+    SLICE_X12Y41.COUT    Tbyp                  0.117   outReg<119>
+                                                       rca/blk00000001/blk00000aef
+    SLICE_X12Y42.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b7
+    SLICE_X12Y42.COUT    Tbyp                  0.117   outReg<123>
+                                                       rca/blk00000001/blk00000ae7
+    SLICE_X12Y43.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b3
+    SLICE_X12Y43.CLK     Tcinck                0.214   outReg<127>
+                                                       rca/blk00000001/blk00000adc
+                                                       outReg_125
+    -------------------------------------------------  ---------------------------
+    Total                                     17.089ns (8.826ns logic, 8.263ns route)
+                                                       (51.6% logic, 48.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -22.505ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rca/blk00000001/blk00000550 (FF)
+  Destination:          outReg_125 (FF)
+  Requirement:          1.666ns
+  Data Path Delay:      17.089ns (Levels of Logic = 33)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -6.929ns (-2.916 - 4.013)
+  Source Clock:         clk_IBUF_BUFG rising at 40.000ns
+  Destination Clock:    del1/delLATCH<0> rising at 41.666ns
+  Clock Uncertainty:    0.153ns
+
+  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.110ns
+    Phase Error (PE):           0.087ns
+
+  Maximum Data Path at Slow Process Corner: rca/blk00000001/blk00000550 to outReg_125
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y14.DMUX    Tshcko                0.594   rca/blk00000001/sig000010eb
+                                                       rca/blk00000001/blk00000550
+    SLICE_X5Y15.A2       net (fanout=1)        1.694   rca/blk00000001/sig000010ea
+    SLICE_X5Y15.AMUX     Tilo                  0.354   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002495/LUT5
+    SLICE_X5Y15.B3       net (fanout=2)        0.666   rca/blk00000001/sig00003a30
+    SLICE_X5Y15.COUT     Topcyb                0.674   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002494/LUT6
+                                                       rca/blk00000001/blk000023f7
+    SLICE_X5Y16.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003943
+    SLICE_X5Y16.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e4d
+                                                       rca/blk00000001/blk000023ef
+    SLICE_X5Y17.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393f
+    SLICE_X5Y17.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e51
+                                                       rca/blk00000001/blk000023e7
+    SLICE_X5Y18.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393b
+    SLICE_X5Y18.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e55
+                                                       rca/blk00000001/blk000023df
+    SLICE_X5Y19.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003937
+    SLICE_X5Y19.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e59
+                                                       rca/blk00000001/blk000023d7
+    SLICE_X5Y20.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003933
+    SLICE_X5Y20.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e5d
+                                                       rca/blk00000001/blk000023cf
+    SLICE_X5Y21.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000392f
+    SLICE_X5Y21.CQ       Tito_logic            0.579   rca/blk00000001/sig00001e61
+                                                       rca/blk00000001/blk000023c7
+                                                       rca/blk00000001/sig00001e60_rt
+    SLICE_X20Y22.C2      net (fanout=1)        1.673   rca/blk00000001/sig00001e60
+    SLICE_X20Y22.CMUX    Tilo                  0.360   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c4/LUT5
+    SLICE_X20Y22.D1      net (fanout=2)        0.708   rca/blk00000001/sig0000295b
+    SLICE_X20Y22.COUT    Topcyd                0.500   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c3/LUT6
+                                                       rca/blk00000001/blk00001310
+    SLICE_X20Y23.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000288a
+    SLICE_X20Y23.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e5
+                                                       rca/blk00000001/blk00001308
+    SLICE_X20Y24.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002886
+    SLICE_X20Y24.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e9
+                                                       rca/blk00000001/blk00001300
+    SLICE_X20Y25.CIN     net (fanout=1)        0.009   rca/blk00000001/sig00002882
+    SLICE_X20Y25.COUT    Tbyp                  0.117   rca/blk00000001/sig000018ed
+                                                       rca/blk00000001/blk000012f8
+    SLICE_X20Y26.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287e
+    SLICE_X20Y26.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f1
+                                                       rca/blk00000001/blk000012f0
+    SLICE_X20Y27.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287a
+    SLICE_X20Y27.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f5
+                                                       rca/blk00000001/blk000012e8
+    SLICE_X20Y28.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002876
+    SLICE_X20Y28.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f9
+                                                       rca/blk00000001/blk000012e0
+    SLICE_X20Y29.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002872
+    SLICE_X20Y29.COUT    Tbyp                  0.117   rca/blk00000001/sig000018fd
+                                                       rca/blk00000001/blk000012d8
+    SLICE_X20Y30.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286e
+    SLICE_X20Y30.COUT    Tbyp                  0.117   rca/blk00000001/sig00001901
+                                                       rca/blk00000001/blk000012d0
+    SLICE_X20Y31.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286a
+    SLICE_X20Y31.COUT    Tbyp                  0.117   rca/blk00000001/sig00001905
+                                                       rca/blk00000001/blk000012c8
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002866
+    SLICE_X20Y32.COUT    Tbyp                  0.117   rca/blk00000001/sig00001909
+                                                       rca/blk00000001/blk000012c0
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002862
+    SLICE_X20Y33.COUT    Tbyp                  0.117   rca/blk00000001/sig0000190d
+                                                       rca/blk00000001/blk000012b8
+    SLICE_X20Y34.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285e
+    SLICE_X20Y34.AQ      Tito_logic            0.645   rca/blk00000001/sig00001911
+                                                       rca/blk00000001/blk000012b0
+                                                       rca/blk00000001/sig0000190e_rt
+    SLICE_X11Y35.A1      net (fanout=1)        1.314   rca/blk00000001/sig0000190e
+    SLICE_X11Y35.AMUX    Tilo                  0.354   rca/blk00000001/sig00001711
+                                                       rca/blk00000001/blk00000d82/LUT5
+    SLICE_X11Y35.B3      net (fanout=2)        0.666   rca/blk00000001/sig000022f3
+    SLICE_X11Y35.COUT    Topcyb                0.674   rca/blk00000001/sig00001711
+                                                       rca/blk00000001/blk00000d81/LUT6
+                                                       rca/blk00000001/blk00000c9c
+    SLICE_X11Y36.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000224e
+    SLICE_X11Y36.CQ      Tito_logic            0.579   rca/blk00000001/sig00001715
+                                                       rca/blk00000001/blk00000c94
+                                                       rca/blk00000001/sig00001714_rt
+    SLICE_X12Y37.C3      net (fanout=1)        0.822   rca/blk00000001/sig00001714
+    SLICE_X12Y37.CMUX    Tilo                  0.360   outReg<103>
+                                                       rca/blk00000001/blk00000bf7/LUT5
+    SLICE_X12Y37.D1      net (fanout=2)        0.708   rca/blk00000001/sig00002164
+    SLICE_X12Y37.COUT    Topcyd                0.500   outReg<103>
+                                                       rca/blk00000001/blk00000bf6/LUT6
+                                                       rca/blk00000001/blk00000b0f
+    SLICE_X12Y38.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020c7
+    SLICE_X12Y38.COUT    Tbyp                  0.117   outReg<107>
+                                                       rca/blk00000001/blk00000b07
+    SLICE_X12Y39.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020c3
+    SLICE_X12Y39.COUT    Tbyp                  0.117   outReg<111>
+                                                       rca/blk00000001/blk00000aff
+    SLICE_X12Y40.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bf
+    SLICE_X12Y40.COUT    Tbyp                  0.117   outReg<115>
+                                                       rca/blk00000001/blk00000af7
+    SLICE_X12Y41.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bb
+    SLICE_X12Y41.COUT    Tbyp                  0.117   outReg<119>
+                                                       rca/blk00000001/blk00000aef
+    SLICE_X12Y42.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b7
+    SLICE_X12Y42.COUT    Tbyp                  0.117   outReg<123>
+                                                       rca/blk00000001/blk00000ae7
+    SLICE_X12Y43.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b3
+    SLICE_X12Y43.CLK     Tcinck                0.214   outReg<127>
+                                                       rca/blk00000001/blk00000adc
+                                                       outReg_125
+    -------------------------------------------------  ---------------------------
+    Total                                     17.089ns (8.829ns logic, 8.260ns route)
+                                                       (51.7% logic, 48.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point outReg_127 (SLICE_X12Y43.CIN), 10089153659 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -22.499ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rca/blk00000001/blk00000550 (FF)
+  Destination:          outReg_127 (FF)
+  Requirement:          1.666ns
+  Data Path Delay:      17.083ns (Levels of Logic = 33)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -6.929ns (-2.916 - 4.013)
+  Source Clock:         clk_IBUF_BUFG rising at 40.000ns
+  Destination Clock:    del1/delLATCH<0> rising at 41.666ns
+  Clock Uncertainty:    0.153ns
+
+  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.110ns
+    Phase Error (PE):           0.087ns
+
+  Maximum Data Path at Slow Process Corner: rca/blk00000001/blk00000550 to outReg_127
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y14.DMUX    Tshcko                0.594   rca/blk00000001/sig000010eb
+                                                       rca/blk00000001/blk00000550
+    SLICE_X5Y15.A2       net (fanout=1)        1.694   rca/blk00000001/sig000010ea
+    SLICE_X5Y15.AMUX     Tilo                  0.354   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002495/LUT5
+    SLICE_X5Y15.B3       net (fanout=2)        0.666   rca/blk00000001/sig00003a30
+    SLICE_X5Y15.COUT     Topcyb                0.674   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002494/LUT6
+                                                       rca/blk00000001/blk000023f7
+    SLICE_X5Y16.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003943
+    SLICE_X5Y16.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e4d
+                                                       rca/blk00000001/blk000023ef
+    SLICE_X5Y17.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393f
+    SLICE_X5Y17.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e51
+                                                       rca/blk00000001/blk000023e7
+    SLICE_X5Y18.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393b
+    SLICE_X5Y18.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e55
+                                                       rca/blk00000001/blk000023df
+    SLICE_X5Y19.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003937
+    SLICE_X5Y19.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e59
+                                                       rca/blk00000001/blk000023d7
+    SLICE_X5Y20.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003933
+    SLICE_X5Y20.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e5d
+                                                       rca/blk00000001/blk000023cf
+    SLICE_X5Y21.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000392f
+    SLICE_X5Y21.CQ       Tito_logic            0.579   rca/blk00000001/sig00001e61
+                                                       rca/blk00000001/blk000023c7
+                                                       rca/blk00000001/sig00001e60_rt
+    SLICE_X20Y22.C2      net (fanout=1)        1.673   rca/blk00000001/sig00001e60
+    SLICE_X20Y22.CMUX    Tilo                  0.360   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c4/LUT5
+    SLICE_X20Y22.D1      net (fanout=2)        0.708   rca/blk00000001/sig0000295b
+    SLICE_X20Y22.COUT    Topcyd                0.500   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c3/LUT6
+                                                       rca/blk00000001/blk00001310
+    SLICE_X20Y23.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000288a
+    SLICE_X20Y23.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e5
+                                                       rca/blk00000001/blk00001308
+    SLICE_X20Y24.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002886
+    SLICE_X20Y24.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e9
+                                                       rca/blk00000001/blk00001300
+    SLICE_X20Y25.CIN     net (fanout=1)        0.009   rca/blk00000001/sig00002882
+    SLICE_X20Y25.COUT    Tbyp                  0.117   rca/blk00000001/sig000018ed
+                                                       rca/blk00000001/blk000012f8
+    SLICE_X20Y26.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287e
+    SLICE_X20Y26.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f1
+                                                       rca/blk00000001/blk000012f0
+    SLICE_X20Y27.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287a
+    SLICE_X20Y27.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f5
+                                                       rca/blk00000001/blk000012e8
+    SLICE_X20Y28.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002876
+    SLICE_X20Y28.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f9
+                                                       rca/blk00000001/blk000012e0
+    SLICE_X20Y29.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002872
+    SLICE_X20Y29.COUT    Tbyp                  0.117   rca/blk00000001/sig000018fd
+                                                       rca/blk00000001/blk000012d8
+    SLICE_X20Y30.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286e
+    SLICE_X20Y30.COUT    Tbyp                  0.117   rca/blk00000001/sig00001901
+                                                       rca/blk00000001/blk000012d0
+    SLICE_X20Y31.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286a
+    SLICE_X20Y31.COUT    Tbyp                  0.117   rca/blk00000001/sig00001905
+                                                       rca/blk00000001/blk000012c8
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002866
+    SLICE_X20Y32.COUT    Tbyp                  0.117   rca/blk00000001/sig00001909
+                                                       rca/blk00000001/blk000012c0
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002862
+    SLICE_X20Y33.COUT    Tbyp                  0.117   rca/blk00000001/sig0000190d
+                                                       rca/blk00000001/blk000012b8
+    SLICE_X20Y34.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285e
+    SLICE_X20Y34.COUT    Tbyp                  0.117   rca/blk00000001/sig00001911
+                                                       rca/blk00000001/blk000012b0
+    SLICE_X20Y35.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285a
+    SLICE_X20Y35.COUT    Tbyp                  0.117   rca/blk00000001/sig00001915
+                                                       rca/blk00000001/blk000012a8
+    SLICE_X20Y36.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002856
+    SLICE_X20Y36.AQ      Tito_logic            0.645   rca/blk00000001/sig00001919
+                                                       rca/blk00000001/blk000012a0
+                                                       rca/blk00000001/sig00001916_rt
+    SLICE_X11Y37.A1      net (fanout=1)        1.317   rca/blk00000001/sig00001916
+    SLICE_X11Y37.AMUX    Tilo                  0.354   rca/blk00000001/sig00001719
+                                                       rca/blk00000001/blk00000d7a/LUT5
+    SLICE_X11Y37.B3      net (fanout=2)        0.666   rca/blk00000001/sig000022e3
+    SLICE_X11Y37.COUT    Topcyb                0.674   rca/blk00000001/sig00001719
+                                                       rca/blk00000001/blk00000d79/LUT6
+                                                       rca/blk00000001/blk00000c8c
+    SLICE_X11Y38.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002246
+    SLICE_X11Y38.CQ      Tito_logic            0.579   rca/blk00000001/sig0000171d
+                                                       rca/blk00000001/blk00000c84
+                                                       rca/blk00000001/sig0000171c_rt
+    SLICE_X12Y39.C3      net (fanout=1)        0.822   rca/blk00000001/sig0000171c
+    SLICE_X12Y39.CMUX    Tilo                  0.360   outReg<111>
+                                                       rca/blk00000001/blk00000bef/LUT5
+    SLICE_X12Y39.D1      net (fanout=2)        0.708   rca/blk00000001/sig00002154
+    SLICE_X12Y39.COUT    Topcyd                0.500   outReg<111>
+                                                       rca/blk00000001/blk00000bee/LUT6
+                                                       rca/blk00000001/blk00000aff
+    SLICE_X12Y40.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bf
+    SLICE_X12Y40.COUT    Tbyp                  0.117   outReg<115>
+                                                       rca/blk00000001/blk00000af7
+    SLICE_X12Y41.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bb
+    SLICE_X12Y41.COUT    Tbyp                  0.117   outReg<119>
+                                                       rca/blk00000001/blk00000aef
+    SLICE_X12Y42.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b7
+    SLICE_X12Y42.COUT    Tbyp                  0.117   outReg<123>
+                                                       rca/blk00000001/blk00000ae7
+    SLICE_X12Y43.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b3
+    SLICE_X12Y43.CLK     Tcinck                0.205   outReg<127>
+                                                       rca/blk00000001/blk00000adc
+                                                       outReg_127
+    -------------------------------------------------  ---------------------------
+    Total                                     17.083ns (8.820ns logic, 8.263ns route)
+                                                       (51.6% logic, 48.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -22.496ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rca/blk00000001/blk00000550 (FF)
+  Destination:          outReg_127 (FF)
+  Requirement:          1.666ns
+  Data Path Delay:      17.080ns (Levels of Logic = 33)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -6.929ns (-2.916 - 4.013)
+  Source Clock:         clk_IBUF_BUFG rising at 40.000ns
+  Destination Clock:    del1/delLATCH<0> rising at 41.666ns
+  Clock Uncertainty:    0.153ns
+
+  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.110ns
+    Phase Error (PE):           0.087ns
+
+  Maximum Data Path at Slow Process Corner: rca/blk00000001/blk00000550 to outReg_127
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y14.DMUX    Tshcko                0.594   rca/blk00000001/sig000010eb
+                                                       rca/blk00000001/blk00000550
+    SLICE_X5Y15.A2       net (fanout=1)        1.694   rca/blk00000001/sig000010ea
+    SLICE_X5Y15.AMUX     Tilo                  0.354   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002495/LUT5
+    SLICE_X5Y15.B3       net (fanout=2)        0.666   rca/blk00000001/sig00003a30
+    SLICE_X5Y15.COUT     Topcyb                0.674   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002494/LUT6
+                                                       rca/blk00000001/blk000023f7
+    SLICE_X5Y16.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003943
+    SLICE_X5Y16.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e4d
+                                                       rca/blk00000001/blk000023ef
+    SLICE_X5Y17.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393f
+    SLICE_X5Y17.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e51
+                                                       rca/blk00000001/blk000023e7
+    SLICE_X5Y18.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393b
+    SLICE_X5Y18.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e55
+                                                       rca/blk00000001/blk000023df
+    SLICE_X5Y19.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003937
+    SLICE_X5Y19.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e59
+                                                       rca/blk00000001/blk000023d7
+    SLICE_X5Y20.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003933
+    SLICE_X5Y20.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e5d
+                                                       rca/blk00000001/blk000023cf
+    SLICE_X5Y21.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000392f
+    SLICE_X5Y21.CQ       Tito_logic            0.579   rca/blk00000001/sig00001e61
+                                                       rca/blk00000001/blk000023c7
+                                                       rca/blk00000001/sig00001e60_rt
+    SLICE_X20Y22.C2      net (fanout=1)        1.673   rca/blk00000001/sig00001e60
+    SLICE_X20Y22.CMUX    Tilo                  0.360   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c4/LUT5
+    SLICE_X20Y22.D1      net (fanout=2)        0.708   rca/blk00000001/sig0000295b
+    SLICE_X20Y22.COUT    Topcyd                0.500   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c3/LUT6
+                                                       rca/blk00000001/blk00001310
+    SLICE_X20Y23.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000288a
+    SLICE_X20Y23.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e5
+                                                       rca/blk00000001/blk00001308
+    SLICE_X20Y24.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002886
+    SLICE_X20Y24.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e9
+                                                       rca/blk00000001/blk00001300
+    SLICE_X20Y25.CIN     net (fanout=1)        0.009   rca/blk00000001/sig00002882
+    SLICE_X20Y25.COUT    Tbyp                  0.117   rca/blk00000001/sig000018ed
+                                                       rca/blk00000001/blk000012f8
+    SLICE_X20Y26.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287e
+    SLICE_X20Y26.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f1
+                                                       rca/blk00000001/blk000012f0
+    SLICE_X20Y27.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287a
+    SLICE_X20Y27.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f5
+                                                       rca/blk00000001/blk000012e8
+    SLICE_X20Y28.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002876
+    SLICE_X20Y28.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f9
+                                                       rca/blk00000001/blk000012e0
+    SLICE_X20Y29.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002872
+    SLICE_X20Y29.COUT    Tbyp                  0.117   rca/blk00000001/sig000018fd
+                                                       rca/blk00000001/blk000012d8
+    SLICE_X20Y30.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286e
+    SLICE_X20Y30.COUT    Tbyp                  0.117   rca/blk00000001/sig00001901
+                                                       rca/blk00000001/blk000012d0
+    SLICE_X20Y31.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286a
+    SLICE_X20Y31.COUT    Tbyp                  0.117   rca/blk00000001/sig00001905
+                                                       rca/blk00000001/blk000012c8
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002866
+    SLICE_X20Y32.COUT    Tbyp                  0.117   rca/blk00000001/sig00001909
+                                                       rca/blk00000001/blk000012c0
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002862
+    SLICE_X20Y33.COUT    Tbyp                  0.117   rca/blk00000001/sig0000190d
+                                                       rca/blk00000001/blk000012b8
+    SLICE_X20Y34.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285e
+    SLICE_X20Y34.COUT    Tbyp                  0.117   rca/blk00000001/sig00001911
+                                                       rca/blk00000001/blk000012b0
+    SLICE_X20Y35.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285a
+    SLICE_X20Y35.COUT    Tbyp                  0.117   rca/blk00000001/sig00001915
+                                                       rca/blk00000001/blk000012a8
+    SLICE_X20Y36.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002856
+    SLICE_X20Y36.AQ      Tito_logic            0.645   rca/blk00000001/sig00001919
+                                                       rca/blk00000001/blk000012a0
+                                                       rca/blk00000001/sig00001916_rt
+    SLICE_X11Y37.A1      net (fanout=1)        1.317   rca/blk00000001/sig00001916
+    SLICE_X11Y37.AMUX    Tilo                  0.354   rca/blk00000001/sig00001719
+                                                       rca/blk00000001/blk00000d7a/LUT5
+    SLICE_X11Y37.B3      net (fanout=2)        0.666   rca/blk00000001/sig000022e3
+    SLICE_X11Y37.COUT    Topcyb                0.674   rca/blk00000001/sig00001719
+                                                       rca/blk00000001/blk00000d79/LUT6
+                                                       rca/blk00000001/blk00000c8c
+    SLICE_X11Y38.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002246
+    SLICE_X11Y38.COUT    Tbyp                  0.114   rca/blk00000001/sig0000171d
+                                                       rca/blk00000001/blk00000c84
+    SLICE_X11Y39.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002242
+    SLICE_X11Y39.CQ      Tito_logic            0.579   rca/blk00000001/sig00001721
+                                                       rca/blk00000001/blk00000c7c
+                                                       rca/blk00000001/sig00001720_rt
+    SLICE_X12Y40.C3      net (fanout=1)        0.822   rca/blk00000001/sig00001720
+    SLICE_X12Y40.CMUX    Tilo                  0.360   outReg<115>
+                                                       rca/blk00000001/blk00000beb/LUT5
+    SLICE_X12Y40.D1      net (fanout=2)        0.708   rca/blk00000001/sig0000214c
+    SLICE_X12Y40.COUT    Topcyd                0.500   outReg<115>
+                                                       rca/blk00000001/blk00000bea/LUT6
+                                                       rca/blk00000001/blk00000af7
+    SLICE_X12Y41.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bb
+    SLICE_X12Y41.COUT    Tbyp                  0.117   outReg<119>
+                                                       rca/blk00000001/blk00000aef
+    SLICE_X12Y42.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b7
+    SLICE_X12Y42.COUT    Tbyp                  0.117   outReg<123>
+                                                       rca/blk00000001/blk00000ae7
+    SLICE_X12Y43.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b3
+    SLICE_X12Y43.CLK     Tcinck                0.205   outReg<127>
+                                                       rca/blk00000001/blk00000adc
+                                                       outReg_127
+    -------------------------------------------------  ---------------------------
+    Total                                     17.080ns (8.817ns logic, 8.263ns route)
+                                                       (51.6% logic, 48.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -22.496ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rca/blk00000001/blk00000550 (FF)
+  Destination:          outReg_127 (FF)
+  Requirement:          1.666ns
+  Data Path Delay:      17.080ns (Levels of Logic = 33)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -6.929ns (-2.916 - 4.013)
+  Source Clock:         clk_IBUF_BUFG rising at 40.000ns
+  Destination Clock:    del1/delLATCH<0> rising at 41.666ns
+  Clock Uncertainty:    0.153ns
+
+  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.110ns
+    Phase Error (PE):           0.087ns
+
+  Maximum Data Path at Slow Process Corner: rca/blk00000001/blk00000550 to outReg_127
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y14.DMUX    Tshcko                0.594   rca/blk00000001/sig000010eb
+                                                       rca/blk00000001/blk00000550
+    SLICE_X5Y15.A2       net (fanout=1)        1.694   rca/blk00000001/sig000010ea
+    SLICE_X5Y15.AMUX     Tilo                  0.354   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002495/LUT5
+    SLICE_X5Y15.B3       net (fanout=2)        0.666   rca/blk00000001/sig00003a30
+    SLICE_X5Y15.COUT     Topcyb                0.674   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002494/LUT6
+                                                       rca/blk00000001/blk000023f7
+    SLICE_X5Y16.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003943
+    SLICE_X5Y16.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e4d
+                                                       rca/blk00000001/blk000023ef
+    SLICE_X5Y17.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393f
+    SLICE_X5Y17.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e51
+                                                       rca/blk00000001/blk000023e7
+    SLICE_X5Y18.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393b
+    SLICE_X5Y18.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e55
+                                                       rca/blk00000001/blk000023df
+    SLICE_X5Y19.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003937
+    SLICE_X5Y19.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e59
+                                                       rca/blk00000001/blk000023d7
+    SLICE_X5Y20.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003933
+    SLICE_X5Y20.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e5d
+                                                       rca/blk00000001/blk000023cf
+    SLICE_X5Y21.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000392f
+    SLICE_X5Y21.CQ       Tito_logic            0.579   rca/blk00000001/sig00001e61
+                                                       rca/blk00000001/blk000023c7
+                                                       rca/blk00000001/sig00001e60_rt
+    SLICE_X20Y22.C2      net (fanout=1)        1.673   rca/blk00000001/sig00001e60
+    SLICE_X20Y22.CMUX    Tilo                  0.360   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c4/LUT5
+    SLICE_X20Y22.D1      net (fanout=2)        0.708   rca/blk00000001/sig0000295b
+    SLICE_X20Y22.COUT    Topcyd                0.500   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c3/LUT6
+                                                       rca/blk00000001/blk00001310
+    SLICE_X20Y23.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000288a
+    SLICE_X20Y23.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e5
+                                                       rca/blk00000001/blk00001308
+    SLICE_X20Y24.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002886
+    SLICE_X20Y24.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e9
+                                                       rca/blk00000001/blk00001300
+    SLICE_X20Y25.CIN     net (fanout=1)        0.009   rca/blk00000001/sig00002882
+    SLICE_X20Y25.COUT    Tbyp                  0.117   rca/blk00000001/sig000018ed
+                                                       rca/blk00000001/blk000012f8
+    SLICE_X20Y26.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287e
+    SLICE_X20Y26.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f1
+                                                       rca/blk00000001/blk000012f0
+    SLICE_X20Y27.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287a
+    SLICE_X20Y27.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f5
+                                                       rca/blk00000001/blk000012e8
+    SLICE_X20Y28.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002876
+    SLICE_X20Y28.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f9
+                                                       rca/blk00000001/blk000012e0
+    SLICE_X20Y29.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002872
+    SLICE_X20Y29.COUT    Tbyp                  0.117   rca/blk00000001/sig000018fd
+                                                       rca/blk00000001/blk000012d8
+    SLICE_X20Y30.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286e
+    SLICE_X20Y30.COUT    Tbyp                  0.117   rca/blk00000001/sig00001901
+                                                       rca/blk00000001/blk000012d0
+    SLICE_X20Y31.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286a
+    SLICE_X20Y31.COUT    Tbyp                  0.117   rca/blk00000001/sig00001905
+                                                       rca/blk00000001/blk000012c8
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002866
+    SLICE_X20Y32.COUT    Tbyp                  0.117   rca/blk00000001/sig00001909
+                                                       rca/blk00000001/blk000012c0
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002862
+    SLICE_X20Y33.COUT    Tbyp                  0.117   rca/blk00000001/sig0000190d
+                                                       rca/blk00000001/blk000012b8
+    SLICE_X20Y34.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285e
+    SLICE_X20Y34.AQ      Tito_logic            0.645   rca/blk00000001/sig00001911
+                                                       rca/blk00000001/blk000012b0
+                                                       rca/blk00000001/sig0000190e_rt
+    SLICE_X11Y35.A1      net (fanout=1)        1.314   rca/blk00000001/sig0000190e
+    SLICE_X11Y35.AMUX    Tilo                  0.354   rca/blk00000001/sig00001711
+                                                       rca/blk00000001/blk00000d82/LUT5
+    SLICE_X11Y35.B3      net (fanout=2)        0.666   rca/blk00000001/sig000022f3
+    SLICE_X11Y35.COUT    Topcyb                0.674   rca/blk00000001/sig00001711
+                                                       rca/blk00000001/blk00000d81/LUT6
+                                                       rca/blk00000001/blk00000c9c
+    SLICE_X11Y36.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000224e
+    SLICE_X11Y36.CQ      Tito_logic            0.579   rca/blk00000001/sig00001715
+                                                       rca/blk00000001/blk00000c94
+                                                       rca/blk00000001/sig00001714_rt
+    SLICE_X12Y37.C3      net (fanout=1)        0.822   rca/blk00000001/sig00001714
+    SLICE_X12Y37.CMUX    Tilo                  0.360   outReg<103>
+                                                       rca/blk00000001/blk00000bf7/LUT5
+    SLICE_X12Y37.D1      net (fanout=2)        0.708   rca/blk00000001/sig00002164
+    SLICE_X12Y37.COUT    Topcyd                0.500   outReg<103>
+                                                       rca/blk00000001/blk00000bf6/LUT6
+                                                       rca/blk00000001/blk00000b0f
+    SLICE_X12Y38.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020c7
+    SLICE_X12Y38.COUT    Tbyp                  0.117   outReg<107>
+                                                       rca/blk00000001/blk00000b07
+    SLICE_X12Y39.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020c3
+    SLICE_X12Y39.COUT    Tbyp                  0.117   outReg<111>
+                                                       rca/blk00000001/blk00000aff
+    SLICE_X12Y40.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bf
+    SLICE_X12Y40.COUT    Tbyp                  0.117   outReg<115>
+                                                       rca/blk00000001/blk00000af7
+    SLICE_X12Y41.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bb
+    SLICE_X12Y41.COUT    Tbyp                  0.117   outReg<119>
+                                                       rca/blk00000001/blk00000aef
+    SLICE_X12Y42.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b7
+    SLICE_X12Y42.COUT    Tbyp                  0.117   outReg<123>
+                                                       rca/blk00000001/blk00000ae7
+    SLICE_X12Y43.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b3
+    SLICE_X12Y43.CLK     Tcinck                0.205   outReg<127>
+                                                       rca/blk00000001/blk00000adc
+                                                       outReg_127
+    -------------------------------------------------  ---------------------------
+    Total                                     17.080ns (8.820ns logic, 8.260ns route)
+                                                       (51.6% logic, 48.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point outReg_126 (SLICE_X12Y43.CIN), 10089153659 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -22.424ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rca/blk00000001/blk00000550 (FF)
+  Destination:          outReg_126 (FF)
+  Requirement:          1.666ns
+  Data Path Delay:      17.008ns (Levels of Logic = 33)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -6.929ns (-2.916 - 4.013)
+  Source Clock:         clk_IBUF_BUFG rising at 40.000ns
+  Destination Clock:    del1/delLATCH<0> rising at 41.666ns
+  Clock Uncertainty:    0.153ns
+
+  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.110ns
+    Phase Error (PE):           0.087ns
+
+  Maximum Data Path at Slow Process Corner: rca/blk00000001/blk00000550 to outReg_126
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y14.DMUX    Tshcko                0.594   rca/blk00000001/sig000010eb
+                                                       rca/blk00000001/blk00000550
+    SLICE_X5Y15.A2       net (fanout=1)        1.694   rca/blk00000001/sig000010ea
+    SLICE_X5Y15.AMUX     Tilo                  0.354   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002495/LUT5
+    SLICE_X5Y15.B3       net (fanout=2)        0.666   rca/blk00000001/sig00003a30
+    SLICE_X5Y15.COUT     Topcyb                0.674   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002494/LUT6
+                                                       rca/blk00000001/blk000023f7
+    SLICE_X5Y16.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003943
+    SLICE_X5Y16.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e4d
+                                                       rca/blk00000001/blk000023ef
+    SLICE_X5Y17.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393f
+    SLICE_X5Y17.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e51
+                                                       rca/blk00000001/blk000023e7
+    SLICE_X5Y18.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393b
+    SLICE_X5Y18.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e55
+                                                       rca/blk00000001/blk000023df
+    SLICE_X5Y19.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003937
+    SLICE_X5Y19.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e59
+                                                       rca/blk00000001/blk000023d7
+    SLICE_X5Y20.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003933
+    SLICE_X5Y20.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e5d
+                                                       rca/blk00000001/blk000023cf
+    SLICE_X5Y21.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000392f
+    SLICE_X5Y21.CQ       Tito_logic            0.579   rca/blk00000001/sig00001e61
+                                                       rca/blk00000001/blk000023c7
+                                                       rca/blk00000001/sig00001e60_rt
+    SLICE_X20Y22.C2      net (fanout=1)        1.673   rca/blk00000001/sig00001e60
+    SLICE_X20Y22.CMUX    Tilo                  0.360   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c4/LUT5
+    SLICE_X20Y22.D1      net (fanout=2)        0.708   rca/blk00000001/sig0000295b
+    SLICE_X20Y22.COUT    Topcyd                0.500   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c3/LUT6
+                                                       rca/blk00000001/blk00001310
+    SLICE_X20Y23.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000288a
+    SLICE_X20Y23.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e5
+                                                       rca/blk00000001/blk00001308
+    SLICE_X20Y24.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002886
+    SLICE_X20Y24.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e9
+                                                       rca/blk00000001/blk00001300
+    SLICE_X20Y25.CIN     net (fanout=1)        0.009   rca/blk00000001/sig00002882
+    SLICE_X20Y25.COUT    Tbyp                  0.117   rca/blk00000001/sig000018ed
+                                                       rca/blk00000001/blk000012f8
+    SLICE_X20Y26.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287e
+    SLICE_X20Y26.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f1
+                                                       rca/blk00000001/blk000012f0
+    SLICE_X20Y27.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287a
+    SLICE_X20Y27.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f5
+                                                       rca/blk00000001/blk000012e8
+    SLICE_X20Y28.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002876
+    SLICE_X20Y28.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f9
+                                                       rca/blk00000001/blk000012e0
+    SLICE_X20Y29.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002872
+    SLICE_X20Y29.COUT    Tbyp                  0.117   rca/blk00000001/sig000018fd
+                                                       rca/blk00000001/blk000012d8
+    SLICE_X20Y30.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286e
+    SLICE_X20Y30.COUT    Tbyp                  0.117   rca/blk00000001/sig00001901
+                                                       rca/blk00000001/blk000012d0
+    SLICE_X20Y31.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286a
+    SLICE_X20Y31.COUT    Tbyp                  0.117   rca/blk00000001/sig00001905
+                                                       rca/blk00000001/blk000012c8
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002866
+    SLICE_X20Y32.COUT    Tbyp                  0.117   rca/blk00000001/sig00001909
+                                                       rca/blk00000001/blk000012c0
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002862
+    SLICE_X20Y33.COUT    Tbyp                  0.117   rca/blk00000001/sig0000190d
+                                                       rca/blk00000001/blk000012b8
+    SLICE_X20Y34.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285e
+    SLICE_X20Y34.COUT    Tbyp                  0.117   rca/blk00000001/sig00001911
+                                                       rca/blk00000001/blk000012b0
+    SLICE_X20Y35.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285a
+    SLICE_X20Y35.COUT    Tbyp                  0.117   rca/blk00000001/sig00001915
+                                                       rca/blk00000001/blk000012a8
+    SLICE_X20Y36.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002856
+    SLICE_X20Y36.AQ      Tito_logic            0.645   rca/blk00000001/sig00001919
+                                                       rca/blk00000001/blk000012a0
+                                                       rca/blk00000001/sig00001916_rt
+    SLICE_X11Y37.A1      net (fanout=1)        1.317   rca/blk00000001/sig00001916
+    SLICE_X11Y37.AMUX    Tilo                  0.354   rca/blk00000001/sig00001719
+                                                       rca/blk00000001/blk00000d7a/LUT5
+    SLICE_X11Y37.B3      net (fanout=2)        0.666   rca/blk00000001/sig000022e3
+    SLICE_X11Y37.COUT    Topcyb                0.674   rca/blk00000001/sig00001719
+                                                       rca/blk00000001/blk00000d79/LUT6
+                                                       rca/blk00000001/blk00000c8c
+    SLICE_X11Y38.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002246
+    SLICE_X11Y38.CQ      Tito_logic            0.579   rca/blk00000001/sig0000171d
+                                                       rca/blk00000001/blk00000c84
+                                                       rca/blk00000001/sig0000171c_rt
+    SLICE_X12Y39.C3      net (fanout=1)        0.822   rca/blk00000001/sig0000171c
+    SLICE_X12Y39.CMUX    Tilo                  0.360   outReg<111>
+                                                       rca/blk00000001/blk00000bef/LUT5
+    SLICE_X12Y39.D1      net (fanout=2)        0.708   rca/blk00000001/sig00002154
+    SLICE_X12Y39.COUT    Topcyd                0.500   outReg<111>
+                                                       rca/blk00000001/blk00000bee/LUT6
+                                                       rca/blk00000001/blk00000aff
+    SLICE_X12Y40.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bf
+    SLICE_X12Y40.COUT    Tbyp                  0.117   outReg<115>
+                                                       rca/blk00000001/blk00000af7
+    SLICE_X12Y41.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bb
+    SLICE_X12Y41.COUT    Tbyp                  0.117   outReg<119>
+                                                       rca/blk00000001/blk00000aef
+    SLICE_X12Y42.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b7
+    SLICE_X12Y42.COUT    Tbyp                  0.117   outReg<123>
+                                                       rca/blk00000001/blk00000ae7
+    SLICE_X12Y43.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b3
+    SLICE_X12Y43.CLK     Tcinck                0.130   outReg<127>
+                                                       rca/blk00000001/blk00000adc
+                                                       outReg_126
+    -------------------------------------------------  ---------------------------
+    Total                                     17.008ns (8.745ns logic, 8.263ns route)
+                                                       (51.4% logic, 48.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -22.421ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rca/blk00000001/blk00000550 (FF)
+  Destination:          outReg_126 (FF)
+  Requirement:          1.666ns
+  Data Path Delay:      17.005ns (Levels of Logic = 33)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -6.929ns (-2.916 - 4.013)
+  Source Clock:         clk_IBUF_BUFG rising at 40.000ns
+  Destination Clock:    del1/delLATCH<0> rising at 41.666ns
+  Clock Uncertainty:    0.153ns
+
+  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.110ns
+    Phase Error (PE):           0.087ns
+
+  Maximum Data Path at Slow Process Corner: rca/blk00000001/blk00000550 to outReg_126
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y14.DMUX    Tshcko                0.594   rca/blk00000001/sig000010eb
+                                                       rca/blk00000001/blk00000550
+    SLICE_X5Y15.A2       net (fanout=1)        1.694   rca/blk00000001/sig000010ea
+    SLICE_X5Y15.AMUX     Tilo                  0.354   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002495/LUT5
+    SLICE_X5Y15.B3       net (fanout=2)        0.666   rca/blk00000001/sig00003a30
+    SLICE_X5Y15.COUT     Topcyb                0.674   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002494/LUT6
+                                                       rca/blk00000001/blk000023f7
+    SLICE_X5Y16.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003943
+    SLICE_X5Y16.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e4d
+                                                       rca/blk00000001/blk000023ef
+    SLICE_X5Y17.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393f
+    SLICE_X5Y17.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e51
+                                                       rca/blk00000001/blk000023e7
+    SLICE_X5Y18.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393b
+    SLICE_X5Y18.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e55
+                                                       rca/blk00000001/blk000023df
+    SLICE_X5Y19.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003937
+    SLICE_X5Y19.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e59
+                                                       rca/blk00000001/blk000023d7
+    SLICE_X5Y20.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003933
+    SLICE_X5Y20.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e5d
+                                                       rca/blk00000001/blk000023cf
+    SLICE_X5Y21.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000392f
+    SLICE_X5Y21.CQ       Tito_logic            0.579   rca/blk00000001/sig00001e61
+                                                       rca/blk00000001/blk000023c7
+                                                       rca/blk00000001/sig00001e60_rt
+    SLICE_X20Y22.C2      net (fanout=1)        1.673   rca/blk00000001/sig00001e60
+    SLICE_X20Y22.CMUX    Tilo                  0.360   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c4/LUT5
+    SLICE_X20Y22.D1      net (fanout=2)        0.708   rca/blk00000001/sig0000295b
+    SLICE_X20Y22.COUT    Topcyd                0.500   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c3/LUT6
+                                                       rca/blk00000001/blk00001310
+    SLICE_X20Y23.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000288a
+    SLICE_X20Y23.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e5
+                                                       rca/blk00000001/blk00001308
+    SLICE_X20Y24.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002886
+    SLICE_X20Y24.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e9
+                                                       rca/blk00000001/blk00001300
+    SLICE_X20Y25.CIN     net (fanout=1)        0.009   rca/blk00000001/sig00002882
+    SLICE_X20Y25.COUT    Tbyp                  0.117   rca/blk00000001/sig000018ed
+                                                       rca/blk00000001/blk000012f8
+    SLICE_X20Y26.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287e
+    SLICE_X20Y26.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f1
+                                                       rca/blk00000001/blk000012f0
+    SLICE_X20Y27.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287a
+    SLICE_X20Y27.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f5
+                                                       rca/blk00000001/blk000012e8
+    SLICE_X20Y28.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002876
+    SLICE_X20Y28.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f9
+                                                       rca/blk00000001/blk000012e0
+    SLICE_X20Y29.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002872
+    SLICE_X20Y29.COUT    Tbyp                  0.117   rca/blk00000001/sig000018fd
+                                                       rca/blk00000001/blk000012d8
+    SLICE_X20Y30.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286e
+    SLICE_X20Y30.COUT    Tbyp                  0.117   rca/blk00000001/sig00001901
+                                                       rca/blk00000001/blk000012d0
+    SLICE_X20Y31.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286a
+    SLICE_X20Y31.COUT    Tbyp                  0.117   rca/blk00000001/sig00001905
+                                                       rca/blk00000001/blk000012c8
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002866
+    SLICE_X20Y32.COUT    Tbyp                  0.117   rca/blk00000001/sig00001909
+                                                       rca/blk00000001/blk000012c0
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002862
+    SLICE_X20Y33.COUT    Tbyp                  0.117   rca/blk00000001/sig0000190d
+                                                       rca/blk00000001/blk000012b8
+    SLICE_X20Y34.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285e
+    SLICE_X20Y34.COUT    Tbyp                  0.117   rca/blk00000001/sig00001911
+                                                       rca/blk00000001/blk000012b0
+    SLICE_X20Y35.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285a
+    SLICE_X20Y35.COUT    Tbyp                  0.117   rca/blk00000001/sig00001915
+                                                       rca/blk00000001/blk000012a8
+    SLICE_X20Y36.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002856
+    SLICE_X20Y36.AQ      Tito_logic            0.645   rca/blk00000001/sig00001919
+                                                       rca/blk00000001/blk000012a0
+                                                       rca/blk00000001/sig00001916_rt
+    SLICE_X11Y37.A1      net (fanout=1)        1.317   rca/blk00000001/sig00001916
+    SLICE_X11Y37.AMUX    Tilo                  0.354   rca/blk00000001/sig00001719
+                                                       rca/blk00000001/blk00000d7a/LUT5
+    SLICE_X11Y37.B3      net (fanout=2)        0.666   rca/blk00000001/sig000022e3
+    SLICE_X11Y37.COUT    Topcyb                0.674   rca/blk00000001/sig00001719
+                                                       rca/blk00000001/blk00000d79/LUT6
+                                                       rca/blk00000001/blk00000c8c
+    SLICE_X11Y38.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002246
+    SLICE_X11Y38.COUT    Tbyp                  0.114   rca/blk00000001/sig0000171d
+                                                       rca/blk00000001/blk00000c84
+    SLICE_X11Y39.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002242
+    SLICE_X11Y39.CQ      Tito_logic            0.579   rca/blk00000001/sig00001721
+                                                       rca/blk00000001/blk00000c7c
+                                                       rca/blk00000001/sig00001720_rt
+    SLICE_X12Y40.C3      net (fanout=1)        0.822   rca/blk00000001/sig00001720
+    SLICE_X12Y40.CMUX    Tilo                  0.360   outReg<115>
+                                                       rca/blk00000001/blk00000beb/LUT5
+    SLICE_X12Y40.D1      net (fanout=2)        0.708   rca/blk00000001/sig0000214c
+    SLICE_X12Y40.COUT    Topcyd                0.500   outReg<115>
+                                                       rca/blk00000001/blk00000bea/LUT6
+                                                       rca/blk00000001/blk00000af7
+    SLICE_X12Y41.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bb
+    SLICE_X12Y41.COUT    Tbyp                  0.117   outReg<119>
+                                                       rca/blk00000001/blk00000aef
+    SLICE_X12Y42.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b7
+    SLICE_X12Y42.COUT    Tbyp                  0.117   outReg<123>
+                                                       rca/blk00000001/blk00000ae7
+    SLICE_X12Y43.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b3
+    SLICE_X12Y43.CLK     Tcinck                0.130   outReg<127>
+                                                       rca/blk00000001/blk00000adc
+                                                       outReg_126
+    -------------------------------------------------  ---------------------------
+    Total                                     17.005ns (8.742ns logic, 8.263ns route)
+                                                       (51.4% logic, 48.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -22.421ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rca/blk00000001/blk00000550 (FF)
+  Destination:          outReg_126 (FF)
+  Requirement:          1.666ns
+  Data Path Delay:      17.005ns (Levels of Logic = 33)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -6.929ns (-2.916 - 4.013)
+  Source Clock:         clk_IBUF_BUFG rising at 40.000ns
+  Destination Clock:    del1/delLATCH<0> rising at 41.666ns
+  Clock Uncertainty:    0.153ns
+
+  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.110ns
+    Phase Error (PE):           0.087ns
+
+  Maximum Data Path at Slow Process Corner: rca/blk00000001/blk00000550 to outReg_126
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y14.DMUX    Tshcko                0.594   rca/blk00000001/sig000010eb
+                                                       rca/blk00000001/blk00000550
+    SLICE_X5Y15.A2       net (fanout=1)        1.694   rca/blk00000001/sig000010ea
+    SLICE_X5Y15.AMUX     Tilo                  0.354   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002495/LUT5
+    SLICE_X5Y15.B3       net (fanout=2)        0.666   rca/blk00000001/sig00003a30
+    SLICE_X5Y15.COUT     Topcyb                0.674   rca/blk00000001/sig00001e49
+                                                       rca/blk00000001/blk00002494/LUT6
+                                                       rca/blk00000001/blk000023f7
+    SLICE_X5Y16.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003943
+    SLICE_X5Y16.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e4d
+                                                       rca/blk00000001/blk000023ef
+    SLICE_X5Y17.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393f
+    SLICE_X5Y17.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e51
+                                                       rca/blk00000001/blk000023e7
+    SLICE_X5Y18.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000393b
+    SLICE_X5Y18.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e55
+                                                       rca/blk00000001/blk000023df
+    SLICE_X5Y19.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003937
+    SLICE_X5Y19.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e59
+                                                       rca/blk00000001/blk000023d7
+    SLICE_X5Y20.CIN      net (fanout=1)        0.000   rca/blk00000001/sig00003933
+    SLICE_X5Y20.COUT     Tbyp                  0.114   rca/blk00000001/sig00001e5d
+                                                       rca/blk00000001/blk000023cf
+    SLICE_X5Y21.CIN      net (fanout=1)        0.000   rca/blk00000001/sig0000392f
+    SLICE_X5Y21.CQ       Tito_logic            0.579   rca/blk00000001/sig00001e61
+                                                       rca/blk00000001/blk000023c7
+                                                       rca/blk00000001/sig00001e60_rt
+    SLICE_X20Y22.C2      net (fanout=1)        1.673   rca/blk00000001/sig00001e60
+    SLICE_X20Y22.CMUX    Tilo                  0.360   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c4/LUT5
+    SLICE_X20Y22.D1      net (fanout=2)        0.708   rca/blk00000001/sig0000295b
+    SLICE_X20Y22.COUT    Topcyd                0.500   rca/blk00000001/sig000018e1
+                                                       rca/blk00000001/blk000013c3/LUT6
+                                                       rca/blk00000001/blk00001310
+    SLICE_X20Y23.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000288a
+    SLICE_X20Y23.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e5
+                                                       rca/blk00000001/blk00001308
+    SLICE_X20Y24.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002886
+    SLICE_X20Y24.COUT    Tbyp                  0.117   rca/blk00000001/sig000018e9
+                                                       rca/blk00000001/blk00001300
+    SLICE_X20Y25.CIN     net (fanout=1)        0.009   rca/blk00000001/sig00002882
+    SLICE_X20Y25.COUT    Tbyp                  0.117   rca/blk00000001/sig000018ed
+                                                       rca/blk00000001/blk000012f8
+    SLICE_X20Y26.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287e
+    SLICE_X20Y26.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f1
+                                                       rca/blk00000001/blk000012f0
+    SLICE_X20Y27.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000287a
+    SLICE_X20Y27.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f5
+                                                       rca/blk00000001/blk000012e8
+    SLICE_X20Y28.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002876
+    SLICE_X20Y28.COUT    Tbyp                  0.117   rca/blk00000001/sig000018f9
+                                                       rca/blk00000001/blk000012e0
+    SLICE_X20Y29.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002872
+    SLICE_X20Y29.COUT    Tbyp                  0.117   rca/blk00000001/sig000018fd
+                                                       rca/blk00000001/blk000012d8
+    SLICE_X20Y30.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286e
+    SLICE_X20Y30.COUT    Tbyp                  0.117   rca/blk00000001/sig00001901
+                                                       rca/blk00000001/blk000012d0
+    SLICE_X20Y31.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000286a
+    SLICE_X20Y31.COUT    Tbyp                  0.117   rca/blk00000001/sig00001905
+                                                       rca/blk00000001/blk000012c8
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002866
+    SLICE_X20Y32.COUT    Tbyp                  0.117   rca/blk00000001/sig00001909
+                                                       rca/blk00000001/blk000012c0
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   rca/blk00000001/sig00002862
+    SLICE_X20Y33.COUT    Tbyp                  0.117   rca/blk00000001/sig0000190d
+                                                       rca/blk00000001/blk000012b8
+    SLICE_X20Y34.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000285e
+    SLICE_X20Y34.AQ      Tito_logic            0.645   rca/blk00000001/sig00001911
+                                                       rca/blk00000001/blk000012b0
+                                                       rca/blk00000001/sig0000190e_rt
+    SLICE_X11Y35.A1      net (fanout=1)        1.314   rca/blk00000001/sig0000190e
+    SLICE_X11Y35.AMUX    Tilo                  0.354   rca/blk00000001/sig00001711
+                                                       rca/blk00000001/blk00000d82/LUT5
+    SLICE_X11Y35.B3      net (fanout=2)        0.666   rca/blk00000001/sig000022f3
+    SLICE_X11Y35.COUT    Topcyb                0.674   rca/blk00000001/sig00001711
+                                                       rca/blk00000001/blk00000d81/LUT6
+                                                       rca/blk00000001/blk00000c9c
+    SLICE_X11Y36.CIN     net (fanout=1)        0.000   rca/blk00000001/sig0000224e
+    SLICE_X11Y36.CQ      Tito_logic            0.579   rca/blk00000001/sig00001715
+                                                       rca/blk00000001/blk00000c94
+                                                       rca/blk00000001/sig00001714_rt
+    SLICE_X12Y37.C3      net (fanout=1)        0.822   rca/blk00000001/sig00001714
+    SLICE_X12Y37.CMUX    Tilo                  0.360   outReg<103>
+                                                       rca/blk00000001/blk00000bf7/LUT5
+    SLICE_X12Y37.D1      net (fanout=2)        0.708   rca/blk00000001/sig00002164
+    SLICE_X12Y37.COUT    Topcyd                0.500   outReg<103>
+                                                       rca/blk00000001/blk00000bf6/LUT6
+                                                       rca/blk00000001/blk00000b0f
+    SLICE_X12Y38.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020c7
+    SLICE_X12Y38.COUT    Tbyp                  0.117   outReg<107>
+                                                       rca/blk00000001/blk00000b07
+    SLICE_X12Y39.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020c3
+    SLICE_X12Y39.COUT    Tbyp                  0.117   outReg<111>
+                                                       rca/blk00000001/blk00000aff
+    SLICE_X12Y40.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bf
+    SLICE_X12Y40.COUT    Tbyp                  0.117   outReg<115>
+                                                       rca/blk00000001/blk00000af7
+    SLICE_X12Y41.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020bb
+    SLICE_X12Y41.COUT    Tbyp                  0.117   outReg<119>
+                                                       rca/blk00000001/blk00000aef
+    SLICE_X12Y42.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b7
+    SLICE_X12Y42.COUT    Tbyp                  0.117   outReg<123>
+                                                       rca/blk00000001/blk00000ae7
+    SLICE_X12Y43.CIN     net (fanout=1)        0.000   rca/blk00000001/sig000020b3
+    SLICE_X12Y43.CLK     Tcinck                0.130   outReg<127>
+                                                       rca/blk00000001/blk00000adc
+                                                       outReg_126
+    -------------------------------------------------  ---------------------------
+    Total                                     17.005ns (8.745ns logic, 8.260ns route)
+                                                       (51.4% logic, 48.6% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clock_clk0t = PERIOD TIMEGRP "clock_clk0t" TS_CLK_OSC / 1.2 HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point Mram_data1 (RAMB18_X1Y10.DIADI1), 13505081 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      0.042ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               Drdy (FF)
+  Destination:          Mram_data1 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.615ns (Levels of Logic = 1)
+  Clock Path Skew:      0.361ns (1.484 - 1.123)
+  Source Clock:         clk1 rising at 0.000ns
+  Destination Clock:    del1/delLATCH<0> rising at 0.000ns
+  Clock Uncertainty:    0.212ns
+
+  Clock Uncertainty:          0.212ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.120ns
+
+  Minimum Data Path at Fast Process Corner: Drdy to Mram_data1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X30Y20.AQ      Tcko                  0.164   Drdy
+                                                       Drdy
+    SLICE_X23Y25.A3      net (fanout=17)       0.594   Drdy
+    SLICE_X23Y25.A       Tilo                  0.045   tdc_decode/tdc_input_buf_reg<59>
+                                                       Mmux__n208971
+    RAMB18_X1Y10.DIADI1  net (fanout=1)        0.108   _n2089<6>
+    RAMB18_X1Y10.RDCLK   Trckd_DIA   (-Th)     0.296   Mram_data1
+                                                       Mram_data1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.615ns (-0.087ns logic, 0.702ns route)
+                                                       (-14.1% logic, 114.1% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.750ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               fsm1_FSM_FFd1 (FF)
+  Destination:          Mram_data1 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.833ns (Levels of Logic = 1)
+  Clock Path Skew:      0.083ns (0.367 - 0.284)
+  Source Clock:         del1/delLATCH<0> rising at 8.333ns
+  Destination Clock:    del1/delLATCH<0> rising at 8.333ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: fsm1_FSM_FFd1 to Mram_data1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y24.CQ      Tcko                  0.141   fsm1_FSM_FFd1
+                                                       fsm1_FSM_FFd1
+    SLICE_X23Y25.A2      net (fanout=10)       0.835   fsm1_FSM_FFd1
+    SLICE_X23Y25.A       Tilo                  0.045   tdc_decode/tdc_input_buf_reg<59>
+                                                       Mmux__n208971
+    RAMB18_X1Y10.DIADI1  net (fanout=1)        0.108   _n2089<6>
+    RAMB18_X1Y10.RDCLK   Trckd_DIA   (-Th)     0.296   Mram_data1
+                                                       Mram_data1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.833ns (-0.110ns logic, 0.943ns route)
+                                                       (-13.2% logic, 113.2% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.898ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3 (FF)
+  Destination:          Mram_data1 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      1.500ns (Levels of Logic = 2)
+  Clock Path Skew:      0.390ns (1.484 - 1.094)
+  Source Clock:         clk1 rising at 0.000ns
+  Destination Clock:    del1/delLATCH<0> rising at 0.000ns
+  Clock Uncertainty:    0.212ns
+
+  Clock Uncertainty:          0.212ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.120ns
+
+  Minimum Data Path at Fast Process Corner: gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3 to Mram_data1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y26.BQ      Tcko                  0.164   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3
+                                                       gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3
+    SLICE_X32Y28.C4      net (fanout=221)      0.435   gen_code_label[0].aes_tinyi/fsm/aes_state_FSM_FFd3
+    SLICE_X32Y28.C       Tilo                  0.045   uartRX/r_Bit_Index<1>
+                                                       out1
+    SLICE_X23Y25.A1      net (fanout=8)        0.999   Dvld
+    SLICE_X23Y25.A       Tilo                  0.045   tdc_decode/tdc_input_buf_reg<59>
+                                                       Mmux__n208971
+    RAMB18_X1Y10.DIADI1  net (fanout=1)        0.108   _n2089<6>
+    RAMB18_X1Y10.RDCLK   Trckd_DIA   (-Th)     0.296   Mram_data1
+                                                       Mram_data1
+    -------------------------------------------------  ---------------------------
+    Total                                      1.500ns (-0.042ns logic, 1.542ns route)
+                                                       (-2.8% logic, 102.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point Mram_data1 (RAMB18_X1Y10.ADDRARDADDR9), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.097ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               addr2_6 (FF)
+  Destination:          Mram_data1 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.155ns (Levels of Logic = 0)
+  Clock Path Skew:      0.058ns (0.117 - 0.059)
+  Source Clock:         del1/delLATCH<0> rising at 8.333ns
+  Destination Clock:    del1/delLATCH<0> rising at 8.333ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: addr2_6 to Mram_data1
+    Location                  Delay type         Delay(ns)  Physical Resource
+                                                            Logical Resource(s)
+    ------------------------------------------------------  -------------------
+    SLICE_X22Y26.CQ           Tcko                  0.164   addr2<7>
+                                                            addr2_6
+    RAMB18_X1Y10.ADDRARDADDR9 net (fanout=4)        0.174   addr2<6>
+    RAMB18_X1Y10.RDCLK        Trckc_ADDRA (-Th)     0.183   Mram_data1
+                                                            Mram_data1
+    ------------------------------------------------------  ---------------------------
+    Total                                           0.155ns (-0.019ns logic, 0.174ns route)
+                                                            (-12.3% logic, 112.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point fsm1_FSM_FFd1 (SLICE_X31Y24.C3), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.101ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               Drdy (FF)
+  Destination:          fsm1_FSM_FFd1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.623ns (Levels of Logic = 1)
+  Clock Path Skew:      0.310ns (1.433 - 1.123)
+  Source Clock:         clk1 rising at 0.000ns
+  Destination Clock:    del1/delLATCH<0> rising at 0.000ns
+  Clock Uncertainty:    0.212ns
+
+  Clock Uncertainty:          0.212ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.170ns
+    Phase Error (PE):           0.120ns
+
+  Minimum Data Path at Fast Process Corner: Drdy to fsm1_FSM_FFd1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X30Y20.AQ      Tcko                  0.164   Drdy
+                                                       Drdy
+    SLICE_X31Y24.C3      net (fanout=17)       0.506   Drdy
+    SLICE_X31Y24.CLK     Tah         (-Th)     0.047   fsm1_FSM_FFd1
+                                                       fsm1_FSM_FFd1-In1
+                                                       fsm1_FSM_FFd1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.623ns (0.117ns logic, 0.506ns route)
+                                                       (18.8% logic, 81.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clock_clk0t = PERIOD TIMEGRP "clock_clk0t" TS_CLK_OSC / 1.2 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 5.757ns (period - min period limit)
+  Period: 8.333ns
+  Min period limit: 2.576ns (388.199MHz) (Trper_CLKA)
+  Physical resource: Mram_data1/CLKARDCLK
+  Logical resource: Mram_data1/CLKARDCLK
+  Location pin: RAMB18_X1Y10.RDCLK
+  Clock network: del1/delLATCH<0>
+--------------------------------------------------------------------------------
+Slack: 5.757ns (period - min period limit)
+  Period: 8.333ns
+  Min period limit: 2.576ns (388.199MHz) (Trper_CLKA)
+  Physical resource: Mram_data2/CLKARDCLK
+  Logical resource: Mram_data2/CLKARDCLK
+  Location pin: RAMB18_X2Y11.CLKARDCLK
+  Clock network: del1/delLATCH<0>
+--------------------------------------------------------------------------------
+Slack: 6.178ns (period - min period limit)
+  Period: 8.333ns
+  Min period limit: 2.155ns (464.037MHz) (Tbcper_I(Fmax))
+  Physical resource: clock/u1/I0
+  Logical resource: clock/u1/I0
+  Location pin: BUFGCTRL_X0Y1.I0
+  Clock network: clock/clk0t
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_CLK_OSC
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_CLK_OSC                     |     10.000ns|      4.106ns|    145.096ns|            0|         1345|        13919| 263566709875|
+| TS_clock_clk1t                |     83.333ns|     13.299ns|          N/A|            0|            0|      2231785|            0|
+| TS_clock_clk0t                |      8.333ns|    120.913ns|          N/A|         1345|            0| 263564478090|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+1 constraint not met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   24.174|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 1345  Score: 23685099  (Setup/Max: 23685099, Hold: 0)
+
+Constraints cover 263566723794 paths, 0 nets, and 30435 connections
+
+Design statistics:
+   Minimum period: 120.913ns{1}   (Maximum frequency:   8.270MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Thu Aug 05 20:01:15 2021 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 5090 MB
+
+
+

@@ -9,7 +9,7 @@
 #include <pthread.h> 
 
 // defining paramters
-#define SAMPLES 20000
+#define SAMPLES 30000
 #define WAVELENGTH 64
 #define KEYBYTES 8 //number of bytes in the key
 #define KEYS 65536 //number of possible keys guesses
@@ -132,6 +132,26 @@ uint64_t inversepermute(uint64_t source){
     return permutation;
 }
 
+uint64_t permute(uint64_t source){
+    uint64_t permutation = 0;
+    int i;
+    for (i=0; i<64; i++){
+        int distance = 63 - i;
+        permutation = permutation | ((source >> distance & 0x1) << 63 - P[i]);
+    }
+    return permutation;
+}
+
+uint64_t inversepermute16(uint64_t source){
+    uint64_t permutation = 0;
+    int i;
+    for (i=0; i<16; i++){
+        int distance = 63 - P[i];
+        permutation = (permutation << 1) | ((source >> distance) & 0x1);
+    }
+    return permutation;
+}
+
 void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int keyguess, int keybyte
 	
 	// an array to hold the hamming values
@@ -146,7 +166,7 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 	//printf("%ud\n\n", cipher[0][1]);
 	//return;
 	//malloc
-	int i, k, z;
+	unsigned int i, k, z;
 
 	//unsigned int word[8];
 	//unsigned int permuted_word[8] = {0, 0, 0, 0, 0, 0, 0, 0};
@@ -157,7 +177,9 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
     //6d ab 31 74 4f 41 d7 00
 	//unsigned int key[] = {0x6d, 0xab, 0x31, 0x74, 0x4f, 0x41, 0xd7, 0x00};
 	// keybyte
-	for(z=0;z<65536;z++){
+	
+	
+	for(z=0; z<65536; z++){
 
 	//key[keybyte] = (unsigned int) z;
 	
@@ -171,23 +193,34 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 
 		uint64_t RKey31 = 0;
 		uint64_t RKey31_16bit = 0;
+		uint64_t RKey31_16bitIP = 0;
 		
 		for(k=0;k<8;k++) {
 			R31 = (R31 <<4 |((cipher[i][k])>>4 & 0x0F));
 			R31 = (R31 <<4 |(cipher[i][k] & 0x0F));
 
-			//RKey31 = (RKey31 <<4 |(key[2*k] & 0x0F));
-			//RKey31 = (RKey31 <<4 |(key[2*k+1] & 0x0F));
+			RKey31 = (RKey31 <<4 |(key[2*k] & 0x0F));
+			RKey31 = (RKey31 <<4 |(key[2*k+1] & 0x0F));
 			
  
 		}
-		// get 16 bits
-		for(k=16*keybyte;k<16*(keybyte+1);k++) {
-			int shift = 63-P[k];
-			R31_16bit 	 = (R31_16bit <<1 | ((R31>>shift)&0x01));
+		//
+		
+		//uint64_t key = inversepermute(RKey31);
+		//printf("key %lx \n", key);
+		uint64_t result_invPer= inversepermute(R31);
+		// get 16 bits inv shift
+		/*
+		for(k=16*(4-keybyte);k>16*(3-keybyte);k--) {
+			//int offset =    // 63 to 
+			int shift  = 63-P[k] ;
+			R31_16bit 	 = (R31_16bit <<1 | ((R31>>shift)&0x00000001));
 			
-		}
+		}*/
+		R31_16bit = (result_invPer >> (16*(3-keybyte))) & 0xffff;
+		
 		RKey31_16bit = (unsigned int)z; //(RKey31_16bit <<1 |((RKey31>>shift)&0x01));
+		printf("Gkey %lx \n", R31_16bit);
 
 		//DEBUG
 		#ifdef DEBUG
@@ -211,7 +244,7 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 			printf("ADR:\t\t %s \n",temp_adr);
 		#endif
 
-		//uint64_t result_invPer= inversepermute(result_XOR);
+		//uint64_t result_invPer= inversepermute(result_XOR_16bit);
 		
 		#ifdef DEBUG
 			char* temp_ipr= fromLongToHexString(result_invPer);
@@ -222,8 +255,8 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 
 		uint64_t result_invSbox=0;
 		uint64_t result_invSbox_16bit=0;
-
-		/* for (int j=7;j>=0;j--){
+		/*
+		 for (int j=7;j>=0;j--){
 			unsigned int low_nib = (result_invPer >> (8*j)) & 0x0F;
 			unsigned int high_nib = (result_invPer >> (8*j+4)) & 0x0F;
 			
@@ -266,10 +299,11 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 		//hammingArray[i]=hamming(result_invSbox, R31);
 		hammingArray[i]=hamming(result_invSbox_16bit, CT_16bit);
 
-		uint64_t HD    = result_invSbox ^ R31;
-		uint64_t HD_16 = result_invSbox_16bit ^ CT_16bit;
+		//printf("HD %04x %04x \n",result_invSbox_16bit, CT_16bit);
 		
 		#ifdef DEBUG
+			uint64_t HD    = result_invSbox ^ R31;
+		    uint64_t HD_16 = result_invSbox_16bit ^ CT_16bit;
 			char* temp_HD= fromLongToHexString(HD);
 			char* temp_HD1= fromLongToHexString(HD_16);
 			printf("HD:\t\t %s \n",temp_HD);

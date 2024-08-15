@@ -1,0 +1,889 @@
+# --------------------------------------------------------------
+# User Constraint File (.ucf)
+#
+# Company         : UEC.
+# File name       : sakura_g_aes128.ucf
+# Create Date     : July/29/2014
+# Target Devices  : xc6slx75-2csg484
+# Last Update     : July/29/2014
+# Version         : 1.0
+# --------------------------------------------------------------
+# Copyright (c) Satoh LaboratoryÅCUEC
+
+
+NET "clk" TNM_NET = "CLK_OSC_GRP";
+TIMESPEC TS_CLK_OSC = PERIOD "CLK_OSC_GRP" 10 ns HIGH 50 %;
+
+#NET "lbus_clk" TNM_NET = "CLK_OSC_GRP";
+#TIMESPEC TS_CLK_OSC = PERIOD "CLK_OSC_GRP" 41.667 ns HIGH 50 %;
+
+
+
+# ------------
+# Clock, Reset
+# ------------
+
+NET "clk" LOC = Y9;
+NET "clk" IOSTANDARD = LVCMOS33;
+NET "clk" DRIVE = 4;
+NET "clk" SLEW = FAST;
+#NET "rstn"          LOC="b13"   | IOSTANDARD="LVCMOS33" ;#| SLEW="FAST" | DRIVE=4 ;
+
+# --------
+# User LED
+# --------
+// "M_LED<0>"
+NET "led[0]" LOC = T22;
+NET "led[0]" IOSTANDARD = LVCMOS33;
+NET "led[0]" DRIVE = 4;
+NET "led[0]" SLEW = SLOW;
+// "M_LED<1>"
+NET "led[1]" LOC = T21;
+NET "led[1]" IOSTANDARD = LVCMOS33;
+NET "led[1]" DRIVE = 4;
+NET "led[1]" SLEW = SLOW;
+// "M_LED<2>"
+NET "led[2]" LOC = U22;
+NET "led[2]" IOSTANDARD = LVCMOS33;
+NET "led[2]" DRIVE = 4;
+NET "led[2]" SLEW = SLOW;
+
+NET "HB" LOC = U14;
+NET "HB" IOSTANDARD = LVCMOS33;
+NET "HB" DRIVE = 4;
+NET "HB" SLEW = SLOW;
+
+# ------------
+#  UART
+# ------------
+
+NET "tx" LOC = Y11;
+NET "tx" IOSTANDARD = LVCMOS33;
+NET "tx" DRIVE = 4;
+NET "tx" SLEW = SLOW;
+
+
+NET "rx" LOC = AA11;
+NET "rx" IOSTANDARD = LVCMOS33;
+NET "rx" DRIVE = 4;
+NET "rx" SLEW = SLOW;
+
+NET "PWR" LOC = Y10;
+NET "PWR" IOSTANDARD = LVCMOS33;
+NET "PWR" DRIVE = 4;
+NET "PWR" SLEW = SLOW;
+
+
+
+
+
+
+
+
+
+## STAGE INSTANCE 39
+#INST "tp/gen_code_label1[39].CARRY4_insti" AREA_GROUP = "pblock_tp_[39].CARRY4_insti";
+#INST "tp/gen_code_label2[156].LDPE_insti" AREA_GROUP = "pblock_tp_[39].CARRY4_insti";
+#INST "tp/gen_code_label2[157].LDPE_insti" AREA_GROUP = "pblock_tp_[39].CARRY4_insti";
+#INST "tp/gen_code_label2[158].LDPE_insti" AREA_GROUP = "pblock_tp_[39].CARRY4_insti";
+#INST "tp/gen_code_label2[159].LDPE_insti" AREA_GROUP = "pblock_tp_[39].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[39].CARRY4_insti" RANGE=SLICE_X112Y99:SLICE_X113Y99;
+#
+#
+#
+## STAGE INSTANCE 38
+#INST "tp/gen_code_label1[38].CARRY4_insti" AREA_GROUP = "pblock_tp_[38].CARRY4_insti";
+#INST "tp/gen_code_label2[152].LDPE_insti" AREA_GROUP = "pblock_tp_[38].CARRY4_insti";
+#INST "tp/gen_code_label2[153].LDPE_insti" AREA_GROUP = "pblock_tp_[38].CARRY4_insti";
+#INST "tp/gen_code_label2[154].LDPE_insti" AREA_GROUP = "pblock_tp_[38].CARRY4_insti";
+#INST "tp/gen_code_label2[155].LDPE_insti" AREA_GROUP = "pblock_tp_[38].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[38].CARRY4_insti" RANGE=SLICE_X112Y98:SLICE_X113Y98;
+#
+#
+#
+## STAGE INSTANCE 37
+#INST "tp/gen_code_label1[37].CARRY4_insti" AREA_GROUP = "pblock_tp_[37].CARRY4_insti";
+#INST "tp/gen_code_label2[148].LDPE_insti" AREA_GROUP = "pblock_tp_[37].CARRY4_insti";
+#INST "tp/gen_code_label2[149].LDPE_insti" AREA_GROUP = "pblock_tp_[37].CARRY4_insti";
+#INST "tp/gen_code_label2[150].LDPE_insti" AREA_GROUP = "pblock_tp_[37].CARRY4_insti";
+#INST "tp/gen_code_label2[151].LDPE_insti" AREA_GROUP = "pblock_tp_[37].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[37].CARRY4_insti" RANGE=SLICE_X112Y97:SLICE_X113Y97;
+#
+#
+#
+## STAGE INSTANCE 36
+#INST "tp/gen_code_label1[36].CARRY4_insti" AREA_GROUP = "pblock_tp_[36].CARRY4_insti";
+#INST "tp/gen_code_label2[144].LDPE_insti" AREA_GROUP = "pblock_tp_[36].CARRY4_insti";
+#INST "tp/gen_code_label2[145].LDPE_insti" AREA_GROUP = "pblock_tp_[36].CARRY4_insti";
+#INST "tp/gen_code_label2[146].LDPE_insti" AREA_GROUP = "pblock_tp_[36].CARRY4_insti";
+#INST "tp/gen_code_label2[147].LDPE_insti" AREA_GROUP = "pblock_tp_[36].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[36].CARRY4_insti" RANGE=SLICE_X112Y96:SLICE_X113Y96;
+#
+#
+#
+## STAGE INSTANCE 35
+#INST "tp/gen_code_label1[35].CARRY4_insti" AREA_GROUP = "pblock_tp_[35].CARRY4_insti";
+#INST "tp/gen_code_label2[140].LDPE_insti" AREA_GROUP = "pblock_tp_[35].CARRY4_insti";
+#INST "tp/gen_code_label2[141].LDPE_insti" AREA_GROUP = "pblock_tp_[35].CARRY4_insti";
+#INST "tp/gen_code_label2[142].LDPE_insti" AREA_GROUP = "pblock_tp_[35].CARRY4_insti";
+#INST "tp/gen_code_label2[143].LDPE_insti" AREA_GROUP = "pblock_tp_[35].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[35].CARRY4_insti" RANGE=SLICE_X112Y95:SLICE_X113Y95;
+#
+#
+#
+## STAGE INSTANCE 34
+#INST "tp/gen_code_label1[34].CARRY4_insti" AREA_GROUP = "pblock_tp_[34].CARRY4_insti";
+#INST "tp/gen_code_label2[136].LDPE_insti" AREA_GROUP = "pblock_tp_[34].CARRY4_insti";
+#INST "tp/gen_code_label2[137].LDPE_insti" AREA_GROUP = "pblock_tp_[34].CARRY4_insti";
+#INST "tp/gen_code_label2[138].LDPE_insti" AREA_GROUP = "pblock_tp_[34].CARRY4_insti";
+#INST "tp/gen_code_label2[139].LDPE_insti" AREA_GROUP = "pblock_tp_[34].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[34].CARRY4_insti" RANGE=SLICE_X112Y94:SLICE_X113Y94;
+#
+#
+#
+## STAGE INSTANCE 33
+#INST "tp/gen_code_label1[33].CARRY4_insti" AREA_GROUP = "pblock_tp_[33].CARRY4_insti";
+#INST "tp/gen_code_label2[132].LDPE_insti" AREA_GROUP = "pblock_tp_[33].CARRY4_insti";
+#INST "tp/gen_code_label2[133].LDPE_insti" AREA_GROUP = "pblock_tp_[33].CARRY4_insti";
+#INST "tp/gen_code_label2[134].LDPE_insti" AREA_GROUP = "pblock_tp_[33].CARRY4_insti";
+#INST "tp/gen_code_label2[135].LDPE_insti" AREA_GROUP = "pblock_tp_[33].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[33].CARRY4_insti" RANGE=SLICE_X112Y93:SLICE_X113Y93;
+#
+#
+#
+## STAGE INSTANCE 32
+#INST "tp/gen_code_label1[32].CARRY4_insti" AREA_GROUP = "pblock_tp_[32].CARRY4_insti";
+#INST "tp/gen_code_label2[128].LDPE_insti" AREA_GROUP = "pblock_tp_[32].CARRY4_insti";
+#INST "tp/gen_code_label2[129].LDPE_insti" AREA_GROUP = "pblock_tp_[32].CARRY4_insti";
+#INST "tp/gen_code_label2[130].LDPE_insti" AREA_GROUP = "pblock_tp_[32].CARRY4_insti";
+#INST "tp/gen_code_label2[131].LDPE_insti" AREA_GROUP = "pblock_tp_[32].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[32].CARRY4_insti" RANGE=SLICE_X112Y92:SLICE_X113Y92;
+#
+#
+#
+## STAGE INSTANCE 31
+#INST "tp/gen_code_label1[31].CARRY4_insti" AREA_GROUP = "pblock_tp_[31].CARRY4_insti";
+#INST "tp/gen_code_label2[124].LDPE_insti" AREA_GROUP = "pblock_tp_[31].CARRY4_insti";
+#INST "tp/gen_code_label2[125].LDPE_insti" AREA_GROUP = "pblock_tp_[31].CARRY4_insti";
+#INST "tp/gen_code_label2[126].LDPE_insti" AREA_GROUP = "pblock_tp_[31].CARRY4_insti";
+#INST "tp/gen_code_label2[127].LDPE_insti" AREA_GROUP = "pblock_tp_[31].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[31].CARRY4_insti" RANGE=SLICE_X112Y91:SLICE_X113Y91;
+#
+#
+#
+## STAGE INSTANCE 30
+#INST "tp/gen_code_label1[30].CARRY4_insti" AREA_GROUP = "pblock_tp_[30].CARRY4_insti";
+#INST "tp/gen_code_label2[120].LDPE_insti" AREA_GROUP = "pblock_tp_[30].CARRY4_insti";
+#INST "tp/gen_code_label2[121].LDPE_insti" AREA_GROUP = "pblock_tp_[30].CARRY4_insti";
+#INST "tp/gen_code_label2[122].LDPE_insti" AREA_GROUP = "pblock_tp_[30].CARRY4_insti";
+#INST "tp/gen_code_label2[123].LDPE_insti" AREA_GROUP = "pblock_tp_[30].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[30].CARRY4_insti" RANGE=SLICE_X112Y90:SLICE_X113Y90;
+#
+#
+#
+## STAGE INSTANCE 29
+#INST "tp/gen_code_label1[29].CARRY4_insti" AREA_GROUP = "pblock_tp_[29].CARRY4_insti";
+#INST "tp/gen_code_label2[116].LDPE_insti" AREA_GROUP = "pblock_tp_[29].CARRY4_insti";
+#INST "tp/gen_code_label2[117].LDPE_insti" AREA_GROUP = "pblock_tp_[29].CARRY4_insti";
+#INST "tp/gen_code_label2[118].LDPE_insti" AREA_GROUP = "pblock_tp_[29].CARRY4_insti";
+#INST "tp/gen_code_label2[119].LDPE_insti" AREA_GROUP = "pblock_tp_[29].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[29].CARRY4_insti" RANGE=SLICE_X112Y89:SLICE_X113Y89;
+#
+#
+#
+## STAGE INSTANCE 28
+#INST "tp/gen_code_label1[28].CARRY4_insti" AREA_GROUP = "pblock_tp_[28].CARRY4_insti";
+#INST "tp/gen_code_label2[112].LDPE_insti" AREA_GROUP = "pblock_tp_[28].CARRY4_insti";
+#INST "tp/gen_code_label2[113].LDPE_insti" AREA_GROUP = "pblock_tp_[28].CARRY4_insti";
+#INST "tp/gen_code_label2[114].LDPE_insti" AREA_GROUP = "pblock_tp_[28].CARRY4_insti";
+#INST "tp/gen_code_label2[115].LDPE_insti" AREA_GROUP = "pblock_tp_[28].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[28].CARRY4_insti" RANGE=SLICE_X112Y88:SLICE_X113Y88;
+#
+#
+#
+## STAGE INSTANCE 27
+#INST "tp/gen_code_label1[27].CARRY4_insti" AREA_GROUP = "pblock_tp_[27].CARRY4_insti";
+#INST "tp/gen_code_label2[108].LDPE_insti" AREA_GROUP = "pblock_tp_[27].CARRY4_insti";
+#INST "tp/gen_code_label2[109].LDPE_insti" AREA_GROUP = "pblock_tp_[27].CARRY4_insti";
+#INST "tp/gen_code_label2[110].LDPE_insti" AREA_GROUP = "pblock_tp_[27].CARRY4_insti";
+#INST "tp/gen_code_label2[111].LDPE_insti" AREA_GROUP = "pblock_tp_[27].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[27].CARRY4_insti" RANGE=SLICE_X112Y87:SLICE_X113Y87;
+#
+#
+#
+## STAGE INSTANCE 26
+#INST "tp/gen_code_label1[26].CARRY4_insti" AREA_GROUP = "pblock_tp_[26].CARRY4_insti";
+#INST "tp/gen_code_label2[104].LDPE_insti" AREA_GROUP = "pblock_tp_[26].CARRY4_insti";
+#INST "tp/gen_code_label2[105].LDPE_insti" AREA_GROUP = "pblock_tp_[26].CARRY4_insti";
+#INST "tp/gen_code_label2[106].LDPE_insti" AREA_GROUP = "pblock_tp_[26].CARRY4_insti";
+#INST "tp/gen_code_label2[107].LDPE_insti" AREA_GROUP = "pblock_tp_[26].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[26].CARRY4_insti" RANGE=SLICE_X112Y86:SLICE_X113Y86;
+#
+#
+#
+## STAGE INSTANCE 25
+#INST "tp/gen_code_label1[25].CARRY4_insti" AREA_GROUP = "pblock_tp_[25].CARRY4_insti";
+#INST "tp/gen_code_label2[100].LDPE_insti" AREA_GROUP = "pblock_tp_[25].CARRY4_insti";
+#INST "tp/gen_code_label2[101].LDPE_insti" AREA_GROUP = "pblock_tp_[25].CARRY4_insti";
+#INST "tp/gen_code_label2[102].LDPE_insti" AREA_GROUP = "pblock_tp_[25].CARRY4_insti";
+#INST "tp/gen_code_label2[103].LDPE_insti" AREA_GROUP = "pblock_tp_[25].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[25].CARRY4_insti" RANGE=SLICE_X112Y85:SLICE_X113Y85;
+#
+#
+#
+## STAGE INSTANCE 24
+#INST "tp/gen_code_label1[24].CARRY4_insti" AREA_GROUP = "pblock_tp_[24].CARRY4_insti";
+#INST "tp/gen_code_label2[96].LDPE_insti" AREA_GROUP = "pblock_tp_[24].CARRY4_insti";
+#INST "tp/gen_code_label2[97].LDPE_insti" AREA_GROUP = "pblock_tp_[24].CARRY4_insti";
+#INST "tp/gen_code_label2[98].LDPE_insti" AREA_GROUP = "pblock_tp_[24].CARRY4_insti";
+#INST "tp/gen_code_label2[99].LDPE_insti" AREA_GROUP = "pblock_tp_[24].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[24].CARRY4_insti" RANGE=SLICE_X112Y84:SLICE_X113Y84;
+#
+#
+#
+## STAGE INSTANCE 23
+#INST "tp/gen_code_label1[23].CARRY4_insti" AREA_GROUP = "pblock_tp_[23].CARRY4_insti";
+#INST "tp/gen_code_label2[92].LDPE_insti" AREA_GROUP = "pblock_tp_[23].CARRY4_insti";
+#INST "tp/gen_code_label2[93].LDPE_insti" AREA_GROUP = "pblock_tp_[23].CARRY4_insti";
+#INST "tp/gen_code_label2[94].LDPE_insti" AREA_GROUP = "pblock_tp_[23].CARRY4_insti";
+#INST "tp/gen_code_label2[95].LDPE_insti" AREA_GROUP = "pblock_tp_[23].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[23].CARRY4_insti" RANGE=SLICE_X112Y83:SLICE_X113Y83;
+#
+#
+#
+## STAGE INSTANCE 22
+#INST "tp/gen_code_label1[22].CARRY4_insti" AREA_GROUP = "pblock_tp_[22].CARRY4_insti";
+#INST "tp/gen_code_label2[88].LDPE_insti" AREA_GROUP = "pblock_tp_[22].CARRY4_insti";
+#INST "tp/gen_code_label2[89].LDPE_insti" AREA_GROUP = "pblock_tp_[22].CARRY4_insti";
+#INST "tp/gen_code_label2[90].LDPE_insti" AREA_GROUP = "pblock_tp_[22].CARRY4_insti";
+#INST "tp/gen_code_label2[91].LDPE_insti" AREA_GROUP = "pblock_tp_[22].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[22].CARRY4_insti" RANGE=SLICE_X112Y82:SLICE_X113Y82;
+#
+#
+#
+## STAGE INSTANCE 21
+#INST "tp/gen_code_label1[21].CARRY4_insti" AREA_GROUP = "pblock_tp_[21].CARRY4_insti";
+#INST "tp/gen_code_label2[84].LDPE_insti" AREA_GROUP = "pblock_tp_[21].CARRY4_insti";
+#INST "tp/gen_code_label2[85].LDPE_insti" AREA_GROUP = "pblock_tp_[21].CARRY4_insti";
+#INST "tp/gen_code_label2[86].LDPE_insti" AREA_GROUP = "pblock_tp_[21].CARRY4_insti";
+#INST "tp/gen_code_label2[87].LDPE_insti" AREA_GROUP = "pblock_tp_[21].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[21].CARRY4_insti" RANGE=SLICE_X112Y81:SLICE_X113Y81;
+#
+#
+#
+## STAGE INSTANCE 20
+#INST "tp/gen_code_label1[20].CARRY4_insti" AREA_GROUP = "pblock_tp_[20].CARRY4_insti";
+#INST "tp/gen_code_label2[80].LDPE_insti" AREA_GROUP = "pblock_tp_[20].CARRY4_insti";
+#INST "tp/gen_code_label2[81].LDPE_insti" AREA_GROUP = "pblock_tp_[20].CARRY4_insti";
+#INST "tp/gen_code_label2[82].LDPE_insti" AREA_GROUP = "pblock_tp_[20].CARRY4_insti";
+#INST "tp/gen_code_label2[83].LDPE_insti" AREA_GROUP = "pblock_tp_[20].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[20].CARRY4_insti" RANGE=SLICE_X112Y80:SLICE_X113Y80;
+#
+#
+#
+## STAGE INSTANCE 19
+#INST "tp/gen_code_label1[19].CARRY4_insti" AREA_GROUP = "pblock_tp_[19].CARRY4_insti";
+#INST "tp/gen_code_label2[76].LDPE_insti" AREA_GROUP = "pblock_tp_[19].CARRY4_insti";
+#INST "tp/gen_code_label2[77].LDPE_insti" AREA_GROUP = "pblock_tp_[19].CARRY4_insti";
+#INST "tp/gen_code_label2[78].LDPE_insti" AREA_GROUP = "pblock_tp_[19].CARRY4_insti";
+#INST "tp/gen_code_label2[79].LDPE_insti" AREA_GROUP = "pblock_tp_[19].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[19].CARRY4_insti" RANGE=SLICE_X112Y79:SLICE_X113Y79;
+#
+#
+#
+## STAGE INSTANCE 18
+#INST "tp/gen_code_label1[18].CARRY4_insti" AREA_GROUP = "pblock_tp_[18].CARRY4_insti";
+#INST "tp/gen_code_label2[72].LDPE_insti" AREA_GROUP = "pblock_tp_[18].CARRY4_insti";
+#INST "tp/gen_code_label2[73].LDPE_insti" AREA_GROUP = "pblock_tp_[18].CARRY4_insti";
+#INST "tp/gen_code_label2[74].LDPE_insti" AREA_GROUP = "pblock_tp_[18].CARRY4_insti";
+#INST "tp/gen_code_label2[75].LDPE_insti" AREA_GROUP = "pblock_tp_[18].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[18].CARRY4_insti" RANGE=SLICE_X112Y78:SLICE_X113Y78;
+#
+#
+#
+## STAGE INSTANCE 17
+#INST "tp/gen_code_label1[17].CARRY4_insti" AREA_GROUP = "pblock_tp_[17].CARRY4_insti";
+#INST "tp/gen_code_label2[68].LDPE_insti" AREA_GROUP = "pblock_tp_[17].CARRY4_insti";
+#INST "tp/gen_code_label2[69].LDPE_insti" AREA_GROUP = "pblock_tp_[17].CARRY4_insti";
+#INST "tp/gen_code_label2[70].LDPE_insti" AREA_GROUP = "pblock_tp_[17].CARRY4_insti";
+#INST "tp/gen_code_label2[71].LDPE_insti" AREA_GROUP = "pblock_tp_[17].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[17].CARRY4_insti" RANGE=SLICE_X112Y77:SLICE_X113Y77;
+#
+#
+#
+## STAGE INSTANCE 16
+#INST "tp/gen_code_label1[16].CARRY4_insti" AREA_GROUP = "pblock_tp_[16].CARRY4_insti";
+#INST "tp/gen_code_label2[64].LDPE_insti" AREA_GROUP = "pblock_tp_[16].CARRY4_insti";
+#INST "tp/gen_code_label2[65].LDPE_insti" AREA_GROUP = "pblock_tp_[16].CARRY4_insti";
+#INST "tp/gen_code_label2[66].LDPE_insti" AREA_GROUP = "pblock_tp_[16].CARRY4_insti";
+#INST "tp/gen_code_label2[67].LDPE_insti" AREA_GROUP = "pblock_tp_[16].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[16].CARRY4_insti" RANGE=SLICE_X112Y76:SLICE_X113Y76;
+#
+#
+#
+## STAGE INSTANCE 15
+#INST "tp/gen_code_label1[15].CARRY4_insti" AREA_GROUP = "pblock_tp_[15].CARRY4_insti";
+#INST "tp/gen_code_label2[60].LDPE_insti" AREA_GROUP = "pblock_tp_[15].CARRY4_insti";
+#INST "tp/gen_code_label2[61].LDPE_insti" AREA_GROUP = "pblock_tp_[15].CARRY4_insti";
+#INST "tp/gen_code_label2[62].LDPE_insti" AREA_GROUP = "pblock_tp_[15].CARRY4_insti";
+#INST "tp/gen_code_label2[63].LDPE_insti" AREA_GROUP = "pblock_tp_[15].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[15].CARRY4_insti" RANGE=SLICE_X112Y75:SLICE_X113Y75;
+#
+#
+#
+## STAGE INSTANCE 14
+#INST "tp/gen_code_label1[14].CARRY4_insti" AREA_GROUP = "pblock_tp_[14].CARRY4_insti";
+#INST "tp/gen_code_label2[56].LDPE_insti" AREA_GROUP = "pblock_tp_[14].CARRY4_insti";
+#INST "tp/gen_code_label2[57].LDPE_insti" AREA_GROUP = "pblock_tp_[14].CARRY4_insti";
+#INST "tp/gen_code_label2[58].LDPE_insti" AREA_GROUP = "pblock_tp_[14].CARRY4_insti";
+#INST "tp/gen_code_label2[59].LDPE_insti" AREA_GROUP = "pblock_tp_[14].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[14].CARRY4_insti" RANGE=SLICE_X112Y74:SLICE_X113Y74;
+#
+#
+#
+## STAGE INSTANCE 13
+#INST "tp/gen_code_label1[13].CARRY4_insti" AREA_GROUP = "pblock_tp_[13].CARRY4_insti";
+#INST "tp/gen_code_label2[52].LDPE_insti" AREA_GROUP = "pblock_tp_[13].CARRY4_insti";
+#INST "tp/gen_code_label2[53].LDPE_insti" AREA_GROUP = "pblock_tp_[13].CARRY4_insti";
+#INST "tp/gen_code_label2[54].LDPE_insti" AREA_GROUP = "pblock_tp_[13].CARRY4_insti";
+#INST "tp/gen_code_label2[55].LDPE_insti" AREA_GROUP = "pblock_tp_[13].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[13].CARRY4_insti" RANGE=SLICE_X112Y73:SLICE_X113Y73;
+#
+#
+#
+## STAGE INSTANCE 12
+#INST "tp/gen_code_label1[12].CARRY4_insti" AREA_GROUP = "pblock_tp_[12].CARRY4_insti";
+#INST "tp/gen_code_label2[48].LDPE_insti" AREA_GROUP = "pblock_tp_[12].CARRY4_insti";
+#INST "tp/gen_code_label2[49].LDPE_insti" AREA_GROUP = "pblock_tp_[12].CARRY4_insti";
+#INST "tp/gen_code_label2[50].LDPE_insti" AREA_GROUP = "pblock_tp_[12].CARRY4_insti";
+#INST "tp/gen_code_label2[51].LDPE_insti" AREA_GROUP = "pblock_tp_[12].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[12].CARRY4_insti" RANGE=SLICE_X112Y72:SLICE_X113Y72;
+#
+#
+#
+## STAGE INSTANCE 11
+#INST "tp/gen_code_label1[11].CARRY4_insti" AREA_GROUP = "pblock_tp_[11].CARRY4_insti";
+#INST "tp/gen_code_label2[44].LDPE_insti" AREA_GROUP = "pblock_tp_[11].CARRY4_insti";
+#INST "tp/gen_code_label2[45].LDPE_insti" AREA_GROUP = "pblock_tp_[11].CARRY4_insti";
+#INST "tp/gen_code_label2[46].LDPE_insti" AREA_GROUP = "pblock_tp_[11].CARRY4_insti";
+#INST "tp/gen_code_label2[47].LDPE_insti" AREA_GROUP = "pblock_tp_[11].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[11].CARRY4_insti" RANGE=SLICE_X112Y71:SLICE_X113Y71;
+#
+#
+#
+## STAGE INSTANCE 10
+#INST "tp/gen_code_label1[10].CARRY4_insti" AREA_GROUP = "pblock_tp_[10].CARRY4_insti";
+#INST "tp/gen_code_label2[40].LDPE_insti" AREA_GROUP = "pblock_tp_[10].CARRY4_insti";
+#INST "tp/gen_code_label2[41].LDPE_insti" AREA_GROUP = "pblock_tp_[10].CARRY4_insti";
+#INST "tp/gen_code_label2[42].LDPE_insti" AREA_GROUP = "pblock_tp_[10].CARRY4_insti";
+#INST "tp/gen_code_label2[43].LDPE_insti" AREA_GROUP = "pblock_tp_[10].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[10].CARRY4_insti" RANGE=SLICE_X112Y70:SLICE_X113Y70;
+#
+#
+#
+## STAGE INSTANCE 9
+#INST "tp/gen_code_label1[9].CARRY4_insti" AREA_GROUP = "pblock_tp_[9].CARRY4_insti";
+#INST "tp/gen_code_label2[36].LDPE_insti" AREA_GROUP = "pblock_tp_[9].CARRY4_insti";
+#INST "tp/gen_code_label2[37].LDPE_insti" AREA_GROUP = "pblock_tp_[9].CARRY4_insti";
+#INST "tp/gen_code_label2[38].LDPE_insti" AREA_GROUP = "pblock_tp_[9].CARRY4_insti";
+#INST "tp/gen_code_label2[39].LDPE_insti" AREA_GROUP = "pblock_tp_[9].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[9].CARRY4_insti" RANGE=SLICE_X112Y69:SLICE_X113Y69;
+#
+#
+#
+## STAGE INSTANCE 8
+#INST "tp/gen_code_label1[8].CARRY4_insti" AREA_GROUP = "pblock_tp_[8].CARRY4_insti";
+#INST "tp/gen_code_label2[32].LDPE_insti" AREA_GROUP = "pblock_tp_[8].CARRY4_insti";
+#INST "tp/gen_code_label2[33].LDPE_insti" AREA_GROUP = "pblock_tp_[8].CARRY4_insti";
+#INST "tp/gen_code_label2[34].LDPE_insti" AREA_GROUP = "pblock_tp_[8].CARRY4_insti";
+#INST "tp/gen_code_label2[35].LDPE_insti" AREA_GROUP = "pblock_tp_[8].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[8].CARRY4_insti" RANGE=SLICE_X112Y68:SLICE_X113Y68;
+#
+#
+#
+## STAGE INSTANCE 7
+#INST "tp/gen_code_label1[7].CARRY4_insti" AREA_GROUP = "pblock_tp_[7].CARRY4_insti";
+#INST "tp/gen_code_label2[28].LDPE_insti" AREA_GROUP = "pblock_tp_[7].CARRY4_insti";
+#INST "tp/gen_code_label2[29].LDPE_insti" AREA_GROUP = "pblock_tp_[7].CARRY4_insti";
+#INST "tp/gen_code_label2[30].LDPE_insti" AREA_GROUP = "pblock_tp_[7].CARRY4_insti";
+#INST "tp/gen_code_label2[31].LDPE_insti" AREA_GROUP = "pblock_tp_[7].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[7].CARRY4_insti" RANGE=SLICE_X112Y67:SLICE_X113Y67;
+#
+#
+#
+## STAGE INSTANCE 6
+#INST "tp/gen_code_label1[6].CARRY4_insti" AREA_GROUP = "pblock_tp_[6].CARRY4_insti";
+#INST "tp/gen_code_label2[24].LDPE_insti" AREA_GROUP = "pblock_tp_[6].CARRY4_insti";
+#INST "tp/gen_code_label2[25].LDPE_insti" AREA_GROUP = "pblock_tp_[6].CARRY4_insti";
+#INST "tp/gen_code_label2[26].LDPE_insti" AREA_GROUP = "pblock_tp_[6].CARRY4_insti";
+#INST "tp/gen_code_label2[27].LDPE_insti" AREA_GROUP = "pblock_tp_[6].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[6].CARRY4_insti" RANGE=SLICE_X112Y66:SLICE_X113Y66;
+#
+#
+#
+## STAGE INSTANCE 5
+#INST "tp/gen_code_label1[5].CARRY4_insti" AREA_GROUP = "pblock_tp_[5].CARRY4_insti";
+#INST "tp/gen_code_label2[20].LDPE_insti" AREA_GROUP = "pblock_tp_[5].CARRY4_insti";
+#INST "tp/gen_code_label2[21].LDPE_insti" AREA_GROUP = "pblock_tp_[5].CARRY4_insti";
+#INST "tp/gen_code_label2[22].LDPE_insti" AREA_GROUP = "pblock_tp_[5].CARRY4_insti";
+#INST "tp/gen_code_label2[23].LDPE_insti" AREA_GROUP = "pblock_tp_[5].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[5].CARRY4_insti" RANGE=SLICE_X112Y65:SLICE_X113Y65;
+#
+#
+#
+## STAGE INSTANCE 4
+#INST "tp/gen_code_label1[4].CARRY4_insti" AREA_GROUP = "pblock_tp_[4].CARRY4_insti";
+#INST "tp/gen_code_label2[16].LDPE_insti" AREA_GROUP = "pblock_tp_[4].CARRY4_insti";
+#INST "tp/gen_code_label2[17].LDPE_insti" AREA_GROUP = "pblock_tp_[4].CARRY4_insti";
+#INST "tp/gen_code_label2[18].LDPE_insti" AREA_GROUP = "pblock_tp_[4].CARRY4_insti";
+#INST "tp/gen_code_label2[19].LDPE_insti" AREA_GROUP = "pblock_tp_[4].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[4].CARRY4_insti" RANGE=SLICE_X112Y64:SLICE_X113Y64;
+#
+#
+#
+## STAGE INSTANCE 3
+#INST "tp/gen_code_label1[3].CARRY4_insti" AREA_GROUP = "pblock_tp_[3].CARRY4_insti";
+#INST "tp/gen_code_label2[12].LDPE_insti" AREA_GROUP = "pblock_tp_[3].CARRY4_insti";
+#INST "tp/gen_code_label2[13].LDPE_insti" AREA_GROUP = "pblock_tp_[3].CARRY4_insti";
+#INST "tp/gen_code_label2[14].LDPE_insti" AREA_GROUP = "pblock_tp_[3].CARRY4_insti";
+#INST "tp/gen_code_label2[15].LDPE_insti" AREA_GROUP = "pblock_tp_[3].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[3].CARRY4_insti" RANGE=SLICE_X112Y63:SLICE_X113Y63;
+#
+#
+#
+## STAGE INSTANCE 2
+#INST "tp/gen_code_label1[2].CARRY4_insti" AREA_GROUP = "pblock_tp_[2].CARRY4_insti";
+#INST "tp/gen_code_label2[8].LDPE_insti" AREA_GROUP = "pblock_tp_[2].CARRY4_insti";
+#INST "tp/gen_code_label2[9].LDPE_insti" AREA_GROUP = "pblock_tp_[2].CARRY4_insti";
+#INST "tp/gen_code_label2[10].LDPE_insti" AREA_GROUP = "pblock_tp_[2].CARRY4_insti";
+#INST "tp/gen_code_label2[11].LDPE_insti" AREA_GROUP = "pblock_tp_[2].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[2].CARRY4_insti" RANGE=SLICE_X112Y62:SLICE_X113Y62;
+#
+#
+#
+## STAGE INSTANCE 1
+#INST "tp/gen_code_label1[1].CARRY4_insti" AREA_GROUP = "pblock_tp_[1].CARRY4_insti";
+#INST "tp/gen_code_label2[4].LDPE_insti" AREA_GROUP = "pblock_tp_[1].CARRY4_insti";
+#INST "tp/gen_code_label2[5].LDPE_insti" AREA_GROUP = "pblock_tp_[1].CARRY4_insti";
+#INST "tp/gen_code_label2[6].LDPE_insti" AREA_GROUP = "pblock_tp_[1].CARRY4_insti";
+#INST "tp/gen_code_label2[7].LDPE_insti" AREA_GROUP = "pblock_tp_[1].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[1].CARRY4_insti" RANGE=SLICE_X112Y61:SLICE_X113Y61;
+#
+#
+#
+## STAGE INSTANCE 0
+#INST "tp/gen_code_label1[0].CARRY4_insti" AREA_GROUP = "pblock_tp_[0].CARRY4_insti";
+#INST "tp/gen_code_label2[0].LDPE_insti" AREA_GROUP = "pblock_tp_[0].CARRY4_insti";
+#INST "tp/gen_code_label2[1].LDPE_insti" AREA_GROUP = "pblock_tp_[0].CARRY4_insti";
+#INST "tp/gen_code_label2[2].LDPE_insti" AREA_GROUP = "pblock_tp_[0].CARRY4_insti";
+#INST "tp/gen_code_label2[3].LDPE_insti" AREA_GROUP = "pblock_tp_[0].CARRY4_insti";
+#AREA_GROUP "pblock_tp_[0].CARRY4_insti" RANGE=SLICE_X112Y60:SLICE_X113Y60;
+
+# STAGE INSTANCE 39
+INST "tp/gen_code_label1[39].CARRY4_insti" AREA_GROUP = "pblock_tp_[39].CARRY4_insti";
+INST "tp/gen_code_label2[156].LDPE_insti" AREA_GROUP = "pblock_tp_[39].CARRY4_insti";
+INST "tp/gen_code_label2[157].LDPE_insti" AREA_GROUP = "pblock_tp_[39].CARRY4_insti";
+INST "tp/gen_code_label2[158].LDPE_insti" AREA_GROUP = "pblock_tp_[39].CARRY4_insti";
+INST "tp/gen_code_label2[159].LDPE_insti" AREA_GROUP = "pblock_tp_[39].CARRY4_insti";
+AREA_GROUP "pblock_tp_[39].CARRY4_insti" RANGE=SLICE_X108Y99:SLICE_X109Y99;
+
+
+
+# STAGE INSTANCE 38
+INST "tp/gen_code_label1[38].CARRY4_insti" AREA_GROUP = "pblock_tp_[38].CARRY4_insti";
+INST "tp/gen_code_label2[152].LDPE_insti" AREA_GROUP = "pblock_tp_[38].CARRY4_insti";
+INST "tp/gen_code_label2[153].LDPE_insti" AREA_GROUP = "pblock_tp_[38].CARRY4_insti";
+INST "tp/gen_code_label2[154].LDPE_insti" AREA_GROUP = "pblock_tp_[38].CARRY4_insti";
+INST "tp/gen_code_label2[155].LDPE_insti" AREA_GROUP = "pblock_tp_[38].CARRY4_insti";
+AREA_GROUP "pblock_tp_[38].CARRY4_insti" RANGE=SLICE_X108Y98:SLICE_X109Y98;
+
+
+
+# STAGE INSTANCE 37
+INST "tp/gen_code_label1[37].CARRY4_insti" AREA_GROUP = "pblock_tp_[37].CARRY4_insti";
+INST "tp/gen_code_label2[148].LDPE_insti" AREA_GROUP = "pblock_tp_[37].CARRY4_insti";
+INST "tp/gen_code_label2[149].LDPE_insti" AREA_GROUP = "pblock_tp_[37].CARRY4_insti";
+INST "tp/gen_code_label2[150].LDPE_insti" AREA_GROUP = "pblock_tp_[37].CARRY4_insti";
+INST "tp/gen_code_label2[151].LDPE_insti" AREA_GROUP = "pblock_tp_[37].CARRY4_insti";
+AREA_GROUP "pblock_tp_[37].CARRY4_insti" RANGE=SLICE_X108Y97:SLICE_X109Y97;
+
+
+
+# STAGE INSTANCE 36
+INST "tp/gen_code_label1[36].CARRY4_insti" AREA_GROUP = "pblock_tp_[36].CARRY4_insti";
+INST "tp/gen_code_label2[144].LDPE_insti" AREA_GROUP = "pblock_tp_[36].CARRY4_insti";
+INST "tp/gen_code_label2[145].LDPE_insti" AREA_GROUP = "pblock_tp_[36].CARRY4_insti";
+INST "tp/gen_code_label2[146].LDPE_insti" AREA_GROUP = "pblock_tp_[36].CARRY4_insti";
+INST "tp/gen_code_label2[147].LDPE_insti" AREA_GROUP = "pblock_tp_[36].CARRY4_insti";
+AREA_GROUP "pblock_tp_[36].CARRY4_insti" RANGE=SLICE_X108Y96:SLICE_X109Y96;
+
+
+
+# STAGE INSTANCE 35
+INST "tp/gen_code_label1[35].CARRY4_insti" AREA_GROUP = "pblock_tp_[35].CARRY4_insti";
+INST "tp/gen_code_label2[140].LDPE_insti" AREA_GROUP = "pblock_tp_[35].CARRY4_insti";
+INST "tp/gen_code_label2[141].LDPE_insti" AREA_GROUP = "pblock_tp_[35].CARRY4_insti";
+INST "tp/gen_code_label2[142].LDPE_insti" AREA_GROUP = "pblock_tp_[35].CARRY4_insti";
+INST "tp/gen_code_label2[143].LDPE_insti" AREA_GROUP = "pblock_tp_[35].CARRY4_insti";
+AREA_GROUP "pblock_tp_[35].CARRY4_insti" RANGE=SLICE_X108Y95:SLICE_X109Y95;
+
+
+
+# STAGE INSTANCE 34
+INST "tp/gen_code_label1[34].CARRY4_insti" AREA_GROUP = "pblock_tp_[34].CARRY4_insti";
+INST "tp/gen_code_label2[136].LDPE_insti" AREA_GROUP = "pblock_tp_[34].CARRY4_insti";
+INST "tp/gen_code_label2[137].LDPE_insti" AREA_GROUP = "pblock_tp_[34].CARRY4_insti";
+INST "tp/gen_code_label2[138].LDPE_insti" AREA_GROUP = "pblock_tp_[34].CARRY4_insti";
+INST "tp/gen_code_label2[139].LDPE_insti" AREA_GROUP = "pblock_tp_[34].CARRY4_insti";
+AREA_GROUP "pblock_tp_[34].CARRY4_insti" RANGE=SLICE_X108Y94:SLICE_X109Y94;
+
+
+
+# STAGE INSTANCE 33
+INST "tp/gen_code_label1[33].CARRY4_insti" AREA_GROUP = "pblock_tp_[33].CARRY4_insti";
+INST "tp/gen_code_label2[132].LDPE_insti" AREA_GROUP = "pblock_tp_[33].CARRY4_insti";
+INST "tp/gen_code_label2[133].LDPE_insti" AREA_GROUP = "pblock_tp_[33].CARRY4_insti";
+INST "tp/gen_code_label2[134].LDPE_insti" AREA_GROUP = "pblock_tp_[33].CARRY4_insti";
+INST "tp/gen_code_label2[135].LDPE_insti" AREA_GROUP = "pblock_tp_[33].CARRY4_insti";
+AREA_GROUP "pblock_tp_[33].CARRY4_insti" RANGE=SLICE_X108Y93:SLICE_X109Y93;
+
+
+
+# STAGE INSTANCE 32
+INST "tp/gen_code_label1[32].CARRY4_insti" AREA_GROUP = "pblock_tp_[32].CARRY4_insti";
+INST "tp/gen_code_label2[128].LDPE_insti" AREA_GROUP = "pblock_tp_[32].CARRY4_insti";
+INST "tp/gen_code_label2[129].LDPE_insti" AREA_GROUP = "pblock_tp_[32].CARRY4_insti";
+INST "tp/gen_code_label2[130].LDPE_insti" AREA_GROUP = "pblock_tp_[32].CARRY4_insti";
+INST "tp/gen_code_label2[131].LDPE_insti" AREA_GROUP = "pblock_tp_[32].CARRY4_insti";
+AREA_GROUP "pblock_tp_[32].CARRY4_insti" RANGE=SLICE_X108Y92:SLICE_X109Y92;
+
+
+
+# STAGE INSTANCE 31
+INST "tp/gen_code_label1[31].CARRY4_insti" AREA_GROUP = "pblock_tp_[31].CARRY4_insti";
+INST "tp/gen_code_label2[124].LDPE_insti" AREA_GROUP = "pblock_tp_[31].CARRY4_insti";
+INST "tp/gen_code_label2[125].LDPE_insti" AREA_GROUP = "pblock_tp_[31].CARRY4_insti";
+INST "tp/gen_code_label2[126].LDPE_insti" AREA_GROUP = "pblock_tp_[31].CARRY4_insti";
+INST "tp/gen_code_label2[127].LDPE_insti" AREA_GROUP = "pblock_tp_[31].CARRY4_insti";
+AREA_GROUP "pblock_tp_[31].CARRY4_insti" RANGE=SLICE_X108Y91:SLICE_X109Y91;
+
+
+
+# STAGE INSTANCE 30
+INST "tp/gen_code_label1[30].CARRY4_insti" AREA_GROUP = "pblock_tp_[30].CARRY4_insti";
+INST "tp/gen_code_label2[120].LDPE_insti" AREA_GROUP = "pblock_tp_[30].CARRY4_insti";
+INST "tp/gen_code_label2[121].LDPE_insti" AREA_GROUP = "pblock_tp_[30].CARRY4_insti";
+INST "tp/gen_code_label2[122].LDPE_insti" AREA_GROUP = "pblock_tp_[30].CARRY4_insti";
+INST "tp/gen_code_label2[123].LDPE_insti" AREA_GROUP = "pblock_tp_[30].CARRY4_insti";
+AREA_GROUP "pblock_tp_[30].CARRY4_insti" RANGE=SLICE_X108Y90:SLICE_X109Y90;
+
+
+
+# STAGE INSTANCE 29
+INST "tp/gen_code_label1[29].CARRY4_insti" AREA_GROUP = "pblock_tp_[29].CARRY4_insti";
+INST "tp/gen_code_label2[116].LDPE_insti" AREA_GROUP = "pblock_tp_[29].CARRY4_insti";
+INST "tp/gen_code_label2[117].LDPE_insti" AREA_GROUP = "pblock_tp_[29].CARRY4_insti";
+INST "tp/gen_code_label2[118].LDPE_insti" AREA_GROUP = "pblock_tp_[29].CARRY4_insti";
+INST "tp/gen_code_label2[119].LDPE_insti" AREA_GROUP = "pblock_tp_[29].CARRY4_insti";
+AREA_GROUP "pblock_tp_[29].CARRY4_insti" RANGE=SLICE_X108Y89:SLICE_X109Y89;
+
+
+
+# STAGE INSTANCE 28
+INST "tp/gen_code_label1[28].CARRY4_insti" AREA_GROUP = "pblock_tp_[28].CARRY4_insti";
+INST "tp/gen_code_label2[112].LDPE_insti" AREA_GROUP = "pblock_tp_[28].CARRY4_insti";
+INST "tp/gen_code_label2[113].LDPE_insti" AREA_GROUP = "pblock_tp_[28].CARRY4_insti";
+INST "tp/gen_code_label2[114].LDPE_insti" AREA_GROUP = "pblock_tp_[28].CARRY4_insti";
+INST "tp/gen_code_label2[115].LDPE_insti" AREA_GROUP = "pblock_tp_[28].CARRY4_insti";
+AREA_GROUP "pblock_tp_[28].CARRY4_insti" RANGE=SLICE_X108Y88:SLICE_X109Y88;
+
+
+
+# STAGE INSTANCE 27
+INST "tp/gen_code_label1[27].CARRY4_insti" AREA_GROUP = "pblock_tp_[27].CARRY4_insti";
+INST "tp/gen_code_label2[108].LDPE_insti" AREA_GROUP = "pblock_tp_[27].CARRY4_insti";
+INST "tp/gen_code_label2[109].LDPE_insti" AREA_GROUP = "pblock_tp_[27].CARRY4_insti";
+INST "tp/gen_code_label2[110].LDPE_insti" AREA_GROUP = "pblock_tp_[27].CARRY4_insti";
+INST "tp/gen_code_label2[111].LDPE_insti" AREA_GROUP = "pblock_tp_[27].CARRY4_insti";
+AREA_GROUP "pblock_tp_[27].CARRY4_insti" RANGE=SLICE_X108Y87:SLICE_X109Y87;
+
+
+
+# STAGE INSTANCE 26
+INST "tp/gen_code_label1[26].CARRY4_insti" AREA_GROUP = "pblock_tp_[26].CARRY4_insti";
+INST "tp/gen_code_label2[104].LDPE_insti" AREA_GROUP = "pblock_tp_[26].CARRY4_insti";
+INST "tp/gen_code_label2[105].LDPE_insti" AREA_GROUP = "pblock_tp_[26].CARRY4_insti";
+INST "tp/gen_code_label2[106].LDPE_insti" AREA_GROUP = "pblock_tp_[26].CARRY4_insti";
+INST "tp/gen_code_label2[107].LDPE_insti" AREA_GROUP = "pblock_tp_[26].CARRY4_insti";
+AREA_GROUP "pblock_tp_[26].CARRY4_insti" RANGE=SLICE_X108Y86:SLICE_X109Y86;
+
+
+
+# STAGE INSTANCE 25
+INST "tp/gen_code_label1[25].CARRY4_insti" AREA_GROUP = "pblock_tp_[25].CARRY4_insti";
+INST "tp/gen_code_label2[100].LDPE_insti" AREA_GROUP = "pblock_tp_[25].CARRY4_insti";
+INST "tp/gen_code_label2[101].LDPE_insti" AREA_GROUP = "pblock_tp_[25].CARRY4_insti";
+INST "tp/gen_code_label2[102].LDPE_insti" AREA_GROUP = "pblock_tp_[25].CARRY4_insti";
+INST "tp/gen_code_label2[103].LDPE_insti" AREA_GROUP = "pblock_tp_[25].CARRY4_insti";
+AREA_GROUP "pblock_tp_[25].CARRY4_insti" RANGE=SLICE_X108Y85:SLICE_X109Y85;
+
+
+
+# STAGE INSTANCE 24
+INST "tp/gen_code_label1[24].CARRY4_insti" AREA_GROUP = "pblock_tp_[24].CARRY4_insti";
+INST "tp/gen_code_label2[96].LDPE_insti" AREA_GROUP = "pblock_tp_[24].CARRY4_insti";
+INST "tp/gen_code_label2[97].LDPE_insti" AREA_GROUP = "pblock_tp_[24].CARRY4_insti";
+INST "tp/gen_code_label2[98].LDPE_insti" AREA_GROUP = "pblock_tp_[24].CARRY4_insti";
+INST "tp/gen_code_label2[99].LDPE_insti" AREA_GROUP = "pblock_tp_[24].CARRY4_insti";
+AREA_GROUP "pblock_tp_[24].CARRY4_insti" RANGE=SLICE_X108Y84:SLICE_X109Y84;
+
+
+
+# STAGE INSTANCE 23
+INST "tp/gen_code_label1[23].CARRY4_insti" AREA_GROUP = "pblock_tp_[23].CARRY4_insti";
+INST "tp/gen_code_label2[92].LDPE_insti" AREA_GROUP = "pblock_tp_[23].CARRY4_insti";
+INST "tp/gen_code_label2[93].LDPE_insti" AREA_GROUP = "pblock_tp_[23].CARRY4_insti";
+INST "tp/gen_code_label2[94].LDPE_insti" AREA_GROUP = "pblock_tp_[23].CARRY4_insti";
+INST "tp/gen_code_label2[95].LDPE_insti" AREA_GROUP = "pblock_tp_[23].CARRY4_insti";
+AREA_GROUP "pblock_tp_[23].CARRY4_insti" RANGE=SLICE_X108Y83:SLICE_X109Y83;
+
+
+
+# STAGE INSTANCE 22
+INST "tp/gen_code_label1[22].CARRY4_insti" AREA_GROUP = "pblock_tp_[22].CARRY4_insti";
+INST "tp/gen_code_label2[88].LDPE_insti" AREA_GROUP = "pblock_tp_[22].CARRY4_insti";
+INST "tp/gen_code_label2[89].LDPE_insti" AREA_GROUP = "pblock_tp_[22].CARRY4_insti";
+INST "tp/gen_code_label2[90].LDPE_insti" AREA_GROUP = "pblock_tp_[22].CARRY4_insti";
+INST "tp/gen_code_label2[91].LDPE_insti" AREA_GROUP = "pblock_tp_[22].CARRY4_insti";
+AREA_GROUP "pblock_tp_[22].CARRY4_insti" RANGE=SLICE_X108Y82:SLICE_X109Y82;
+
+
+
+# STAGE INSTANCE 21
+INST "tp/gen_code_label1[21].CARRY4_insti" AREA_GROUP = "pblock_tp_[21].CARRY4_insti";
+INST "tp/gen_code_label2[84].LDPE_insti" AREA_GROUP = "pblock_tp_[21].CARRY4_insti";
+INST "tp/gen_code_label2[85].LDPE_insti" AREA_GROUP = "pblock_tp_[21].CARRY4_insti";
+INST "tp/gen_code_label2[86].LDPE_insti" AREA_GROUP = "pblock_tp_[21].CARRY4_insti";
+INST "tp/gen_code_label2[87].LDPE_insti" AREA_GROUP = "pblock_tp_[21].CARRY4_insti";
+AREA_GROUP "pblock_tp_[21].CARRY4_insti" RANGE=SLICE_X108Y81:SLICE_X109Y81;
+
+
+
+# STAGE INSTANCE 20
+INST "tp/gen_code_label1[20].CARRY4_insti" AREA_GROUP = "pblock_tp_[20].CARRY4_insti";
+INST "tp/gen_code_label2[80].LDPE_insti" AREA_GROUP = "pblock_tp_[20].CARRY4_insti";
+INST "tp/gen_code_label2[81].LDPE_insti" AREA_GROUP = "pblock_tp_[20].CARRY4_insti";
+INST "tp/gen_code_label2[82].LDPE_insti" AREA_GROUP = "pblock_tp_[20].CARRY4_insti";
+INST "tp/gen_code_label2[83].LDPE_insti" AREA_GROUP = "pblock_tp_[20].CARRY4_insti";
+AREA_GROUP "pblock_tp_[20].CARRY4_insti" RANGE=SLICE_X108Y80:SLICE_X109Y80;
+
+
+
+# STAGE INSTANCE 19
+INST "tp/gen_code_label1[19].CARRY4_insti" AREA_GROUP = "pblock_tp_[19].CARRY4_insti";
+INST "tp/gen_code_label2[76].LDPE_insti" AREA_GROUP = "pblock_tp_[19].CARRY4_insti";
+INST "tp/gen_code_label2[77].LDPE_insti" AREA_GROUP = "pblock_tp_[19].CARRY4_insti";
+INST "tp/gen_code_label2[78].LDPE_insti" AREA_GROUP = "pblock_tp_[19].CARRY4_insti";
+INST "tp/gen_code_label2[79].LDPE_insti" AREA_GROUP = "pblock_tp_[19].CARRY4_insti";
+AREA_GROUP "pblock_tp_[19].CARRY4_insti" RANGE=SLICE_X108Y79:SLICE_X109Y79;
+
+
+
+# STAGE INSTANCE 18
+INST "tp/gen_code_label1[18].CARRY4_insti" AREA_GROUP = "pblock_tp_[18].CARRY4_insti";
+INST "tp/gen_code_label2[72].LDPE_insti" AREA_GROUP = "pblock_tp_[18].CARRY4_insti";
+INST "tp/gen_code_label2[73].LDPE_insti" AREA_GROUP = "pblock_tp_[18].CARRY4_insti";
+INST "tp/gen_code_label2[74].LDPE_insti" AREA_GROUP = "pblock_tp_[18].CARRY4_insti";
+INST "tp/gen_code_label2[75].LDPE_insti" AREA_GROUP = "pblock_tp_[18].CARRY4_insti";
+AREA_GROUP "pblock_tp_[18].CARRY4_insti" RANGE=SLICE_X108Y78:SLICE_X109Y78;
+
+
+
+# STAGE INSTANCE 17
+INST "tp/gen_code_label1[17].CARRY4_insti" AREA_GROUP = "pblock_tp_[17].CARRY4_insti";
+INST "tp/gen_code_label2[68].LDPE_insti" AREA_GROUP = "pblock_tp_[17].CARRY4_insti";
+INST "tp/gen_code_label2[69].LDPE_insti" AREA_GROUP = "pblock_tp_[17].CARRY4_insti";
+INST "tp/gen_code_label2[70].LDPE_insti" AREA_GROUP = "pblock_tp_[17].CARRY4_insti";
+INST "tp/gen_code_label2[71].LDPE_insti" AREA_GROUP = "pblock_tp_[17].CARRY4_insti";
+AREA_GROUP "pblock_tp_[17].CARRY4_insti" RANGE=SLICE_X108Y77:SLICE_X109Y77;
+
+
+
+# STAGE INSTANCE 16
+INST "tp/gen_code_label1[16].CARRY4_insti" AREA_GROUP = "pblock_tp_[16].CARRY4_insti";
+INST "tp/gen_code_label2[64].LDPE_insti" AREA_GROUP = "pblock_tp_[16].CARRY4_insti";
+INST "tp/gen_code_label2[65].LDPE_insti" AREA_GROUP = "pblock_tp_[16].CARRY4_insti";
+INST "tp/gen_code_label2[66].LDPE_insti" AREA_GROUP = "pblock_tp_[16].CARRY4_insti";
+INST "tp/gen_code_label2[67].LDPE_insti" AREA_GROUP = "pblock_tp_[16].CARRY4_insti";
+AREA_GROUP "pblock_tp_[16].CARRY4_insti" RANGE=SLICE_X108Y76:SLICE_X109Y76;
+
+
+
+# STAGE INSTANCE 15
+INST "tp/gen_code_label1[15].CARRY4_insti" AREA_GROUP = "pblock_tp_[15].CARRY4_insti";
+INST "tp/gen_code_label2[60].LDPE_insti" AREA_GROUP = "pblock_tp_[15].CARRY4_insti";
+INST "tp/gen_code_label2[61].LDPE_insti" AREA_GROUP = "pblock_tp_[15].CARRY4_insti";
+INST "tp/gen_code_label2[62].LDPE_insti" AREA_GROUP = "pblock_tp_[15].CARRY4_insti";
+INST "tp/gen_code_label2[63].LDPE_insti" AREA_GROUP = "pblock_tp_[15].CARRY4_insti";
+AREA_GROUP "pblock_tp_[15].CARRY4_insti" RANGE=SLICE_X108Y75:SLICE_X109Y75;
+
+
+
+# STAGE INSTANCE 14
+INST "tp/gen_code_label1[14].CARRY4_insti" AREA_GROUP = "pblock_tp_[14].CARRY4_insti";
+INST "tp/gen_code_label2[56].LDPE_insti" AREA_GROUP = "pblock_tp_[14].CARRY4_insti";
+INST "tp/gen_code_label2[57].LDPE_insti" AREA_GROUP = "pblock_tp_[14].CARRY4_insti";
+INST "tp/gen_code_label2[58].LDPE_insti" AREA_GROUP = "pblock_tp_[14].CARRY4_insti";
+INST "tp/gen_code_label2[59].LDPE_insti" AREA_GROUP = "pblock_tp_[14].CARRY4_insti";
+AREA_GROUP "pblock_tp_[14].CARRY4_insti" RANGE=SLICE_X108Y74:SLICE_X109Y74;
+
+
+
+# STAGE INSTANCE 13
+INST "tp/gen_code_label1[13].CARRY4_insti" AREA_GROUP = "pblock_tp_[13].CARRY4_insti";
+INST "tp/gen_code_label2[52].LDPE_insti" AREA_GROUP = "pblock_tp_[13].CARRY4_insti";
+INST "tp/gen_code_label2[53].LDPE_insti" AREA_GROUP = "pblock_tp_[13].CARRY4_insti";
+INST "tp/gen_code_label2[54].LDPE_insti" AREA_GROUP = "pblock_tp_[13].CARRY4_insti";
+INST "tp/gen_code_label2[55].LDPE_insti" AREA_GROUP = "pblock_tp_[13].CARRY4_insti";
+AREA_GROUP "pblock_tp_[13].CARRY4_insti" RANGE=SLICE_X108Y73:SLICE_X109Y73;
+
+
+
+# STAGE INSTANCE 12
+INST "tp/gen_code_label1[12].CARRY4_insti" AREA_GROUP = "pblock_tp_[12].CARRY4_insti";
+INST "tp/gen_code_label2[48].LDPE_insti" AREA_GROUP = "pblock_tp_[12].CARRY4_insti";
+INST "tp/gen_code_label2[49].LDPE_insti" AREA_GROUP = "pblock_tp_[12].CARRY4_insti";
+INST "tp/gen_code_label2[50].LDPE_insti" AREA_GROUP = "pblock_tp_[12].CARRY4_insti";
+INST "tp/gen_code_label2[51].LDPE_insti" AREA_GROUP = "pblock_tp_[12].CARRY4_insti";
+AREA_GROUP "pblock_tp_[12].CARRY4_insti" RANGE=SLICE_X108Y72:SLICE_X109Y72;
+
+
+
+# STAGE INSTANCE 11
+INST "tp/gen_code_label1[11].CARRY4_insti" AREA_GROUP = "pblock_tp_[11].CARRY4_insti";
+INST "tp/gen_code_label2[44].LDPE_insti" AREA_GROUP = "pblock_tp_[11].CARRY4_insti";
+INST "tp/gen_code_label2[45].LDPE_insti" AREA_GROUP = "pblock_tp_[11].CARRY4_insti";
+INST "tp/gen_code_label2[46].LDPE_insti" AREA_GROUP = "pblock_tp_[11].CARRY4_insti";
+INST "tp/gen_code_label2[47].LDPE_insti" AREA_GROUP = "pblock_tp_[11].CARRY4_insti";
+AREA_GROUP "pblock_tp_[11].CARRY4_insti" RANGE=SLICE_X108Y71:SLICE_X109Y71;
+
+
+
+# STAGE INSTANCE 10
+INST "tp/gen_code_label1[10].CARRY4_insti" AREA_GROUP = "pblock_tp_[10].CARRY4_insti";
+INST "tp/gen_code_label2[40].LDPE_insti" AREA_GROUP = "pblock_tp_[10].CARRY4_insti";
+INST "tp/gen_code_label2[41].LDPE_insti" AREA_GROUP = "pblock_tp_[10].CARRY4_insti";
+INST "tp/gen_code_label2[42].LDPE_insti" AREA_GROUP = "pblock_tp_[10].CARRY4_insti";
+INST "tp/gen_code_label2[43].LDPE_insti" AREA_GROUP = "pblock_tp_[10].CARRY4_insti";
+AREA_GROUP "pblock_tp_[10].CARRY4_insti" RANGE=SLICE_X108Y70:SLICE_X109Y70;
+
+
+
+# STAGE INSTANCE 9
+INST "tp/gen_code_label1[9].CARRY4_insti" AREA_GROUP = "pblock_tp_[9].CARRY4_insti";
+INST "tp/gen_code_label2[36].LDPE_insti" AREA_GROUP = "pblock_tp_[9].CARRY4_insti";
+INST "tp/gen_code_label2[37].LDPE_insti" AREA_GROUP = "pblock_tp_[9].CARRY4_insti";
+INST "tp/gen_code_label2[38].LDPE_insti" AREA_GROUP = "pblock_tp_[9].CARRY4_insti";
+INST "tp/gen_code_label2[39].LDPE_insti" AREA_GROUP = "pblock_tp_[9].CARRY4_insti";
+AREA_GROUP "pblock_tp_[9].CARRY4_insti" RANGE=SLICE_X108Y69:SLICE_X109Y69;
+
+
+
+# STAGE INSTANCE 8
+INST "tp/gen_code_label1[8].CARRY4_insti" AREA_GROUP = "pblock_tp_[8].CARRY4_insti";
+INST "tp/gen_code_label2[32].LDPE_insti" AREA_GROUP = "pblock_tp_[8].CARRY4_insti";
+INST "tp/gen_code_label2[33].LDPE_insti" AREA_GROUP = "pblock_tp_[8].CARRY4_insti";
+INST "tp/gen_code_label2[34].LDPE_insti" AREA_GROUP = "pblock_tp_[8].CARRY4_insti";
+INST "tp/gen_code_label2[35].LDPE_insti" AREA_GROUP = "pblock_tp_[8].CARRY4_insti";
+AREA_GROUP "pblock_tp_[8].CARRY4_insti" RANGE=SLICE_X108Y68:SLICE_X109Y68;
+
+
+
+# STAGE INSTANCE 7
+INST "tp/gen_code_label1[7].CARRY4_insti" AREA_GROUP = "pblock_tp_[7].CARRY4_insti";
+INST "tp/gen_code_label2[28].LDPE_insti" AREA_GROUP = "pblock_tp_[7].CARRY4_insti";
+INST "tp/gen_code_label2[29].LDPE_insti" AREA_GROUP = "pblock_tp_[7].CARRY4_insti";
+INST "tp/gen_code_label2[30].LDPE_insti" AREA_GROUP = "pblock_tp_[7].CARRY4_insti";
+INST "tp/gen_code_label2[31].LDPE_insti" AREA_GROUP = "pblock_tp_[7].CARRY4_insti";
+AREA_GROUP "pblock_tp_[7].CARRY4_insti" RANGE=SLICE_X108Y67:SLICE_X109Y67;
+
+
+
+# STAGE INSTANCE 6
+INST "tp/gen_code_label1[6].CARRY4_insti" AREA_GROUP = "pblock_tp_[6].CARRY4_insti";
+INST "tp/gen_code_label2[24].LDPE_insti" AREA_GROUP = "pblock_tp_[6].CARRY4_insti";
+INST "tp/gen_code_label2[25].LDPE_insti" AREA_GROUP = "pblock_tp_[6].CARRY4_insti";
+INST "tp/gen_code_label2[26].LDPE_insti" AREA_GROUP = "pblock_tp_[6].CARRY4_insti";
+INST "tp/gen_code_label2[27].LDPE_insti" AREA_GROUP = "pblock_tp_[6].CARRY4_insti";
+AREA_GROUP "pblock_tp_[6].CARRY4_insti" RANGE=SLICE_X108Y66:SLICE_X109Y66;
+
+
+
+# STAGE INSTANCE 5
+INST "tp/gen_code_label1[5].CARRY4_insti" AREA_GROUP = "pblock_tp_[5].CARRY4_insti";
+INST "tp/gen_code_label2[20].LDPE_insti" AREA_GROUP = "pblock_tp_[5].CARRY4_insti";
+INST "tp/gen_code_label2[21].LDPE_insti" AREA_GROUP = "pblock_tp_[5].CARRY4_insti";
+INST "tp/gen_code_label2[22].LDPE_insti" AREA_GROUP = "pblock_tp_[5].CARRY4_insti";
+INST "tp/gen_code_label2[23].LDPE_insti" AREA_GROUP = "pblock_tp_[5].CARRY4_insti";
+AREA_GROUP "pblock_tp_[5].CARRY4_insti" RANGE=SLICE_X108Y65:SLICE_X109Y65;
+
+
+
+# STAGE INSTANCE 4
+INST "tp/gen_code_label1[4].CARRY4_insti" AREA_GROUP = "pblock_tp_[4].CARRY4_insti";
+INST "tp/gen_code_label2[16].LDPE_insti" AREA_GROUP = "pblock_tp_[4].CARRY4_insti";
+INST "tp/gen_code_label2[17].LDPE_insti" AREA_GROUP = "pblock_tp_[4].CARRY4_insti";
+INST "tp/gen_code_label2[18].LDPE_insti" AREA_GROUP = "pblock_tp_[4].CARRY4_insti";
+INST "tp/gen_code_label2[19].LDPE_insti" AREA_GROUP = "pblock_tp_[4].CARRY4_insti";
+AREA_GROUP "pblock_tp_[4].CARRY4_insti" RANGE=SLICE_X108Y64:SLICE_X109Y64;
+
+
+
+# STAGE INSTANCE 3
+INST "tp/gen_code_label1[3].CARRY4_insti" AREA_GROUP = "pblock_tp_[3].CARRY4_insti";
+INST "tp/gen_code_label2[12].LDPE_insti" AREA_GROUP = "pblock_tp_[3].CARRY4_insti";
+INST "tp/gen_code_label2[13].LDPE_insti" AREA_GROUP = "pblock_tp_[3].CARRY4_insti";
+INST "tp/gen_code_label2[14].LDPE_insti" AREA_GROUP = "pblock_tp_[3].CARRY4_insti";
+INST "tp/gen_code_label2[15].LDPE_insti" AREA_GROUP = "pblock_tp_[3].CARRY4_insti";
+AREA_GROUP "pblock_tp_[3].CARRY4_insti" RANGE=SLICE_X108Y63:SLICE_X109Y63;
+
+
+
+# STAGE INSTANCE 2
+INST "tp/gen_code_label1[2].CARRY4_insti" AREA_GROUP = "pblock_tp_[2].CARRY4_insti";
+INST "tp/gen_code_label2[8].LDPE_insti" AREA_GROUP = "pblock_tp_[2].CARRY4_insti";
+INST "tp/gen_code_label2[9].LDPE_insti" AREA_GROUP = "pblock_tp_[2].CARRY4_insti";
+INST "tp/gen_code_label2[10].LDPE_insti" AREA_GROUP = "pblock_tp_[2].CARRY4_insti";
+INST "tp/gen_code_label2[11].LDPE_insti" AREA_GROUP = "pblock_tp_[2].CARRY4_insti";
+AREA_GROUP "pblock_tp_[2].CARRY4_insti" RANGE=SLICE_X108Y62:SLICE_X109Y62;
+
+
+
+# STAGE INSTANCE 1
+INST "tp/gen_code_label1[1].CARRY4_insti" AREA_GROUP = "pblock_tp_[1].CARRY4_insti";
+INST "tp/gen_code_label2[4].LDPE_insti" AREA_GROUP = "pblock_tp_[1].CARRY4_insti";
+INST "tp/gen_code_label2[5].LDPE_insti" AREA_GROUP = "pblock_tp_[1].CARRY4_insti";
+INST "tp/gen_code_label2[6].LDPE_insti" AREA_GROUP = "pblock_tp_[1].CARRY4_insti";
+INST "tp/gen_code_label2[7].LDPE_insti" AREA_GROUP = "pblock_tp_[1].CARRY4_insti";
+AREA_GROUP "pblock_tp_[1].CARRY4_insti" RANGE=SLICE_X108Y61:SLICE_X109Y61;
+
+
+
+# STAGE INSTANCE 0
+INST "tp/gen_code_label1[0].CARRY4_insti" AREA_GROUP = "pblock_tp_[0].CARRY4_insti";
+INST "tp/gen_code_label2[0].LDPE_insti" AREA_GROUP = "pblock_tp_[0].CARRY4_insti";
+INST "tp/gen_code_label2[1].LDPE_insti" AREA_GROUP = "pblock_tp_[0].CARRY4_insti";
+INST "tp/gen_code_label2[2].LDPE_insti" AREA_GROUP = "pblock_tp_[0].CARRY4_insti";
+INST "tp/gen_code_label2[3].LDPE_insti" AREA_GROUP = "pblock_tp_[0].CARRY4_insti";
+AREA_GROUP "pblock_tp_[0].CARRY4_insti" RANGE=SLICE_X108Y60:SLICE_X109Y60;
+
+
+# PlanAhead Generated physical constraints 
+
+INST "gen_code_label[0].*" AREA_GROUP = "pblock_aes";
+INST "gen_code_label[1].*" AREA_GROUP = "pblock_aes";
+AREA_GROUP "pblock_aes" RANGE=SLICE_X0Y0:SLICE_X49Y48;
+AREA_GROUP "pblock_aes" RANGE=DSP48_X0Y0:DSP48_X2Y17;
+AREA_GROUP "pblock_aes" RANGE=RAMB18_X0Y0:RAMB18_X2Y17;
+AREA_GROUP "pblock_aes" RANGE=RAMB36_X0Y0:RAMB36_X2Y8;
+

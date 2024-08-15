@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=F:\OneDrive-UNSW\OneDrive - UNSW\My Onedrive\PhD\Src\Briyan-RO\2TDC-1AES\Auto_sensor\CARRY4-WO-latch\ZEDBOARD-CARRY-WO-LATCH-1del\top.ncd
+OUTFILE=F:\OneDrive-UNSW\OneDrive - UNSW\My Onedrive\PhD\Src\Briyan-RO\2TDC-1AES\Auto_sensor\CARRY4-WO-latch\ZEDBOARD-CARRY-WO-LATCH-1del\top.bit
+FAMILY=Zynq
+PART=xc7z020-1clg484
+WORKINGDIR=F:\OneDrive-UNSW\OneDrive - UNSW\My Onedrive\PhD\Src\Briyan-RO\2TDC-1AES\Auto_sensor\CARRY4-WO-latch\ZEDBOARD-CARRY-WO-LATCH-1del
+LICENSE=ISE
+USER_INFO=176080079_176910363_210559698_406

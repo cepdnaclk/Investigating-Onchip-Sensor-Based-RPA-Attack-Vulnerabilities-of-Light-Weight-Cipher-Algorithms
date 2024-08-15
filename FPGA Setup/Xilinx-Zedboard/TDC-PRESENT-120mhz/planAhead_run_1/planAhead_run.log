@@ -1,0 +1,103 @@
+
+****** PlanAhead v14.7 (64-bit)
+  **** Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Common 17-86] Your PlanAhead license expires in -2946 day(s)
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+INFO: [Common 17-81] Feature available: PartialReconfiguration
+source {D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/ZEDBOARD-OrigTDCSensor-8del-new/pa.fromNetlist.tcl}
+# create_project -name test -dir "D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/ZEDBOARD-OrigTDCSensor-8del-new/planAhead_run_2" -part xc7z020clg484-1
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/ZEDBOARD-OrigTDCSensor-8del-new/top.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/ZEDBOARD-OrigTDCSensor-8del-new} {ipcore_dir} }
+# add_files [list {ipcore_dir/AddSub.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/chipscope_icon.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/chipscope_ila.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/multiplier.ncf}] -fileset [get_property constrset [current_run]]
+# set_property target_constrs_file "Zturn.ucf" [current_fileset -constrset]
+Adding file 'D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/ZEDBOARD-OrigTDCSensor-8del-new/Zturn.ucf' to fileset 'constrs_1'
+# add_files [list {Zturn.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc7z020clg484-1
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design top.ngc ...
+WARNING:NetListWriters:298 - No output is written to top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus fsmfake1[7 : 0] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Kin[105 : 0] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus dataIn_0[127 : 8] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus fsm[9]_fsm[9]_mux_349_OUT[7 : 0] on
+   block top is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[2].aes_tinyi/next_key[125
+   : 88] on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[2].aes_tinyi/m_col[7 : 0]
+   on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[1].aes_tinyi/next_key[125
+   : 88] on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[1].aes_tinyi/m_col[7 : 0]
+   on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[0].aes_tinyi/next_key[125
+   : 88] on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus gen_code_label[0].aes_tinyi/m_col[7 : 0]
+   on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus Madd_addr1[10]_GND_1_o_add_143_OUT_cy[8
+   : 3] on block top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   tdc_decode/ADDERTREE_INTERNAL_Madd14_cy[4 : 2] on block top is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   tdc_decode/ADDERTREE_INTERNAL_Madd14_lut[3 : 0] on block top is not
+   reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file top.edif ...
+ngc2edif: Total memory usage is 4338212 kilobytes
+
+Parsing EDIF File [./planAhead_run_2/test.data/cache/top_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_2/test.data/cache/top_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 1180 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-43] Netlist 'top' is not ideal for floorplanning, since the cellview 'top' defined in file 'top.ngc' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/zynq/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/zynq/zynq/xc7z020/clg484/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/zynq/IOStandards.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/zynq/drc.xml
+Parsing UCF File [D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/ZEDBOARD-OrigTDCSensor-8del-new/Zturn.ucf]
+Finished Parsing UCF File [D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/ZEDBOARD-OrigTDCSensor-8del-new/Zturn.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1178 instances were transformed.
+  FD => FDCE: 111 instances
+  FDC => FDCE: 405 instances
+  FDE => FDCE: 523 instances
+  FDR => FDRE: 3 instances
+  FDS => FDSE: 136 instances
+
+Phase 0 | Netlist Checksum: a8af8504
+link_design: Time (s): elapsed = 00:00:23 . Memory (MB): peak = 795.836 ; gain = 373.738
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Tue May 24 23:17:15 2022...
+INFO: [Common 17-83] Releasing license: PlanAhead

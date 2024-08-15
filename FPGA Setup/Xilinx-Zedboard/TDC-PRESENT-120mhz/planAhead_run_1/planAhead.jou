@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Tue May 24 23:15:04 2022
+# Process ID: 21668
+# Log file: D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/ZEDBOARD-OrigTDCSensor-8del-new/planAhead_run_1/planAhead.log
+# Journal file: D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/ZEDBOARD-OrigTDCSensor-8del-new/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {D:/Onedrive/OneDrive - UNSW/My Onedrive/PhD/Src/New-Delay-Sensor/TDC-10clk-BrianAES/ZEDBOARD-OrigTDCSensor-LUT-TDC-V0/ZEDBOARD-OrigTDCSensor-8del-new/pa.fromNetlist.tcl}

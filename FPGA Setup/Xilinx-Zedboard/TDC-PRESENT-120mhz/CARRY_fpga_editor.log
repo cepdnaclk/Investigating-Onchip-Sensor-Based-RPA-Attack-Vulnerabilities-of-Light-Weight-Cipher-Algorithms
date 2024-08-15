@@ -1,0 +1,13 @@
+#:C0     
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   NT M2.1 P.20131013
+#Current Working Directory:
+#:D   D:\Onedrive\OneDrive - UNSW\My Onedrive\PhD\Src\Briyan-RO\2TDC-1AES\Auto_sensor\CARRY4-WO-latch\ZEDBOARD-CARRY-WO-LATCH-1del
+#Date/Time:
+#:T   Thu Jul 01 11:21:26 2021
+#------------------------------
+	#Design creation date: 2021.07.01.01.21.26
+	#Loading device for application Rf_Device from file '7z020.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+	#Building chip graphics...
+	#Loading speed info...

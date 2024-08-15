@@ -1,0 +1,162 @@
+unselect -all
+select wire 'INPUT(152860,-46344)'
+unselect -all
+unselect -all
+select net 'tp/co1<2>'
+hilite -c yellow
+unselect -all
+select net 'tp/co1<3>'
+hilite -c yellow
+unselect -all
+select net 'tp/co1<1>'
+hilite -c yellow
+unselect -all
+select net 'tp/co1<0>'
+hilite -c yellow
+unselect -all
+select net 'clk0'
+hilite -c yellow
+unselect -all
+select net 'adjust<0>'
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select comp 'tp/delOut<3>'
+post block
+post attr main
+setattr main edit-mode Read-Write
+setattr main case_sensitive off
+setattr main case_sensitive off
+unpost main
+unselect -all
+select net 'out<0>'
+delete
+unselect -all
+select net 'out<1>'
+delete
+unselect -all
+select net 'out<2>'
+delete
+unselect -all
+select net 'out<3>'
+delete
+unselect -all
+select net 'tp/co1<3>'
+delete
+unselect -all
+select net 'tp/co1<2>'
+delete
+unselect -all
+select net 'tp/co1<1>'
+delete
+unselect -all
+select net 'tp/co1<0>'
+delete
+unselect -all
+select net 'clk0'
+delete
+unselect -all
+select net 'GLOBAL_LOGIC1'
+delete
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+unselect -all
+select pin 'SLICE_X109Y60.A4'
+unselect -all
+select pin 'SLICE_X109Y60.A5'
+unselect -all
+select pin 'SLICE_X109Y60.AQ'
+unselect -all
+select net '_n0768<10>'
+unselect -all
+select wire 'INPUT(152796,-47160)'
+unselect -all
+select net 'adjust<0>'
+unselect -all
+select pin 'SLICE_X109Y60.CLK'
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select pin 'SLICE_X109Y60.CLK'
+unselect -all
+select pin 'SLICE_X109Y60.CE'
+unselect -all
+select pin 'SLICE_X109Y60.CLK'
+select pin 'SLICE_X109Y61.CLK'
+add
+post attr net $NET_0
+unpost net "$NET_0"
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select comp 'out<7>'
+post block
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select pin 'SLICE_X109Y61.CLK'
+unselect -all
+select pin 'SLICE_X109Y60.CLK'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.DQ'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.D4'
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select pin 'SLICE_X109Y60.D4'
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select pin 'SLICE_X109Y60.D3'
+unselect -all
+select pin 'SLICE_X109Y60.D4'
+unselect -all
+select pin 'SLICE_X109Y60.D6'
+unselect -all
+select pin 'SLICE_X109Y60.D5'
+unselect -all
+select pin 'SLICE_X109Y60.D4'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.D4'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.CQ'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.C4'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.BQ'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.B4'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.A4'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.AQ'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.AMUX'
+unselect -all
+select pin 'SLICE_X109Y60.AQ'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.AMUX'
+select pin 'SLICE_X109Y60.A4'
+add
+post attr net $NET_1
+unpost net "$NET_1"
+end

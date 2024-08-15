@@ -1,0 +1,63 @@
+unselect -all
+select comp 'tp/delOut<3>'
+post block
+setattr comp tp/delOut<3> Config "A5LUT:#LUT:O5=A4 A6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) ACY0:O5 AFF:#AND2L AFFINIT:INIT0 AFFMUX:CY AFFSR:SRLOW AOUTMUX:XOR B5LUT:#LUT:O5=A4 B6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) BCY0:O5 BFF:#AND2L BFFINIT:INIT0 BFFMUX:CY BFFSR:SRLOW BOUTMUX:XOR C5LUT:#LUT:O5=A4 C6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) CCY0:O5 CEUSEDMUX:1 CFF:#AND2L CFFINIT:INIT0 CFFMUX:CY CFFSR:SRLOW CLKINV:CLK_B COUTMUX:XOR COUTUSED:0 D5LUT:#LUT:O5=A4 D6LUT:#LUT:O6=(A6+~A6)*(((~A4*(~A5*A6))+(A4*(~A5+~A6)))) DCY0:O5 DFF:#AND2L DFFINIT:INIT0 DFFMUX:CY DFFSR:SRLOW DOUTMUX:XOR PRECYINIT:AX SRUSEDMUX:0 SYNC_ATTR:ASYNC"
+block apply
+end block
+unselect -all
+select wire 'LUTINPUT(152860,-46392)'
+unselect -all
+select pin 'SLICE_X109Y60.CLK'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.AX'
+select pin 'SLICE_X109Y60.CLK'
+add
+save
+unselect -all
+select pin 'SLICE_X109Y60.DQ'
+unselect pin 'SLICE_X109Y60.DQ'
+select -k comp 'outReg<3>'
+unselect -all
+select comp 'outReg<3>'
+unselect -all
+select comp 'outReg<3>'
+post block
+unselect -all
+unselect -all
+select pin 'SLICE_X102Y63.D'
+unselect -all
+select pin 'SLICE_X102Y63.DMUX'
+unselect -all
+select pin 'SLICE_X102Y63.DQ'
+unselect -all
+select pin 'SLICE_X102Y63.WE'
+unselect -all
+select pin 'SLICE_X102Y63.AI'
+unselect -all
+select pin 'SLICE_X102Y63.BI'
+unselect -all
+select pin 'SLICE_X102Y63.CI'
+unselect -all
+select pin 'SLICE_X102Y63.DI'
+unselect -all
+select pin 'SLICE_X102Y63.DX'
+hilite -c yellow
+unselect -all
+select pin 'SLICE_X102Y63.CX'
+hilite -c yellow
+unselect -all
+select pin 'SLICE_X102Y63.BX'
+hilite -c yellow
+unselect -all
+select pin 'SLICE_X102Y63.AX'
+hilite -c yellow
+unselect -all
+select comp 'outReg<3>'
+unselect -all
+unselect -all
+select pin 'SLICE_X102Y63.DX'
+select pin 'SLICE_X109Y60.DQ'
+add
+save
+end

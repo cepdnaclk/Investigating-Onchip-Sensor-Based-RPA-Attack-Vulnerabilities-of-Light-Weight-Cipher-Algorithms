@@ -1,0 +1,7 @@
+verilog work "uartTX.v"
+verilog work "uartrx.v"
+verilog work "tdc_top.v"
+vhdl work "lattice_sensor.vhd"
+verilog work "clock.v"
+verilog work "aes128_table_ecb.v"
+verilog work "top.v"

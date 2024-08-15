@@ -9,7 +9,7 @@
 #include <pthread.h> 
 
 // defining paramters
-#define SAMPLES 100000
+#define SAMPLES 110000
 #define WAVELENGTH 64
 #define KEYBYTES 8 //number of bytes in the key
 #define KEYS 16 //number of possible keys guesses
@@ -179,6 +179,10 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
  
 		}
 		
+		uint64_t R31IP = inversepermute(R31);
+		uint64_t RKey31IP = inversepermute(RKey31);
+		//printf("Gkey %lx \n", RKey31IP);
+		
 		//DEBUG
 		#ifdef DEBUG
 			char* temp_state= fromLongToHexString(R31);
@@ -196,7 +200,8 @@ void maxCorelation(void * arg ){ //float **wavedata, unsigned int **cipher, int 
 			printf("ADR:\t\t %s \n",temp_adr);
 		#endif
 
-		uint64_t result_invPer= inversepermute(result_XOR);
+		uint64_t result_invPer= (result_XOR);
+		//uint64_t result_invPer= inversepermute(result_XOR);
 		
 		#ifdef DEBUG
 			char* temp_ipr= fromLongToHexString(result_invPer);

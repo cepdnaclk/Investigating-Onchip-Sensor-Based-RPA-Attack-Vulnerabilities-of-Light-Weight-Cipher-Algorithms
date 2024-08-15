@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Onedrive\OneDrive - UNSW\My Onedrive\PhD\Src\Briyan-RO\2TDC-1AES\test-5x-v2\MY-TDC-2-tinyAES-4x-diffsensor-working-17x-test3\top.ncd
+OUTFILE=D:\Onedrive\OneDrive - UNSW\My Onedrive\PhD\Src\Briyan-RO\2TDC-1AES\test-5x-v2\MY-TDC-2-tinyAES-4x-diffsensor-working-17x-test3\top.bit
+FAMILY=Zynq
+PART=xc7z020-1clg400
+WORKINGDIR=D:\Onedrive\OneDrive - UNSW\My Onedrive\PhD\Src\Briyan-RO\2TDC-1AES\test-5x-v2\MY-TDC-2-tinyAES-4x-diffsensor-working-17x-test3
+LICENSE=ISE
+USER_INFO=176080079_176910363_210559698_406

@@ -1,0 +1,16 @@
+Release 14.7 - WebTalk (P.20131013)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Project Information
+--------------------
+ProjectID=73694503E85C44FD85EC548D8A02C5AC
+ProjectIteration=555
+
+WebTalk Summary
+----------------
+INFO:WebTalk:2 - WebTalk is enabled.
+
+INFO:WebTalk:8 - WebTalk Install setting is ON.
+INFO:WebTalk:6 - WebTalk User setting is ON.
+
+INFO:WebTalk:5 - F:/OneDrive-UNSW/OneDrive - UNSW/My Onedrive/PhD/Src/Briyan-RO/2TDC-1AES/Auto_sensor/CARRY4-WO-latch/ZEDBOARD-CARRY-WO-LATCH-1del/usage_statistics_webtalk.html WebTalk report has not been sent to Xilinx.  Please check your network and proxy settings.  For additional details about this file, please refer to the WebTalk help file at I:/Xilinx/14.7/ISE_DS/ISE/data/reports/webtalk_introduction.html

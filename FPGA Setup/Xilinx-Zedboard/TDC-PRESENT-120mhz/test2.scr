@@ -1,0 +1,20 @@
+unselect -all
+select pin 'SLICE_X109Y60.BMUX'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.B4'
+unselect -all
+select pin 'SLICE_X109Y60.B5'
+unselect -all
+select pin 'SLICE_X109Y60.B4'
+delete
+unselect -all
+select pin 'SLICE_X109Y60.B4'
+select pin 'SLICE_X109Y60.BMUX'
+add
+post attr net $NET_0
+unselect -all
+select pin "SLICE_X109Y60.AQ"
+unselect -all
+select -k pin "SLICE_X109Y60.AQ"
+delete

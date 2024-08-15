@@ -1,0 +1,94 @@
+delete
+unselect -all
+select pin 'SLICE_X108Y62.CQ'
+delete
+unselect -all
+unselect -all
+select pin 'SLICE_X108Y62.CQ'
+unselect -all
+unselect -all
+unselect -all
+select wire 'OUTPUT(152700,-40432)'
+unselect -all
+unselect -all
+unselect -all
+unselect -all
+unselect -all
+select net 'out<8>'
+delete
+unselect -all
+select net 'out<9>'
+delete
+unselect -all
+select pin 'SLICE_X108Y62.CQ'
+delete
+unselect -all
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select pin 'SLICE_X109Y62.C6'
+unselect -all
+select pin 'SLICE_X109Y62.CQ'
+unselect -all
+select pin 'SLICE_X109Y62.CMUX'
+unselect -all
+select pin 'SLICE_X109Y62.CQ'
+unselect -all
+select pin 'SLICE_X109Y62.C'
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select comp 'tp/delOut<11>'
+post block
+unselect -all
+select pin 'SLICE_X109Y62.CMUX'
+delete
+unselect -all
+select pin 'SLICE_X109Y62.C5'
+unselect -all
+select pin 'SLICE_X109Y62.CMUX'
+unselect -all
+select pin 'SLICE_X109Y62.C5'
+select pin 'SLICE_X109Y62.CMUX'
+add
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select rpm 'Shape_0'
+unselect -all
+select net 'tp/co1<11>'
+unselect -all
+select pin 'SLICE_X109Y62.BMUX'
+unselect -all
+select pin 'SLICE_X109Y62.B'
+unselect -all
+select pin 'SLICE_X109Y62.CMUX'
+delete
+unselect -all
+select pin 'SLICE_X109Y62.CQ'
+delete
+unselect -all
+select pin 'SLICE_X109Y62.CMUX'
+unselect -all
+select pin 'SLICE_X109Y62.C4'
+unselect -all
+select pin 'SLICE_X109Y62.C5'
+unselect -all
+select pin 'SLICE_X109Y62.C4'
+select pin 'SLICE_X109Y62.CMUX'
+add
+unselect -all
+select pin 'SLICE_X109Y62.C5'
+select pin 'SLICE_X109Y62.CMUX'
+add
+post routecst
+unselect -all
+unselect -all
+unselect -all
+unselect -all
+routecst -noloc -cf "top_map.ucf"
+unpost routecst
+post routecst
+unselect -all
+routecst -l  -cf "top_map.ucf"
+unpost routecst

@@ -1,0 +1,39 @@
+#:C9     
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   NT M2.1 P.20131013
+#Current Working Directory:
+#:D   F:\OneDrive-UNSW\OneDrive - UNSW\My Onedrive\PhD\Src\Briyan-RO\2TDC-1AES\Auto_sensor\CARRY4-WO-latch\ZEDBOARD-CARRY-WO-LATCH-1del
+#Date/Time:
+#:T   Wed Jun 23 15:20:14 2021
+#------------------------------
+	#Reading top.ncd...
+	#Loading device for application Rf_Device from file '7z020.nph' in environment I:\Xilinx\14.7\ISE_DS\ISE\.
+	#   "top" is an NCD, version 3.2, device xc7z020, package clg484, speed -1
+	#Design creation date: 2021.06.23.05.16.06
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+select -k net 'gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[2].ff/d<23>'
+	#3
+unselect net 'gen_code_label[0].aes_tinyi/Inst_dataBody/state_FF/gen_ff[2].ff/d<23>'
+	#4
+select -k net 'tp/S<0>'
+	#5
+unselect net 'tp/S<0>'
+	#6
+select -k net 'tp/S<1>'
+	#7
+unselect net 'tp/S<1>'
+	#8
+select -k net 'tp/D<0>'
+	#9
+unselect net 'tp/D<0>'
+	#10
+select -k net 'addr1<5>'
+	#11
+unselect net 'addr1<5>'
+	#12
+select -k net 'GND_1_o_GND_1_o_AND_162_o_mmx_out5'

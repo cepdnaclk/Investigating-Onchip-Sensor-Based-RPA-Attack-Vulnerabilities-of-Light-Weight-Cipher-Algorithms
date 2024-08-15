@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/mnt/c/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/Xilinx-Zedboard/TDC-PRESENT-120mhz/top.ncd
+OUTFILE=/mnt/c/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/Xilinx-Zedboard/TDC-PRESENT-120mhz/top.bit
+FAMILY=Zynq
+PART=xc7z020-1clg484
+WORKINGDIR=/mnt/c/Users/Darshana/Documents/GitHub/e17-4yp-Investigating/FPGA Setup/Xilinx-Zedboard/TDC-PRESENT-120mhz
+LICENSE=WebPack
+USER_INFO=210700429_0_0_571
